@@ -156,6 +156,7 @@ tema = \relative c {
   \temaD
   \mark \default
   \temaE
+  \bar "|."
 }
 
 chordsPart ={
