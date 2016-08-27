@@ -60,7 +60,7 @@ accordiA = \chordmode{
 temaB = {
   \repeat volta 2 {
     d4\prall e8 f f d a' gis4 f8 e|
-    d4\prall d'8 d d c b a g f e |
+    d4\prall d'8 d d c b a gis f e |
     d4\prall e8 f f d a' gis4\prall f8 a|
     gis4\prall f8 e e d f e4\prall e| 
   }

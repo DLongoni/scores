@@ -49,7 +49,7 @@ tema = {
   d4 e8 c4 b b4.|\bar"||" \break
 
   r4 a8 b4 b c b8 |
-  fis'4 e8 e d cis fis d4 c8|
+  fis'4 e8 e d e fis d4 c8|
   b4 d8 e4 e8 fis d4 cis8|
   d4 e8 c4 b b4.|\bar"||" \break
 
