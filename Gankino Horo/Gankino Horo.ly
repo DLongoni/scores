@@ -126,7 +126,7 @@ temaE = {
   }
   \alternative{
     { e8 d cis d e4 a8 e4\prall e| }
-    { e8 d cis d e4 a8 e4\staccato| }
+    { e8 d cis d e4 a8 e4\staccato r4| }
   }
 }
 
