@@ -37,11 +37,11 @@ global = {
 struttura = \markup {
   \column {
     \line {
-      Struttura: \bold{A}(g) \bold{B}(f) \bold{A}(g,f,c) \bold{B}(g,f,c)
-      \bold{C}(t)
+      Struttura: \bold{A}(g,b) \bold{B1x}(g,b) \bold{B2x}(g\italic{8va},b) 
+      \bold{A1x}(g,f,b) \bold{A2x}(g\italic{2voce},f,b) \bold{B}(g,f,b)
     }
     \line {
-      % linea2
+      \bold{C1}(t) \bold{C2}(t) \bold{C3}(t)
     }
   }
 }
@@ -49,83 +49,94 @@ struttura = \markup {
 
 % PARTE A {{{
   temaA={
-    \time #'(3 2 2) 7/8
-    a8 c, f a bes16 a g8 f| g c, e g a16 g f8 e |
-    \time #'(2 2 3 2 2) 11/8
-    d e c a c d e f4 f|
-    \time #'(3 2 2) 7/8
-    a8 c, f a bes16 a g8 f| g c, e g a16 g f8 e |
-    \time #'(2 2 3 2 2) 11/8
-    d e c a c d e d4 d|
+    \repeat volta 2 {
+      \time #'(3 2 2) 7/8
+      a8 c, f a16 bes a8 g f| g c, e g16 a g8 f e |
+      \time #'(2 2 3 2 2) 11/8
+      d e c a c d e f4 f|
+      \time #'(3 2 2) 7/8
+      a8 c, f a16 bes a8 g f| g c, e g16 a g8 f e |
+      \time #'(2 2 3 2 2) 11/8
+      d e c a c d e d4 d|
+    }
   }
 
   accordiA=\chordmode{
-    \set chordChanges = ##t
-    \time #'(3 2 2) 7/8
-    f4. f2| c4. c2|
-    \time #'(2 2 3 2 2) 11/8
-    c2 c4. f2:|
-    \time #'(3 2 2) 7/8
-    f4. f2| c4. c2|
-    \time #'(2 2 3 2 2) 11/8
-    c2 c4. g2|
+    \repeat volta 2 {
+      \set chordChanges = ##t
+      \time #'(3 2 2) 7/8
+      f4. f2| c4. c2|
+      \time #'(2 2 3 2 2) 11/8
+      c2 c4. f2:|
+      \time #'(3 2 2) 7/8
+      f4. f2| c4. c2|
+      \time #'(2 2 3 2 2) 11/8
+      c2 c4. g2|
+    }
   }
 
   accordiAfusion=\chordmode{
-    \set chordChanges = ##t
-    \time #'(3 2 2) 7/8
-    f4.:6 fis2:dim7| c4./g a2:m7|
-    \time #'(2 2 3 2 2) 11/8
-    c2/g ges4.:aug7 f2:maj7|
-    \time #'(3 2 2) 7/8
-    f4.:6 fis2:dim7| c4./g a2:m7|
-    \time #'(2 2 3 2 2) 11/8
-    a2:m7 aes4.:aug7 g2:6
+    \repeat volta 2 {
+      \set chordChanges = ##t
+      \time #'(3 2 2) 7/8
+      f4.:6 fis2:dim7| c4./g a2:m7|
+      \time #'(2 2 3 2 2) 11/8
+      c2/g ges4.:7.11+ f2:maj7|
+      \time #'(3 2 2) 7/8
+      f4.:6 fis2:dim7| c4./g a2:m7|
+      \time #'(2 2 3 2 2) 11/8
+      a2:m7 aes4.:7.11+ g2:6
+    }
   }
 
   bassoAfusion={
-    \time #'(3 2 2) 7/8
-    f,4. fis2| g4. a2|
-    \time #'(2 2 3 2 2) 11/8
-    g2 ges4. f4 f|
-    \time #'(3 2 2) 7/8
-    f4. fis2| g4. a2|
-    \time #'(2 2 3 2 2) 11/8
-    a2 aes4. g4 g|
+    \repeat volta 2 {
+      \time #'(3 2 2) 7/8
+      f,4. fis2| g4. a2|
+      \time #'(2 2 3 2 2) 11/8
+      g2 ges4. f4 f|
+      \time #'(3 2 2) 7/8
+      f4. fis2| g4. a2|
+      \time #'(2 2 3 2 2) 11/8
+      a2 aes4. g4 g|
+    }
   }
 
   bassoA={
-    \time #'(3 2 2) 7/8
-    f4 a8 f4 c| c4 e8 c4 g'4|
-    \time #'(2 2 3 2 2) 11/8
-    c4 e c g8 f4 f|
-    \time #'(3 2 2) 7/8
-    f4 a8 f4 c| c4 e8 c4 g'4|
-    \time #'(2 2 3 2 2) 11/8
-    c4 e c e,8 g4 g|
+    \repeat volta 2 {
+      \time #'(3 2 2) 7/8
+      f4 a8 f4 c| c4 e8 c4 g'4|
+      \time #'(2 2 3 2 2) 11/8
+      c4 e c g8 f4 f|
+      \time #'(3 2 2) 7/8
+      f4 a8 f4 c| c4 e8 c4 g'4|
+      \time #'(2 2 3 2 2) 11/8
+      c4 e c e,8 g4 g|
+    }
   }
 
-  fisaA={
-    \time #'(3 2 2) 7/8
-    c8 e, a c d16 c bes8 a| bes e, g bes c16 bes a8 g |
-    \time #'(2 2 3 2 2) 11/8
-    f g e c e f g a4 a|
-    \time #'(3 2 2) 7/8
-    c8 e, a c d16 c bes8 a| bes e, g bes c16 bes a8 g |
-    \time #'(2 2 3 2 2) 11/8
-    f g e c e f g f4 f|
+  temaAdue={
+    \repeat volta 2 {
+      \time #'(3 2 2) 7/8
+      c8 e, a c16 d c8 bes a| bes e, g bes16 c bes8 a g |
+      \time #'(2 2 3 2 2) 11/8
+      f g e c e f g a4 a|
+      \time #'(3 2 2) 7/8
+      c8 e, a c16 d c8 bes a| bes e, g bes16 c bes8 a g |
+      \time #'(2 2 3 2 2) 11/8
+      f g e c e f a g4 g|
+    }
   }
-
   % }}}
 
   % {{{ PARTE B
   temaB={
     \time #'(3 2 2) 7/8
-    d,8 e c e f16 e d8 c| e f c g' a16 g f8 e |
+    d,8 e c e16 f e8 d c| e f c g'16 a g8 f e |
     \time #'(2 2 3 2 2) 11/8
     d e c a c d e f4 f|
     \time #'(3 2 2) 7/8
-    d8 e c e f16 e d8 c| e f c g' a16 g f8 e |
+    d8 e c e16 f e8 d c| e f c g'16 a g8 f e |
     \time #'(2 2 3 2 2) 11/8
     d e c a c d e d4 d|
   }
@@ -147,11 +158,11 @@ struttura = \markup {
     \time #'(3 2 2) 7/8
     c4.:6 b2:7.5-| bes4. a2:m7|
     \time #'(2 2 3 2 2) 11/8
-    c2/g ges4.:aug7 f2:maj7|
+    c2/g ges4.:7.11+ f2:maj7|
     \time #'(3 2 2) 7/8
     f4.:6 fis2:dim7| c4./g a2:m7|
     \time #'(2 2 3 2 2) 11/8
-    a2:m7 aes4.:aug7 g2:6
+    a2:m7 aes4.:7.11+ g2:6
   }
 
   bassoBfusion={
@@ -201,7 +212,7 @@ struttura = \markup {
   % PARTE C {{{
     temaC={
       \time #'(3 2 2) 7/8
-      fis' 8 ees c d16 ees d c d4 | ees 8 fis c d16 ees ees d d4 |
+      fis' 8 ees c d16 ees d c d4 | fis 8 ees c d16 ees ees d d4 |
       \time #'(2 2 3 2 2) 11/8
       d8 ees fis g a bes g a16 bes a g a4|
       \time #'(3 2 2) 7/8
@@ -246,13 +257,13 @@ struttura = \markup {
 
     bassoCcinque={
       \time #'(3 2 2) 7/8
-      d4. r4 d4 | r4. d4 r4|
+      d4.-.  r4 d4-. | r4. d4-. r4|
       \time #'(2 2 3 2 2) 11/8
-      r8 d4. r4 d4. r4|
+      r8 d8-. r4 r4 d8-. r4 r4|
       \time #'(3 2 2) 7/8
-      d4. r4 d4 | r4. d4 r4|
+      d4.-.  r4 d4-. | r4. d4-. r4|
       \time #'(2 2 3 2 2) 11/8
-      r8 d4. ees4 ees8 d4 d|
+      r8 d8-. r4 r4 ees8 d4 d|
     }
 
     accordionCcinque=\chordmode{
@@ -277,18 +288,7 @@ struttura = \markup {
       fis4 fis4 g bes8 fis4-. fis-.
     }
 
-    clarinoCcinque={
-      \time #'(3 2 2) 7/8
-      d4.~\p\< d2~ | d4.~ d2~ |
-      \time #'(2 2 3 2 2) 11/8
-      d8~ d8-.\f r4 ees8-.\f r4 r2|
-      \time #'(3 2 2) 7/8
-      d4.~\p\< d2~ | d4.~ d2~ |
-      \time #'(2 2 3 2 2) 11/8
-      d8~ d8-.\f r4 ees8 r ees d4-. r4|
-    }
-
-    trombaCcinque={
+    trombaCcinqueLungo={
       \time #'(3 2 2) 7/8
       a4.~\p\< a2~ | a4.~ a2~ |
       \time #'(2 2 3 2 2) 11/8
@@ -296,7 +296,18 @@ struttura = \markup {
       \time #'(3 2 2) 7/8
       a4.~\p\< a2~ | a4.~ a2~ |
       \time #'(2 2 3 2 2) 11/8
-      a8~ a8-.\f r4 bes8 r bes a4-. r4|
+      a8~ a8-.\f r4 bes8 r bes a4 r4|
+    }
+
+    trombaCcinque={
+      \time #'(3 2 2) 7/8
+      a8-. r4 r4 a4-. | r4. a8-. r8 r4| 
+      \time #'(2 2 3 2 2) 11/8
+      r8 a8-. r4 r4 a8-. r4 r4|
+      \time #'(3 2 2) 7/8
+      a8-. r4 r4 a4-. | r4. a8-. r8 r4| 
+      \time #'(2 2 3 2 2) 11/8
+      r8 a8-. r4 r4 bes8 a4 r4 |
     }
 
     clarinoC={
@@ -307,7 +318,29 @@ struttura = \markup {
       \time #'(3 2 2) 7/8
       d4.-. d4-. d4-.| d4.-. d4-. d4-. |
       \time #'(2 2 3 2 2) 11/8
-      d4 d4 ees g8 d4-. d-.
+      d4 d4 ees g8 d4-. d-.|
+    }
+
+    clarinoCcinqueLungo={
+      \time #'(3 2 2) 7/8
+      d4.~\p\< d2~ | d4.~ d2~ |
+      \time #'(2 2 3 2 2) 11/8
+      d8~ d8-.\f r4 ees8-.\f r4 r2|
+      \time #'(3 2 2) 7/8
+      d4.~\p\< d2~ | d4.~ d2~ |
+      \time #'(2 2 3 2 2) 11/8
+      d8~ d8-.\f r4 ees8 r ees d4 r4|
+    }
+
+    clarinoCcinque={
+      \time #'(3 2 2) 7/8
+      d8-. r4 r4 d4-. | r4. d8-. r8 r4| 
+      \time #'(2 2 3 2 2) 11/8
+      r8 d8-. r4 r4 d8-. r4 r4|
+      \time #'(3 2 2) 7/8
+      d8-. r4 r4 d4-. | r4. d8-. r8 r4| 
+      \time #'(2 2 3 2 2) 11/8
+      r8 d8-. r4 r4 ees8 d4 r4|
     }
     % }}}
 
@@ -366,10 +399,10 @@ struttura = \markup {
           \global
           \pausa
           \clarinoBintro
+          \clarinoCcinqueLungo
           \clarinoCcinque
-          \clarinoC
+          \temaCdue
           \temaA
-
         }
 
         trumpetBb = \relative c'' {
@@ -377,16 +410,19 @@ struttura = \markup {
           \global
           \pausa
           \trombaBintro
+          \trombaCcinqueLungo
           \trombaCcinque  
-          \trombaC  
+          \relative c'{\temaC}
+          \pausa
         }
 
         accordion = \relative c'' {
-          \pausa
+          \temaAdue
           \pausa
           \accordionCcinque
-          \temaCdue
-          \fisaA
+          \temaC
+          \pausa
+          \temaAdue
         }
 
         guitar = \relative c'' {
@@ -397,7 +433,11 @@ struttura = \markup {
           \temaB
           \mark \markup{ \box \bold{C1} }
           \temaC
-          \relative c{\temaC}
+          \mark \markup{ \box \bold{C2} }
+          \break
+          \temaCdue
+          \mark \markup{ \box \bold{C3} }
+          \pausa
           \mark \markup{ \box \bold{A2} }
           \accordiA
         }
@@ -407,6 +447,7 @@ struttura = \markup {
           \bassoAfusion
           \bassoBfusion
           \bassoCcinque
+          \bassoCcinque
           \bassoC
           \bassoA
         }
@@ -415,6 +456,7 @@ struttura = \markup {
           \new ChordNames {
             \accordiAfusion
             \accordiBfusion
+            \accordiC
             \accordiC
             \accordiC
             \accordiA
