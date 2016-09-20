@@ -1,3 +1,4 @@
+ % {{{ INIZIALIZZAZIONE
 \version "2.16.2"
 
 \header {
@@ -45,10 +46,10 @@ struttura = \markup {
       \bold{B}(e), \bold{D}, \bold{B}(f,fisa 2 voce), \bold{E}x4, \bold{F}x4, \italic{coda}
     }
   }
-
 }
+% }}}
 
-%%% PARTE A
+% {{{ PARTE A
 
 temaA = {
   \repeat volta 2 {
@@ -104,7 +105,9 @@ accordiA = \chordmode{
   }
 }
 
-%%% PARTE B
+% }}}
+
+% {{{ PARTE B
 
 pausaB = { R1*14*7/8|}
 
@@ -162,16 +165,27 @@ bassoB = {
   d4. r4 f| r4. c4 a|
 }
 
+% trombaB = { % Elimino: non piace ne agli altri ne a me
+%   \repeat volta 2{
+%     a4.\mp c4 a | a8-. a8-. r8 r4 c4 | a8-. a8-. r8 r4 r8 bes8 | c8 bes a a bes c d|
+%     a4. c4 a | bes8-. bes8-. r8 bes8 a bes a | bes8-. bes8-. r8 r4 r8 bes | c8 bes a a bes c d|
+%     a4. c4 a | bes8-. bes8-. r8 bes8 a bes a | bes8-. bes8-. r8 r4 r8 bes |
+%     a8 c d~ d ees c bes| a4.~ \startTrillSpan a2~ | a4.~ a2\stopTrillSpan|
+%   }
+% }
+
 trombaB = {
   \repeat volta 2{
-    a4.\mp c4 a | a8-. a8-. r8 r4 c4 | a8-. a8-. r8 r4 r8 bes8 | c8 bes a a bes c d|
-    a4. c4 a | bes8-. bes8-. r8 bes8 a bes a | bes8-. bes8-. r8 r4 r8 bes | c8 bes a a bes c d|
-    a4. c4 a | bes8-. bes8-. r8 bes8 a bes a | bes8-. bes8-. r8 r4 r8 bes |
-    a8 c d~ d ees c bes| a4.~ \startTrillSpan a2~ | a4.~ a2\stopTrillSpan|
+    r4. r8 c8 bes4 | f8 g bes a2 | r4. r8 c8 bes4 | f4 e8 d e f g |
+    f4. r2 | bes8 c d d c bes a | g4. r2 | a4 g8 g f e f |
+    f4. r2 | r4 bes8 bes a a g| e4. r2 | 
+    a8 bes c d c c bes| a4.~ \startTrillSpan a2~ | a4.~ a2\stopTrillSpan|
   }
 }
 
-%%% PARTE C
+% }}}
+
+% {{{ PARTE C
 
 pausaC={R1*15/8*7}
 
@@ -249,7 +263,9 @@ accordiC = \chordmode{
   c4. c4 c4/b|bes4. bes4 c4:m | d4.:m d2:m| d4.:m d2:m|
 }
 
-%%% Parte D - break
+% }}}
+
+% {{{ Parte D - break
 
 pausaD = {R1*8*7/8}
 
@@ -285,8 +301,9 @@ accordiD= \chordmode{
   d'4.:m d2:m |  d'4.:m d2:m |  d'4.:m d2:m | d'4.:m c2 |
 }
 
+% }}}
 
-%%% Parte E
+% {{{ Parte E
 
 pausaE = {
   R1*2
@@ -345,7 +362,9 @@ accordiE = \chordmode{
 
 }
 
-%%% Parte F
+% }}}
+
+% {{{ Parte F
 
 pausaF = { \repeat volta 4{R1*4}}
 
@@ -399,8 +418,9 @@ accordiF = \chordmode{
   }
 
 }
+% }}}
 
-%%% Coda
+% {{{ Coda
 pausaCoda ={R1*2}
 
 temaCoda ={
@@ -419,8 +439,9 @@ bassoCoda ={
   a,8.\p\< cis8. e8 a,8. cis8. e8 |
   a,16 cis8 e16~ e16 g8 gis16 a4 a4\f-.|
 }
+% }}}
 
-%%% MAIN
+% {{{ MAIN
 
 clarinet = \relative c'' {
   \global
@@ -516,30 +537,38 @@ chordsPart ={
 }
 
 accordionPart = \new Staff \with {
-  instrumentName = "Accordion"
+  instrumentName = "Fisa"
+shortInstrumentName = #"F"
   midiInstrument = "piano"
 } \accordion
 
 clarinetPart = \new Staff \with {
-  instrumentName = "Clarinet"
+  instrumentName = "Clarinetto"
+shortInstrumentName = #"C"
   midiInstrument = "clarinet"
 } \clarinet
 
 trumpetPart =  \new Staff \with {
-  instrumentName = "Trumpet"
+  instrumentName = "Tromba"
+shortInstrumentName = #"T"
   midiInstrument = "trumpet"
 } \trumpetBb
 
 guitarPart = \new Staff \with {
-  instrumentName = "Guitar"
+  instrumentName = "Chitarra"
+shortInstrumentName = #"G"
   midiInstrument = "guitar"
 } { \clef "treble_8" \guitar }
 
 contrabassPart = \new Staff \with {
-  instrumentName = "Contrabass"
+  instrumentName = "Basso"
+shortInstrumentName = #"B"
   midiInstrument = "tuba"
 } { \clef bass \contrabass }
 
+% }}}
+
+% {{{ BOOKS
 \book{
   \bookOutputSuffix "Score"
   \struttura
@@ -562,7 +591,6 @@ contrabassPart = \new Staff \with {
     }
   }
 }
-
 
 \book{
   \bookOutputSuffix "ClTr"
@@ -601,3 +629,4 @@ contrabassPart = \new Staff \with {
     >>
   }
 }
+% }}}

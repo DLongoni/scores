@@ -21,10 +21,10 @@
 
   myStaffSize = #20
   fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 20))
+            "FontAwesome"
+            "FontAwesome"
+            "FontAwesome"
+            (/ myStaffSize 20))
 }
 
 global = {
@@ -37,12 +37,27 @@ global = {
 struttura = \markup {
   \column {
     \line {
-      Struttura: \bold{A}(g,b) \bold{B1x}(g,b) \bold{B2x}(g\italic{8va},b) 
-      \bold{A1x}(g,f,b) \bold{A2x}(g\italic{2voce},f,b) \bold{B}(g,f,b) \bold{C1}(t) 
+      Struttura: \bold{A}(g,b) \bold{B1x}(g,b) \bold{B2x}(g\italic{8va},b)
+      \bold{A1x}(g,f,b) \bold{A2x}(g\italic{2voce},f,b) \bold{B}(g,f,b) \bold{C1}(t)
     }
     \line {
-      \bold{A2}(t) \bold{B2}(t,\italic{piano}) \bold{C2}(t) \bold{D2} (g,f,c,t) \bold{A2}(t,\italic{no rip}) \bold(Coda)
+      \bold{A2}(t) \bold{B2}(t,\italic{piano}) \bold{C2}(t) \bold{D} (g,f,c,t) \bold{Coda}
     }
+    \line {
+      Clarino: entra a \bold{C1}, \bold{A2} 1voce, \bold{B2} 1voce, metà \bold{C2} 2voce, \bold{D2} 2voce, \bold{Coda}
+    }
+    \line {
+      Tromba: entra a \bold{C1}, \bold{A2} 2voce, \bold{B2} no, metà \bold{C2} 1voce, \bold{D2} 1voce, \bold{Coda}
+    }
+    \line {
+      Fisa: entra la 2a \bold{A1} 1voce, \bold{B1} 1voce, \bold{C1}, \bold{A2} acc, \bold{B2} 1voce, \bold{C2} 2voce, \bold{D2} acc \bold{Coda}
+    }
+    \line {
+      Chitarra: intro scritta, \bold{A2} acc \bold{B2} acc metà \bold{C2} 1voce, \bold{D2} acc \bold{Coda}
+    }
+    % \line {
+    %   Basso: intro scritta, \bold{A2} 1voce, \bold{B2} 1voce, metà \bold{C2} 2voce, \bold{D2} 2voce, \bold{Coda}
+    % }
   }
 }
 % }}}
@@ -53,11 +68,11 @@ temaA={
     \time #'(3 2 2) 7/8
     a8 c, f a16 bes a8 g f| g c, e g16 a g8 f e |
     \time #'(2 2 3 2 2) 11/8
-    d e c a c d e f4 f|
+    d e c a c d e f4 f|\break
     \time #'(3 2 2) 7/8
     a8 c, f a16 bes a8 g f| g c, e g16 a g8 f e |
     \time #'(2 2 3 2 2) 11/8
-    d e c a c d e d4 d|
+    d e c a c d e d4 d|\break
   }
 }
 
@@ -94,11 +109,11 @@ bassoAfusion={
     \time #'(3 2 2) 7/8
     f,4. fis2| g4. a2|
     \time #'(2 2 3 2 2) 11/8
-    g2 ges4. f4 f|
+    g2 ges4. f4 f|\break
     \time #'(3 2 2) 7/8
     f4. fis2| g4. a2|
     \time #'(2 2 3 2 2) 11/8
-    a2 aes4. g4 g|
+    a2 aes4. g4 g|\break
   }
 }
 
@@ -135,11 +150,11 @@ temaB={
     \time #'(3 2 2) 7/8
     d,8 e c e16 f e8 d c| e f c g'16 a g8 f e |
     \time #'(2 2 3 2 2) 11/8
-    d e c a c d e f4 f|
+    d e c a c d e f4 f|\break
     \time #'(3 2 2) 7/8
     d8 e c e16 f e8 d c| e f c g'16 a g8 f e |
     \time #'(2 2 3 2 2) 11/8
-    d e c a c d e d4 d|
+    d e c a c d e d4 d|\break
   }
 }
 
@@ -148,11 +163,11 @@ temaBdue={
     \time #'(3 2 2) 7/8
     f8 g e g16 a g8 f e| g a e c'16 d c8 a g |
     \time #'(2 2 3 2 2) 11/8
-    e g e c e f g a4 a|
+    e g e c e f g a4 a|\break
     \time #'(3 2 2) 7/8
     f8 g e g16 a g8 f e| g a e c'16 d c8 a g |
     \time #'(2 2 3 2 2) 11/8
-    f g e c e f g g4 g|
+    f g e c e f g g4 g|\break
   }
 }
 
@@ -189,11 +204,11 @@ bassoBfusion={
     \time #'(3 2 2) 7/8
     c4. b2| bes4. a2|
     \time #'(2 2 3 2 2) 11/8
-    g2 ges4. f4 f|
+    g2 ges4. f4 f|\break
     \time #'(3 2 2) 7/8
     c'4. b2| bes4. a2|
     \time #'(2 2 3 2 2) 11/8
-    a2 aes4. g4 g|
+    a2 aes4. g4 g|\break
   }
 }
 
@@ -218,7 +233,7 @@ trombaBintro={
     \time #'(3 2 2) 7/8
     R1*2*7/8|
     \time #'(2 2 3 2 2) 11/8
-    r2 r4. g'4\f g\f
+    r2 r4. g'4\f g\f\break
   }
 }
 
@@ -230,7 +245,7 @@ clarinoBintro={
     \time #'(3 2 2) 7/8
     R1*2*7/8|
     \time #'(2 2 3 2 2) 11/8
-    r2 r4. d4\f d\f
+    r2 r4. d4\f d\f\break
   }
 }
 
@@ -254,11 +269,11 @@ temaC={
   \time #'(3 2 2) 7/8
   fis' 8 ees c d16 ees d c d4 | fis 8 ees c d16 ees ees d d4 |
   \time #'(2 2 3 2 2) 11/8
-  d8 ees fis g a bes g a16 bes a g a4|
+  d8 ees fis g a bes g a16 bes a g a4|\break
   \time #'(3 2 2) 7/8
   fis 8 ees c d16 ees d c d4 | fis 8 ees c d16 ees ees d d4 |
   \time #'(2 2 3 2 2) 11/8
-  g8 fis ees d c ees c d4 d|
+  g8 fis ees d c ees c d4 d|\break
 }
 
 temaCdue={
@@ -288,22 +303,22 @@ bassoC={
   \time #'(3 2 2) 7/8
   d4. a4 d4|d4. fis4 d4|
   \time #'(2 2 3 2 2) 11/8
-  d2 ees4. d4 fis|
+  d2 ees4. d4 fis|\break
   \time #'(3 2 2) 7/8
   d4. a4 d4|d4. fis4 d4|
   \time #'(2 2 3 2 2) 11/8
-  d4 d ees g8 d4 d|
+  d4 d ees g8 d4 d|\break
 }
 
 bassoCcinque={
   \time #'(3 2 2) 7/8
   d4.-.  r4 d4-. | r4. d4-. r4|
   \time #'(2 2 3 2 2) 11/8
-  r8 d8-. r4 r4 d8-. r4 r4|
+  r8 d8-. r4 r4 d8-. r4 r4|\break
   \time #'(3 2 2) 7/8
   d4.-.  r4 d4-. | r4. d4-. r4|
   \time #'(2 2 3 2 2) 11/8
-  r8 d8-. r4 r4 ees8 d4 d|
+  r8 d8-. r4 r4 ees8 d4 d|\break
 }
 
 accordionCcinque=\chordmode{
@@ -341,11 +356,11 @@ trombaCcinqueLungo={
 
 trombaCcinque={
   \time #'(3 2 2) 7/8
-  a8-. r4 r4 a4-. | r4. a8-. r8 r4| 
+  a8-. r4 r4 a4-. | r4. a8-. r8 r4|
   \time #'(2 2 3 2 2) 11/8
   r8 a8-. r4 r4 a8-. r4 r4|
   \time #'(3 2 2) 7/8
-  a8-. r4 r4 a4-. | r4. a8-. r8 r4| 
+  a8-. r4 r4 a4-. | r4. a8-. r8 r4|
   \time #'(2 2 3 2 2) 11/8
   r8 a8-. r4 r4 bes8 a4 r4 |
 }
@@ -374,11 +389,11 @@ clarinoCcinqueLungo={
 
 clarinoCcinque={
   \time #'(3 2 2) 7/8
-  d8-. r4 r4 d4-. | r4. d8-. r8 r4| 
+  d8-. r4 r4 d4-. | r4. d8-. r8 r4|
   \time #'(2 2 3 2 2) 11/8
   r8 d8-. r4 r4 d8-. r4 r4|
   \time #'(3 2 2) 7/8
-  d8-. r4 r4 d4-. | r4. d8-. r8 r4| 
+  d8-. r4 r4 d4-. | r4. d8-. r8 r4|
   \time #'(2 2 3 2 2) 11/8
   r8 d8-. r4 r4 ees8 d4 r4|
 }
@@ -391,11 +406,11 @@ temaD={
     \time #'(3 2 2) 7/8
     c,8 d c c bes a g| bes c bes a g fis g|
     \time #'(2 2 3 2 2) 11/8
-    a bes \tuplet 3/2 {a16 bes a} g8 a a g fis g a4|
+    a bes \tuplet 3/2 {a16 bes a} g8 a a g fis g a4|\break
     \time #'(3 2 2) 7/8
     c8 d c c bes a g| bes c bes a g fis g|
     \time #'(2 2 3 2 2) 11/8
-    a8 a g fis g fis ees  d4 d|
+    a8 a g fis g fis ees  d4 d|\break
   }
 }
 
@@ -431,43 +446,145 @@ bassoD={
     \time #'(3 2 2) 7/8
     c4.~ c4 a | g4.~ g4 b |
     \time #'(2 2 3 2 2) 11/8
-    d4 d c4. d2 |
+    d4 d c4. d2 |\break
     \time #'(3 2 2) 7/8
     c4.~ c4 a | g4.~ g4 b |
     \time #'(2 2 3 2 2) 11/8
-    d4 d c4. d2 |
+    d4 d c4. d2 |\break
   }
 }
 % }}}
 
 % CODA {{{
+
+temaCoda={
+  \time #'(3 2 2) 7/8
+  R1*2*7/8|
+  \time #'(2 2 3 2 2) 11/8
+  R1*11/8|\break
+  \time #'(3 2 2) 7/8
+  a8 c, f a16 bes a8 g f| g c, e g16 a g8 f e |
+  f\mf\< bes, d f16 g f8 e d| e a, cis e16 f e8 d cis\f|\break
+  d a d f16 g f8 e d| des aes des f16 g f8 ees des|
+  \time #'(2 2 3 2 2) 11/8
+  c e c a c d e d4 r|
+}
+
+temaCodaDue={
+  \time #'(3 2 2) 7/8
+  c8 e, a c16 d c8 bes a| bes e, g bes16 c bes8 a g |
+  \time #'(2 2 3 2 2) 11/8
+  f g e c e f g a4 a|\break
+  \time #'(3 2 2) 7/8
+  c8 e, a c16 d c8 bes a| bes e, g bes16 c bes8 a g |
+  a\mf\< d, e a16 bes a8 g f| g cis, e g16 a g8 f e\f|\break
+  d a d f16 g f8 e d| des aes des f16 g f8 ees des|
+  \time #'(2 2 3 2 2) 11/8
+  e g e c e f a g4 r|
+}
+
+accordiCoda=\chordmode{
+  \set chordChanges = ##t
+  \time #'(3 2 2) 7/8
+  f4. f2| c4. c2|
+  \time #'(2 2 3 2 2) 11/8
+  c2 c4. f2:|
+  \time #'(3 2 2) 7/8
+  f4.~ f2 | c4.~ c2 |
+  bes4.~ bes2 | a4.~ a2|
+  d4.:m d2:m | des4. des2 |
+  \time #'(2 2 3 2 2) 11/8
+  c2 aes4.:7.13+ g4 s4 |
+}
+
+bassoCoda={
+  \time #'(3 2 2) 7/8
+  f4 a8 f4 c| c4 e8 c4 g'4|
+  \time #'(2 2 3 2 2) 11/8
+  c4 e c g8 f4 f|\break
+  \time #'(3 2 2) 7/8
+  f4.~ f2 | c4.~ c2 |
+  bes4. f'4 d8 bes | a4. e'4 cis8 a|
+  d4 f8 d4 a4| des4 f8 des4 aes4|
+  \time #'(2 2 3 2 2) 11/8
+  c4 g4 aes8 c aes g4-. r4|
+}
+
+trombaCoda={
+  \time #'(3 2 2) 7/8
+  R1*7/8|R1*7/8|
+  \time #'(2 2 3 2 2) 11/8
+  R1*11/8|
+  \time #'(3 2 2) 7/8
+  R1*7/8|R1*7/8|
+  r4 f8\p\< a4 f8 bes | e,4.~ e8 f16 g a8 g16 e\f|
+  f4. a4 g8 e | f4.~ f8 des16 ees f8 ees16 des |
+  \time #'(2 2 3 2 2) 11/8
+  c8 e c a c d e d4 r|
+}
+
+guitCoda={
+  \time #'(3 2 2) 7/8
+  a8 c, f a16 bes a8 g f| g c, e g16 a g8 f e |
+  \time #'(2 2 3 2 2) 11/8
+  d e c a c d e f4 f|
+  \time #'(3 2 2) 7/8
+  R1*2*7/8|
+  R1*2*7/8|
+  R1*2*7/8|
+  \time #'(2 2 3 2 2) 11/8
+  R1*11/8|
+}
+
+pausaCoda={
+  \time #'(3 2 2) 7/8
+  R1*2*7/8|
+  \time #'(2 2 3 2 2) 11/8
+  R1*11/8|
+  \time #'(3 2 2) 7/8
+  R1*2*7/8|
+  R1*2*7/8|
+  R1*2*7/8|
+  \time #'(2 2 3 2 2) 11/8
+  R1*11/8|
+}
 % }}}
 
 % MAIN {{{
 
 pausa = {
+  \time #'(3 2 2) 7/8
   R1*2*7/8|
   \time #'(2 2 3 2 2) 11/8
   R1*11/8|
   \time #'(3 2 2) 7/8
   R1*2*7/8|
   \time #'(2 2 3 2 2) 11/8
-  R1*11/8|
+  R1*11/8|\break
 }
 
 clarinet = \relative c'' {
   %\transposition bes
   \global
+  \mark \markup{ \box \bold{A1} }
   \pausa
+  \mark \markup{ \box \bold{B1} }
   \clarinoBintro
+  \mark \markup{ \box \bold{C1} }
   \clarinoCcinqueLungo
   \clarinoCcinque
   \temaCdue
+  \mark \markup{ \box \bold{A2} }
   \temaA
+  \mark \markup{ \box \bold{B2} }
   \relative c'''{\temaB}
+  \mark \markup{ \box \bold{C2} }
   \pausa
   \relative c''{\temaCdue}
+  \mark \markup{ \box \bold{D} }
   \relative c'''{\temaD}
+  \mark \markup{Coda}
+  \relative c''{\temaCoda}
 }
 
 trumpetBb = \relative c'' {
@@ -476,48 +593,45 @@ trumpetBb = \relative c'' {
   \pausa
   \trombaBintro
   \trombaCcinqueLungo
-  \trombaCcinque  
+  \trombaCcinque
   \relative c'{\temaC}
-  \pausa
+  \relative c'{\temaAdue}
   \temaBdue
   \pausa
   \relative c'{\temaC}
   \relative c' {\temaDdue}
+  \trombaCoda
 }
 
 accordion = \relative c'' {
+  \global
   \temaAdue
-  \pausa
+  \temaBdue
   \accordionCcinque
   \temaC
-  \pausa
-  \temaAdue
-  \pausa
+  \temaCdue
+  \relative c''{\temaAdue}
+  \relative c'' {\temaB}
   \temaCdue
   \temaC
-  \pausa
+  \relative c {\temaDdue}
+  \temaCodaDue
 }
 
 guitar = \relative c'' {
   \global
-  \mark \markup{ \box \bold{A1} }
   \temaA
-  \mark \markup{ \box \bold{B1} }
   \temaB
-  \mark \markup{ \box \bold{C1} }
   \temaC
   \break
   \temaCdue
   \pausa
-  \mark \markup{ \box \bold{A2} }
   \accordiA
-  \mark \markup{ \box \bold{B2} }
   \accordiB
-  \mark \markup{ \box \bold{C2} }
   \temaC
   \pausa
-  \mark \markup{ \box \bold{D} }
   \accordiD
+  \guitCoda
 }
 
 contrabass = \relative c {
@@ -532,48 +646,65 @@ contrabass = \relative c {
   \bassoC
   \bassoC
   \bassoD
+  \bassoCoda
 }
 
 chordsPart ={
   \new ChordNames {
+  \mark \markup{ \box \bold{A1} }
     \accordiAfusion
+  \mark \markup{ \box \bold{B1} }
     \accordiBfusion
+  \mark \markup{ \box \bold{C1} }
     \accordiC
     \accordiC
     \accordiC
+  \mark \markup{ \box \bold{A2} }
     \accordiA
+  \mark \markup{ \box \bold{B2} }
     \accordiB
+  \mark \markup{ \box \bold{C2} }
     \accordiC
     \accordiC
+  \mark \markup{ \box \bold{D} }
     \accordiD
+  \mark \markup{Coda}
+    \accordiCoda
   }
 }
 
 accordionPart = \new Staff \with {
-  instrumentName = "Accordion"
+  instrumentName = "Fisa"
+shortInstrumentName = #"F"
   midiInstrument = "piano"
 } \accordion
 
 clarinetPart = \new Staff \with {
-  instrumentName = "Clarinet"
+  instrumentName = "Clarinetto"
+shortInstrumentName = #"C"
   midiInstrument = "clarinet"
 } \clarinet
 
 trumpetPart =  \new Staff \with {
-  instrumentName = "Trumpet"
+  instrumentName = "Tromba"
+shortInstrumentName = #"T"
   midiInstrument = "trumpet"
 } \trumpetBb
 
 guitarPart = \new Staff \with {
-  instrumentName = "Guitar"
+  instrumentName = "Chitarra"
+shortInstrumentName = #"G"
   midiInstrument = "guitar"
 } { \clef "treble_8" \guitar }
 
 contrabassPart = \new Staff \with {
-  instrumentName = "Contrabass"
+  instrumentName = "Basso"
+shortInstrumentName = #"B"
   midiInstrument = "tuba"
 } { \clef bass \contrabass }
+%}}}
 
+% {{{ BOOKS
 \book{
   \bookOutputSuffix "Score"
   \struttura
@@ -591,9 +722,47 @@ contrabassPart = \new Staff \with {
     \midi {
       \context {
         \Score
-        tempoWholesPerMinute = #(ly:make-moment 140 4)
+        tempoWholesPerMinute = #(ly:make-moment 150 4)
       }
     }
   }
 }
-%}}}
+
+\book{
+  \bookOutputSuffix "ClTr"
+  \struttura
+  \score {
+    <<
+      \transpose c d { \chordsPart }
+      \transpose c d { \clarinetPart}
+      \transpose c d { \trumpetPart}
+    >>
+  }
+}
+
+\book{
+  \bookOutputSuffix "Basso"
+  \struttura
+  \score {
+    <<
+      \chordsPart
+      \accordionPart
+      \contrabassPart
+    >>
+  }
+}
+
+\book{
+  \bookOutputSuffix "GuitAcc"
+  \struttura
+  \score {
+    <<
+      \chordsPart
+      \clarinetPart
+      \accordionPart
+      \guitarPart
+    >>
+  }
+}
+
+% }}}
