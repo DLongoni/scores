@@ -193,7 +193,7 @@ accordiBfusion=\chordmode{
     \time #'(2 2 3 2 2) 11/8
     c2/g ges4.:7.11+ f2:maj7|
     \time #'(3 2 2) 7/8
-    f4.:6 fis2:dim7| c4./g a2:m7|
+    c4.:6 b2:7.5-| bes4. a2:m7|
     \time #'(2 2 3 2 2) 11/8
     a2:m7 aes4.:7.11+ g2:6
   }
