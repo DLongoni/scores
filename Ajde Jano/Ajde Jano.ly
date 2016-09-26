@@ -4,7 +4,6 @@
   \header {
     title = "Ajde Jano"
     composer = "Serbian Traditional"
-    %poet = "Struttura: A(Fi), B(Cl+Fi+Co), B(+Gu), C(Tr+Fi+Co)"
   }
 
   \paper{
@@ -38,12 +37,12 @@
   struttura = \markup {
     \column {
       \line {
-        Struttura: \bold{A}(f), \bold{B}(c,f), \bold{B}(+g,d),
-        \bold{C}(t,f,d,g), \bold{B}(e,fisa 2 voce)
+        Struttura: \bold{A}(f), \bold{B}(b,f), \bold{B}(+g,c,fisa 2 voce),
+        \bold{C}(t,f,b,g), \bold{B2}
       }
       \line {
-        \bold{C}(e), \bold{C}(strofa1), \bold{B}(e), \bold{C}(strofa2),
-        \bold{B}(e), \bold{D}, \bold{B}(f,fisa 2 voce), \bold{E}x4, \bold{F}x4, \italic{coda}
+        \bold{C}, \bold{C}(strofa1), \bold{B}(fisa 2 voce), \bold{C}(strofa2),
+        \bold{B2}, \bold{D}, \bold{A}, \bold{E}x2, \bold{F}x6, \italic{coda}
       }
     }
   }
@@ -288,7 +287,7 @@
 
   clarinoD={
     R1*4*7/8| \break
-    a4.\p\<~ a2~ | a4.~ a2|\noBreak bes4. c4  d | a8-. a-. a-. g4 e\! |
+    a'4.\p\<~ a2~ | a4.~ a2|\noBreak bes4. c4  d | a8-. a-. a-. g4 e\! |
   }
 
   trombaD={
@@ -311,7 +310,7 @@
   }
 
   temaE ={
-    r1|r2 r4 r8. d'16|
+    r1|r2 r4 r8. d16|
     \repeat volta 2{
       d g d c d e f g a8.\prall g16 a8\prall g16 f|
       g8 f16 e f8 e16 c d f d c d8 r16 c16|
@@ -346,7 +345,7 @@
   trombaE ={
     r1| r1|
     \repeat volta 2{
-      f,16 a~ a8~ a8 c a4. d8| c16 e~ e8~ e c a2|
+      f16 a~ a8~ a8 c a4. d8| c16 e~ e8~ e c a2|
       f16 a~ a8 c8 e f4. e8| d16 bes~ bes8 e c d2|
     }
   }
@@ -366,10 +365,10 @@
 
 % {{{ Parte F
 
-  pausaF = { \repeat volta 4{R1*4}}
+  pausaF = { \repeat volta 2{R1*4}}
 
   temaF ={
-    \repeat volta 4{
+    \repeat volta 2{
       a'8 e16 a16~ a16 e a e cis' a32 bes g16 a bes cis d e |
       e32 f g f e f d16 cis32 d e d cis d bes16 a d32 a g16 a16~ a4|
       a8 e16 a16~ a16 e a e cis' a32 bes g16 a bes cis d e |
@@ -378,8 +377,8 @@
   }
 
   clarinoF ={
-    \repeat volta 4{
-      a8 e16 a16~ a16 e a e cis'8 g16 a bes cis d e |
+    \repeat volta 2{
+      a'8 e16 a16~ a16 e a e cis'8 g16 a bes cis d e |
       e16 g8\prall d16 cis8 a a16 bes8 g16 a4\prall|
       a8 e16 a16~ a16 e a e cis'8 g16 a bes cis d e |
       e16 g8\prall d16 cis8 a a16 bes8 cis16 a4\prall|
@@ -387,8 +386,8 @@
   }
 
   trombaF ={
-    \repeat volta 4{
-      cis'8 a16 cis16~ cis16 a cis a e'8 bes16 cis d e f g |
+    \repeat volta 2{
+      cis8 a16 cis16~ cis16 a cis a e'8 bes16 cis d e f g |
       g16 bes8\prall f16 e8 bes bes16 d8 bes16 cis4\prall|
       cis8 a16 cis16~ cis16 a cis a e'8 bes16 cis d e f g |
       g16 bes8\prall f16 e8 bes bes16 d8 e16 cis4\prall|
@@ -396,8 +395,8 @@
   }
 
   accordionF ={
-    \repeat volta 4{
-      a8 e16 a16~ a16 e a e cis'8 g16 a bes cis d e |
+    \repeat volta 2{
+      a,8 e16 a16~ a16 e a e cis'8 g16 a bes cis d e |
       e16 g8\prall d16 cis8 a a16 bes8 g16 a4\prall|
       a8 e16 a16~ a16 e a e cis'8 g16 a bes cis d e |
       e16 g8\prall d16 cis8 a a16 bes8 cis16 a4\prall|
@@ -405,14 +404,14 @@
   }
 
   bassoF = {
-    \repeat volta 4{
+    \repeat volta 2{
       a,8. cis8. e8 a,8. cis8. e8|g,8. bes8. d8 a8. cis8. e8|
       a,8. cis8. e8 a,8. cis8. e8|g,8. bes8. d8 a8. cis8. e8|
     }
   }
 
   accordiF = \chordmode{
-    \repeat volta 4{
+    \repeat volta 2{
       a1|g2:m a2|
       a1|g2:m a2|
     }
@@ -449,43 +448,39 @@
     \partial 8 r8 | % levare
     \mark \default
     \pausaA
-    \bar "||"
     \break
     \mark \default
     \temaB
-    \bar "||"
     \break
     \mark \default
     \clarinoC
-    \bar "||"
+    \break
+    \mark \markup{ \box \bold{B2} }
+    \temaB
     \break
     \mark \default
     \clarinoD
-    \bar "||"
     \break
     \time 4/4
     \mark \default
     \temaE
-    \bar ":|"
     \break
     \mark \default
-    \bar "|:"
     \clarinoF
     \break
     \clarinoCoda
-    \bar "|."
   }
 
   trumpetBb = \relative c'' {
     \global
     %\transposition bes
     \partial 8 r8 | % levare
-    \pausaA
+    \temaA
     \trombaB
     \temaC
+    \relative c''{\guitB}
     \trombaD
     \trombaE
-    \bar ":|"
     \trombaF
     \temaCoda
   }
@@ -496,6 +491,7 @@
     \temaA
     \accordionB
     \accordionC
+    \trombaB
     \accordionD
     \accorionE
     \accordionF
@@ -508,6 +504,7 @@
     \pausaA
     \guitB
     \guitC
+    \pausaB
     \guitD
     \pausaE
     \temaF
@@ -519,6 +516,7 @@
     \pausaA
     \bassoB
     \bassoC
+    \bassoB
     \bassoD
     \bassoE
     \bassoF
@@ -528,11 +526,20 @@
   chordsPart ={
     \new ChordNames {
       \accordiA
+      \bar "||"
       \accordiB
+      \bar "||"
       \accordiC
+      \bar "||"
+      \accordiB
+      \bar "||"
       \accordiD
+      \bar "||"
       \accordiE
       \accordiF
+      \bar ":|."
+      \pausaCoda
+      \bar "|."
     }
   }
 
