@@ -38,12 +38,12 @@
   struttura = \markup {
     \column {
       \line {
-        Struttura: \bold{A}(f), \bold{B}(c,f), \bold{B}(+g,d),
-        \bold{C}(t,f,d,g), \bold{B}(e,fisa 2 voce)
+        Struttura: \bold{A}(f), \bold{B}(f,b), \bold{B}(+g,c, fisa 2 voce),
+        \bold{C}(t,f,b,g), \bold{B}(fisa 2 voce)
       }
       \line {
-        \bold{C}(e), \bold{C}(strofa1), \bold{B}(e), \bold{C}(strofa2),
-        \bold{B}(e), \bold{D}, \bold{B}(f,fisa 2 voce), \bold{E}x4, \bold{F}x4, \italic{coda}
+        \bold{C}, \bold{C}(strofa1), \bold{B}, \bold{C}(strofa2),
+        \bold{B}, \bold{D}, \bold{A}, \bold{E}x2, \bold{F}x46 \italic{coda}
       }
     }
   }
@@ -480,7 +480,7 @@
     \global
     %\transposition bes
     \partial 8 r8 | % levare
-    \pausaA
+    \temaA
     \trombaB
     \temaC
     \trombaD
