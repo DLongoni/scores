@@ -74,14 +74,14 @@ pausaTema={R1*9}
     r1|r1|r1|r1|
     r1|r1|r2 r8 b cis b | fis' d4 cis d b8~ |
     b8 cis4. r2| r1| r1 | r1|
-    r1|r1| r1 | b16 d8 cis16~ cis16 fis8 e16~ e8 d8 d cis |
+    r1|r1| r2 a4 cis | b16 d8 cis16~ cis16 fis8 e16~ e8 d8 d cis |
   }
 
   trombaStrofa={
     r1|r1|r1|r1|
     r1|r1|r2 r8 d, e d | a' fis4 e fis e8~ |
     e2 r2| r1| r1 | r1|
-    r1|r1| r1 | d16 fis8 e16~ e16 a8 gis16~ gis8 fis8 fis e |
+    r1|r1| r2 cis4 e | d16 fis8 e16~ e16 a8 gis16~ gis8 fis8 fis e |
   }
 
   pausaStrofa={R1*8}
@@ -90,13 +90,13 @@ pausaTema={R1*9}
 % RITORNELLO {{{
 temaRit={
   gis8. gis gis8 gis gis fis gis | a8. fis16~ fis4 r8 fis8 fis e |
-  d4 d8 d d4 d8 fis | e e e e e4 d8 cis | 
+  d4 d8 d d4 d8 fis | e e e e e4 d8 cis | \break
   a4 r8 a'8 a gis fis gis | a8. fis16~ fis4 r8 e fis e|
-  fis4 d d d8 fis | gis4 e r4 r8 gis8 |
+  fis4 d d d8 fis | gis4 e r4 r8 gis8 |\break
   gis8. gis gis8 gis gis fis gis | a8. fis16~ fis4 r8 fis8 fis e |
-  d4 d8 d d4 d8 fis | e e e e e4 d8 cis | 
+  d4 d8 d d4 d8 fis | e e e e e4 d8 cis | \break
   a4 r8 a'8 a gis fis gis | a8. fis16~ fis4 r4 fis8 e |
-  d4 d8 d d4 d8 fis | e8 e e e e4 d8 cis | a2 r2|
+  d4 d8 d d4 d8 fis | e8 e e e e4 d8 cis | a2 r2| \bar "|."
 }
 
 accordiRit=\chordmode{
@@ -107,17 +107,17 @@ accordiRit=\chordmode{
 }
 
 saxRit={
-  e2 r2| r1| r1| r1|
-  r1|r1|r1|r1|
-  r1|r1|r1|r1|
-  r1|r1|r1|r1|r4 r8 gis gis8. gis8. fis8|
+  e4. e8 e8. gis fis8~ | fis4. r8 r2 | r8 d4 d8 d8. fis e8~ | e2 r2 |
+  e4. e8 a8. gis fis8~ | fis4. r8 r2 | r8 d4 d8 d8. fis e8~ | e2 r2 |
+  e4. e8 e8. gis fis8~ | fis4. r8 r2 | r8 d4 d8 d8. fis e8~ | e2 r2 |
+  e4. e8 a8. gis fis8~ | fis4. r8 r2 | r1 |r1|r4 r8 gis gis8. gis8. fis8|
 }
 
 trombaRit={
-  gis2 r2| r1| r1| r1|
-  r1|r1|r1|r1|
-  r1|r1|r1|r1|
-  r1|r1|r1|r1|r4 r8 e cis'8. cis8. b8 |
+  gis4. gis8 gis8. b8. a8~ | a4. r8 r2 | r8 fis4 fis8 fis8. a8. gis8~ | gis2 r2 |
+  a4. a8 cis8. b8. a8~ | a4. r8 r2 | r8 fis4 fis8 fis8. a8. gis8~ | gis2 r2 |
+  gis4. gis8 gis8. b8. a8~ | a4. r8 r2 | r8 fis4 fis8 fis8. a8. gis8~ | gis2 r2 |
+  a4. a8 cis8. b8. a8~ | a4. r8 r2 | r1 |r1|r4 r8 e^\markup{\italic tema} cis'8. cis8. b8 |
 }
       % }}}
 
@@ -125,9 +125,11 @@ trombaRit={
       sax = \relative c'' {
         %\transposition ees
         \global
-        \mark \markup{ \box \bold{A1} }
+        \mark \markup{ \box \bold{A} }
         \saxTema
+        \mark \markup{ \box \bold{B} }
         \saxStrofa
+        \mark \markup{ \box \bold{C} }
         \saxRit
       }
 
@@ -189,7 +191,7 @@ trombaRit={
             \midi {
               \context {
                 \Score
-                tempoWholesPerMinute = #(ly:make-moment 150 4)
+                tempoWholesPerMinute = #(ly:make-moment 140 4)
               }
             }
           }
