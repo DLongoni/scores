@@ -36,15 +36,15 @@ global = {
 
 % TEMA {{{
 accordiTema=\chordmode{
-  s1 | a1 | cis1:m | b1:m | a1 |
-  a1 | cis1:m | d1 | a1 |
+  s1 | a1 | cis1:m | b1:m | a1 |\break
+  a1 | cis1:m | d1 | a1 |\break
 }
 
 saxTema={
   r4 r8 gis' gis8. gis8. fis8 \bar"||"| e4. gis8 a8. gis fis8 | e4 r4 r8 cis e e |
-  d4 r8 cis d a gis a8~ | a4 r8 gis' gis8. gis8. fis8 |\break
+  d4 r8 cis d a gis a8~ | a4 r8 gis' gis8. gis8. fis8 |
   e4. gis8 a8. gis fis8 | e4 r4 r8 cis e e |
-  d4 r8 e e fis4 e8~ | e4 r4 r2 |\break
+  d4 r8 e e fis4 e8~ | e4 r4 r2 |
 }
 
 trombaTema={
@@ -60,14 +60,14 @@ pausaTema={R1*9}
   % STROFA {{{
   temaStrofa={
     e8 e4 fis4 fis a8~ | a8 a4 fis8 fis4 e4 |
-    fis4 e8 dis4 e fis8~ | fis4 fis8 dis e4 dis |\break
+    fis4 e8 dis4 e fis8~ | fis4 fis8 dis e4 dis |
     r4 r8 gis8 e e e dis | cis4 r8 b a b cis4 |
-    e8 fis d4 r2 | r2 r4 r8 e |\break
+    e8 fis d4 r2 | r2 r4 r8 e |
   }
 
   accordiStrofa=\chordmode{
-    a1 | a1 | b1 | b1 |
-    cis1:m | cis1:m | d1 | d1 |
+    a1 | a1 | b1 | b1 |\break
+    cis1:m | cis1:m | d1 | d1 |\break
   }
 
   saxStrofa={
@@ -90,20 +90,20 @@ pausaTema={R1*9}
 % RITORNELLO {{{
 temaRit={
   gis8. gis gis8 gis gis fis gis | a8. fis16~ fis4 r8 fis8 fis e |
-  d4 d8 d d4 d8 fis | e e e e e4 d8 cis | \break
+  d4 d8 d d4 d8 fis | e e e e e4 d8 cis |
   a4 r8 a'8 a gis fis gis | a8. fis16~ fis4 r8 e fis e|
-  fis4 d d d8 fis | gis4 e r4 r8 gis8 |\break
+  fis4 d d d8 fis | gis4 e r4 r8 gis8 |
   gis8. gis gis8 gis gis fis gis | a8. fis16~ fis4 r8 fis8 fis e |
-  d4 d8 d d4 d8 fis | e e e e e4 d8 cis | \break
+  d4 d8 d d4 d8 fis | e e e e e4 d8 cis | 
   a4 r8 a'8 a gis fis gis | a8. fis16~ fis4 r4 fis8 e |
-  d4 d8 d d4 d8 fis | e8 e e e e4 d8 cis | a2 r2| \bar "|."
+  d4 d8 d d4 d8 fis | e8 e e e e4 d8 cis | a2 r2| 
 }
 
 accordiRit=\chordmode{
-  e1 | fis1:m | d1 | e1 |
-  a1 | fis1:m | d1 | e1 |
-  cis1:m | fis1:m | d1 | e1 |
-  a1 | fis1:m | d1 | e1 | a1 |
+  e1 | fis1:m | d1 | e1 |\break
+  a1 | fis1:m | d1 | e1 |\break
+  cis1:m | fis1:m | d1 | e1 |\break
+  a1 | fis1:m | d1 | e1 | a1 |\bar "|."
 }
 
 saxRit={
@@ -122,7 +122,7 @@ trombaRit={
       % }}}
 
       % MAIN {{{
-      sax = \relative c'' {
+      sax = \relative c' {
         %\transposition ees
         \global
         \mark \markup{ \box \bold{A} }
@@ -133,7 +133,7 @@ trombaRit={
         \saxRit
       }
 
-      trumpetBb = \relative c'' {
+      trumpetBb = \relative c' {
         %\transposition bes
         \global
         \trombaTema
@@ -197,14 +197,15 @@ trombaRit={
           }
         }
 
-        % \book{
-        %   \bookOutputSuffix "ClTr"
-        %   \score {
-        %     <<
-        %       \transpose c d { \chordsPart }
-        %       \transpose c d { \trumpetPart}
-        %       \transpose c a { \saxPart}
-        %     >>
-        %   }
-        % }
+        \book{
+          \bookOutputSuffix "ClTr"
+          \score {
+            <<
+              \transpose c d { \chordsPart }
+              \transpose c d { \trumpetPart}
+              \transpose c a { \chordsPart }
+              \transpose c a { \saxPart}
+            >>
+          }
+        }
       % }}}
