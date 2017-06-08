@@ -108,4 +108,14 @@ temaPart = \new Staff \with {
     }
   }
 }
+
+\book{
+\bookOutputSuffix "Bb"
+\score {
+  <<
+	\transpose c d { \chordsPart }
+	\transpose c d { \temaPart}
+  >>
+}
+}
 % }}}

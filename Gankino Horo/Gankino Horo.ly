@@ -191,4 +191,24 @@ temaPart = \new Staff \with {
     }
   }
 }
+
+\book{
+\bookOutputSuffix "Bb"
+\score {
+  <<
+	\transpose c d { \chordsPart }
+	\transpose c d { \temaPart}
+  >>
+}
+}
+
+\book{
+\bookOutputSuffix "Eb"
+\score {
+  <<
+	\transpose ees c { \chordsPart }
+	\transpose ees c { \temaPart}
+  >>
+}
+}
 % }}}
