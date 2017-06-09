@@ -136,7 +136,7 @@ accordiE = \chordmode{
     d2 a4. d2|
     a2 a4. d2|
   }
-    \alternative{
+  \alternative{
     {e2 a4. a2|}
     {e2 a4. a2|}
   }
@@ -182,6 +182,7 @@ temaPart = \new Staff \with {
       \temaPart
     >>
     \layout {
+      indent = #0
     }
     \midi {
       \context {
@@ -193,22 +194,28 @@ temaPart = \new Staff \with {
 }
 
 \book{
-\bookOutputSuffix "Bb"
-\score {
-  <<
-	\transpose c d { \chordsPart }
-	\transpose c d { \temaPart}
-  >>
-}
+  \bookOutputSuffix "Bb"
+  \score {
+    <<
+      \transpose c d { \chordsPart }
+      \transpose c d { \temaPart}
+    >>
+    \layout {
+      indent = #0
+    }
+  }
 }
 
 \book{
-\bookOutputSuffix "Eb"
-\score {
-  <<
-	\transpose ees c { \chordsPart }
-	\transpose ees c { \temaPart}
-  >>
-}
+  \bookOutputSuffix "Eb"
+  \score {
+    <<
+      \transpose ees c { \chordsPart }
+      \transpose ees c { \temaPart}
+    >>
+    \layout {
+      indent = #0
+    }
+  }
 }
 % }}}

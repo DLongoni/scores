@@ -67,10 +67,10 @@ tema = {
 accordi = \chordmode{
   \set chordChanges = ##t
   \repeat volta 2{
-     b4.:m b4:m b4:m b4.:m |
-     b4.:m b4:m b4:m b4.:m |
-     b4.:m b4:m b4:m b4.:m |
-     b4.:m b4:m b4:m b4.:m |
+    b4.:m b4:m b4:m b4.:m |
+    b4.:m b4:m b4:m b4.:m |
+    b4.:m b4:m b4:m b4.:m |
+    b4.:m b4:m b4:m b4.:m |
   }
 }
 
@@ -99,6 +99,7 @@ temaPart = \new Staff \with {
       \temaPart
     >>
     \layout {
+      indent = #0
     }
     \midi {
       \context {
@@ -110,12 +111,15 @@ temaPart = \new Staff \with {
 }
 
 \book{
-\bookOutputSuffix "Bb"
-\score {
-  <<
-	\transpose c d { \chordsPart }
-	\transpose c d { \temaPart}
-  >>
-}
+  \bookOutputSuffix "Bb"
+  \score {
+    <<
+      \transpose c d { \chordsPart }
+      \transpose c d { \temaPart}
+    >>
+    \layout {
+      indent = #0
+    }
+  }
 }
 % }}}

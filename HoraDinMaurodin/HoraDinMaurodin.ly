@@ -152,6 +152,7 @@ temaPart = \new Staff \with {
       \temaPart
     >>
     \layout {
+      indent = #0
     }
     \midi {
       \context {
@@ -169,6 +170,9 @@ temaPart = \new Staff \with {
       \transpose c d { \chordsPart }
       \transpose c d { \temaPart}
     >>
+    \layout {
+      indent = #0
+    }
   }
 }
 % }}}
