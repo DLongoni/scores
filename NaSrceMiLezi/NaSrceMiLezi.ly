@@ -39,20 +39,20 @@ tema = {
   \mark \default
   \repeat volta 2 {
     \new Voice <<
-      {d8 g fis e d e d4 b8 | d c16 d c b a8 b c d e d| d g fis e d e d4 b8 |}
-      {b8 e d c b c b4 g8 | b a16 b a g fis8 g a b c b | b e d c b c b4 g8|}
+      {d8 g16 g fis8 e d e d4 b8 | d c16 d c b a8 b c d e d| d g16 g fis8 e d e d4 b8 |}
+      {b8 e16 e d8 c b c b4 g8 | b a16 b a g fis8 g a b c b | b e16 e d8 c b c b4 g8|}
     >>
   }
   \alternative{
     {
       \new Voice <<
         {d'8 c16 d c b a8 b b16 g b g b8 b16 g|}
-        {b'8 a16 b a g fis8 g g16 d g d g8 g16 d|}
+        {b8 a16 b a g fis8 g g16 d g d g8 g16 d|}
       >>
     } 
     {
       \new Voice <<
-        {d8 c16 d c b a8 b4 b8 r4 | }
+        {d'8 c16 d c b a8 b4 b8 r4 | }
         {b8 a16 b a g fis8 g4 g8 r4 |}
       >>
     }
@@ -62,7 +62,7 @@ tema = {
 
   \new Voice <<
     {d'4 d e d4. | d4 c b8 a b4 c8 | d4 d e d4. | e8 d c b b4~ b4. | }
-    { b4 b c b4. | b4 a g8 fis g4 a8 | b4 b c b4. | c8 b a g g4~ g4. | }
+    {b4 b c b4. | b4 a g8 fis g4 a8 | b4 b c b4. | c8 b a g g4~ g4. | }
   >>\break
 
   \repeat volta 2{

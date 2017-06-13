@@ -39,30 +39,32 @@ global = {
 tema = {
   \mark \default
   \repeat volta 2 {
-    gis16~ a fis d a d fis d |
-    fis~ g e cis a cis a cis |
+    gis16 a fis d a d fis d |
+    fis g e cis a cis a cis |
     a b cis dis e fis g e |
   }
   \alternative{
-    {fis16~ g e cis d fis a a,}
-    {d8 r r4}
-  }\bar"||" \break
+    {fis16 g e cis d fis a a,}
+    {fis'16 g e cis d8\mark "Fine" r}
+  }
+  \bar"||" \break
 
   \mark \default
   \acciaccatura{ais'16 cis}b2 |
   \acciaccatura{ais16 cis}b2 |
   \acciaccatura{ais16 cis}b2 |
   \acciaccatura{ais16 cis}b2 |
-  b8. a16 d c b a | b8. a16 g8 g16 fis |
-  fis g e8 e4 | e4. a,8 | \bar"||" \break
+  \arpeggioParenthesis
+  b8.\prall a16 \acciaccatura{cis16} d c b a | b8.\prall g16 a g g fis |
+  fis8 e4.~ | e4. a,8 | \bar"||" \break
 
   \mark \default
   \repeat volta 2{
     d16 e fis g a8 g |
     fis8. e16 d8 cis |
-    cis d16 c d e fis cis |
-    d4 a' |
-    d,16 e fis g a8 g |
+    d8. cis16 d e fis cis |
+    d4 a |\break
+    d16 e fis g a8 g |
     fis8. e16 d8 cis |
     b b16 ais b cis d cis |
   }
@@ -73,13 +75,13 @@ tema = {
 
   \mark \default
   \repeat volta 2{
-    fis'16 g g e e dis e fis |
+    fis'8 g8~ g16 fis e dis|
     e bes' g fis e d cis b |
-    cis d d cis cis b cis d |
-    b cis d e fis8 b |
-    fis16 g g e e dis e fis |
+    cis8 d8~\prall d16 b cis d|
+    b cis d e fis8 b, |
+    fis'8 g8~ g16 fis e dis|
     e bes' g fis e d cis b |
-    cis d d cis cis b cis d |
+    cis8 d8~\prall d16 b cis d|
   }
   \alternative{
     { b fis gis ais b8 r| }
@@ -90,7 +92,9 @@ tema = {
   \acciaccatura{gis8} a2 |
   \acciaccatura{gis8} a2 |
   \acciaccatura{gis8} a4 r8 a, |
-  }\bar"|."
+  \once \override Score.RehearsalMark #'self-alignment-X = #RIGHT
+  \mark "D.C. al Fine"
+  \bar"|."
 
 }
 

@@ -51,7 +51,7 @@ tema = {
   cis4 e8 d cis bes4 | a4.~ a2 | 
   \new Voice <<
     {cis4 e8 d cis bes4 | cis4.~ cis2 | }
-    {e4 g8 f e d4 | e4.~ e2 |}
+    {e4 g8 f e d4 | e4.~ e2~ |e4.~ r2 | }
   >>
 
   \break
@@ -85,7 +85,7 @@ accordi = \chordmode{
   }
 
   a4. a4 g4:m | a1*7/8 |
-  a4. a4 g4:m | a1*7/8 |
+  a4. a4 g4:m | a1*7/8 | a4. b4:7/b a4:7/cis  |
 
   \repeat volta 2{
   d1*7/8:m | d4.:m d4:m g4:m | 

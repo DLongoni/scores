@@ -48,8 +48,8 @@ tema = {
   }\bar"||" \break
 
   \mark \default
-  g8 a f b c a f bes4 a8 a f |  g8 a f b c a f bes a a f |
-  g8 a f b c a f bes4 a8 a f | g4 c8 g f e f g4 g f| \bar"||" \break
+  g8 a f b c a f bes4 a8 a f |  g8 a f b c a f bes4 a8 a f |
+  g8 a f b c a f bes4 a8 a f | g4 c8 g f e f g4 g f8| \bar"||" \break
 
   \mark \default
   g8 a f a bes bes a g a c f, f | g8 a f a bes bes a g a c f, f |

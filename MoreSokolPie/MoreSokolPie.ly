@@ -2,8 +2,8 @@
 \version "2.18.2"
 
 \header {
-  title = "more sokol pie"
-  composer = "macedonian"
+  title = "More Sokol Pie"
+  composer = "Macedonian"
 }
 
 \paper{
@@ -49,7 +49,7 @@ temaUno = {
   \mark \default
   \repeat volta 2{
     c8 d4 d d | \tuplet 4/3 {bes'8 a g fis} g2~ | g4.~ g8 a16 g fis8 g| 
-    a g fis ees4 fis | \tuplet 4/3 {g8 fis ees d} d2~ | d4. d2 |
+    a g fis ees4 fis | \tuplet 4/3 {g8 fis ees d} d2~ | d4.~ d2 |
   }
 
   % C
