@@ -47,9 +47,8 @@ global = {
       {f2|}
       {d4 d|}
     }
-    \bar "||"
     a'4 a | a d, | a' a | a d, | a' a8 a | bes4 a8 g | a2 | r2 |
-    \break \bar "||"
+    \break
     \repeat volta 2{
       a4 a8 a | bes4 a8 g | a4 a8 a | bes4 a8 g |
     }
@@ -74,7 +73,6 @@ global = {
     }
     \bar "||"
     d2:m | d2:m | d2:m | d2:m | d2:m | g2:m | d2:m | a2 |
-    \bar "||"
     \repeat volta 2{
       d2:m | g2:m | d2:m | g2:m |
     }
@@ -195,7 +193,7 @@ chordsPartD ={
 }
 
 \book{
-  \bookOutputSuffix "Score"
+  \bookOutputSuffix "C"
   \score{ 
     <<
       \chordsPartA
@@ -259,6 +257,41 @@ chordsPartD ={
     <<
       \transpose c d { \chordsPartD }
       \transpose c d { \temaPartD }
+    >>
+    \header {piece = "Sivivon"}
+  }
+}
+
+\book{
+  \bookOutputSuffix "Eb"
+  \score{ 
+    <<
+      \transpose ees c { \chordsPartA }
+      \transpose ees c { \temaPartA }
+    >>
+    \header {piece = "Oy Chanukah"}
+  }
+
+  \score{ 
+    <<
+      \transpose ees c { \chordsPartB }
+      \transpose ees c { \temaPartB }
+    >>
+    \header {piece = "Mi Y'mael"}
+  }
+
+  \score{ 
+    <<
+      \transpose ees c { \chordsPartC }
+      \transpose ees c { \temaPartC }
+    >>
+    \header {piece = "Dreydel"}
+  }
+
+  \score{ 
+    <<
+      \transpose ees c { \chordsPartD }
+      \transpose ees c { \temaPartD }
     >>
     \header {piece = "Sivivon"}
   }

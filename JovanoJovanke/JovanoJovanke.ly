@@ -2,7 +2,7 @@
   myTitle = "Jovano Jovanke"
   mySubTitle = "Macedonian"
   myKey = \key f \major
-  myTime = #'(3 2 2) 7/8
+  myTime = \time #'(3 2 2) 7/8
   myTempo =  #(ly:make-moment 190 4)
 % }}}
 

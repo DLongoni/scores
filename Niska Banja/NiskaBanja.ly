@@ -41,6 +41,26 @@ global = {
   \set Score.markFormatter = #format-mark-box-alphabet
 }
 \layout { indent = #0 }
+
+toCoda = {
+  % the align part
+  \once \override Score.RehearsalMark.self-alignment-X = #RIGHT  
+  \once \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
+  \once \override Score.RehearsalMark.direction = #DOWN
+  \once \override Score.RehearsalMark.font-size = #-1
+  \mark \markup { { \lower #1 "D.S. al  " { \musicglyph #"scripts.coda"} } } 
+}
+
+fakeBar = {  
+  \cadenzaOn
+  \once \omit Score.TimeSignature
+  \time 1/16
+  s16 \bar ""
+  \cadenzaOff
+  \once \omit Score.TimeSignature
+  \time #'(2 2 2 3) 9/8
+}
+
 %}}}
 
 % {{{ PARTE A

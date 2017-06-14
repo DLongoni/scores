@@ -2,7 +2,7 @@
   myTitle = "Arapsko Kokonjeste"
   mySubTitle = "Serbian"
   myKey = \key bes \major
-  myTime = 2/4 
+  myTime = \time 2/4 
   myTempo =  #(ly:make-moment 190 4)
 % }}}
 
@@ -83,7 +83,7 @@ global = {
   temaC = {
     \repeat volta 2 {
       g16 a bes a bes4 | d16 e d cis d4 | cis16 e d cis bes d bes a | g a bes cis d4 | 
-      g,16 a bes a bes4 | d16 e d cis d4 | cis16 e d cis bes d bes a | b a bes a g4 |
+      g,16 a bes a bes4 | d16 e d cis d4 | cis16 e d cis bes d bes a | g a bes a g4 |
     } 
     g'16 fis ees d ees4 | g16 fis ees d c4 | g'16 fis ees d ees4 | g16 fis ees d c4 |
   }

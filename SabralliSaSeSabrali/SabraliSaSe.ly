@@ -149,11 +149,13 @@ temaDuePart = \relative c'' {
 temaUnoPart = \new Staff \with {
   instrumentName = ""
   midiInstrument = "piano"
+  \override VerticalAxisGroup.default-staff-staff-spacing =
+  #'((padding . 0))
 } { \clef "treble_8" \temaUnoPart }
 
 scoreContent = << 
-    \temaUnoPart
-    \temaDuePart
+  \temaUnoPart
+  \temaDuePart
 >>
 %}}}
 
@@ -176,7 +178,13 @@ scoreContent = <<
 
   \book{
     \bookOutputSuffix "Eb"
-    \score { \transpose ees c { \scoreContent } }
+    \score { 
+      \transpose ees c { 
+
+        \scoreContent 
+
+      } 
+    }
     \testoCompleto
   }
 % }}}

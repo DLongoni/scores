@@ -169,7 +169,6 @@ testoCompleto=\markup { }
 
 % {{{ BOOKS
   \book{
-    #(set-global-staff-size 10)
     \bookOutputSuffix "C"
     \score {
       \scoreContent
@@ -179,38 +178,12 @@ testoCompleto=\markup { }
   }
 
   \book{
-    #(set-global-staff-size 10)
     \bookOutputSuffix "Bb"
     \score { \transpose c d { \scoreContent } }
   }
 
   \book{
-    #(set-global-staff-size 10)
     \bookOutputSuffix "Eb"
     \score { \transpose ees c { \scoreContent } }
-  }
-% }}}
-
-% {{{ BOOKS
-  \book{
-    \bookOutputSuffix "C"
-    \score {
-      \scoreContent
-      \layout {}
-      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
-    }
-    \testoCompleto
-  }
-
-  \book{
-    \bookOutputSuffix "Bb"
-    \score { \transpose c d {\scoreContent} }
-    \testoCompleto
-  }
-
-  \book{
-    \bookOutputSuffix "Eb"
-    \score { \transpose ees c { \scoreContent } }
-    \testoCompleto
   }
 % }}}
