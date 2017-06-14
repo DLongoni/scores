@@ -1,9 +1,17 @@
-% DEFINIZIONI {{{
+% {{{ PARAMETRI
+  myTitle = "Petrunino Horo"
+  mySubTitle = "Bulgarian Traditional"
+  myKey = \key f \major
+  myTime = \time #'(3 2 2 2 3) 12/8
+  myTempo =  #(ly:make-moment 190 4)
+% }}}
+
+% INTESTAZIONE {{{
 \version "2.18.2"
 
 \header {
-  title = "Petrunino Horo"
-  composer = "Bulgarian Traditional"
+  title = \myTitle
+  composer = \mySubTitle
 }
 
 \paper{
@@ -18,7 +26,6 @@
   }
   evenFooterMarkup = \oddFooterMarkup
   #(set-global-staff-size 10)
-
   myStaffSize = #20
   fonts = #(make-pango-font-tree
   "FontAwesome"
@@ -28,14 +35,15 @@
 }
 
 global = {
-  \key f \major
+  \myKey
   \numericTimeSignature
-  \time #'(3 2 2 2 3) 12/8
+  \myTime
   \set Score.markFormatter = #format-mark-box-alphabet
 }
+\layout { indent = #0 }
 %}}}
 
-
+% {{{ MAIN
 tema = {
   \mark \default
   \repeat volta 2 {
@@ -82,15 +90,20 @@ accordi = \chordmode{
   f1*12/8:m | f1*12/8:m | f1*12/8:m | c1*12/8 |
   f1*12/8:m | f1*12/8:m | f1*12/8:m | c1*12/8 |
 }
+%}}}
+
+% LYRICS {{{
+testoCompleto=\markup { }
+% }}}
 
 % SCORE {{{
 tema = \relative c {
-  \global 
   \tema
 }
 
 chordsPart ={
   \new ChordNames {
+    \set chordChanges = ##t
     \accordi
   }
 }
@@ -98,37 +111,34 @@ chordsPart ={
 temaPart = \new Staff \with {
   instrumentName = ""
   midiInstrument = "piano"
-} { \clef "treble_8" \tema }
+} { \clef "treble_8" \global \tema }
 
-\book{
-  \bookOutputSuffix "Score"
-  \score {
-    <<
-      \chordsPart
-      \temaPart
-    >>
-    \layout {
-      indent = #0
-    }
-    \midi {
-      \context {
-        \Score
-        tempoWholesPerMinute = #(ly:make-moment 190 4)
-      }
-    }
-  }
-}
+scoreContent = << 
+  \chordsPart
+  \temaPart
+>>
+%}}}
 
-\book{
-  \bookOutputSuffix "Bb"
-  \score {
-    <<
-      \transpose c d { \chordsPart }
-      \transpose c d { \temaPart}
-    >>
-    \layout {
-      indent = #0
+% {{{ BOOKS
+  \book{
+    \bookOutputSuffix "C"
+    \score {
+      \scoreContent
+      \layout {}
+      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
     }
+    \testoCompleto
   }
-}
+
+  \book{
+    \bookOutputSuffix "Bb"
+    \score { \transpose c d {\scoreContent} }
+    \testoCompleto
+  }
+
+  \book{
+    \bookOutputSuffix "Eb"
+    \score { \transpose ees c { \scoreContent } }
+    \testoCompleto
+  }
 % }}}

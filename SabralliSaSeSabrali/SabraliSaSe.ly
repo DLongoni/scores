@@ -1,48 +1,46 @@
-% definizioni {{{
+% {{{ PARAMETRI
+  myTitle = "Sabrali Sa Se, Sabrali"
+  mySubTitle = "Bulgarian"
+  myKey = \key d \major
+  myTime = \time #'(3 2 2 2 3 2 2) 16/8
+  myTempo =  #(ly:make-moment 190 4)
+% }}}
+
+% INTESTAZIONE {{{
 \version "2.18.2"
 
 \header {
-  title = "Sabrali Sa Se, Sabrali"
-  composer = "Bulgarian"
+  title = \myTitle
+  composer = \mySubTitle
 }
 
 \paper{
   print-first-page-number = ##t
-  oddheadermarkup = \markup \null
-  evenheadermarkup = \markup \null
-  oddfootermarkup = \markup {
+  oddHeaderMarkup = \markup \null
+  evenHeaderMarkup = \markup \null
+  oddFooterMarkup = \markup {
     \fill-line {
       \on-the-fly \print-page-number-check-first
       \fromproperty #'page:page-number-string
     }
   }
-  evenfootermarkup = \oddfootermarkup
+  evenFooterMarkup = \oddFooterMarkup
   #(set-global-staff-size 10)
-
-  mystaffsize = #20
+  myStaffSize = #20
   fonts = #(make-pango-font-tree
-  "fontawesome"
-  "fontawesome"
-  "fontawesome"
-  (/ mystaffsize 20))
+  "FontAwesome"
+  "FontAwesome"
+  "FontAwesome"
+  (/ myStaffSize 20))
 }
 
 global = {
-  \key d \major
+  \myKey
   \numericTimeSignature
-  \time #'(3 2 2 2 3 2 2) 16/8
+  \myTime
   \set Score.markFormatter = #format-mark-box-alphabet
 }
-
-struttura = \markup {
-  \column {
-    \line {
-      (\bold{A}, \bold{B1}, \bold{A}, \bold{B2}, \bold{C1}),
-      (\bold{A}, \bold{B1}, \bold{C1}),
-      (\bold{A}, \bold{B3}, \bold{C1}, \bold{C2})
-    }
-  }
-}
+\layout { indent = #0 }
 %}}}
 
 % TEMA UNO {{{
@@ -133,6 +131,10 @@ temaTre = {
 }
 % }}}
 
+% LYRICS {{{
+testoCompleto=\markup { }
+% }}}
+
 % SCORE {{{
 temaUnoPart = \relative c' {
   \global 
@@ -149,44 +151,32 @@ temaUnoPart = \new Staff \with {
   midiInstrument = "piano"
 } { \clef "treble_8" \temaUnoPart }
 
-temaDue = \new Staff \with {
-  instrumentName = ""
-  midiInstrument = "piano"
-} { \clef "treble_8" \temaDuePart }
+scoreContent = << 
+    \temaUnoPart
+    \temaDuePart
+>>
+%}}}
 
-\book{
-  \bookOutputSuffix "Score"
-  \struttura
-  \score {
-    <<
-      \temaUnoPart
-      \temaDuePart
-    >>
-    \layout {
-      indent = #0
+% {{{ BOOKS
+  \book{
+    \bookOutputSuffix "C"
+    \score {
+      \scoreContent
+      \layout {}
+      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
     }
-    \midi {
-      \context {
-        \Score
-        tempoWholesPerMinute = #(ly:make-moment 100 4)
-      }
-    }
+    \testoCompleto
   }
-  \testoCompleto
-}
 
-\book{
-  \bookOutputSuffix "Bb"
-  \struttura
-  \score {
-    <<
-      \transpose c d { \temaUnoPart}
-      \transpose c d { \temaDuePart}
-    >>
-    \layout {
-      indent = #0
-    }
+  \book{
+    \bookOutputSuffix "Bb"
+    \score { \transpose c d {\scoreContent} }
+    \testoCompleto
   }
-  \testoCompleto
-}
+
+  \book{
+    \bookOutputSuffix "Eb"
+    \score { \transpose ees c { \scoreContent } }
+    \testoCompleto
+  }
 % }}}

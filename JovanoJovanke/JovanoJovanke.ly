@@ -1,9 +1,17 @@
-% DEFINIZIONI {{{
+% {{{ PARAMETRI
+  myTitle = "Jovano Jovanke"
+  mySubTitle = "Macedonian"
+  myKey = \key f \major
+  myTime = #'(3 2 2) 7/8
+  myTempo =  #(ly:make-moment 190 4)
+% }}}
+
+% INTESTAZIONE {{{
 \version "2.18.2"
 
 \header {
-  title = "Jovano Jovanke"
-  composer = "Macedonian"
+  title = \myTitle
+  composer = \mySubTitle
 }
 
 \paper{
@@ -28,14 +36,15 @@
 }
 
 global = {
-  \key f \major
+  \myKey
   \numericTimeSignature
-  \time #'(3 2 2) 7/8
+  \myTime
   \set Score.markFormatter = #format-mark-box-alphabet
 }
+\layout { indent = #0 }
 %}}}
 
-
+% {{{ TEMA
 tema = {
   \mark \default
   \repeat volta 2 {
@@ -95,7 +104,7 @@ accordi = \chordmode{
   a1*7/8 | a1*7/8 |
   }
 }
-
+% }}}
 
 % LYRICS {{{
 testoCompleto=\markup {
@@ -148,7 +157,6 @@ testoCompleto=\markup {
 
 % SCORE {{{
 tema = \relative c' {
-  \global 
   \tema
 }
 
@@ -157,43 +165,37 @@ chordsPart ={
     \accordi
   }
 }
-
 temaPart = \new Staff \with {
   instrumentName = ""
   midiInstrument = "piano"
-} { \clef "treble_8" \tema }
+} { \clef "treble_8" \global \tema }
 
-\book{
-  \bookOutputSuffix "Score"
-  \score {
-    <<
-      \chordsPart
-      \temaPart
-    >>
-    \layout {
-      indent = #0
-    }
-    \midi {
-      \context {
-        \Score
-        tempoWholesPerMinute = #(ly:make-moment 100 4)
-      }
-    }
-  }
-  \testoCompleto
-}
+scoreContent = << 
+  \chordsPart
+  \temaPart
+>>
+%}}}
 
-\book{
-  \bookOutputSuffix "Bb"
-  \score {
-    <<
-      \transpose c d { \chordsPart }
-      \transpose c d { \temaPart}
-    >>
-    \layout {
-      indent = #0
+% {{{ BOOKS
+  \book{
+    \bookOutputSuffix "C"
+    \score {
+      \scoreContent
+      \layout {}
+      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
     }
+    \testoCompleto
   }
-  \testoCompleto
-}
+
+  \book{
+    \bookOutputSuffix "Bb"
+    \score { \transpose c d {\scoreContent} }
+    \testoCompleto
+  }
+
+  \book{
+    \bookOutputSuffix "Eb"
+    \score { \transpose ees c { \scoreContent } }
+    \testoCompleto
+  }
 % }}}

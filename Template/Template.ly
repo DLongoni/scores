@@ -2,7 +2,7 @@
   myTitle = "Arapsko Kokonjeste"
   mySubTitle = "Serbian"
   myKey = \key bes \major
-  myTime = 2/4 
+  myTime = \time 2/4 
   myTempo =  #(ly:make-moment 190 4)
 % }}}
 
@@ -26,7 +26,6 @@
   }
   evenFooterMarkup = \oddFooterMarkup
   #(set-global-staff-size 10)
-
   myStaffSize = #20
   fonts = #(make-pango-font-tree
   "FontAwesome"
@@ -112,12 +111,28 @@ global = {
 % }}}
 
 % LYRICS {{{
-testoCompleto=\markup { }
+testoCompleto=\markup {
+  \vspace #2
+  \fill-line {
+    \hspace #1
+    \column {
+      \line {Jovno,Jovanke }
+      \vspace #1
+      \line {Jovano,Jovanke }
+    }
+    \hspace #2
+    \column \italic {
+      \line {Jovano, Jovanke,}
+      \vspace #1
+      \line {Jovano, Jovanke,}
+    }
+    \hspace #1
+  }
+}
 % }}}
 
 % SCORE {{{
 tema = \relative c' {
-  \global 
   \mark \default
   \temaA \break
   \mark \default
@@ -141,7 +156,7 @@ chordsPart ={
 temaPart = \new Staff \with {
   instrumentName = ""
   midiInstrument = "piano"
-} { \clef "treble_8" \tema }
+} { \clef "treble_8" \global \tema }
 
 scoreContent = << 
   \chordsPart
