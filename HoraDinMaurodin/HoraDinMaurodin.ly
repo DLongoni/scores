@@ -1,9 +1,17 @@
-% DEFINIZIONI {{{
+% {{{ PARAMETRI
+  myTitle = "Hora din Maurodin"
+  mySubTitle = "Romanian Traditional"
+  myKey = \key d \major
+  myTime = 2/4 
+  myTempo =  #(ly:make-moment 100 4)
+% }}}
+
+% INTESTAZIONE {{{
 \version "2.18.2"
 
 \header {
-  title = "Hora din Maurodin"
-  composer = "Romanian Traditional"
+  title = \myTitle
+  composer = \mySubTitle
 }
 
 \paper{
@@ -18,7 +26,6 @@
   }
   evenFooterMarkup = \oddFooterMarkup
   #(set-global-staff-size 10)
-
   myStaffSize = #20
   fonts = #(make-pango-font-tree
   "FontAwesome"
@@ -28,14 +35,15 @@
 }
 
 global = {
-  \key d \major
+  \myKey
   \numericTimeSignature
-  \time 2/4
+  \time \myTime
   \set Score.markFormatter = #format-mark-box-alphabet
 }
+\layout { indent = #0 }
 %}}}
 
-
+% {{{ TEMA
 tema = {
   \mark \default
   \repeat volta 2 {
@@ -130,15 +138,16 @@ accordi = \chordmode{
   d2 | d2 | d2 | d2 |
 
 }
+%}}}
 
 % SCORE {{{
 tema = \relative c'' {
-  \global 
   \tema
 }
 
 chordsPart ={
   \new ChordNames {
+    \set chordChanges = ##t
     \accordi
   }
 }
@@ -146,37 +155,62 @@ chordsPart ={
 temaPart = \new Staff \with {
   instrumentName = ""
   midiInstrument = "piano"
-} { \clef "treble_8" \tema }
+} { \clef "treble_8" \global \tema }
 
-\book{
-  \bookOutputSuffix "Score"
-  \score {
-    <<
-      \chordsPart
-      \temaPart
-    >>
-    \layout {
-      indent = #0
-    }
-    \midi {
-      \context {
-        \Score
-        tempoWholesPerMinute = #(ly:make-moment 100 4)
-      }
+scoreContent = << 
+  \chordsPart
+  \temaPart
+>>
+%}}}
+
+% LYRICS {{{
+testoCompleto=\markup { }
+% }}}
+
+% {{{ BOOKS
+  \book{
+    #(set-global-staff-size 10)
+    \bookOutputSuffix "C"
+    \score {
+      \scoreContent
+      \layout {}
+      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
     }
   }
-}
 
-\book{
-  \bookOutputSuffix "Bb"
-  \score {
-    <<
-      \transpose c d { \chordsPart }
-      \transpose c d { \temaPart}
-    >>
-    \layout {
-      indent = #0
-    }
+  \book{
+    #(set-global-staff-size 10)
+    \bookOutputSuffix "Bb"
+    \score { \transpose c d { \scoreContent } }
   }
-}
+
+  \book{
+    #(set-global-staff-size 10)
+    \bookOutputSuffix "Eb"
+    \score { \transpose ees c { \scoreContent } }
+  }
+% }}}
+
+% {{{ BOOKS
+  \book{
+    \bookOutputSuffix "C"
+    \score {
+      \scoreContent
+      \layout {}
+      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
+    }
+    \testoCompleto
+  }
+
+  \book{
+    \bookOutputSuffix "Bb"
+    \score { \transpose c d {\scoreContent} }
+    \testoCompleto
+  }
+
+  \book{
+    \bookOutputSuffix "Eb"
+    \score { \transpose ees c { \scoreContent } }
+    \testoCompleto
+  }
 % }}}

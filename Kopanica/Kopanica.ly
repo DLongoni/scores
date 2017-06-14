@@ -1,9 +1,17 @@
-% DEFINIZIONI {{{
+% {{{ PARAMETRI
+  myTitle = "Kopanitsa"
+  mySubTitle = "Bulgarian Traditional"
+  myKey = \key c \major
+  myTime = \time #'(2 2 3 2 2) 11/8
+  myTempo =  #(ly:make-moment 190 4)
+% }}}
+
+% INTESTAZIONE {{{
 \version "2.18.2"
 
 \header {
-  title = "Kopanitsa"
-  composer = "Bulgarian Traditional"
+  title = \myTitle
+  composer = \mySubTitle
 }
 
 \paper{
@@ -28,19 +36,12 @@
 }
 
 global = {
-  \key c \major
+  \myKey
   \numericTimeSignature
-  \time #'(2 2 3 2 2) 11/8
+  \myTime
   \set Score.markFormatter = #format-mark-box-alphabet
 }
-
-struttura = \markup {
-  \column {
-    \line {
-      \bold{A}, \bold{B}, \bold{A}, \bold{B}, \bold{to end}
-    }
-  }
-}
+\layout { indent = #0 }
 %}}}
 
 % PARTE A {{{
@@ -243,6 +244,10 @@ accordiL = \chordmode{
 }
 % }}}
 
+% LYRICS {{{
+testoCompleto=\markup { }
+% }}}
+
 % SCORE {{{
 tema = \relative c' {
   \global 
@@ -327,35 +332,32 @@ temaPart = \new Staff \with {
   midiInstrument = "piano"
 } { \clef "treble_8" \tema }
 
-\book{
-  \bookOutputSuffix "Score"
-  \score {
-    <<
-      \chordsPart
-      \temaPart
-    >>
-    \layout {
-      indent = #0
-    }
-    \midi {
-      \context {
-        \Score
-        tempoWholesPerMinute = #(ly:make-moment 120 4)
-      }
-    }
-  }
-}
+scoreContent = << 
+  \chordsPart
+  \temaPart
+>>
+%}}}
 
-\book{
-  \bookOutputSuffix "Bb"
-  \score {
-    <<
-      \transpose c d { \chordsPart }
-      \transpose c d { \temaPart}
-    >>
-    \layout {
-      indent = #0
+% {{{ BOOKS
+  \book{
+    \bookOutputSuffix "C"
+    \score {
+      \scoreContent
+      \layout {}
+      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
     }
+    \testoCompleto
   }
-}
+
+  \book{
+    \bookOutputSuffix "Bb"
+    \score { \transpose c d {\scoreContent} }
+    \testoCompleto
+  }
+
+  \book{
+    \bookOutputSuffix "Eb"
+    \score { \transpose ees c { \scoreContent } }
+    \testoCompleto
+  }
 % }}}

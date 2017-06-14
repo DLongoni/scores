@@ -1,38 +1,46 @@
-% definizioni {{{
+% {{{ PARAMETRI
+  myTitle = "More Sokol Pie"
+  mySubTitle = "Macedonian"
+  myKey = \key g \major
+  myTime = \time #'(3 2 2) 7/8
+  myTempo =  #(ly:make-moment 190 4)
+% }}}
+
+% INTESTAZIONE {{{
 \version "2.18.2"
 
 \header {
-  title = "More Sokol Pie"
-  composer = "Macedonian"
+  title = \myTitle
+  composer = \mySubTitle
 }
 
 \paper{
   print-first-page-number = ##t
-  oddheadermarkup = \markup \null
-  evenheadermarkup = \markup \null
-  oddfootermarkup = \markup {
+  oddHeaderMarkup = \markup \null
+  evenHeaderMarkup = \markup \null
+  oddFooterMarkup = \markup {
     \fill-line {
       \on-the-fly \print-page-number-check-first
       \fromproperty #'page:page-number-string
     }
   }
-  evenfootermarkup = \oddfootermarkup
+  evenFooterMarkup = \oddFooterMarkup
   #(set-global-staff-size 10)
-
-  mystaffsize = #20
+  myStaffSize = #20
   fonts = #(make-pango-font-tree
-  "fontawesome"
-  "fontawesome"
-  "fontawesome"
-  (/ mystaffsize 20))
+  "FontAwesome"
+  "FontAwesome"
+  "FontAwesome"
+  (/ myStaffSize 20))
 }
 
 global = {
-  \key g \major
+  \myKey
   \numericTimeSignature
-  \time #'(3 2 2) 7/8
+  \myTime
   \set Score.markFormatter = #format-mark-box-alphabet
 }
+\layout { indent = #0 }
 %}}}
 
 % TEMA UNO {{{
@@ -108,6 +116,7 @@ temaUno = {
   }
 % }}}
 
+% {{{ ACCORDI
 accordi = \chordmode{
   \set chordChanges = ##t
   \repeat volta 2{
@@ -134,7 +143,7 @@ accordi = \chordmode{
     {d1*7/8| d1*7/8 |}
   }
 }
-
+% }}}
 
 % LYRICS {{{
 testoCompleto=\markup {
@@ -187,39 +196,33 @@ temaDue = \new Staff \with {
   midiInstrument = "piano"
 } { \clef "treble_8" \temaDuePart }
 
-\book{
-  \bookOutputSuffix "Score"
-  \score {
-    <<
+scoreContent = << 
       \chordsPart
       \temaUnoPart
       \temaDuePart
-    >>
-    \layout {
-      indent = #0
-    }
-    \midi {
-      \context {
-        \Score
-        tempoWholesPerMinute = #(ly:make-moment 100 4)
-      }
-    }
-  }
-  \testoCompleto
-}
+>>
+%}}}
 
-\book{
-  \bookOutputSuffix "Bb"
-  \score {
-    <<
-      \transpose c d { \chordsPart }
-      \transpose c d { \temaUnoPart}
-      \transpose c d { \temaDuePart}
-    >>
-    \layout {
-      indent = #0
+% {{{ BOOKS
+  \book{
+    \bookOutputSuffix "C"
+    \score {
+      \scoreContent
+      \layout {}
+      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
     }
+    \testoCompleto
   }
-  \testoCompleto
-}
+
+  \book{
+    \bookOutputSuffix "Bb"
+    \score { \transpose c d {\scoreContent} }
+    \testoCompleto
+  }
+
+  \book{
+    \bookOutputSuffix "Eb"
+    \score { \transpose ees c { \scoreContent } }
+    \testoCompleto
+  }
 % }}}

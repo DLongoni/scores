@@ -1,9 +1,17 @@
-% DEFINIZIONI {{{
+% {{{ PARAMETRI
+  myTitle = "Pravo Horo"
+  mySubTitle = "Bulgarian Traditional"
+  myKey = \key d \major
+  myTime = \time 6/8
+  myTempo =  #(ly:make-moment 190 4)
+% }}}
+
+% INTESTAZIONE {{{
 \version "2.18.2"
 
 \header {
-  title = "Pravo Horo"
-  composer = "Bulgarian Traditional"
+  title = \myTitle
+  composer = \mySubTitle
 }
 
 \paper{
@@ -18,7 +26,6 @@
   }
   evenFooterMarkup = \oddFooterMarkup
   #(set-global-staff-size 10)
-
   myStaffSize = #20
   fonts = #(make-pango-font-tree
   "FontAwesome"
@@ -28,13 +35,15 @@
 }
 
 global = {
-  \key d \major
+  \myKey
   \numericTimeSignature
-  \time 6/8
+  \myTime
   \set Score.markFormatter = #format-mark-box-alphabet
 }
+\layout { indent = #0 }
 %}}}
 
+% {{{ MAIN
 tema = {
   % A
   \mark \default
@@ -84,15 +93,20 @@ accordi = \chordmode{
     d1*6/8 | d1*6/8 | g1*6/8 | a4. d4. | d1*6/8 | d1*6/8 | g1*6/8 | a4. d4. |
   }
 }
+% }}}
+
+% LYRICS {{{
+testoCompleto=\markup { }
+% }}}
 
 % SCORE {{{
 tema = \relative c {
-  \global 
   \tema
 }
 
 chordsPart ={
   \new ChordNames {
+    \set chordChanges = ##t
     \accordi
   }
 }
@@ -100,37 +114,34 @@ chordsPart ={
 temaPart = \new Staff \with {
   instrumentName = ""
   midiInstrument = "piano"
-} { \clef "treble_8" \tema }
+} { \clef "treble_8" \global \tema }
 
-\book{
-  \bookOutputSuffix "Score"
-  \score {
-    <<
-      \chordsPart
-      \temaPart
-    >>
-    \layout {
-      indent = #0
-    }
-    \midi {
-      \context {
-        \Score
-        tempoWholesPerMinute = #(ly:make-moment 190 4)
-      }
-    }
-  }
-}
+scoreContent = << 
+  \chordsPart
+  \temaPart
+>>
+%}}}
 
-\book{
-  \bookOutputSuffix "Bb"
-  \score {
-    <<
-      \transpose c d { \chordsPart }
-      \transpose c d { \temaPart}
-    >>
-    \layout {
-      indent = #0
+% {{{ BOOKS
+  \book{
+    \bookOutputSuffix "C"
+    \score {
+      \scoreContent
+      \layout {}
+      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
     }
+    \testoCompleto
   }
-}
+
+  \book{
+    \bookOutputSuffix "Bb"
+    \score { \transpose c d {\scoreContent} }
+    \testoCompleto
+  }
+
+  \book{
+    \bookOutputSuffix "Eb"
+    \score { \transpose ees c { \scoreContent } }
+    \testoCompleto
+  }
 % }}}
