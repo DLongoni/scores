@@ -93,7 +93,7 @@ global = {
 
     % B
     \repeat volta 2{
-      a4 a8 a4 a | g f8 e f g aes | b4 a8 g4 \tuplet 3/2 {f8 e c} | 
+      aes4 aes8 aes4 aes | g f8 e f g aes | b4 a8 g4 \tuplet 3/2 {f8 e c} | 
     }
     \alternative{
       {e4. e4 r4|}
@@ -148,7 +148,7 @@ global = {
     }
     \alternative {
       {c1*7/8 |}
-      {c1*7/8 |}
+      {\once \set chordChanges = ##f c1*7/8 |}
     }
 
     % B
