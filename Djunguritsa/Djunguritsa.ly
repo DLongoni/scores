@@ -41,6 +41,15 @@ global = {
   \set Score.markFormatter = #format-mark-box-alphabet
 }
 \layout { indent = #0 }
+fakeBar = {  
+  \cadenzaOn
+  \once \omit Score.TimeSignature
+  \time 1/16
+  s16 \bar ""
+  \cadenzaOff
+  \once \omit Score.TimeSignature
+  \time #'(2 2 2 3) 9/8
+}
 %}}}
 
 % {{{ PARTE A
@@ -53,6 +62,12 @@ global = {
   accordiA = \chordmode{
     \repeat volta 2{
       e4:m c4 d4 g4. | a4:m a4:m d4:/fis g4. | c2 d4 g4. | a2:m b4:m e4.:m |
+    }
+  }
+
+  accordiAbis = \chordmode{
+    \repeat volta 2{
+      e1*9/8:m | a2:m b4:m e4.:m | e1*9/8:m | s1*8/9 |
     }
   }
 % }}}
@@ -73,12 +88,18 @@ global = {
       a2:m d4 g4. | a2:m a4 d4. | b2:m c4 g4. | a2:m b4:m e4.:m |
     }
   }
+
+  accordiBbis = \chordmode{
+    \repeat volta 2{
+      s1*8/9 | s1*8/9 | s1*8/9 | s1*8/9 | 
+    }
+  }
 % }}}
 
 % {{{ PARTE C
   temaC = {
     \repeat volta 2 {
-      cis16 d d cis d8 r8 cis16 d d cis d8 e4 | cis16 d d cis d8 e8 d8 c8 b a g |
+      cis'16 d d cis d8 r8 cis16 d d cis d8 e4 | cis16 d d cis d8 e8 d8 c8 b a g |
     } 
   }
 
@@ -87,18 +108,149 @@ global = {
       e1*9/8 | e1*9/8 | 
     }
   }
+
+  accordiCbis = \chordmode{
+    \repeat volta 2{
+      s1*8/9 | s1*8/9 |
+    }
+  }
 % }}}
 
 % {{{ PARTE D
   temaD = {
     \repeat volta 2 {
-      bes'8 bes16 a g8 d' | bes16 d a bes g8 d' | bes bes16 a g8 d' | bes16 d a bes16 g4 |
+      cis16 d d cis d8 e d c b a g | a16 a a g a8 b c d b4 b8 |
+      cis16 d d cis d8 e d c b a g | a16 a a g a8 b g16 a g fis e4. |
     } 
   }
 
   accordiD = \chordmode{
     \repeat volta 2{
-      g2:m | g2:m | g2:m | d4 g4:m |
+      d2:7 d4:/fis g4. | c2:m d4:/fis g4. | a2:m d4 g4. | a2:m b4:m e4.:m |
+    }
+  }
+
+  accordiDbis = \chordmode{
+    \repeat volta 2{
+      s1*8/9 | s1*8/9 | s1*8/9 | s1*8/9 | 
+    }
+  }
+% }}}
+
+% {{{ PARTE E
+  temaE = {
+    \repeat volta 2 {
+      g8 a16 a a8 fis g fis g fis d | g a16 a a8 fis g fis d4. |
+      g8 a16 a a8 a d c b a g | a16 a a g a8 b g16 a g fis e4. |
+    } 
+  }
+
+  accordiE = \chordmode{
+    \repeat volta 2{
+      a2:m d4 g4. a1*9/8:m b4:m c4:m d4:/fis g4. | a2:m b4:m e4.:m |
+    }
+  }
+
+  accordiEbis = \chordmode{
+    \repeat volta 2{
+      e1*9/8:m | e2:m a4 d4. | s1*9/8 | s1*9/8 |
+    }
+  }
+% }}}
+
+% {{{ PARTE F
+  temaF = {
+    \repeat volta 2 {
+      b'16 c c a b b b8 b16 c c a gis8 a b | b16 c c a b b b8 b16 a gis f e fis g a b8 |
+      b16 c c a b b b8 b16 c c a gis8 a b | b16 c c a b b b8 b16 a gis f e b e4 |
+    } 
+  }
+
+  accordiF = \chordmode{
+    \repeat volta 2{
+      e1*9/8 | e2 d4:m e4. | e2 a4:m e4. | e2 d4:m e4. |
+    }
+  }
+% }}}
+
+% {{{ PARTE G
+  temaG = {
+    \repeat volta 2 {
+      d'16 cis d e d c b a b c b a gis8 a b | d16 c b a b b b8 b16 c b a gis8 a b |
+      d16 cis d e d c b a b c b a gis8 a b | d16 c b a b b b8 b16 a gis f e b e4 |
+    } 
+  }
+
+  accordiG = \chordmode{
+    \repeat volta 2{
+      e2 d4:m e4. | a4:m e4 a4:m d4.:m |
+      e2 d4:m e4. | a4:m e4 d4:m e4. |
+    }
+  }
+% }}}
+
+% {{{ PARTE H
+  temaH = {
+    \repeat volta 2 {
+      d'16 c b a b b b8 b16 c b a gis f e f gis a | d c b a b b b8 b16 a gis f e8 e4 |
+      d'16 c b a b b b8 b16 c b a gis f e f gis a | d c b a b b b8 b16 a gis f e16 b e4 |
+    } 
+  }
+
+  accordiH = \chordmode{
+    \repeat volta 2{
+      a4:m e2 e4. | e2 d4:m e4. |
+      a4:m e2 e4. | a4:m e4 d4:m e4. |
+    }
+  }
+% }}}
+
+% {{{ PARTE I
+  temaI = {
+    \fakeBar
+    \mark \markup { \musicglyph #"scripts.segno" }
+    \repeat volta 2 {
+      e4 e'8 e e e e e4 | d8 c b a b a d e4 | d8 c b a g a b4 a8 | g fis fis16 fis f e e4 e8 e4 |
+    } 
+  }
+
+  accordiI = \chordmode{
+    \fakeBar
+    \repeat volta 2{
+      a2:m g4 c4. | a4:m d4 g4 c4. |a2:m d4 g4. | a4:m b4:m e4 e4. |
+    }
+  }
+% }}}
+
+% {{{ PARTE J
+  temaJ = {
+    \repeat volta 2 {
+      g8 a16 a a8 a a g b4 a8 | g fis fis d e fis g a b | 
+      \acciaccatura{cis8} d8 c b a g a b4 a8 | g8 fis fis16 fis f e e4 e8 e4 |
+    } 
+  }
+
+  accordiJ = \chordmode{
+    \repeat volta 2{
+      a4:m c4:m d4 d4. | a4:m b4:m e4:m e4.:m | a:m d4 g4 c4. | a4:m b4:m e4:m e4.:m |
+    }
+  }
+% }}}
+
+% {{{ PARTE K
+  temaK = {
+    \repeat volta 2 {
+      g8 a16 a a8 a c16 b a g g d g8 g | g16 g fis a fis fis d8 e f g a b |
+      g8 a16 a a8 a c16 b a g g d g8 g | g16 g fis a fis fis d8 e16 e e b e b
+      \once \override Score.RehearsalMark.direction = #DOWN
+      \once \override Score.RehearsalMark.self-alignment-X = #RIGHT  
+      \mark \markup { { \lower #1 \italic "D.S."} }  e4 |
+    } 
+  }
+
+  accordiK = \chordmode{
+    \repeat volta 2{
+      a4:m c4:m d4 d4. | a2:m e4:m e4.:m | a4:m c4:m d4 g4. | a4:m b4:m e4:m e4.:m |
     }
   }
 % }}}
@@ -115,6 +267,22 @@ tema = \relative c' {
   \temaB \break
   \mark \default
   \temaC
+  \mark \default
+  \temaD
+  \mark \default
+  \temaE \break
+  \mark \default
+  \temaF \break
+  \mark \default
+  \temaG
+  \mark \default
+  \temaH \break
+  \mark \default
+  \temaI \break
+  \mark \default
+  \temaJ \break
+  \mark \default
+  \temaK \break
 }
 
 chordsPart ={
@@ -123,6 +291,14 @@ chordsPart ={
     \accordiA
     \accordiB
     \accordiC
+    \accordiD
+    \accordiE
+    \accordiF
+    \accordiG
+    \accordiH
+    \accordiI
+    \accordiJ
+    \accordiK
   }
 }
 
