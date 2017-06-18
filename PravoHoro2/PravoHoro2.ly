@@ -48,7 +48,7 @@ fakeBar = {
   s16 \bar ""
   \cadenzaOff
   \once \omit Score.TimeSignature
-  \time #'(2 2 2 3) 9/8
+  \time 6/8
 }
 %}}}
 
@@ -232,20 +232,23 @@ accordiBdue = \chordmode{
     \repeat volta 2 {
       {
         cis4 a8 d4 a8 |cis4 a8 e' a, a | cis4 a8 d4 a8 |cis4 e8 b4 a8 |
-        \mark \markup{ "4x" }
       }
     }
+            \mark \markup{ "4x" }
+      \fakeBar
   }
 
   accordiF = \chordmode{
     \repeat volta 2{
       a4. d4. | a1*6/8 | a4. d4. | a4. e4. |
     }
+    \fakeBar
   }
 % }}}
 
 % {{{ PARTE G
   temaG = {
+    \bar ".|:"
     \repeat volta 2 {
       { e'8 a, a a d e, | cis'4 e,8 a b cis | d cis e cis d b | }
     }
@@ -293,8 +296,9 @@ accordiBdue = \chordmode{
     \repeat volta 2 {
       {
         b4\prall d8 c4\prall d8 | b4\prall d8 c4\prall d8 | b4\prall d8 c4\prall d8 | b4 d8 a4 g8 |
-        %\mark \markup{ "4x" }
       }
+      \mark \markup{ "4x" }
+      \fakeBar
     }
   }
 
@@ -302,11 +306,13 @@ accordiBdue = \chordmode{
     \repeat volta 2{
       g4. c4. | g4. c4. | g4. c4. | g4. d4. |
     }
+    \fakeBar
   }
 % }}}
 
 % {{{ PARTE J
   temaJ = {
+    \bar ".|:"
     \repeat volta 2 {
       {
         g8 a b c4 g8 | b4 g8 d' g, g | g a b c4 g8 | b8 b d a4 g8 |
