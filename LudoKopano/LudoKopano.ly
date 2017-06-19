@@ -63,6 +63,7 @@ global = {
 
 % {{{ PARTE B
   temaB = {
+    \bar ".|:"
     \repeat volta 2 {
       f8 g g f f g4 f8 e d c | f g g f a g4 f8 e d4 | f8 g g f f g4 f8 e d e | f8 d e c d4. d4 r4 |
     } 
@@ -107,6 +108,7 @@ global = {
 
 % {{{ PARTE E
   temaE = {
+    \bar ".|:"
     \repeat volta 2 {
       g8 a a f a g f e d e f | g a a f a g f e d a' d, | g a a f a g f e d e f | g a a f a g f e c d4 |
     } 
