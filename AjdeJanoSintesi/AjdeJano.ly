@@ -18,13 +18,6 @@
   print-first-page-number = ##t
   oddHeaderMarkup = \markup \null
   evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
   #(set-global-staff-size 1)
   myStaffSize = #19
   fonts = #(make-pango-font-tree
@@ -95,7 +88,7 @@ fakeBarDue = {
     }
     \once \override Score.RehearsalMark.self-alignment-X = #RIGHT  
     \once \override Score.RehearsalMark.font-size = #-1
-    \mark \markup { "2nd time go to E"} 
+    \mark \markup { \italic "2nd time go to E"} 
     \fakeBarDue
   }
 
@@ -296,7 +289,7 @@ fakeBarDue = {
 % {{{ Parte F
   temaF ={
     \repeat volta 2{
-      a8 e16 a16~ a16 e a e cis' a32 bes g16 a bes cis d e |
+      a'8 e16 a16~ a16 e a e cis' a32 bes g16 a bes cis d e |
       e32 f g f e f d16 cis32 d e d cis d bes16 a d32 a g16 a16~ a4|
       a8 e16 a16~ a16 e a e cis' a32 bes g16 a bes cis d e |
       e32 f g f e f d16 cis32 d e d cis d bes16 a bes32 a g16 a32 bes a4|

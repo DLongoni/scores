@@ -18,13 +18,6 @@
   print-first-page-number = ##t
   oddHeaderMarkup = \markup \null
   evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
   #(set-global-staff-size 10)
   myStaffSize = #20
   fonts = #(make-pango-font-tree

@@ -18,13 +18,6 @@
   print-first-page-number = ##t
   oddHeaderMarkup = \markup \null
   evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
   #(set-global-staff-size 10)
   myStaffSize = #20
   fonts = #(make-pango-font-tree
@@ -77,10 +70,9 @@ fakeBar = {
     \repeat volta 2 {
       g16 d a' a a8 fis g16 d fis d g8 fis d | g16 d a' a a8 fis g fis d4. |
       g8 a16 a a8 a d8 c b a g | a16 a a g a8 b g16 a g fis e4. |
-      \once \override Score.RehearsalMark.direction = #DOWN
       \once \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
       \once \override Score.RehearsalMark.self-alignment-X = #RIGHT  
-      \mark \markup { \lower #1 \italic "D.C."} 
+      \mark \markup { \italic "D.C."} 
     } 
   }
 
@@ -249,9 +241,9 @@ fakeBar = {
     \repeat volta 2 {
       g8 a16 a a8 a c16 b a g g d g8 g | g16 g fis a fis fis d8 e fis g a b |
       g8 a16 a a8 a c16 b a g g d g8 g | g16 g fis a fis fis d8 e16 e e b e b
-      \once \override Score.RehearsalMark.direction = #DOWN
       \once \override Score.RehearsalMark.self-alignment-X = #RIGHT  
-      \mark \markup { { \lower #1 \italic "D.S."} }  e4 |
+      \once \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
+      \mark \markup { \italic "D.S." }  e4 |
     } 
   }
 

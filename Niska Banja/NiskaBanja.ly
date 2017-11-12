@@ -18,13 +18,6 @@
   print-first-page-number = ##t
   oddHeaderMarkup = \markup \null
   evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
   #(set-global-staff-size 10)
   myStaffSize = #20
   fonts = #(make-pango-font-tree
@@ -46,9 +39,7 @@ toCoda = {
   % the align part
   \once \override Score.RehearsalMark.self-alignment-X = #RIGHT  
   \once \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
-  \once \override Score.RehearsalMark.direction = #DOWN
-  \once \override Score.RehearsalMark.font-size = #-1
-  \mark \markup { { \lower #1 "D.S. al  " { \musicglyph #"scripts.coda"} } } 
+  \mark \markup { { "D.S. al  " { \musicglyph #"scripts.coda"} } } 
 }
 
 fakeBar = {  
