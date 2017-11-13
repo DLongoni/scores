@@ -20,16 +20,16 @@
 
   myStaffSize = #20
   fonts = #(make-pango-font-tree
-            "FontAwesome"
-            "FontAwesome"
-            "FontAwesome"
-            (/ myStaffSize 20))
+  "FontAwesome"
+  "FontAwesome"
+  "FontAwesome"
+  (/ myStaffSize 20))
 }
 
 global = {
-  \key bes \major
+  \key a \major
   \numericTimeSignature
-  \time 2/4
+  \time 4/4
   \set Score.markFormatter = #format-mark-box-alphabet
 }
 
@@ -44,46 +44,42 @@ toCoda = {
 % PARTE A {{{
 temaA = {
   \repeat volta 2 {
-    \time 2/4
-    d,8. g16~ g4. d'4 c8 | f16 f r16 f f8 g d4 r4 |
-    r4 c8 ees bes8. g16 r4 | c16 c r c c8 ees bes8. g16 r4 |
-    r4 c8 d a8. g16 r4 | 
+    cis,8. fis16~ fis4. cis'4 b8 | e16 e r16 e e8 fis cis4 r4 |
+    r4 b8 d a8. fis16 r4 | b16 b r b b8 d a8. fis16 r4 |
+    r4 b8 cis gis8. fis16 r4 | 
     \time 3/4
-    c16 c r c c8 ees a,8 g |
+    b16 b r b b8 d gis,8 fis |
   }
 }
 
 temaAdue = {
   \repeat volta 2 {
-    \time 2/4
-    s1 | bes'16 bes s bes bes8 c g4 s4 |
+    s1 | a'16 a s a a8 b fis4 s4 |
     s1 | s1 |
-    s4 g8 bes f8. ees16 s4 | 
+    s4 fis8 a e8. d16 s4 | 
     \time 3/4
-    g16 g s g g8 bes f8 ees |
+    fis16 fis s fis fis8 a e8 d |
   }
 }
 
 bassoA = {
   \repeat volta 2 {
-    \time 2/4
-    g2 d'2 | f4 c bes2 |
-    c8 r ees f g r c, r | ees r f g d g r4 |
-    c,8 r ees f d r c r | 
+    fis,2 cis'2 | e4 b a2 |
+    b8 r d e fis r b, r | d r e fis cis fis r4 |
+    b,8 r d e cis r b r | 
     \time 3/4
-    d8 r c r f d |
+    cis8 r b r e cis |
   }
 }
 
 accordiA = \chordmode{
   \repeat volta 2 {
-    \time 2/4
     \set chordChanges = ##t
-    g2:sus2 d2:sus4 | f4:m7 f4:m7/c bes2:6 |
-    c2:m7 g2:m9 | c2:m7 g2:m9 | 
-    c2:m7 f2:9 | 
+    fis2:sus2 cis2:sus4 | e4:m7 e4:m7/b a2:6 |
+    b2:m7 fis2:m9 | b2:m7 fis2:m9 | 
+    b2:m7 e2:9 | 
     \time 3/4
-    c2:m7 d4:m7 | 
+    b2:m7 cis4:m7 | 
   }
 }
 % }}}
@@ -91,39 +87,42 @@ accordiA = \chordmode{
 % PARTE B {{{
 temaB = {
   \repeat volta 2 {
-    ees,2 g 4 bes | d c bes g | a2 \tuplet 3/2 {c4 b g} | 
-    e'2 g4 fis | b,2 e4 d | fis,2 |
+    d,2 fis 4 a | cis b a fis | gis2 \tuplet 3/2 {b4 bes fis} | 
+    dis'2 fis4 f | ais,2 dis4 cis |
   }
   \alternative{
     {
-      c'4 b |
-      r4 d,4 |
+      f,2 b4 bes |
+      \time 2/4 
+      r4 cis,4 |
     }
     {
-      c'8. bes16~ bes4~ | 
-      bes4 r8 d,8 |
+      \time 4/4
+      f2 b8. a16~ a4~ | 
+      \time 2/4
+      a4 r8 cis,8 |
     }
   }
 }
 
 bassoB = {
   \repeat volta 2 {
-    s1 | s1 | s1 | s1 | s1 | s2 |
+    s1 | s1 | s1 | s1 | s1 |
   }
   \alternative{
-    {s2 | s2|}
-    {s2 | s2|}
+    {s1 |\time 2/4 s2|}
+    {\time 4/4 s1 |\time 2/4 s2|}
   }
 }
 
 accordiB = \chordmode{
   \repeat volta 2 {
-    ees1:maj9 | ees2:maj9 bes2:7.11+ | a2:m7 c2:maj7/aes | 
-    g1:6 | c1:maj7 | b2:m7 |
+    d1:maj9 | d2:maj9 a2:7.11+ | gis2:m7 b2:maj7/g | 
+    fis1:6 | b1:maj7 |
   }
   \alternative{
-    {b2:m7 | bes2:7 |}
-    { b8.:m7 d16:7.9+ d4:7.9+ | d2:7.9+|}
+    {bes1:m7 | \time 2/4 a2:7 |}
+    {\time 4/4 bes2:m7 bes8.:m7 cis16:7.9+ cis4:7.9+ |\time 2/4 cis2:7.9+|}
   }
 }
 % }}}
@@ -131,21 +130,21 @@ accordiB = \chordmode{
 % PARTE C {{{
 temaC = {
   \repeat volta 2 {
-    f'16 g f d f g bes c d c d c~ c bes8 a16~ |
-    a8 f8~ f4 r4 f8 g | d8. c16 r4 f16 f r f f8 g |
-    d8. c16 r4 |
+    e'16 fis e cis e fis a b cis b cis b~ b a8 gis16~ |
+    gis8 e8~ e4 r4 e8 fis | cis8. b16 r4 e16 e r e e8 fis |
+    \time 2/4 cis8. b16 r4 |
   }
 }
 
 bassoC = {
   \repeat volta 2 {
-    g,2 d'4. a8 | bes4. a8 bes4 d | ees2 f4 d | c a |
+    fis,2 cis'4. gis8 | a4. gis8 a4 cis | d2 e4 cis | \time 2/4 b gis |
   }
 }
 
 accordiC = \chordmode{
   \repeat volta 2 {
-    g2:m7 d2:m7 |bes1:maj7 | ees2:maj7 d2:m7 | c2:m7 |
+    fis2:m7 cis2:m7 |a1:maj7 | d2:maj7 cis2:m7 | \time 2/4 b2:m7 |
   }
 }
 % }}}
@@ -159,7 +158,7 @@ tema = \relative c' {
     \temaAdue
   >>
   \mark \default
-  \time 2/4
+  \time 4/4
   \temaB
   \bar "||"
   \break
@@ -174,25 +173,22 @@ basso = \relative c {
   \bassoC
 }
 
-chordsPart = \new ChordNames \with {
-  midiMaximumVolume = #0.7
-}{
-  \accordiA
-  \accordiB
-  \accordiC
+chordsPart ={
+  \new ChordNames {
+    \accordiA
+    \accordiB
+    \accordiC
+  }
 }
-
 
 temaPart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "trumpet"
-  
+  midiInstrument = "piano"
 } { \clef "treble_8" \tema }
 
 bassPart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "contrabass"
-  midiMaximumVolume = #0.8
+  midiInstrument = "tuba"
 } { \clef bass \basso }
 
 \book{
@@ -206,18 +202,10 @@ bassPart = \new Staff \with {
     \layout {
       indent = #0
     }
-  }
-  \score {
-    \unfoldRepeats 
-    <<
-      \chordsPart
-      \temaPart
-      \bassPart
-    >>
     \midi {
       \context {
         \Score
-        tempoWholesPerMinute = #(ly:make-moment 120 4)
+        tempoWholesPerMinute = #(ly:make-moment 80 4)
       }
     }
   }

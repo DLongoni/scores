@@ -141,7 +141,7 @@ temaPart = \new Staff \with {
     \midi {
       \context {
         \Score
-        tempoWholesPerMinute = #(ly:make-moment 80 4)
+        tempoWholesPerMinute = #(ly:make-moment 120 4)
       }
     }
   }
