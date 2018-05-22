@@ -42,46 +42,117 @@ toCoda = {
 %}}}
 
 % PARTE A {{{
-tema = {
-  a8 b c d e a |
-  g e b a b a |
-  e'4 d4. c8 |
-  d4 c d | \break
-  a8 b c d e a |
-  g e c a c a |
-  e' f8~ f4 c8 g |
-  a2. | \break
-  e'4. a | fis d | c e | d b | \break
-  a8 c \tuplet 3/2 {b c d} e4 |
-  d8 f \tuplet 3/2 {e f g} a4 |
-  e2.~ | 
-  e 2.| 
+temaA = {
+  \repeat volta 2{
+    a8^\markup{ \italic {swing feel} }
+    b c d e a |
+    g e b a b a |
+    e'4 d4. c8 |
+    d4 c d | \break
+    a8 b c d e a |
+    g e c a c a |
+    e' f8~ f4 c8 g |
+    a2. | \break
+    e'4. a | fis d | c e | d b | \break
+    a8 c \tuplet 3/2 {b c d} e4 |
+    d8 f \tuplet 3/2 {e f g} a4 |
+    e2.~ | 
+    e 2.| 
     \toCoda 
-  \break
-  a,8 b c d e a |
-  \time 2/4
-  g e g e |
-  \time 3/4
-  a,4 r2 | r2. |
+    \break
+    a,8 b c d e a |
+    \time 2/4
+    g e g e |
+    \time 3/4
+    a,4 r2 | r2. |
+  }
 }
 
-accordiTema = \chordmode{
+accordiA = \chordmode{
   \set chordChanges = ##t
-  a2.:m | g2.:6 | f2.:maj7 | bes2.:7.11+ |
-  a2.:m | c2.:7 | bes2.:maj7 | f2.:maj7 |
-  a2.:7 | b2.:m7 | c2.:maj7 | g2.:6 |
-  d2.:m7 | d2.:m7 | c2.:maj7 | c2.:maj7 |
-  a2.:m |
-  \time 2/4
-  f4 e4:7.9- |
-  \time 3/4
-  a2.:m | a2.:m |
+  \repeat volta 2{
+    a2.:m | g2.:6 | f2.:maj7 | bes2.:7.11+ |
+    a2.:m | c2.:7 | bes2.:maj7 | f2.:maj7 |
+    a2.:7 | b2.:m7 | c2.:maj7 | g2.:6 |
+    d2.:m7 | d2.:m7 | c2.:maj7 | c2.:maj7 |
+    a2.:m |
+    \time 2/4
+    f4 e4:7.9- |
+    \time 3/4
+    a2.:m | a2.:m |
+  }
+}
+% }}}
+
+% PARTE B {{{
+temaB = {
+  \repeat volta 2{
+    \time 3/4
+    a8^\markup{ \italic {straight feel} }
+    a4 c4. | a8 a4 g4. |
+    r4 d'8 e d e | 
+    \time 2/4 c8 c a4 |
+    \time 3/4
+    a8 a4 c4. | a8 a g2 |
+    e8 e4 g4. | e8 e d2 |
+  }
+}
+
+accordiB = \chordmode{
+  \set chordChanges = ##t
+  \repeat volta 2{
+    \time 3/4
+    a2.:m7 | a2.:m7 |
+    f2.:maj7 |
+    \time 2/4 f2:maj7 |
+    \time 3/4
+    a2.:m7 | a2.:m7 |
+    g2.:6 | g2.:6 |
+  }
+}
+% }}}
+
+% PARTE Bdue {{{
+temaBdue = {
+  \repeat volta 2{
+    \time 3/4
+    a'8^\markup{ \italic {swing feel} }
+    a4 c4. | a8 a4 g4. |
+    r4 d'8 e d e | 
+    \time 2/4 c8 c a4 |
+    \time 4/4
+    a8 a4 c4. a8 a |
+    \time 2/4
+    g2 |
+    \time 4/4
+    e8 e4 g4. e8 e |
+    \time 2/4
+    d2 |
+  }
+}
+
+accordiBdue = \chordmode{
+  \set chordChanges = ##t
+  \repeat volta 2{
+    a2.:m7 | a2.:m7 |
+    d2.:7 |
+    \time 2/4 d2:7 |
+    \time 4/4
+    a1:m7 | 
+    \time 2/4
+    a2:m7 |
+    \time 4/4
+    g1:6 | 
+    \time 2/4
+    g2:6 |
+  }
 }
 % }}}
 
 % CODA {{{
 temaCoda = {
-  a8 b c d e a |
+  \time 3/4
+  a'8 b c d e a |
   \time 1/4
   g f |
   \time 3/4
@@ -93,6 +164,7 @@ temaCoda = {
 
 accordiCoda = \chordmode{
   \set chordChanges = ##t
+  \time 3/4
   a2.:m7 | 
   \time 1/4
   g4:13 |
@@ -108,8 +180,14 @@ accordiCoda = \chordmode{
 % SCORE {{{
 tema = \relative c' {
   \global 
-  \tema
-  \bar"||"
+  \mark \default
+  \temaA
+  \break
+  \mark \default
+  \temaB
+  \break
+  \mark \markup{ \box \bold{B2} }
+  \temaBdue
   \break
   \mark \markup { \musicglyph #"scripts.coda"}
   \temaCoda
@@ -118,7 +196,9 @@ tema = \relative c' {
 
 chordsPart ={
   \new ChordNames {
-    \accordiTema
+    \accordiA
+    \accordiB
+    \accordiBdue
     \accordiCoda
   }
 }
@@ -141,7 +221,7 @@ temaPart = \new Staff \with {
     \midi {
       \context {
         \Score
-        tempoWholesPerMinute = #(ly:make-moment 80 4)
+        tempoWholesPerMinute = #(ly:make-moment 120 4)
       }
     }
   }
