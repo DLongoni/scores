@@ -229,6 +229,7 @@ bassPart = \new Staff \with {
     <<
       \transpose c d { \chordsPart }
       \transpose c d { \temaPart}
+      \transpose c d { \bassPart}
     >>
     \layout {
       indent = #0
