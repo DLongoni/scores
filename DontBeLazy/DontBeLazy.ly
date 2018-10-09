@@ -39,13 +39,27 @@ toCoda = {
   \once \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
   \mark \markup { { \lower #1 "al  " { \musicglyph #"scripts.coda"} } } 
 }
+
+\layout {
+  \context { 
+    \Staff \RemoveEmptyStaves 
+  }
+}
+
+struttura = \markup {
+  \column {
+    \line {
+      \bold{B}, \bold{A}, \bold{B}, \bold{A}, Soli, \bold{C}, \bold{B}, \bold{A}, \bold{C}, Colda
+    }
+  }
+}
 %}}}
 
 % PARTE A {{{
 temaA = {
   \repeat volta 2 {
     \time 2/4
-    d,8. g16~ g4. d'4 c8 | f16 f r16 f f8 g d4 r4 |
+    d,8. g16~ g4~ g8 d'4 c8 | f16 f r16 f f8 g d4 r4 |
     r4 c8 ees bes8. g16 r4 | c16 c r c c8 ees bes8. g16 r4 |
     r4 c8 d a8. g16 r4 | 
     \time 3/4
@@ -150,6 +164,53 @@ accordiC = \chordmode{
 }
 % }}}
 
+% PARTE Soli {{{
+temaSoli = {  
+  \repeat volta 2 {
+    \mark "Soli"
+    s1 | s1 | s1 |
+  }
+  \alternative{ {s1|} {s1|} }
+}
+
+bassoSoli = {
+  \repeat volta 2 {
+    c8 r ees f g r c, r | ees f g r d g r4 |
+    c,8 r ees g f r c r | 
+  }
+  \alternative{
+    {r4 ees8 r8 c8 r8 r4 |}
+    {c8 c' cis, cis' d,4 a |}
+  }
+}
+
+accordiSoli = \chordmode{
+  \repeat volta 2 {
+    c2:m7 g2:m9 |c2:m7 g2:m9 | c2:m7 f2:9 | 
+  }
+  \alternative{
+    {c2:m7 f2:9 |}
+    {c4:m7 cis4:dim7 d2:7.9+|}
+  }
+}
+% }}}
+
+% PARTE Coda {{{
+temaCoda = {
+    \mark "Coda"
+    f16 g f d f g bes c d c d c~ c8 bes8\fermata |
+    a2 |
+}
+
+bassoCoda = {
+    g,2 d'8. d16 r8 bes8 | a2 |
+}
+
+accordiCoda = \chordmode{
+    g2:m7 d4.:m7 a8:dim7 | g2:m9 |
+}
+% }}}
+
 % SCORE {{{
 tema = \relative c' {
   \global 
@@ -165,6 +226,10 @@ tema = \relative c' {
   \break
   \mark \default
   \temaC
+  \break
+  \temaSoli
+  \break
+  \temaCoda
 }
 
 basso = \relative c {
@@ -172,6 +237,8 @@ basso = \relative c {
   \bassoA
   \bassoB
   \bassoC
+  \bassoSoli
+  \bassoCoda
 }
 
 chordsPart = \new ChordNames \with {
@@ -180,23 +247,28 @@ chordsPart = \new ChordNames \with {
   \accordiA
   \accordiB
   \accordiC
+  \accordiSoli
+  \accordiCoda
 }
 
 
 temaPart = \new Staff \with {
-  instrumentName = ""
+  instrumentName = "T"
+  shortInstrumentName = "T"
   midiInstrument = "trumpet"
   
 } { \clef "treble_8" \tema }
 
 bassPart = \new Staff \with {
-  instrumentName = ""
+  instrumentName = "B"
+  shortInstrumentName = "B"
   midiInstrument = "contrabass"
   midiMaximumVolume = #0.8
 } { \clef bass \basso }
 
 \book{
-  \bookOutputSuffix "Score"
+  \struttura
+  \bookOutputSuffix "C"
   \score {
     <<
       \chordsPart
@@ -224,6 +296,7 @@ bassPart = \new Staff \with {
 }
 
 \book{
+  \struttura
   \bookOutputSuffix "Bb"
   \score {
     <<

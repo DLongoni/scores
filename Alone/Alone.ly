@@ -46,32 +46,114 @@ fakeBar = {
 }
 %}}}
 
+% {{{ PARTE Intro
+  temaIntro = {
+    \repeat volta 3{
+      r4 bes'4 a bes8 a g~ | g4 g fis g8 fis e~ | e4 e d e8 d bes~ | bes2 r4 r4. | r2. r4. |
+    }
+    r4 bes4 a bes8 a g~ | g4 g fis g8 fis e~ | e4 e d e8 d bes~ | bes2 r4 r4. | r2. r4. |
+    bes'8 a bes a g fis g fis e | c2.~ c4. | r2. r4. |
+    \repeat volta 2{ s2. s4. | s2. s4. | s2. s4. | s2. s4. |}
+  }
+
+  ritmicaUnoIntro = {
+    \repeat volta 3{
+      c,8 r8 r2 c4. | c8 r8 r2 c4. | c8 r8 r2 c4. | c8 r8 r2 c4. | c8 r8 r2 c4. |
+    }
+    c8 r8 r2 c4. | c8 r8 r2 c4. | c8 r8 r2 c4. | c8 r8 r2 c4. | c8 r8 r2 c4. |
+    d'8 c d c bes a bes a g | e2.~ e4. | r2. r4. |
+    \repeat volta 2{ c'4 c c c8 c c | bes4 bes bes bes8 bes bes | a4 a a a8 a a | bes4 bes bes bes8 bes bes | }
+  }
+
+  ritmicaDueIntro = {
+    \repeat volta 3{
+      c,4 c'2 r4 g8 | c,4 c'2 r4 g8 | c,4 c'2 r4 g8 | c,4 c'2 r4 g8 | c,4 c'2 r4 g8 |
+    }
+    c,4 c'2 r4 g8 | c,4 c'2 r4 g8 | c,4 c'2 r4 g8 | c,4 c'2 r4 g8 | c,4 c'2 r4 g8 |
+    s2. s4. | c4 c c c8 c c | c4 c c c8 c c |
+    \repeat volta 2{ g4 g g g8 g g | g4 g g g8 g g | g4 g g g8 g g | g4 g g g8 g g | }
+  }
+
+  accordiIntro = \chordmode{
+    \repeat volta 3{ s2. s4. | s2. s4. | s2. s4. | s2. s4. | s2. s4. |}
+   s2. s4. | s2. s4. | s2. s4. | s2. s4. | s2. s4. |
+   s2. s4. | c2.:7 c4.:7 | c2.:7 c4.:7 | 
+   \repeat volta 2{c2.:7 c4.:7 | c2.:7/bes c4.:7/bes | c2.:7/a c4.:7/a | c2.:7/g c4.:7/g | }
+  }
+% }}}
+
 % {{{ PARTE A
   temaA = {
-    r8 f c f a4 g8 e c | f d d2 e8 c a | d bes bes2 c8 a f | a e'16 f e2~ e4. | \break
-    r8 bes f bes d4 c8 a f | g4 bes8 g bes g a4 cis8 | d4 e8 d e d a4.~ | a2. r4. | \break
+    r8 f' c f a4 g8 e c | f d d2 e8 c a | d bes bes2 c8 a f | a e'16 f e2~ e4. | \break
+    r8 bes f bes d4 c8 a f | g4 bes8 g bes g a4 cis8 | e4 e8 d a4~ a4.~ | a2. r4. | \break
     r8 f' c f a4 g8 e c | f d d2 e8 c a | d bes bes2 c8 a f | a e'16 f e2~ e4. | \break
     r8 bes f bes d4 c8 a f | g4 bes8 a bes a g4 d'8 | f2. r4. | r2. r4. |
   }
 
   accordiA = \chordmode{
       f2.:maj7 c4.:7 | d2.:m7 a4.:m7 | bes2.:maj7 f4.:maj7 | a1*9/8:m7 |
-      bes2.:maj7 f4.:maj7 | g2.:m7 a4.:7 | d1*9/8:m9 | d2.:m9 c4.:13 |
+      bes2.:maj7 f4.:maj7 | g2.:m7 a4.:7 | d1*9/8:m9 | des2.:7.9+ c4.:13 |
       f2.:maj7 c4.:7 | d2.:m7 a4.:m7 | bes2.:maj7 f4.:maj7 | a1*9/8:m7 |
       bes2.:maj7 f4.:maj7 | g2.:m7 c4.:9 | f1*9/8:maj7 | f1*9/8:maj7 |
   }
 % }}}
 
+% {{{ PARTE B
+  temaB = {
+    \repeat volta 2 {
+      f4 f a g e8 | c2. e8 d c | d4 d f e d8 | a2. r4. |
+    }
+  }
+
+  accordiB = \chordmode{
+    \repeat volta 2 {
+      d2.:m7 c4.:6 | c2.:6 c4.:6 | bes2.:maj7 c4.:7 | f2.:maj7 f4.:maj7 |
+    }
+  }
+% }}}
+
+% {{{ PARTE Soli
+  temaSoli = {
+    \repeat volta 2 {
+      s2. s4. | s2. s4. | s2. s4. | s2. s4. |
+    }
+  }
+
+  accordiSoli = \chordmode{
+    \repeat volta 2 {
+      d2.:m7 d4.:m7 | c2.:6 c4.:6 | bes2.:maj7 c4.:7 | f2.:maj7 f4.:maj7 |
+    }
+  }
+% }}}
+
 % SCORE {{{
 tema = \relative c' {
+  \mark "Intro"
+  \temaIntro
+  \break
   \mark \default
-  \temaA \break \bar "|."
+  \temaA \break 
+  \mark \default
+  \temaB \break 
+  \mark "Soli"
+  \temaSoli \bar "|."
+}
+
+ritmicaUno = \relative c' {
+  \ritmicaUnoIntro
+}
+
+ritmicaDue = \relative c' {
+  \ritmicaDueIntro
 }
 
 chordsPart ={
   \new ChordNames {
     \set chordChanges = ##t
+    \accordiIntro
     \accordiA
+    \accordiB
+    \accordiSoli
   }
 }
 
@@ -80,9 +162,21 @@ temaPart = \new Staff \with {
   midiInstrument = "piano"
 } { \clef "treble_8" \global \tema }
 
+ritmicaUnoPart = \new Staff \with {
+  instrumentName = ""
+  midiInstrument = "piano"
+} { \clef "treble_8" \global \ritmicaUno }
+
+ritmicaDuePart = \new Staff \with {
+  instrumentName = ""
+  midiInstrument = "piano"
+} { \clef "treble_8" \global \ritmicaDue }
+
 scoreContent = << 
   \chordsPart
   \temaPart
+  \ritmicaUnoPart
+  \ritmicaDuePart
 >>
 %}}}
 
@@ -99,5 +193,15 @@ scoreContent = <<
   \book{
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }
+  }
+  
+  \book{
+    \bookOutputSuffix "C2"
+    \score { \transpose c f {\scoreContent} }
+  }
+  
+  \book{
+    \bookOutputSuffix "Bes2"
+    \score { \transpose c g {\scoreContent} }
   }
 % }}}
