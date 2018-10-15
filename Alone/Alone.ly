@@ -102,12 +102,43 @@ fakeBar = {
   temaB = {
     \repeat volta 2 {
       f4 f a g e8 | c2. e8 d c | d4 d f e d8 | a2. r4. |
+      g4 g bes a f8 | e2. d8 c bes | c2.~ c4. | r2. r4. |
     }
   }
 
   accordiB = \chordmode{
     \repeat volta 2 {
-      d2.:m7 c4.:6 | c2.:6 c4.:6 | bes2.:maj7 c4.:7 | f2.:maj7 f4.:maj7 |
+      d2.:m7 d4.:m7 | c2.:6 c4.:6 | bes2.:maj7 c4.:7 | f2.:maj7 f4.:maj7 |
+      g'2.:m7 g4.:m7 | c2.:6 c4.:6 | a2.:m7 a4.:m7 | a2.:m7 a4.:m7 |
+    }
+  }
+% }}}
+
+% {{{ PARTE C
+  temaC = {
+    \repeat volta 2 {
+      g''8 c, bes'16 a g f g4 e d8 | fis16 e d c bes8 d e16 fis e d fis4 e8 |
+    }
+  }
+
+  accordiC = \chordmode{
+    \repeat volta 2 {
+      c2.:7 c4.:7 | c2.:7 c4.:7 |
+    }
+  }
+% }}}
+
+% {{{ PARTE D
+  temaD = {
+    \repeat volta 2 {
+      a,8 d, bes'16 a g f g4 e d8 | f16 e d cis bes8 cis d16 cis bes a g4 a8 |
+
+    }
+  }
+
+  accordiD = \chordmode{
+    \repeat volta 2 {
+      d2.:m a4.:7 | d2:m a4:7 a4.:7 |
     }
   }
 % }}}
@@ -135,6 +166,10 @@ tema = \relative c' {
   \temaA \break 
   \mark \default
   \temaB \break 
+  \mark \default
+  \temaC \break 
+  \mark \default
+  \temaD \break 
   \mark "Soli"
   \temaSoli \bar "|."
 }
@@ -153,6 +188,8 @@ chordsPart ={
     \accordiIntro
     \accordiA
     \accordiB
+    \accordiC
+    \accordiD
     \accordiSoli
   }
 }
