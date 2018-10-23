@@ -44,6 +44,15 @@ fakeBar = {
   \once \omit Score.TimeSignature
   \myTime
 }
+
+struttura = \markup {
+  \column {
+      \line {
+        \bold{Intro}, \bold{Bridge}, \bold{A}, \bold{B}, \bold{A}, \bold{Solo}-Intro, \bold{Bridge}, \bold{C}, \bold{Solo}-Vamp, \bold{A}
+        \bold{D}, \bold{B}, \bold{A}, \bold{Coda}
+    }
+  }
+}
 %}}}
 
 % {{{ PARTE Intro
@@ -51,8 +60,10 @@ fakeBar = {
     \repeat volta 3{
       r4 bes'4 a bes8 a g~ | g4 g fis g8 fis e~ | e4 e d e8 d bes~ | bes2 r4 r4. | r2. r4. |
     }
-    r4 bes4 a bes8 a g~ | g4 g fis g8 fis e~ | e4 e d e8 d bes~ | bes2 r4 r4. | r2. r4. |
-    bes'8 a bes a g fis g fis e | c2.~ c4. | r2. r4. |
+    r4 bes4 a bes8 a g~ | g4 g fis g8 fis e~ | e4 e d e8 d bes~ | bes2 r4 r4. | r2. r4. | \break
+    \mark "Bridge"
+    bes'8 a bes a g fis g fis e | c2.~ c4. | r2. r4. | \break
+    \mark "Vamp"
     \repeat volta 2{ s2. s4. | s2. s4. | s2. s4. | s2. s4. |}
   }
 
@@ -86,8 +97,8 @@ fakeBar = {
   temaA = {
     r8 f' c f a4 g8 e c | f d d2 e8 c a | d bes bes2 c8 a f | a e'16 f e2~ e4. | \break
     r8 bes f bes d4 c8 a f | g4 bes8 g bes g a4 cis8 | e4 e8 d a4~ a4.~ | a2. r4. | \break
-    r8 f' c f a4 g8 e c | f d d2 e8 c a | d bes bes2 c8 a f | a e'16 f e2~ e4. | \break
-    r8 bes f bes d4 c8 a f | g4 bes8 a bes a g4 d'8 | f2. r4. | r2. r4. |
+    r8 f' c f a4 g8 e c | f d d2 e8 c a | d bes bes2 c8 a f | a e'16 f e2~ e4.^"(al Coda)" | \break
+    r8 bes f bes d4 c8 a f | g4 bes8 a bes a g4 d'8^"(Soli su Intro)" | f2. r4. | r2. r4. | \bar "||"
   }
 
   accordiA = \chordmode{
@@ -100,16 +111,18 @@ fakeBar = {
 
 % {{{ PARTE B
   temaB = {
+    \fakeBar
     \repeat volta 2 {
       f4 f a g e8 | c2. e8 d c | d4 d f e d8 | a2. r4. |
-      g4 g bes a f8 | e2. d8 c bes | c2.~ c4. | r2. r4. |
+      g'4 g bes a f8 | e2. d8 c bes | c2.~ c4. | r2. r4. |
     }
   }
 
   accordiB = \chordmode{
+    \fakeBar
     \repeat volta 2 {
       d2.:m7 d4.:m7 | c2.:6 c4.:6 | bes2.:maj7 c4.:7 | f2.:maj7 f4.:maj7 |
-      g'2.:m7 g4.:m7 | c2.:6 c4.:6 | a2.:m7 a4.:m7 | a2.:m7 a4.:m7 |
+      g2.:m7 g4.:m7 | c2.:6 c4.:6 | a2.:m7 a4.:m7 | a2.:m7 a4.:m7 |
     }
   }
 % }}}
@@ -117,7 +130,7 @@ fakeBar = {
 % {{{ PARTE C
   temaC = {
     \repeat volta 2 {
-      g''8 c, bes'16 a g f g4 e d8 | fis16 e d c bes8 d e16 fis e d fis4 e8 |
+      g8 c, bes'16 a g f g4 e d8 | fis16 e d c bes8 d e16 fis e d fis4 e8 |
     }
   }
 
@@ -131,7 +144,7 @@ fakeBar = {
 % {{{ PARTE D
   temaD = {
     \repeat volta 2 {
-      a,8 d, bes'16 a g f g4 e d8 | f16 e d cis bes8 cis d16 cis bes a g4 a8 |
+      a8 d, bes'16 a g f g4 e d8 | f16 e d cis bes8 cis d16 cis bes a g4^"Stop" a8 |
 
     }
   }
@@ -157,11 +170,24 @@ fakeBar = {
   }
 % }}}
 
+% {{{ PARTE Coda
+  temaCoda = {
+    r8 bes' f bes d4 c8 a f | g4 bes8 a g4~ g4.~ | g2. r4. | \break
+    r8 bes f bes d4 c8 a f | g4 bes8 a bes a g4 d'8 | f2. r4. | r2. r4. |
+  }
+
+  accordiCoda = \chordmode{
+      bes2.:maj7 f4.:maj7 | ees2.:maj9 ees4.:maj9 | ees2.:maj9 d4.:7 |
+      c2.:m7 d4.:7 | g2.:m7 c4.:9 | f1*9/8:maj7 | f1*9/8:maj7 |
+  }
+% }}}
+
 % SCORE {{{
 tema = \relative c' {
   \mark "Intro"
   \temaIntro
   \break
+  \pageBreak
   \mark \default
   \temaA \break 
   \mark \default
@@ -170,8 +196,10 @@ tema = \relative c' {
   \temaC \break 
   \mark \default
   \temaD \break 
-  \mark "Soli"
-  \temaSoli \bar "|."
+  % \mark "Soli"
+  % \temaSoli \break
+  \mark "Coda"
+  \temaCoda \bar "|."
 }
 
 ritmicaUno = \relative c' {
@@ -190,7 +218,8 @@ chordsPart ={
     \accordiB
     \accordiC
     \accordiD
-    \accordiSoli
+    % \accordiSoli
+    \accordiCoda
   }
 }
 
@@ -219,6 +248,7 @@ scoreContent = <<
 
 % {{{ BOOKS
   \book{
+    \struttura
     \bookOutputSuffix "C"
     \score {
       \scoreContent
@@ -228,16 +258,19 @@ scoreContent = <<
   }
 
   \book{
+    \struttura
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }
   }
   
   \book{
+    \struttura
     \bookOutputSuffix "C2"
     \score { \transpose c f {\scoreContent} }
   }
   
   \book{
+    \struttura
     \bookOutputSuffix "Bes2"
     \score { \transpose c g {\scoreContent} }
   }
