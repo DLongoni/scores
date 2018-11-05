@@ -52,8 +52,8 @@ toCoda = {
 % PARTE A {{{
 temaA = {
   \repeat volta 2{
-    a8^\markup{ \italic {swing feel} } b c d e a | g e b a b a | e'4 d4. c8 | d4 c d | \break
-    a8 b c d e a | g e c a c a | e' f8~ f4 c8 g | a2. | \break
+    a8^\markup{ \italic {swing feel} } b c d e a | g e b a b a | e'4 d4. c8 | d4 c e | \break
+    a,8 b c d e a | g e c a c a | e' f8~ f8 c8~ c8 g | a2. | \break
     e'4.\< a | fis d | c\! e\> | d b\! | \break
     a8 c \tuplet 3/2 {b c d} e4 | d8 f \tuplet 3/2 {e f g} a4 | e2.~ | e 2.| \toCoda \break
     a,8 b c d e a | \time 2/4 g e g e | \time 3/4 a,4 r2 | r2. |
@@ -62,8 +62,8 @@ temaA = {
 
 temaAseconda = {
   \repeat volta 2{
-    r4 g'8 a~ a c | b2. | b4 a2 | r2. |
-    r4 g8 a~ a c~ | c4 bes a | g8 a~ a e~ e g | e2. |
+    r4 e8 a~ a c | b2. | b4 a2 | r2. |
+    r4 e8 a~ a c~ | c4 g a | g8 a~ a e~ e g | e2. |
     a,4. cis4. | b fis | g a | b2. |
     r2. | r2. | r2. | r2. |
     c8 d e f g c | \time 2/4 b a b g | \time 3/4 e4 r2 | r2. |
@@ -74,7 +74,7 @@ percA = {
   \repeat volta 2{
     c4^\markup { \italic {swing} } c8 c r8 c | c4 c8 c r8 c | c4 c8 c r8 c | c4 c8 c r8 c |
     c4 c8 c r8 c | c4 c8 c r8 c | c4 c8 c r8 c | \tuplet 3/2 {c c c} \tuplet 3/2 {c c c} c4 |
-    c8^\markup{ \italic {straight feel} } c c c r4  | c8 c c c r4  | c8 c c c r4  | c8 c c c r4  | 
+    c4.^\markup{ \italic {straight feel} } c | c c | c2. | c2 r8 c8 | 
     c8^\markup{ \italic {swing} } c r c r c | c8 c r c r c | c4 c8 c r8 c | c4 c8 c r8 c |
     c4 c8 c r8 c | \time 2/4 c4 c | c8 c \tuplet 3/2 {c c c} c8 c | c4 r4 r8 c8 |
   }
@@ -91,10 +91,10 @@ silenzioA = {
 accordiA = \chordmode{
   \set chordChanges = ##t
   \repeat volta 2{
-    a2.:m | g2.:6 | f2.:maj7 | bes2.:7.11+ |
+    a2.:m | g2.:13 f2.:maj7 | bes2.:7.11+ |
     a2.:m | c2.:7 | bes2.:maj7 | f2.:maj7 |
     a2.:7 | b2.:m7 | c2.:maj7 | g2.:6 |
-    d2.:m7 | d2.:m7 | c2.:maj7 | c2.:maj7 |
+    d2.:m7 | d2:m7 d4:m7/a | c2.:maj7 | c2.:maj7/b |
     a2.:m |
     \time 2/4
     f4 e4:7.9- |
@@ -115,7 +115,7 @@ temaB = {
 temaBseconda = {
   \repeat volta 2{
     \time 3/4 c8 c4 e4. | c8 c4 b4. | r4 b8 c b c | \time 2/4 e e c4 |
-    \time 3/4 c8 c4 e4. | c8 c b2 | a8 a4 c4. | g8 g e2 |
+    \time 3/4 c8 c4 e4. | c8 c b2 | g8 g4 b4. | g8 g a2 |
   }
 }
 
@@ -178,7 +178,7 @@ temaCoda = {
 }
 
 temaCodaseconda = {
-  \time 4/4 c'8 d e f g c b g | \time 3/4 a,4. c | b g | aes c | g aes | \break
+  \time 4/4 c8 d e f g c b g | \time 3/4 a,4. c | b g | aes c | g aes | \break
   c8 d ees f g c | \time 2/4 bes g bes g | c,2 |
 }
 
