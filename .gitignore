@@ -1,6 +1,8 @@
+.ropeproject
 *.pdf
 *.ps
 *.midi
 *.mid
 *.log
+*.swp
 *~
