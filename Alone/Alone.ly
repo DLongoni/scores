@@ -1,6 +1,6 @@
 % {{{ PARAMETRI
   myTitle = "Alone in a sleeping city"
-  myKey = \key f \major
+  myKey = \key bes \major
   myTime = \time #'(2 2 2 3) 9/8
   myTempo =  #(ly:make-moment 100 4)
 % }}}
@@ -44,6 +44,13 @@ fakeBar = {
   \once \omit Score.TimeSignature
   \myTime
 }
+\paper{
+  system-system-spacing =
+    #'((basic-distance . -1) 
+       (minimum-distance . -1)
+       (padding . -1)
+       (stretchability . 60)) 
+}
 
 struttura = \markup {
   \column {
@@ -58,54 +65,68 @@ struttura = \markup {
 % {{{ PARTE Intro
   temaIntro = {
     \repeat volta 3{
-      r4 bes'4 a bes8 a g~ | g4 g fis g8 fis e~ | e4 e d e8 d bes~ | bes2 r4 r4. | r2. r4. |
+      r4 es'4 d es8 d c~ | c4 c b c8 b a~ | a4 a g a8 g es~ | es2 r4 r4. | r2. r4. |
     }
-    r4 bes4 a bes8 a g~ | g4 g fis g8 fis e~ | e4 e d e8 d bes~ | bes2 r4 r4. | r2. r4. | \break
+    r4 es4 d es8 d c~ | c4 c b c8 b a~ | a4 a g a8 g es~ | es2 r4 r4. | r2. r4. | \break
     \mark "Bridge"
-    bes'8 a bes a g fis g fis e | c2.~ c4. | r2. r4. | \break
+    es'8 d es d c b c b a | f2.~ f4. | r2. r4. | \break
     \mark "Vamp"
     \repeat volta 2{ s2. s4. | s2. s4. | s2. s4. | s2. s4. |}
   }
 
   ritmicaUnoIntro = {
     \repeat volta 3{
-      c,8 r8 r2 c4. | c8 r8 r2 c4. | c8 r8 r2 c4. | c8 r8 r2 c4. | c8 r8 r2 c4. |
+      f,8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. |
     }
-    c8 r8 r2 c4. | c8 r8 r2 c4. | c8 r8 r2 c4. | c8 r8 r2 c4. | c8 r8 r2 c4. |
-    d'8 c d c bes a bes a g | e2.~ e4. | r2. r4. |
-    \repeat volta 2{ c'4 c c c8 c c | bes4 bes bes bes8 bes bes | a4 a a a8 a a | bes4 bes bes bes8 bes bes | }
+    f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. |
+    g'8 f g f es d es d c | a2.~ a4. | r2. r4. |
+    \repeat volta 2{ f4 f f f8 f f | es4 es es es8 es es | d4 d d d8 d d | es4 es es es8 es es | }
   }
 
   ritmicaDueIntro = {
     \repeat volta 3{
-      c,4 c'2 r4 g8 | c,4 c'2 r4 g8 | c,4 c'2 r4 g8 | c,4 c'2 r4 g8 | c,4 c'2 r4 g8 |
+      f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 |
     }
-    c,4 c'2 r4 g8 | c,4 c'2 r4 g8 | c,4 c'2 r4 g8 | c,4 c'2 r4 g8 | c,4 c'2 r4 g8 |
-    s2. s4. | c4 c c c8 c c | c4 c c c8 c c |
-    \repeat volta 2{ g4 g g g8 g g | g4 g g g8 g g | g4 g g g8 g g | g4 g g g8 g g | }
+     f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 |
+    s2. s4. | f4 f f f8 f f | f4 f f f8 f f |
+    \repeat volta 2{ c4 c c c8 c c | c4 c c c8 c c | c4 c c c8 c c | c4 c c c8 c c | }
   }
 
   accordiIntro = \chordmode{
     \repeat volta 3{ s2. s4. | s2. s4. | s2. s4. | s2. s4. | s2. s4. |}
    s2. s4. | s2. s4. | s2. s4. | s2. s4. | s2. s4. |
-   s2. s4. | c2.:7 c4.:7 | c2.:7 c4.:7 | 
-   \repeat volta 2{c2.:7 c4.:7 | c2.:7/bes c4.:7/bes | c2.:7/a c4.:7/a | c2.:7/g c4.:7/g | }
+   s2. s4. | f2.:7 f4.:7 | f2.:7 f4.:7 | 
+   \repeat volta 2{f2.:7 f4.:7 | f2.:7/es f4.:7/es | f2.:7/d f4.:7/d | f2.:7/c f4.:7/c | }
   }
 % }}}
 
 % {{{ PARTE A
   temaA = {
-    r8 f' c f a4 g8 e c | f d d2 e8 c a | d bes bes2 c8 a f | a e'16 f e2~ e4. | \break
-    r8 bes f bes d4 c8 a f | g4 bes8 g bes g a4 cis8 | e4 e8 d a4~ a4.~ | a2. r4. | \break
-    r8 f' c f a4 g8 e c | f d d2 e8 c a | d bes bes2 c8 a f | a e'16 f e2~ e4.^"(al Coda)" | \break
-    r8 bes f bes d4 c8 a f | g4 bes8 a bes a g4 d'8^"(Soli su Intro)" | f2. r4. | r2. r4. | \bar "||"
+    r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4. | \break
+    r8 es bes es g4 f8 d bes | c4 es8 c es c d4 fis8 | a4 a8 g d4~ d4.~ | d2. r4. | \break
+    r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4.^"(al Coda)" | \break
+    r8 es bes es g4 f8 d bes | c4 es8 d es d c4 g'8^"(Soli su Intro)" | bes2. r4. | \bar "||"
+  }
+
+  temaAbis = {
+    r8 f' d f bes4 a8 f d | bes2. f'8 d bes | g2. d'8 bes g | a d f2~ f4. | 
+    r8 bes, g bes ees4 d8 bes f | g4 c8 r c r a4 c8 | d2.~ d4.~ | d2. r4. | 
+    r8 f d f bes4 a8 f d | bes2. f'8 d bes | g2. d'8 bes g | a d f2~ f4. |
+    r8 bes, g bes ees4 d8 bes f | g2. f4. | d2.~ d4. |
+  }
+
+  temaAtris = {
+    d'2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
+    g2.~ g4. | d4 g8 r g r fis4 a8 | bes2.~ bes4.~ | bes2. r4. |
+    d,2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
+    g2.~ g4. | ees4 g8 r g r f ees d | bes2. r4. |
   }
 
   accordiA = \chordmode{
-      f2.:maj7 c4.:7 | d2.:m7 a4.:m7 | bes2.:maj7 f4.:maj7 | a1*9/8:m7 |
-      bes2.:maj7 f4.:maj7 | g2.:m7 a4.:7 | d1*9/8:m9 | des2.:7.9+ c4.:13 |
-      f2.:maj7 c4.:7 | d2.:m7 a4.:m7 | bes2.:maj7 f4.:maj7 | a1*9/8:m7 |
-      bes2.:maj7 f4.:maj7 | g2.:m7 c4.:9 | f1*9/8:maj7 | f1*9/8:maj7 |
+      bes2.:maj7 f4.:7 | g2.:m7 d4.:m7 | es2.:maj7 bes4.:maj7 | d1*9/8:m7 |
+      es2.:maj7 bes4.:maj7 | c2.:m7 d4.:7 | g1*9/8:m9 | ges2.:7.9+ f4.:13 |
+      bes2.:maj7 f4.:7 | g2.:m7 d4.:m7 | es2.:maj7 bes4.:maj7 | d1*9/8:m7 |
+      es2.:maj7 bes4.:maj7 | c2.:m7 f4.:9 | bes1*9/8:maj7 |
   }
 % }}}
 
@@ -113,16 +134,16 @@ struttura = \markup {
   temaB = {
     \fakeBar
     \repeat volta 2 {
-      f4 f a g e8 | c2. e8 d c | d4 d f e d8 | a2. r4. |
-      g'4 g bes a f8 | e2. d8 c bes | c2.~ c4. | r2. r4. |
+      bes4 bes d c a8 | f2. a8 g f | g4 g bes a g8 | d2. r4. |
+      c'4 c es d bes8 | a2. g8 f es | f2.~ f4. | r2. r4. |
     }
   }
 
   accordiB = \chordmode{
     \fakeBar
     \repeat volta 2 {
-      d2.:m7 d4.:m7 | c2.:6 c4.:6 | bes2.:maj7 c4.:7 | f2.:maj7 f4.:maj7 |
-      g2.:m7 g4.:m7 | c2.:6 c4.:6 | a2.:m7 a4.:m7 | a2.:m7 a4.:m7 |
+      g2.:m7 g4.:m7 | f2.:6 f4.:6 | es2.:maj7 f4.:7 | bes2.:maj7 bes4.:maj7 |
+      c2.:m7 c4.:m7 | f2.:6 f4.:6 | d2.:m7 d4.:m7 | d2.:m7 d4.:m7 |
     }
   }
 % }}}
@@ -130,13 +151,13 @@ struttura = \markup {
 % {{{ PARTE C
   temaC = {
     \repeat volta 2 {
-      g8 c, bes'16 a g f g4 e d8 | fis16 e d c bes8 d e16 fis e d fis4 e8 |
+      c8 f, es'16 d c bes c4 a g8 | b16 a g f es8 g a16 b a g b4 a8 |
     }
   }
 
   accordiC = \chordmode{
     \repeat volta 2 {
-      c2.:7 c4.:7 | c2.:7 c4.:7 |
+      f2.:7 f4.:7 | f2.:7 f4.:7 |
     }
   }
 % }}}
@@ -144,28 +165,13 @@ struttura = \markup {
 % {{{ PARTE D
   temaD = {
     \repeat volta 2 {
-      a8 d, bes'16 a g f g4 e d8 | f16 e d cis bes8 cis d16 cis bes a g4^"Stop" a8 |
-
+      d8 g, ees'16 d c bes c4 a g8 | bes16 a g fis es8 fis g16 fis es d c4^"Stop" d8 |
     }
   }
 
   accordiD = \chordmode{
     \repeat volta 2 {
-      d2.:m a4.:7 | d2:m a4:7 a4.:7 |
-    }
-  }
-% }}}
-
-% {{{ PARTE Soli
-  temaSoli = {
-    \repeat volta 2 {
-      s2. s4. | s2. s4. | s2. s4. | s2. s4. |
-    }
-  }
-
-  accordiSoli = \chordmode{
-    \repeat volta 2 {
-      d2.:m7 d4.:m7 | c2.:6 c4.:6 | bes2.:maj7 c4.:7 | f2.:maj7 f4.:maj7 |
+      g2.:m d4.:7 | g2:m d4:7 d4.:7 |
     }
   }
 % }}}
@@ -195,15 +201,16 @@ tema = \relative c' {
   \mark \default
   \temaC \break 
   \mark \default
-  \temaD \break 
+  \temaD \bar "|."
   % \mark "Soli"
   % \temaSoli \break
-  \mark "Coda"
-  \temaCoda \bar "|."
+  % \mark "Coda"
+  % \temaCoda \bar "|."
 }
 
 ritmicaUno = \relative c' {
   \ritmicaUnoIntro
+  \temaAbis
 }
 
 ritmicaDue = \relative c' {
@@ -211,7 +218,7 @@ ritmicaDue = \relative c' {
 }
 
 chordsPart ={
-  \new ChordNames {
+  \new ChordNames \with{midiInstrument = "acoustic guitar (nylon)"}
     \set chordChanges = ##t
     \accordiIntro
     \accordiA
@@ -219,23 +226,24 @@ chordsPart ={
     \accordiC
     \accordiD
     % \accordiSoli
-    \accordiCoda
+    % \accordiCoda
   }
-}
 
 temaPart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "piano"
+  midiInstrument = "trumpet"
 } { \clef "treble_8" \global \tema }
 
 ritmicaUnoPart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "piano"
+  midiInstrument = "acoustic guitar (nylon)"
 } { \clef "treble_8" \global \ritmicaUno }
 
 ritmicaDuePart = \new Staff \with {
+  
+  \override VerticalAxisGroup.default-staff-staff-spacing =#'((basic-distance . 30))
   instrumentName = ""
-  midiInstrument = "piano"
+  midiInstrument = "acoustic guitar (nylon)"
 } { \clef "treble_8" \global \ritmicaDue }
 
 scoreContent = << 
@@ -261,17 +269,5 @@ scoreContent = <<
     \struttura
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }
-  }
-  
-  \book{
-    \struttura
-    \bookOutputSuffix "C2"
-    \score { \transpose c f {\scoreContent} }
-  }
-  
-  \book{
-    \struttura
-    \bookOutputSuffix "Bes2"
-    \score { \transpose c g {\scoreContent} }
   }
 % }}}
