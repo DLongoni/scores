@@ -66,7 +66,7 @@ temaAseconda = {
     r4 e8 a~ a c~ | c4 g a | g8 a~ a e~ e g | e2. |
     a,4. cis4. | b fis | g a | b2. |
     r2. | r2. | r2. | r2. |
-    c8 d e f g c | \time 2/4 b a b g | \time 3/4 e4 r2 | r2. |
+    r8 e~ e g~ g e | \time 2/4 c4 b | \time 3/4 c4 r2 | r2. |
   }
 }
 
