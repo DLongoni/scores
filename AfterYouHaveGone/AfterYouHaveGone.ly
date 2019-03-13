@@ -45,15 +45,20 @@ global = {
 
 % {{{ TEMA
   temaSolo = {
-    g'8. fis32 f32 e4 e b | b8 a g a~ a2 | g'8. \tuplet 3/2 16 {fis32 f32 e} ees4 ees c | c4 g8 a~ a2 |
-    r2 r8 a8 fis g | b d fis g b d e f | fis c cis e d b gis e | d b gis f e es d ees16 d |
-    cis8 e g4 b4~ b8 b8~ | b4 a8 g a b r4 | r8 c,8 ees fis bes c ees fis | a c ees fis b4 r4 |
-    r8 fis~ fis a~ a e g16 gis r8 | r8 e, f e' d c a f | e ees d r8 a' ais cis b | gis f cis b g f d c |
-    b8 c e g b c e g | b16 a b8~ b a a4 r4 | r8 a,, c ees g bes c ees | g a c ees d c b d |
-    b g d b \tuplet 3/2 {ais'8 b ais} \tuplet 3/2 {e8 a bes} | 
-    \tuplet 3/2 {a8 e gis} \tuplet 3/2 {a8 gis e,,} gis8 b d f | 
-    \tuplet 3/2 {gis8 b d e f gis f e d} c8 b | a g f e d c b a |
-    gis b a b c b a gis | b d f g e c b a | c a bes a c4 r4 |
+    g'8. fis32 f32 e4 e b | b8 a g a~ a2 | 
+    g'8. \tuplet 3/2 16 {fis32 f32 e} ees4 ees c | c4 g8 a~ a2 |
+    r2 r8 a8 fis g | b d fis g b d e f | 
+    fis c cis e d b gis e | d b gis f e es d ees16 d |
+    cis8 e g4 b4~ b8 b8~ | b4 a8 g a b r4 | 
+    r8 c,8 ees fis bes c ees fis | \ottava #1 a c ees fis b4 r4 |
+    r8 fis~ fis a~ a e g16 gis r8 | \ottava #0 r8 e, f e' d c a f | 
+    e ees d r8 a' ais cis b | gis f cis b g f d c |
+    b8 c e g b c e g | b16 a b8~ b a a4 r4 | 
+    r8 a,, c ees g bes c ees | g a c ees d c b d |
+    b g d b ais'16 b ais8 e a16 bes | a8 e gis16 a e,,8 gis8 b d f | 
+    \tuplet 3/2 {gis8 b d} \tuplet 3/2 {e f gis} \tuplet 3/2 {f e d} c8 b | a g f e d c b a |
+    gis b a b c b a gis | b d f g e c b a | 
+    c a bes a c4 r4 | r1 |
   }
 % }}}
 
@@ -76,7 +81,7 @@ chordsPart ={
   \new ChordNames {
     \set chordChanges = ##t
     \accordiA
-    \accordiA
+    % \accordiA
   }
 }
 
