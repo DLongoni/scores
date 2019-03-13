@@ -25,7 +25,7 @@
     }
   }
   evenFooterMarkup = \oddFooterMarkup
-  #(set-global-staff-size 10)
+  
   myStaffSize = #20
   fonts = #(make-pango-font-tree
   "FontAwesome"
@@ -40,6 +40,15 @@ global = {
   \myTime
   \set Score.markFormatter = #format-mark-box-alphabet
 }
+
+\paper{
+  system-system-spacing =
+    #'((basic-distance . 10) 
+       (minimum-distance . 5)
+       (padding . 5)
+       (stretchability . 60)) 
+}
+
 \layout { indent = #0 }
 %}}}
 
