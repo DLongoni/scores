@@ -55,15 +55,16 @@ global = {
     e ees d r8 a' ais cis b | gis f cis b g f d c |
     b8 c e g b c e g | b16 a b8~ b a a4 r4 | 
     r8 a,, c ees g bes c ees | g a c ees d c b d |
-    b g d b ais'16 b ais8 e a16 bes | a8 e gis16 a e,,8 gis8 b d f | 
-    \tuplet 3/2 {gis8 b d} \tuplet 3/2 {e f gis} \tuplet 3/2 {f e d} c8 b | a g f e d c b a |
-    gis b a b c b a gis | b d f g e c b a | 
-    c a bes a c4 r4 | r2 r8 b e fis |
-    g a b d e fis g a | b c d ees d c b a | 
-    g dis e fis g a bes b, | a' g fis e d16 e d8 b8 c |
-    d8 r r d e d b c | d8 r r d r d des c | 
-    b c e g ais b d4 | fis,8 d bes fis d b c e |
-    % gis errato?
+    b g d b ais'16 b ais8 e a16 bes | a8 e gis16 a gis8 e g16 gis g8 e,, |
+    gis b d f \tuplet 3/2 {gis8 b d} \tuplet 3/2 {e f gis} |
+    \tuplet 3/2 {f e d} c8 b a g f e |
+    d c b a gis b a b | c b a gis b d f g |
+    e c b a c a bes a | c4 r4 r2 |
+    r8 b e fis g a b d | e fis g a b c d ees |
+    d c b a g dis e fis | g a bes b, a' g fis e |
+    d16 e d8 b8 c d8 r r d | e d b c d8 r r d |
+    r d des c b c e g | ais b d4 fis,8 d bes fis |
+    d b c e g4 r4 | r1 | r1 | r1 | % non concludo perchè brutto
   }
 % }}}
 
