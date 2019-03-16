@@ -74,7 +74,8 @@ global = {
     a1:7 | a1:7 | d1:7 | d1:7 | g1 | g1 | g1:7 | g1:7 | \break
     c1 | c1: | c1:m | c1:m | g1 | g1 | e1:7 | e1:7 | \break
     a1:m | e1:7 | a1:m | c1:m | g1 | b1:7 | e1:m7 | a1:7 | \break
-    g1 | e1:7 | a1:m7 | d1:7 | g1 | g1 | g1:7 | g1:7 | \break
+    g1 | e1:7 | a1:m7 | d1:7 | \break
+    g1 | g1 | g1:7 | g1:7 | \break
   }
 % }}}
 
