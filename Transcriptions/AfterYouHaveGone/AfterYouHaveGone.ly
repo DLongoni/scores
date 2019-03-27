@@ -1,6 +1,6 @@
 % {{{ PARAMETRI
   myTitle = "After You Have Gone"
-  mySubTitle = "Birely Lagrene Solo"
+  mySubTitle = "Bireli Lagrene Solo"
   myKey = \key c \major
   myTime = \time 4/4 
   myTempo =  #(ly:make-moment 190 4)
