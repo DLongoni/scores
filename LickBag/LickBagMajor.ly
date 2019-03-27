@@ -1,5 +1,5 @@
 % {{{ PARAMETRI
-  myTitle = "Lick Bag - Minor"
+  myTitle = "Lick Bag - Major"
   myTempo =  #(ly:make-moment 190 4)
 % }}}
 

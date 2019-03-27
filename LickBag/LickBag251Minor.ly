@@ -76,7 +76,7 @@ global = {
   }
 
   lickA = \score {
-    \header{ piece="Mike Stern, Autumn Leaves"}
+    \header{ piece="1. Mike Stern, Autumn Leaves"}
     << 
         \relative c' {\temaA}
         \accordiA
@@ -100,7 +100,7 @@ global = {
   }
 
   lickB = \score {
-    \header{ piece="Bireli, 500 miles high"}
+    \header{ piece="2. Bireli, 500 miles high"}
     << 
         \relative c'' {\temaB}
         \accordiB
@@ -113,8 +113,8 @@ global = {
     \time 4/4
     \key c \major
     \partial 8 g8
-    gis b d f \tuplet 3/2 {gis8 b d} \tuplet 3/2 {e f gis} | \tuplet 3/2 {f e d} c8 b a g f e |
-    d4 r4 r2 |
+    gis b d f \tuplet 3/2 {gis8 b d} \tuplet 3/2 {e f gis} | \tuplet 3/2 {f e d} c8 b a g f d |
+    e8 c b a gis4 r4 |
   }
   
 
@@ -126,7 +126,7 @@ global = {
   }
 
   lickC = \score {
-    \header{ piece="Bireli, After You Have Gone"}
+    \header{ piece="3. Bireli, After You Have Gone"}
     << 
         \relative c' {\temaC}
         \accordiC
@@ -138,7 +138,7 @@ global = {
   temaD = {
     \time 4/4
     \key g \major
-    r8 b e fis g a b d | e fis g a b c d ees |
+    r8 b e fis g a b c | dis fis g a b c d ees |
     d c b a g4 r4 |
   }
   
@@ -150,7 +150,7 @@ global = {
   }
 
   lickD = \score {
-    \header{ piece="Bireli, After You Have Gone"}
+    \header{ piece="4. Bireli, After You Have Gone"}
     << 
         \relative c' {\temaD}
         \accordiD

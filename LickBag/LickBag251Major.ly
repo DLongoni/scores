@@ -70,7 +70,7 @@ global = {
 
   accordiA = \new ChordNames{ 
     \chordmode{
-      d1:m7.5- | g1:13 | c1:maj7 | \bar "|."
+      d1:m7 | g1:13 | c1:maj7 | \bar "|."
     }
   }
 
@@ -94,7 +94,7 @@ global = {
 
   accordiB = \new ChordNames{ 
     \chordmode{
-      \partial 4. r4. |
+      \partial 4. s4. |
       e1:7 | e1:7 | a1 | \bar "|."
     }
   }
@@ -158,12 +158,14 @@ global = {
   temaE = {
     \time 4/4
     \key g \major
-    r8 d des c b c e g | ais b d4 fis,8 d bes fis | d b c e g4 r4 | 
+    \partial 4. d des c |
+    b c e g ais b d4 | fis,8 d bes fis d b c e | g4 r4 r2 | 
   }
   
 
   accordiE = \new ChordNames{ 
     \chordmode{
+      \partial 4. s4. |
       a1:m7 | d1:7 | g1 | \bar "|."
     }
   }
