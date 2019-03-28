@@ -158,7 +158,7 @@ global = {
   temaE = {
     \time 4/4
     \key g \major
-    \partial 4. d des c |
+    \partial 4. d8 des c |
     b c e g ais b d4 | fis,8 d bes fis d b c e | g4 r4 r2 | 
   }
   
