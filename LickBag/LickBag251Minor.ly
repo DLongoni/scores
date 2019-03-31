@@ -88,8 +88,9 @@ global = {
   temaB = {
     \time 4/4
     \key c \major
-    r8. f16 e'8 d16 a16~ a16 f8 g16~ g16 f8 aes16 | g16 f e d c aes g e f d e f a c e a, |
-    b d c e, r4 r2 |
+    r8. f16\1 e'8\4 \glissando d16\4 a16~\1 a16 f8\2 g16~\3 g16 f8\2 aes16\4 \glissando  | 
+    g16 f e d c aes g e\4 f\3 d e f a c e a,\3 \glissando |
+    b d\1 c\4 e,\1 r4 r2 |
   }
   
 
@@ -158,6 +159,27 @@ global = {
   }
 % }}}
 
+% {{{ LICK E
+  temaE = {
+    \time 4/4
+    \key ees \major
+    \partial 4 bes8 a | 
+    aes ees' r g, r f r ees | d c r b~ b g fis g | d'4~ d8 c b c ees4~ | ees1 |
+  }
+
+  accordiE = \new ChordNames{ \chordmode{
+    \partial 4 s4 | d1:m7 | g1:7 | c1:maj7 | c1:maj7 |     
+  }}
+
+  lickE = \score {
+    \header{ piece="5."}
+    << 
+        \relative c''' {\temaE}
+        \accordiE
+    >>    
+  }
+% }}}
+
 % {{{ BOOKS
   \book{
     \bookOutputSuffix "C"    
@@ -165,5 +187,6 @@ global = {
     \lickB
     \lickC
     \lickD
+    \lickE
   }
 % }}}
