@@ -47,7 +47,7 @@ global = {
     \repeat volta 2{
       bes4. \tuplet 3/2 {a16 bes a} \tuplet 3/2 {g8 e des} |
       c8 d ees g f4~ | f2 bes4 | bes2 bes8 a | 
-      aes4. g16 f ges8 f | des2 ees4 | c2.~ | c2  c'8 a |
+      aes4. g8 \tuplet 3/2 {f8 ges f} | des2 ees4 | c2.~ | c2  c'8 a |
     }
   }
 
