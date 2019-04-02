@@ -179,6 +179,50 @@ global = {
   }
 % }}}
 
+% {{{ LICK F
+  temaF = {
+    \time 4/4
+    \key d \major
+    cis8 r b cis b32 c b16 g8 e d | cis a g dis bes4 r |
+  }
+
+  accordiF = \new ChordNames{ \chordmode{
+    e1:m7 | a1:7 |
+    \bar "|."
+  }}
+
+  lickF = \score {
+    \header{ piece="6. Io, Coquette"}
+    << 
+        \relative c''' {\temaF}
+        \accordiF
+    >>    
+  }
+% }}}
+
+% {{{ LICK G
+  temaG = {
+    \time 4/4
+    \key d \major
+    \partial 8 dis8 |
+    \tuplet 3/2 {e g b} d8 e cis a fis dis | e g bes cis e g bes gis | a2 r2 |
+  }
+
+  accordiG = \new ChordNames{ \chordmode{
+    \partial 8 s8 |
+    e1:m7 | a1:7 | d1:maj7 |
+    \bar "|."
+  }}
+
+  lickG = \score {
+    \header{ piece="7. Io, Coquette."}
+    << 
+        \relative c' {\temaG}
+        \accordiG
+    >>    
+  }
+% }}}
+
 % {{{ BOOKS
   \book{
     \bookOutputSuffix "C"    
@@ -187,5 +231,7 @@ global = {
     \lickC
     \lickD
     \lickE
+    \lickF
+    \lickG
   }
 % }}}
