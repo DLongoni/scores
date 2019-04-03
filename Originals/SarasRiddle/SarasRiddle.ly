@@ -54,7 +54,7 @@ global = {
   accordiA = \chordmode{
     \partial 4 s4 |
     \repeat volta 2{
-      bes2.:maj7 | aes2.:6 | aes2.:6 | g2.:m7 |
+      bes2.:maj7 | aes2.:6 | bes2.:6 | g2.:m7 |
       bes2.:m7 | ges2.:7 | f2.:6 | f2.:6 |
     }
   }
