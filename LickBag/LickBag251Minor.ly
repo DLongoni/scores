@@ -63,7 +63,7 @@ global = {
   temaA = {
     \time 4/4
     \key f \major
-    r2 \tuplet 3/2 {c8 d e} \tuplet 3/2 {f g a} |
+    r2 \tuplet 3/2 {c8\2 d e} \tuplet 3/2 {f g a} |
     \tuplet 3/2 {f g a} \tuplet 3/2 {bes c d} \tuplet 3/2 {e f g} a8 r8 |
     c4 bes8 a g f e a | f4 d a f |
   }
@@ -88,7 +88,7 @@ global = {
   temaB = {
     \time 4/4
     \key c \major
-    r8. f16\1 e'8\4 \glissando d16\4 a16~\1 a16 f8\2 g16~\3 g16 f8\2 aes16\4 \glissando  | 
+    r8. f16\1 e'8\4 \glissando d16\4 a16~\1 a16 f8\2 g16~\3 g16 f8\2 aes16 | 
     g16 f e d c aes g e\4 f\3 d e f a c e a,\3 \glissando |
     b d\1 c\4 e,\1 r4 r2 |
   }
@@ -113,8 +113,8 @@ global = {
   temaC = {
     \time 4/4
     \key c \major
-    \partial 8 g8
-    gis b d f \tuplet 3/2 {gis8 b d} \tuplet 3/2 {e f gis} | \tuplet 3/2 {f e d} c8 b a g f d |
+    \partial 8 e8\0
+    gis\4 b d f \tuplet 3/2 {gis8 b d} \tuplet 3/2 {e f gis} | \tuplet 3/2 {f e d} c8 b a g f d |
     e8 c b a gis4 r4 |
   }
   
@@ -139,7 +139,7 @@ global = {
   temaD = {
     \time 4/4
     \key g \major
-    r8 b e fis g a b c | dis fis g a b c d ees |
+    r8 b\1 e\1 fis\3 g\4 a b c | dis fis g a b c d ees |
     d c b a g4 r4 |
   }
   
@@ -163,8 +163,8 @@ global = {
   temaE = {
     \time 4/4
     \key ees \major
-    \partial 4 bes8 a | 
-    aes ees' r g, r f r ees | d c r b~ b g fis g | d'4~ d8 c b c ees4~ | ees1 |
+    \partial 4 bes8\4 a\3 | 
+    aes\2 ees'\4 r g, r f r ees | d c r b~ b g fis g | d'4~ d8 c b c ees4~ | ees1 |
   }
 
   accordiE = \new ChordNames{ \chordmode{
@@ -180,35 +180,11 @@ global = {
   }
 % }}}
 
-% {{{ LICK F
-  temaF = {
-    \time 4/4
-    \key ees \major
-    \partial 4 bes8 a |
-    aes c, ees g ges f e ees | d c b g d' b c d | g4 c8 g f ees c bes | 
-    <g b f' ais>4 <g b f' ais>2 r4 |
-  }
-
-  accordiF = \new ChordNames{ \chordmode{
-    \partial 4 s4 |
-    d1:m7.5- | g1:7 | c1:m7 | c1:m7 |
-    \bar "|."
-  }}
-
-  lickF = \score {
-    \header{ piece="6."}
-    << 
-        \relative c''' {\temaF}
-        \accordiF
-    >>    
-  }
-% }}}
-
 % {{{ LICK G
   temaG = {
     \time 4/4
     \key ees \major
-    bes8 aes g f ees d c bes | b aes g f ees d f d | ees r b c r2 | 
+    bes8\4 aes g f ees d c\4 bes\2 | b\3 aes g f ees d f d | ees r b c r2 | 
   }
 
   accordiG = \new ChordNames{ \chordmode{
@@ -217,7 +193,7 @@ global = {
   }}
 
   lickG = \score {
-    \header{ piece="7. Mike Stern, Autumn Leaves"}
+    \header{ piece="6. Mike Stern, Autumn Leaves"}
     << 
         \relative c''' {\temaG}
         \accordiG
@@ -229,7 +205,7 @@ global = {
   temaH = {
     \time 4/4
     \key ees \major
-    r2 d8 b c d | ees4 bes' aes bes | g f8 ees d4 f8 d | ees4 g f aes | g1 |  
+    r2 d8\1 b c d | ees4 bes' aes bes | g f8 ees d4 f8 d | ees4 g f aes | g1 |  
   }
 
   accordiH = \new ChordNames{ \chordmode{
@@ -238,7 +214,7 @@ global = {
   }}
 
   lickH = \score {
-    \header{ piece="8. Mike Stern, Autumn Leaves"}
+    \header{ piece="7. Mike Stern, Autumn Leaves"}
     << 
         \relative c'' {\temaH}
         \accordiH
@@ -259,7 +235,7 @@ global = {
   }}
 
   lickI = \score {
-    \header{ piece="9.Mike Stern, Autumn Leaves"}
+    \header{ piece="8. Mike Stern, Autumn Leaves"}
     << 
         \relative c' {\temaI}
         \accordiI
@@ -280,7 +256,7 @@ global = {
   }}
 
   lickJ = \score {
-    \header{ piece="10.Mike Stern, Autumn Leaves"}
+    \header{ piece="9 Stern, Autumn Leaves"}
     << 
         \relative c' {\temaJ}
         \accordiJ
@@ -301,15 +277,15 @@ global = {
   }}
 
   lickK = \score {
-    \header{ piece="11. Bill Evans, Autumn Leaves"}
+    \header{ piece="10. Bill Evans, Autumn Leaves"}
     << 
-        \relative c' {\temaK}
+        \relative c'' {\temaK}
         \accordiK
     >>    
   }
 % }}}
 
-% {{{ LICK L
+% {{{ LICK L 
   temaL = {
     \time 4/4
     \key ees \major
@@ -324,7 +300,7 @@ global = {
   }}
 
   lickL = \score {
-    \header{ piece="12. Bill Evans, Autumn Leaves"}
+    \header{ piece="11. Bill Evans, Autumn Leaves"}
     << 
         \relative c'' {\temaL}
         \accordiL
@@ -345,7 +321,7 @@ global = {
   }}
 
   lickM = \score {
-    \header{ piece="13. Bill Evans, Autumn Leaves"}
+    \header{ piece="12. Bill Evans, Autumn Leaves"}
     << 
         \relative c'' {\temaM}
         \accordiM
@@ -357,7 +333,7 @@ global = {
   temaN = {
     \time 4/4
     \key ees \major
-    r4 aes8\4 g\3 ces f ees d | ges ees f d ees c\1 g\1 r | 
+    r4 aes8\4 g\3 ges f ees d | ges ees f d ees c\1 g\1 r | 
   }
 
   accordiN = \new ChordNames{ \chordmode{
@@ -366,7 +342,7 @@ global = {
   }}
 
   lickN = \score {
-    \header{ piece="14. Bill Evans, Autumn Leaves"}
+    \header{ piece="13. Bill Evans, Autumn Leaves"}
     << 
         \relative c''' {\temaN}
         \accordiN
@@ -388,7 +364,7 @@ global = {
   }}
 
   lickO = \score {
-    \header{ piece="15. Bill Evans, Autumn Leaves"}
+    \header{ piece="14. Bill Evans, Autumn Leaves"}
     << 
         \relative c''' {\temaO}
         \accordiO
@@ -401,7 +377,7 @@ global = {
     \time 4/4
     \key ees \major
     r8 d\1 \tuplet 3/2 {aes' c ees} d ees f r | f g aes bes b cis\4 d\4 r | 
-    r aes\4, \tuplet 3/2 {c\3 ees\1 f} ees f g bes | d c\1 \tuplet 3/2 {g\1 ees\1 c\3} bes' a aes g | f ees d c b4 g|
+    r aes,\4 \tuplet 3/2 {c\3 ees\1 f} ees f g bes | d c\1 \tuplet 3/2 {g\1 ees\1 c\3} bes' a aes g | f ees d c b4 g|
   }
 
   accordiP = \new ChordNames{ \chordmode{
@@ -410,7 +386,7 @@ global = {
   }}
 
   lickP = \score {
-    \header{ piece="16. Bill Evans, Autumn Leaves"}
+    \header{ piece="15. Bill Evans, Autumn Leaves"}
     << 
         \relative c' {\temaP}
         \accordiP
@@ -424,7 +400,7 @@ global = {
     \key ees \major
     \partial 8 c8 |
     b c aes' c, b c aes' r | r b, \tuplet 3/2 {a b g'} \tuplet 3/2 {b, a b} g' r|
-    r a, \tuplet 3/2 {g aes f'} \tuplet 3/2 {a, g a} f' r | r d ees f ees d c r |
+    r a, \tuplet 3/2 {g a f'} \tuplet 3/2 {a, g a} f' r | r d ees f ees d c r |
   }
 
   accordiQ = \new ChordNames{ \chordmode{
@@ -434,7 +410,7 @@ global = {
   }}
 
   lickQ = \score {
-    \header{ piece="17."}
+    \header{ piece="16."}
     << 
         \relative c'' {\temaQ}
         \accordiQ
@@ -746,7 +722,6 @@ global = {
     \lickC
     \lickD
     \lickE
-    \lickF
     \lickG
     \lickH
     \lickI
