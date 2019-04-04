@@ -57,31 +57,53 @@ global = {
   \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = #2
 
 }
-%}}}
 
-% {{{ LICK A
-  temaA = {
-    \time 4/4
-    \key f \major
-    r2 \tuplet 3/2 {c8\2 d e} \tuplet 3/2 {f g a} |
-    \tuplet 3/2 {f g a} \tuplet 3/2 {bes c d} \tuplet 3/2 {e f g} a8 r8 |
-    c4 bes8 a g f e a | f4 d a f |
-  }
-  
+#(define-markup-command (LickCounter layout props) ()
+  "Increases and prints out the value of the given counter named @var{name}.
+  If the counter does not yet exist, it is initialized with 1."
+  (let* ((oldval (assoc-ref counter-alist 'LickC))
+         (newval (if (number? oldval) (+ oldval 1) 1)))
+  (set! counter-alist (assoc-set! counter-alist 'LickC newval))
+  (interpret-markup layout props
+    (markup (number->string newval)))))
 
-  accordiA = \new ChordNames{ 
-    \chordmode{
-      e1:m7.5- | a1:7 | d1:m7 | d1:m7 \bar "|."
-    }
-  }
+trip = #(define-music-function (parser location m1 m2 m3) 
+  (ly:music? ly:music? ly:music?)
+  "Triplets"             
+  #{ \tuplet 3/2 { $m1 $m2 $m3 } #})
 
-  lickA = \score {
-    \header{ piece="1. Mike Stern, Autumn Leaves"}
+myScore = 
+#(define-scheme-function (p l tempo majkey tema accordi author tune) 
+   (scheme? scheme? ly:music? scheme? string? string?)
+   #{ 
+  \score {
+    \header{ piece = \markup \concat{\LickCounter ". " $author ", " $tune ""}}
     << 
-        \relative c' {\temaA}
-        \accordiA
+        \relative c' {
+          $tempo
+          $majkey 
+          $tema
+        }
+        \new ChordNames{$accordi \bar "|."}
     >>    
   }
+
+#})
+
+%}}}
+
+iLick = 0
+
+% {{{ LICK A
+  lickA = \myScore 
+  \time 4/4 
+  \key f \major 
+  {r2 \tuplet 3/2 {c8\2 d e} \tuplet 3/2 {f g a} |
+    \tuplet 3/2 {f g a} \tuplet 3/2 {bes c d} \tuplet 3/2 {e f g} a8 r8 |
+    c4 bes8 a g f e a | f4 d a f |}
+  \chordmode{ e1:m7.5- | a1:7 | d1:m7 | d1:m7 \bar "|." }
+  #"Mike Stern"
+  #"Autumn Leaves"   
 % }}}
 
 % {{{ LICK B
@@ -717,7 +739,7 @@ global = {
 % {{{ BOOKS
   \book{
     \bookOutputSuffix "C"    
-    \lickA
+    \lickA    
     \lickB
     \lickC
     \lickD
