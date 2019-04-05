@@ -1,101 +1,14 @@
 % {{{ PARAMETRI
+  \version "2.18.2"
   myTitle = "Lick Bag - Minor 251"
   myTempo =  #(ly:make-moment 190 4)
+  \include "LickBagHeader.ly"
 % }}}
-
-% INTESTAZIONE {{{
-\version "2.18.2"
-
-\header {
-  title = \myTitle
-}
-
-\paper{  
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-  myStaffSize = #2
-  fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 2))  
-  
-  scoreTitleMarkup = \markup { 
-    \column {
-      \fill-line {
-        \fontsize #2.5 \italic \fromproperty #'header:piece
-        \fromproperty #'header:opus
-      }
-    }
-  }
-  
-%    markup-system-spacing =
-%    #'((basic-distance . 0)
-%       (padding . 0))
-    
-%    score-markup-spacing =
-%    #'((basic-distance . 0)
-%       (padding . 0))
-}
-
-global = {
-  \numericTimeSignature
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
-\layout { 
-  \override Score.RehearsalMark.self-alignment-X = #LEFT
-  \set chordChanges = ##t
-  indent = #0
-  \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = #2
-
-}
-
-#(define-markup-command (LickCounter layout props) ()
-  "Increases and prints out the value of the given counter named @var{name}.
-  If the counter does not yet exist, it is initialized with 1."
-  (let* ((oldval (assoc-ref counter-alist 'LickC))
-         (newval (if (number? oldval) (+ oldval 1) 1)))
-  (set! counter-alist (assoc-set! counter-alist 'LickC newval))
-  (interpret-markup layout props
-    (markup (number->string newval)))))
-
-trip = #(define-music-function (parser location m1 m2 m3) 
-  (ly:music? ly:music? ly:music?)
-  "Triplets"             
-  #{ \tuplet 3/2 { $m1 $m2 $m3 } #})
-
-myScore = 
-#(define-scheme-function (p l tempo majkey tema accordi author tune) 
-   (scheme? scheme? ly:music? scheme? string? string?)
-   #{ 
-  \score {
-    \header{ piece = \markup \concat{\LickCounter ". " $author ", " $tune ""}}
-    << 
-        \relative c' {
-          $tempo
-          $majkey 
-          $tema
-        }
-        \new ChordNames{$accordi \bar "|."}
-    >>    
-  }
-
-#})
-
-%}}}
 
 iLick = 0
 
 % {{{ LICK A
-  lickA = \myScore 
+  lickA = \LickScore 
   \time 4/4 
   \key f \major 
   {r2 \tuplet 3/2 {c8\2 d e} \tuplet 3/2 {f g a} |
@@ -107,54 +20,32 @@ iLick = 0
 % }}}
 
 % {{{ LICK B
-  temaB = {
+  lickB = \LickScore
     \time 4/4
     \key c \major
-    r8. f16\1 e'8\4 \glissando d16\4 a16~\1 a16 f8\2 g16~\3 g16 f8\2 aes16 | 
+    {r8. f16\1 e'8\4 \glissando d16\4 a16~\1 a16 f8\2 g16~\3 g16 f8\2 aes16 | 
     g16 f e d c aes g e\4 f\3 d e f a c e a,\3 \glissando |
-    b d\1 c\4 e,\1 r4 r2 |
-  }
-  
-
-  accordiB = \new ChordNames{ 
-    \chordmode{
-      b1:m7.5- | e1:7 | a1:m7 | \bar "|."
-    }
-  }
-
-  lickB = \score {
-    \header{ piece="2. Bireli, 500 miles high"}
-    << 
-        \relative c'' {\temaB}
-        \accordiB
-    >>    
-  }
+    b d\1 c\4 e,\1 r4 r2 |}
+    \chordmode{ b1:m7.5- | e1:7 | a1:m7 | \bar "|." }
+    #"Bireli"
+    #"500 miles high"
 % }}}
 
 % {{{ LICK C
-  temaC = {
+  lickC = \LickScore
     \time 4/4
     \key c \major
-    \partial 8 e8\0
-    gis\4 b d f \tuplet 3/2 {gis8 b d} \tuplet 3/2 {e f gis} | \tuplet 3/2 {f e d} c8 b a g f d |
-    e8 c b a gis4 r4 |
-  }
-  
-
-  accordiC = \new ChordNames{ 
+    { 
+      \partial 8 e8\0
+      gis\4 b d f \tuplet 3/2 {gis8 b d} \tuplet 3/2 {e f gis} | \tuplet 3/2 {f e d} c8 b a g f d |
+      e8 c b a gis4 r4 |
+    }
     \chordmode{
       \partial 8 r8 |
       e1:7 | e1:7 | a1:m7 | \bar "|."
-    }
-  }
-
-  lickC = \score {
-    \header{ piece="3. Bireli, After You Have Gone"}
-    << 
-        \relative c' {\temaC}
-        \accordiC
-    >>    
-  }
+    }						
+    #'"Bireli"
+    #'"After You Have Gone"
 % }}}
 
 % {{{ LICK D
