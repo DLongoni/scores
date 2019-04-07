@@ -21,8 +21,8 @@
   lickB = \LickScore
     \time 4/4
     \key c \major
-    {r8. f16\1 e'8\4 \glissando d16\4 a16~\1 a16 f8\2 g16~\3 g16 f8\2 aes16 | 
-    g16 f e d c aes g e\4 f\3 d e f a c e a,\3 \glissando |
+    {r8. f'16\1 e'8\4 \glissando d16\4 a16~\1 a16 f8\2 g16~\3 g16 f8\2 aes16\1 | 
+    g16\4 f e d c aes g e\4 f\3 d e f a c e a,\3 \glissando |
     b d\1 c\4 e,\1 r4 r2 |}
     \chordmode{ b1:m7.5- | e1:7 | a1:m7 | \bar "|." }
     #"Bireli"
@@ -203,23 +203,6 @@
     }
     \chordmode{
       d1:m7.5- | g1:7 | c1:m7 | c1:m7 |    
-    }
-    #"Bill Evans"
-    #"Autumn Leaves"
-% }}}
-
-% {{{ LICK P
-  lickP = \LickScore
-    \time 4/4
-    \key ees \major
-    {
-      r8 d\1 \tuplet 3/2 {aes' c ees} d ees f r |
-      f g aes bes b cis\4 d\4 r | 
-      r aes,\4 \tuplet 3/2 {c\3 ees\1 f} ees f g bes |
-      d c\1 \tuplet 3/2 {g\1 ees\1 c\3} bes' a aes g | f ees d c b4 g|
-    }
-    \chordmode{
-      d1:m7.5- | d1:m7.5- | g1:7 | g1:7 | c1:m7 |
     }
     #"Bill Evans"
     #"Autumn Leaves"
@@ -481,7 +464,6 @@
     \lickM
     \lickN
     \lickO
-    \lickP
     \lickQ
     \lickR
     \lickS
