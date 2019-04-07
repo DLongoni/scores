@@ -1,226 +1,114 @@
 % {{{ PARAMETRI
+  \version "2.18.2"
   myTitle = "Lick Bag - Major 251"
   myTempo =  #(ly:make-moment 190 4)
+  \include "LickBagHeader.ly"
 % }}}
 
-% INTESTAZIONE {{{
-\version "2.18.2"
-
-\header {
-  title = \myTitle
-}
-
-\paper{  
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 20))  
-  
-  scoreTitleMarkup = \markup { 
-    \column {
-      \fill-line {
-        \fontsize #2.5 \italic \fromproperty #'header:piece
-        \fromproperty #'header:opus
-      }
-    }
-  }
-  
-    markup-system-spacing =
-    #'((basic-distance . 2)
-       (padding . 2))
-    
-    score-markup-spacing =
-    #'((basic-distance . 0)
-       (padding . 4))
-}
-
-global = {
-  \numericTimeSignature
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
-\layout { 
-  \override Score.RehearsalMark.self-alignment-X = #LEFT
-  \set chordChanges = ##t
-  indent = #0
-  \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = #2
-
-}
-%}}}
-
 % {{{ LICK A
-  temaA = {
+  lickA = \LickScore
     \time 4/4
     \key c \major
-    r4 \tuplet 3/2 {e8 f g} \tuplet 3/2 {a b c} \tuplet 3/2 {d e f} | 
-    \tuplet 3/2 {g a g} \tuplet 3/2 {f e d} \tuplet 3/2 {c b a} \tuplet 3/2 {g ges f} | e2 r2 |
-  }
-  
-
-  accordiA = \new ChordNames{ 
-    \chordmode{
-      d1:m7 | g1:13 | c1:maj7 | \bar "|."
+    {
+      r4 \trip e8 f g \tuplet 3/2 {a b c} \tuplet 3/2 {d e f} | 
+      \tuplet 3/2 {g a g} \tuplet 3/2 {f e d} \tuplet 3/2 {c b a} \tuplet 3/2 {g ges f} | e2 r2 |
     }
-  }
-
-  lickA = \score {
-    \header{ piece="1. Unknown, Blue Bossa"}
-    << 
-        \relative c' {\temaA}
-        \accordiA
-    >>    
-  }
+    \chordmode{
+      d1:m7 | g1:13 | c1:maj7 | 
+    }
+    #"Unknown"
+    #"Blue Bossa"
 % }}}
 
 % {{{ LICK B
-  temaB = {
+  lickB = \LickScore
     \time 4/4
     \key a \major
-    \partial 4. d8 e f |
-    fis c cis e d b gis e | d b gis f e es d ees16 d | cis4 r4 r2 |
-  }
-  
-
-  accordiB = \new ChordNames{ 
+    {
+      \partial 4. d''8 e f |
+      fis c cis e d b gis e | d b gis f e es d ees16 d | cis4 r4 r2 |
+    }
     \chordmode{
       \partial 4. s4. |
-      e1:7 | e1:7 | a1 | \bar "|."
+      e1:7 | e1:7 | a1 | 
     }
-  }
-
-  lickB = \score {
-    \header{ piece="2. Bireli, After You Have Gone"}
-    << 
-        \relative c''' {\temaB}
-        \accordiB
-    >>    
-  }
+    #"Bireli"
+    #"After You Have Gone"
 % }}}
 
 % {{{ LICK C
-  temaC = {
+  lickC = \LickScore
     \time 4/4
     \key g \major
-    r2 r8 c,8 ees fis | bes c ees fis \ottava #1 a c ees fis | b2 r2 |
-  }
-  
-
-  accordiC = \new ChordNames{ 
-    \chordmode{
-      d1:7 | d1:7 | g1 | \bar "|."
+    {
+      r2 r8 c8 ees fis | bes c ees fis \ottava #1 a c ees fis | b2 r2 |
     }
-  }
-
-  lickC = \score {
-    \header{ piece="3. Bireli, After You Have Gone"}
-    << 
-        \relative c'' {\temaC}
-        \accordiC
-    >>    
-  }
+    \chordmode{
+      d1:7 | d1:7 | g1 |
+    }
+    #"Bireli"
+    #"After You Have Gone"
 % }}}
 
 % {{{ LICK D
-  temaD = {
+  lickD = \LickScore
     \time 4/4
     \key c \major
-    r2 a'8 ais cis b | gis f cis b g f d c | b4 r4 r2 |
-  }
-  
-
-  accordiD = \new ChordNames{ 
-    \chordmode{
-      g1:7 | g1:7 | c1 | \bar "|."
+    {
+      r2 a''8 ais cis b | gis f cis b g f d c | b4 r4 r2 |
     }
-  }
-
-  lickD = \score {
-    \header{ piece="4. Bireli, After You Have Gone"}
-    << 
-        \relative c'' {\temaD}
-        \accordiD
-    >>    
-  }
+    \chordmode{
+      g1:7 | g1:7 | c1 | 
+    }
+    #"Bireli"
+    #"After You Have Gone"
 % }}}
 
 % {{{ LICK E
-  temaE = {
+  lickE = \LickScore
     \time 4/4
     \key g \major
-    \partial 4. d8 des c |
-    b c e g ais b d4 | fis,8 d bes fis d b c e | g4 r4 r2 | 
-  }
-  
-
-  accordiE = \new ChordNames{ 
+    {
+      \partial 4. d'8 des c |
+      b c e g ais b d4 | fis,8 d bes fis d b c e | g4 r4 r2 | 
+    }
     \chordmode{
       \partial 4. s4. |
-      a1:m7 | d1:7 | g1 | \bar "|."
+      a1:m7 | d1:7 | g1 | 
     }
-  }
-
-  lickE = \score {
-    \header{ piece="5. Bireli, After You Have Gone"}
-    << 
-        \relative c'' {\temaE}
-        \accordiE
-    >>    
-  }
+    #"Bireli"
+    #"After You Have Gone"
 % }}}
 
 % {{{ LICK F
-  temaF = {
+  lickF = \LickScore
     \time 4/4
     \key d \major
-    cis8 r b cis b32 c b16 g8 e d | cis a g dis bes4 r |
-  }
-
-  accordiF = \new ChordNames{ \chordmode{
-    e1:m7 | a1:7 |
-    \bar "|."
-  }}
-
-  lickF = \score {
-    \header{ piece="6. Io, Coquette"}
-    << 
-        \relative c''' {\temaF}
-        \accordiF
-    >>    
-  }
+    {
+      cis''8 r b cis b32 c b16 g8 e d | cis a g dis bes4 r |
+    }
+    \chordmode{
+      e1:m7 | a1:7 |
+    }
+    #"Io"
+    #"Coquette"
 % }}}
 
 % {{{ LICK G
-  temaG = {
+  lickG = \LickScore
     \time 4/4
     \key d \major
-    \partial 8 dis8 |
-    \tuplet 3/2 {e g b} d8 e cis a fis dis | e g bes cis e g bes gis | a2 r2 |
-  }
-
-  accordiG = \new ChordNames{ \chordmode{
-    \partial 8 s8 |
-    e1:m7 | a1:7 | d1:maj7 |
-    \bar "|."
-  }}
-
-  lickG = \score {
-    \header{ piece="7. Io, Coquette."}
-    << 
-        \relative c' {\temaG}
-        \accordiG
-    >>    
-  }
+    {
+      \partial 8 dis8 |
+      \tuplet 3/2 {e g b} d8 e cis a fis dis |
+      e g bes cis e g bes gis | a2 r2 |
+    }
+    \chordmode{
+      \partial 8 s8 |
+      e1:m7 | a1:7 | d1:maj7 |
+    }
+    #"Io"
+    #"Coquette."
 % }}}
 
 % {{{ BOOKS
