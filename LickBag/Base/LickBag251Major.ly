@@ -116,7 +116,7 @@
     \time 4/4
     \key c \major
     {
-      r8 d' f a e' d c a | aes des, f aes g e bes aes | g4 |
+      r8 d' f a e' d c a | aes des, f aes g e bes aes | g1 |
     }
     \chordmode{
       d1:m7 | g1:7 | c1:maj7 |
@@ -405,34 +405,82 @@
     #"Tangerine"
 % }}}
 
+% {{{ LICK AA
+  lickAA = \LickScore
+    \time 4/4
+    \key c \major
+    { 
+      c'4 c b c8 a~ | a a~ a2 r4 | b4 b8 b r g e r | a a r4 r2 |
+    }
+    \chordmode{
+      d1:m7 | g1:7 | c1:maj7 | c1:maj7 |
+    }						
+    #"Jim Hall"
+    #"Tangerine"
+% }}}
+
+% {{{ LICK AB
+  lickAB = \LickScore
+    \time 4/4
+    \key c \major
+    { 
+      \partial 2 d8 f a r |
+      c r f, r a r d f | r4 r8 fis8 r4 r8 a | 
+      g e r f r d r e | r c r d r2 |
+    }
+    \chordmode{
+      \partial 2 s2 |
+      d1:m7 | g1:7 | c1:maj7 | c1:maj7 |
+    }						
+    #"Jim Hall"
+    #"Tangerine"
+% }}}
+
+% {{{ LICK AC
+  lickAC = \LickScore
+    \time 4/4
+    \key c \major
+    { 
+      \partial 4. e8 r e | 
+      f f cis cis d d e e | f f g g a a ais ais | 
+      b e d r a r r a |
+    }
+    \chordmode{
+      \partial 4. s4. |
+      d1:m7 | g1:7 | c1:maj7 | 
+    }						
+    #"Jim Hall"
+    #"Tangerine"
+% }}}
+
+% {{{ LICK AD
+  lickAD = \LickScore
+    \time 4/4
+    \key c \major
+    { 
+      r4 r8 c' dis e f dis | e c g f e g dis e | g1 |
+    }
+    \chordmode{
+      d1:m7 | g1:7 | c1:maj7 | 
+    }						
+    #"Jim Hall"
+    #"Tangerine"
+% }}}
+
+% {{{ LICK AE
+  lickAE = \LickScore
+    \time 4/4
+    \key c \major
+    { 
+      r2 e'4 c | a2 e'4 a | e c a8 e' a, r | c2 a4 f8 e |
+    }
+    \chordmode{
+      d1:m7 | g1:7 | c1:maj7 | c1:maj7 |
+    }						
+    #"Jim Hall"
+    #"Tangerine"
+% }}}
+
 % {{{ BOOKS
-  \book{
-    \bookOutputSuffix "C"    
-    \lickA
-    \lickB
-    \lickC
-    \lickD
-    \lickE
-    \lickF
-    \lickG
-    \lickH
-    \lickI
-    \lickJ
-    \lickK
-    \lickL
-    \lickM
-    \lickN
-    \lickO
-    \lickP
-    \lickQ
-    \lickR
-    \lickS
-    \lickT
-    \lickU
-    \lickV
-    \lickW
-    \lickX
-    \lickY
-    \lickZ
-  }
+\includeLocal "ScoreCompleto251Major.ly"
 % }}}

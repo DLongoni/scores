@@ -81,3 +81,17 @@ LickScore =
   }
 #})
 
+#(define-public includeLocal (define-music-function (parser location 
+file)(string?)
+     (let ((outname (format "~A.ly" (ly:parser-output-name parser)))
+           (locname (car (ly:input-file-line-char-column location)))
+           (file (ly:find-file file)))
+          (if (or (string=? outname locname) (string-suffix? outname 
+locname))
+              (begin
+                ;(ly:input-message location "include ~A" file)
+                (ly:parser-include-string parser (format 
+"\\sourcefilename \"~A\" \\sourcefileline 0\n~A"
+                    file (ly:gulp-file file))))
+          )
+          (make-music 'SequentialMusic 'void #t))))

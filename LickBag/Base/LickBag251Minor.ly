@@ -447,38 +447,20 @@
     #"After You Have Gone"
 % }}}
 
+% {{{ LICK AG
+  lickAG = \LickScore
+    \time 4/4
+    \key bes \major
+    {
+      r2 r8 c8 ees fis | bes c ees fis \ottava #1 a c ees fis | bes2 r2 |
+    }
+    \chordmode{
+      d1:7 | d1:7 | g1:m7 |
+    }
+    #"Bireli"
+    #"After You Have Gone"
+% }}}
+
 % {{{ BOOKS
-  \book{
-    \bookOutputSuffix "C"    
-    \lickA    
-    \lickB
-    \lickC
-    \lickD
-    \lickE
-    \lickG
-    \lickH
-    \lickI
-    \lickJ
-    \lickK
-    \lickL
-    \lickM
-    \lickN
-    \lickO
-    \lickQ
-    \lickR
-    \lickS
-    \lickT
-    \lickU
-    \lickV
-    \lickW
-    \lickX
-    \lickY
-    \lickZ
-    \lickAA
-    \lickAB
-    \lickAC
-    \lickAD
-    \lickAE
-    \lickAF
-  }
+\includeLocal "ScoreCompleto251Minor.ly"
 % }}}
