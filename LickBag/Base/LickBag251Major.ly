@@ -2,7 +2,7 @@
   \version "2.18.2"
   myTitle = "Lick Bag - Major 251"
   myTempo =  #(ly:make-moment 190 4)
-  \include "LickBagHeader.ly"
+  \include "./LickBagHeader.ly"
 % }}}
 
 % {{{ LICK A
@@ -479,6 +479,20 @@
     }						
     #"Jim Hall"
     #"Tangerine"
+% }}}
+
+% {{{ LICK AF
+  lickAF = \LickScore
+    \time 4/4
+    \key a \major
+    { 
+      r8 gis8 b d fis a b d | fis gis b d cis b ais cis | a4 r4 r2 |
+    }
+    \chordmode{
+      b1:m7 | e1:7 | a1 |
+    }						
+    #"Bireli"
+    #"After You Have Gone"
 % }}}
 
 % {{{ BOOKS
