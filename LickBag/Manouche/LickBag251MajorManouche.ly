@@ -14,6 +14,26 @@
     \bookOutputSuffix "C"    
     \lickA
     \lickB
+    \lickC
     \lickD
+    \lickE
+    \lickF
+    \lickG
+    \lickH
+    \lickI
+    \lickJ
+    \lickK
+    \lickL
+    \lickM
+    \lickP
+    \lickR
+    \lickT
+    \lickU
+    \lickW
+    \lickX
+    \lickZ
+    \lickAC
+    \lickAD
+    \lickAF
   }
 % }}}

@@ -272,8 +272,8 @@
     \time 4/4
     \key c \major
     {
-      d8 e f g a b c e | e f g ges16 f e8 c a f |
-      e2. d'8 b | d a~ a2 r4 |
+      d8\1 e f g a b c e | e f g ges16 f e8 c a f |
+      e2. d'8\1 b | c a~ a2 r4 |
     }
     \chordmode{
       d1:m7 | g1:7 | c1:maj7 | c1:maj7 |
@@ -394,8 +394,8 @@
     \time 4/4
     \key c \major
     {
-      \partial 2 f8 e d e | cis d f a cis e d cis |
-      f, e r d r c' b a | g f e g d c b a | g1 |
+      \partial 2 f8\1 e d e | cis d f a cis e d cis |
+      f, e\1 r d\1 r c'\2 b\1 a | g f e g d c b a | g1 |
     }
     \chordmode{
       \partial 2 s2
