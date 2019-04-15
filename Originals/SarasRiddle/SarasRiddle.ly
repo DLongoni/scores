@@ -60,16 +60,33 @@ global = {
   }
 % }}}
 
+% {{{ PARTE B
+  temaB = {
+    % sarebbe da scrivere in 9/8
+    \time 9/8
+    \repeat volta 2{
+      g8 d bes' g4 f16 g16 f8 d c~ |
+      c8 g bes c d e f d d |
+    }
+  }
+
+  accordiB = \chordmode{
+    g1*9/8:m7 | c4. d2.:m7 |
+  }
+% }}}
+
 % SCORE {{{
 tema = \relative c' {
   \mark \default
   \temaA \break
+  \temaB \break
 }
 
 chordsPart ={
   \new ChordNames {
     \set chordChanges = ##t
     \accordiA
+    \accordiB
   }
 }
 
