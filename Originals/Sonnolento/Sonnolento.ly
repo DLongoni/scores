@@ -61,9 +61,9 @@ global = {
   ritmicaAdue = {
     \repeat volta 2{
       d16 e d8 c16 d c8 | bes16 c bes8~ bes 4|
-      g16 bes a8 aes16 bes aes8 | f16 g f8~ f4 |
+      a16 bes a8 aes16 bes aes8 | f16 g f8~ f4 |
       d'16 e d8 c16 d c8 | bes16 c bes8~ bes 4|
-      a16 b a8~ a4 | f16 g f8~ f4 |
+      a16 bes a8~ a4 | f16 g f8~ f4 |
     }
   }
 
@@ -84,16 +84,30 @@ global = {
 
 % {{{ PARTE B
   temaB = {
-    % sarebbe da scrivere in 9/8
-    \time 9/8
+    \time 6/8
+    \key c \minor
     \repeat volta 2{
-      g8 d bes' g4 f16 g16 f8 d c~ |
-      c8 g bes c d e f d d |
+      c,8 ees g c b c | d c bes aes g bes | 
+      f4. g4 f16 g | f ees  c4~ c4. |
+      c8 ees g c b c | a4 a8 g b c | 
+      ees16 f d4~ d4. | 
     }
-  }
+    \alternative{
+      { r4. f,8 fis g | }
+      { r2. | }
+    }
+}
 
   accordiB = \chordmode{
-    g1*9/8:m7 | c4. d2.:m7 |
+    \repeat volta 2 {
+      c2.:m | bes2. | f4.:m g4.:7 | c2.:m | \break
+      c2.:m | f2. | g2.:7 |
+    }
+    \alternative
+    {
+      { bes2.: | }
+      { g2.:7 | }
+    }
   }
 % }}}
 
@@ -101,6 +115,8 @@ global = {
 tema = \relative c' {
   \mark \default
   \temaA \break
+  \mark \default
+  \temaB \break
 }
 
 basso = \relative c {
@@ -111,6 +127,7 @@ chordsPart ={
   \new ChordNames {
     \set chordChanges = ##t
     \accordiA
+    \accordiB
   }
 }
 
