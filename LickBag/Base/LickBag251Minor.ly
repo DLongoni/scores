@@ -461,6 +461,20 @@
     #"After You Have Gone"
 % }}}
 
+% {{{ LICK AH
+  lickAH = \LickScore
+    \time 4/4
+    \key bes \major
+    { 
+      r2 gis''8 b f gis | d f b, d \trip gis, b d f gis | g1 | 
+    }
+    \chordmode{
+      d1:7 | d1:7 | g1:m | 
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
 % {{{ BOOKS
 \includeLocal "ScoreCompleto251Minor.ly"
 % }}}
