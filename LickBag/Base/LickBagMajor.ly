@@ -49,11 +49,27 @@
     #"500 miles high"
 % }}}
 
+% {{{ LICK D
+  lickD = \LickScore
+    \time 4/4
+    \key g \major
+    {
+      g8 b d g b d fis g | b d fis d b fis d b | 
+      g fis g b d g b d | fis1 |
+    }
+    \chordmode{
+      g1:maj7 | g1:maj7 | g1:maj7 | g1:maj7 |
+    }
+    #"Libro Manouche"
+    #""
+% }}}
+
 % {{{ BOOKS
   \book{
     \bookOutputSuffix "C"    
     \lickA
     \lickB
     \lickC
+    \lickD
   }
 % }}}

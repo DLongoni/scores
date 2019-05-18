@@ -62,6 +62,22 @@
     #"After You Have Gone"
 % }}}
 
+% {{{ LICK E
+  lickE = \LickScore
+    \time 4/4
+    \key g \major
+    {
+      e,8 fis g b e fis g b | e g b d b g fis e |
+      b g fis f e fis g b | e fis g b e fis g dis |
+      fis e cis b g e ees d | cis e g b e4 r4 |
+    }
+    \chordmode{
+      e1:m6 | e1:m6 | e1:m6 | e1:m6 | e1:m6 | e1:m6 |
+    }
+    #"Libro Manouche"
+    #""
+% }}}
+
 % {{{ BOOKS
   \book{
     \bookOutputSuffix "C"    
@@ -69,5 +85,5 @@
     \lickB
     \lickC
     \lickD
-  }
+    \lickE }
 % }}}

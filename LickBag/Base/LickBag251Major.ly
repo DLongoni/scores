@@ -495,6 +495,125 @@
     #"After You Have Gone"
 % }}}
 
+% {{{ LICK AG
+  lickAG = \LickScore
+    \time 4/4
+    \key g \major
+    { 
+      c8 ees fis bes c ees fis a16 ais | b4 r4 r2 |
+    }
+    \chordmode{
+      d1:7 | g1 |
+    }						
+    #"Io"
+    #"Esercizio"
+% }}}
+
+% {{{ LICK AH
+  lickAH = \LickScore
+    \time 4/4
+    \key g \major
+    { 
+      a8 b c d e g e f | fis a c e d b g d' | b1 |
+    }
+    \chordmode{
+      a1:m7 | d1:7 | g1 |
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK AI
+  lickAI = \LickScore
+    \time 4/4
+    \key g \major
+    { 
+      b8 c e a c e g a | \trip c d c a g e c \trip g' a g |
+      fis e b4 r2 |
+
+    }
+    \chordmode{
+      a1:m7 | d1:7 | g1 |
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK AJ
+  lickAJ = \LickScore
+    \time 4/4
+    \key g \major
+    { 
+      e8 a b c e g e f | fis a c ees d c a fis |
+      d b a fis g b d fis | g b d fis e2 |
+
+    }
+    \chordmode{
+      a1:m7 | d1:7 | g1 | g1 |
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK AK
+  lickAK = \LickScore
+    \time 4/4
+    \key d \major
+    { 
+      \partial 8 a8 
+      cis e g bes cis e g f | e d c b a g f e | d1 |
+    }
+    \chordmode{
+      \partial 8 s8 
+      a1:7 | a1:7 | d1 | 
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK AL
+  lickAL = \LickScore
+    \time 4/4
+    \key g \major
+    { 
+      \trip a''8 b a fis e c a aes g | fis e'~ e4 r2 |
+    }
+    \chordmode{
+      d1:7 | g1 | 
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK AM
+  lickAM = \LickScore
+    \time 4/4
+    \key g \major
+    { 
+      r2 gis''8 b f gis | d f b, d \trip gis, b d f gis | g1 | 
+    }
+    \chordmode{
+      d1:7 | d1:7 | g1 | 
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK AN
+  lickAN = \LickScore
+    \time 4/4
+    \key f \major
+    { 
+      g'8 bes d f g bes d des | c bes g e c bes g ges |
+      f1 |
+    }
+    \chordmode{
+      g1:m7 | c1:7 | f1 | 
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
 % {{{ BOOKS
 \includeLocal "ScoreCompleto251Major.ly"
 % }}}
