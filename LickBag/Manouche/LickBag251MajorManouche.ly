@@ -35,5 +35,13 @@
     \lickAC
     \lickAD
     \lickAF
+    \lickAG
+    \lickAH
+    \lickAI
+    \lickAJ
+    \lickAK
+    \lickAL
+    \lickAM
+    \lickAN
   }
 % }}}
