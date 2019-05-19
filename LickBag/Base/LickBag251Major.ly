@@ -590,7 +590,7 @@
     \time 4/4
     \key g \major
     { 
-      r2 gis''8 b f gis | d f b, d \trip gis, b d f gis | g1 | 
+      r2 fis'8 a ees fis | c ees a, c \trip fis, a c ees fis | d1 |
     }
     \chordmode{
       d1:7 | d1:7 | g1 | 

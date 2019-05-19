@@ -466,10 +466,139 @@
     \time 4/4
     \key bes \major
     { 
-      r2 gis''8 b f gis | d f b, d \trip gis, b d f gis | g1 | 
+      r2 fis'8 a ees fis | c ees a, c \trip fis, a c ees fis | d1 |
     }
     \chordmode{
       d1:7 | d1:7 | g1:m | 
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK AI
+  lickAI = \LickScore
+    \time 4/4
+    \key bes \major
+    { 
+      a8 c ees g fis ees c cis | d fis a c ees fis a aes |
+      \trip g a g e d bes g ges f | e1 |
+    }
+    \chordmode{
+      d1:7 | d1:7 | g1:m6 | g1:m6 |
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK AJ
+  lickAJ = \LickScore
+    \time 4/4
+    \key bes \major
+    { 
+      d8 ees g c ees g a c | 
+      \trip ees f ees c a fis ees c a | g1 |
+
+    }
+    \chordmode{
+      d1:7 | d1:7 | g1:m6 |
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK AK
+  lickAK = \LickScore
+    \time 4/4
+    \key bes \major
+    { 
+      a8 c ees g a c ees g |
+      \trip fis g fis ees c a fis ees a, | g1 |
+
+
+    }
+    \chordmode{
+      d1:7 | d1:7 | g1:m6 |
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK AL
+  lickAL = \LickScore
+    \time 4/4
+    \key f \major
+    { 
+      \partial 8 a8 
+      cis e g bes cis e g f | e d c b a g f e | d1 |
+    }
+    \chordmode{
+      \partial 8 s8 
+      a1:7 | a1:7 | d1 | 
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK AM
+  lickAM = \LickScore
+    \time 4/4
+    \key c \major
+    { 
+      \trip f'8 g f e d c b d c | b a gis f e d c b |
+      a b c e a c b e | a2 r2 |
+    }
+    \chordmode{
+      e1:7 | e1:7 | a1:m6 | a1:m6 |
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK AN
+  lickAN = \LickScore
+    \time 4/4
+    \key g \major
+    { 
+      \trip c''8 d c b a g fis a g |
+      fis e dis c b a g fis |
+      \trip e fis e dis c b bes a c |
+      dis fis a c dis g fis dis |
+      e2 r2 |
+    }
+    \chordmode{
+      b1:7 | b1:7 | b1:7 | b1:7 |
+      e1:m6 |
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK AO
+  lickAO = \LickScore
+    \time 4/4
+    \key a \major
+    { 
+      \ottava #1
+      c'8 dis fis a gis fis dis e | f gis b d cis b a gis |
+      fis cis a g fis g a cis | fis g a cis fis4 r4 |
+    }
+    \chordmode{
+      gis1:7 | cis1:7 | fis1:m | fis1:m |
+    }						
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK AP
+  lickAP = \LickScore
+    \time 4/4
+    \key bes \major
+    { 
+      ees8 g bes des f g bes c |
+      \trip d ees d c a fis d c a | g4 r r2 |
+    }
+    \chordmode{
+      ees1:7 | d1:7 | g1:m |
     }						
     #"Libro Manouche"
     #""

@@ -78,6 +78,68 @@
     #""
 % }}}
 
+% {{{ LICK F
+  lickF = \LickScore
+    \time 4/4
+    \key c \major
+    {
+      \trip a''8\1 b a fis e c a aes g |
+      fis a c e a b c\4 e\4 |
+      \trip d e d b a f d des c | b1 |
+    }
+    \chordmode{
+      a1:m6 | a1:m6 | d1:m6 | d1:m6 |
+    }
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK G
+  lickG = \LickScore
+    \time 4/4
+    \key d \major
+    {
+      ais8 b cis d f fis ais b |
+      cis d f fis ais b cis fis |
+      \trip e fis e d b gis e ees d | b a f dis e4 r |
+    }
+    \chordmode{
+      b1:m7 | b1:m7 | e1:9 | e1:9 |
+    }
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK H
+  lickH = \LickScore
+    \time 4/4
+    \key d \major
+    {
+      \trip b'8 cis b ais b d fis b d | fis1 |
+    }
+    \chordmode{
+      b1:m | b1:m |
+    }
+    #"Libro Manouche"
+    #""
+% }}}
+
+% {{{ LICK I
+  lickI = \LickScore
+    \time 4/4
+    \key ees \major
+    {
+      c8\1 d ees g c d ees g |
+      c d ees b d c a g | ees2 r2 |
+
+    }
+    \chordmode{
+      c1:m | c1:m | c1:m |
+    }
+    #"Libro Manouche"
+    #""
+% }}}
+
 % {{{ BOOKS
   \book{
     \bookOutputSuffix "C"    
@@ -85,5 +147,10 @@
     \lickB
     \lickC
     \lickD
-    \lickE }
+    \lickE 
+    \lickF
+    \lickG
+    \lickH
+    \lickI
+  }
 % }}}
