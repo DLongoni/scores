@@ -15,5 +15,21 @@
     \lickA
     \lickB
     \lickD
+    \lickG
+    \lickU
+    \lickV
+    \lickW
+    \lickX
+    \lickAF
+    \lickAG
+    \lickAH
+    \lickAI
+    \lickAJ
+    \lickAK
+    \lickAL
+    \lickAM
+    \lickAN
+    \lickAO
+    \lickAP
   }
 % }}}

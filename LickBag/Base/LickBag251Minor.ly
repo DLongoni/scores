@@ -276,14 +276,14 @@
     \time 4/4
     \key ees \major
     {
-      r8 c ees g c d ees c | d r a c b r g ges |
+      r8 c\3 ees\1 g\1 c\1 d ees c | d r a c b r g ges |
       f ees'~ ees4 d8 c b d | c g ees d c2 |
     }
     \chordmode{
       d1:m7.5- | g1:7 | c1:m7 | c1:m7 |    
     }
-    #""
-    #""
+    #"Django"
+    #"Minor Swing"
 % }}}
 
 % {{{ LICK V
@@ -291,14 +291,14 @@
     \time 4/4
     \key ees \major
     {
-      r4 \tuplet 3/2 {d'8 ees f} g4. f8 | ees d c b f'4. g,8 |
+      r4 \tuplet 3/2 {d'8\1 ees\2 f\3} g4.\1 f8 | ees d c b f'4. g,8 |
       f4 ees c8 d ees aes | g ees c4 ees2 |
     }
     \chordmode{
       d1:m7.5- | g1:7 | g1:7 | c1:m7 |    
     }
-    #""
-    #""
+    #"Django"
+    #"Minor Swing"
 % }}}
 
 % {{{ LICK W
@@ -306,14 +306,14 @@
     \time 4/4
     \key ees \major
     {
-      r4 r8 aes'' aes g g ges | ges f f ees ees d d c |
+      r4 r8 aes''\3 aes\3 g\2 g\2 ges\1 | ges\1 f\3 f ees ees d d c |
       c b b aes aes g g g | c,2 r2 |
     }
     \chordmode{
       d1:m7.5- | g1:7 | g1:7 | c1:m7 | 
     }
-    #""
-    #""
+    #"Django"
+    #"Minor Swing"
 % }}}
 
 % {{{ LICK X
@@ -321,7 +321,7 @@
     \time 4/4
     \key ees \major
     {
-      r2 g''8 aes16 g f8 g | b c b aes g f ees c | d4 ees8 c8~ c2 |
+      r2 g''8\1 aes16\2 g\1 f8\3 g\2 | b\1 c b aes g f ees c | d4 ees8 c8~ c2 |
     }
     \chordmode{
       g1:7 | g1:7 | c1:m7 |    
