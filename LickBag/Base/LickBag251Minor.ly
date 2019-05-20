@@ -447,20 +447,6 @@
     #"After You Have Gone"
 % }}}
 
-% {{{ LICK AG
-  lickAG = \LickScore
-    \time 4/4
-    \key bes \major
-    {
-      r2 r8 c8 ees fis | bes c ees fis \ottava #1 a c ees fis | bes2 r2 |
-    }
-    \chordmode{
-      d1:7 | d1:7 | g1:m7 |
-    }
-    #"Bireli"
-    #"After You Have Gone"
-% }}}
-
 % {{{ LICK AH
   lickAH = \LickScore
     \time 4/4

@@ -5,21 +5,6 @@
   \include "./LickBagHeader.ly"
 % }}}
 
-% {{{ LICK A
-  lickA = \LickScore
-    \time 4/4
-    \key c \major
-    {
-      r4 \trip e8 f g \tuplet 3/2 {a b c} \tuplet 3/2 {d e f} | 
-      \tuplet 3/2 {g a g} \tuplet 3/2 {f e d} \tuplet 3/2 {c b a} \tuplet 3/2 {g ges f} | e2 r2 |
-    }
-    \chordmode{
-      d1:m7 | g1:13 | c1:maj7 | 
-    }
-    #"Unknown"
-    #"Blue Bossa"
-% }}}
-
 % {{{ LICK B
   lickB = \LickScore
     \time 4/4
@@ -81,17 +66,17 @@
 % }}}
 
 % {{{ LICK F
-  lickF = \LickScore
-    \time 4/4
-    \key d \major
-    {
-      cis''8 r b cis b32 c b16 g8 e d | cis a g dis bes4 r |
-    }
-    \chordmode{
-      e1:m7 | a1:7 |
-    }
-    #"Io"
-    #"Coquette"
+  % lickF = \LickScore
+  %   \time 4/4
+  %   \key d \major
+  %   {
+  %     cis''8 r b cis b32 c b16 g8 e d | cis a g dis bes4 r |
+  %   }
+  %   \chordmode{
+  %     e1:m7 | a1:7 |
+  %   }
+  %   #"Io"
+  %   #"Coquette"
 % }}}
 
 % {{{ LICK G
@@ -514,7 +499,7 @@
     \time 4/4
     \key g \major
     { 
-      a8 b c d e g e f | fis a c e d b g d' | b1 |
+      a8\4 b c d e g e f | fis a c e d b g d' | b1 |
     }
     \chordmode{
       a1:m7 | d1:7 | g1 |
@@ -528,7 +513,7 @@
     \time 4/4
     \key g \major
     { 
-      b8 c e a c e g a | \trip c d c a g e c \trip g' a g |
+      b8\1 c\2 e\1 a\4 c e g a | \trip c d c a g e c \trip g' a g |
       fis e b4 r2 |
 
     }

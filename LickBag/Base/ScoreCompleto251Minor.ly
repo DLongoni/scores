@@ -30,7 +30,6 @@
     \lickAD
     \lickAE
     \lickAF
-    \lickAG
     \lickAH
     \lickAI
     \lickAJ

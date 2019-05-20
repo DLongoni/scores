@@ -1,11 +1,10 @@
   \book{
     \bookOutputSuffix "C"    
-    \lickA
     \lickB
     \lickC
     \lickD
     \lickE
-    \lickF
+    % \lickF
     \lickG
     \lickH
     \lickI

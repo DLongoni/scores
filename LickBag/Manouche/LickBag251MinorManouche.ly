@@ -21,7 +21,6 @@
     \lickW
     \lickX
     \lickAF
-    \lickAG
     \lickAH
     \lickAI
     \lickAJ

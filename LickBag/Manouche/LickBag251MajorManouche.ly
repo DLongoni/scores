@@ -12,12 +12,10 @@
 % {{{ BOOKS
   \book{
     \bookOutputSuffix "C"    
-    \lickA
     \lickB
     \lickC
     \lickD
     \lickE
-    \lickF
     \lickG
     \lickH
     \lickI
@@ -28,7 +26,6 @@
     \lickP
     \lickR
     \lickT
-    \lickU
     \lickW
     \lickX
     \lickZ
