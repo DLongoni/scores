@@ -28,7 +28,6 @@
     \lickT
     \lickW
     \lickX
-    \lickZ
     \lickAC
     \lickAD
     \lickAF

@@ -335,7 +335,7 @@
     \time 4/4
     \key c \major
     {
-      b''4 g8 a f16 e d8~ d16 g8 e16 |
+      b''4\3 g8\4 a f16 e d8~ d16 g8 e16 |
       c a aes8~ aes e' \trip ees c bes \trip a g f | e1 |
     }
     \chordmode{
@@ -379,7 +379,7 @@
     \time 4/4
     \key c \major
     {
-      \partial 2 f8\1 e d e | cis d f a cis e d cis |
+      \partial 2 f8\2 e\1 d e | cis d f a cis e d cis |
       f, e\1 r d\1 r c'\2 b\1 a | g f e g d c b a | g1 |
     }
     \chordmode{
@@ -452,8 +452,7 @@
     #"Tangerine"
 % }}}
 
-% {{{ LICK AE
-  lickAE = \LickScore
+% {{{ LICK AE lickAE = \LickScore
     \time 4/4
     \key c \major
     { 
@@ -529,7 +528,7 @@
     \time 4/4
     \key g \major
     { 
-      e8 a b c e g e f | fis a c ees d c a fis |
+      e8\4 a\4 b\1 c\2 e g e f | fis a c ees d c a fis |
       d b a fis g b d fis | g b d fis e2 |
 
     }
