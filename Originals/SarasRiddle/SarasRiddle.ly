@@ -38,7 +38,12 @@ global = {
   \myTime
   \set Score.markFormatter = #format-mark-box-alphabet
 }
-\layout { indent = #0 }
+\layout {
+  \context { 
+    \Staff \RemoveEmptyStaves 
+    \override VerticalAxisGroup.remove-first = ##t
+  }
+}
 %}}}
 
 % {{{ PARTE A
@@ -46,9 +51,15 @@ global = {
     \partial 4 c'8 a |
     \repeat volta 2{
       bes4. \tuplet 3/2 {a16 bes a} \tuplet 3/2 {g8 e des} |
-      c8 d ees g f4~ | f2 g8 a | bes2 bes8 a | 
+      c8 d ees g f4~ | f2 g8 a | bes2 bes8 g | 
       aes4. g8 \tuplet 3/2 {f8 ges f} | des2 ees4 | c2.~ | c2  c'8 a |
     }
+  }
+
+  silenzioA = {
+    \partial 4 s4 |
+    s2. | s2. | s2. | s2. | 
+    s2. | s2. | s2. | s2. |
   }
 
   accordiA = \chordmode{
@@ -62,11 +73,18 @@ global = {
 
 % {{{ PARTE B
   temaB = {
-    % sarebbe da scrivere in 9/8
     \time 9/8
     \repeat volta 2{
       g8 d bes' g4 f16 g16 f8 d c~ |
-      c8 g bes c d e f d d |
+      c8 g bes c d e f4 d8 |
+    }
+  }
+
+  temaBdue = {
+    \time 9/8
+    \repeat volta 2{
+      bes'8 g d' bes4 a16 bes16 a8 f e~ |
+      e4 f8 a c bes a4 f8 |
     }
   }
 
@@ -82,6 +100,11 @@ tema = \relative c' {
   \temaB \break
 }
 
+temaDue = \relative c' {
+  \silenzioA
+  \temaBdue 
+}
+
 chordsPart ={
   \new ChordNames {
     \set chordChanges = ##t
@@ -95,9 +118,15 @@ temaPart = \new Staff \with {
   midiInstrument = "piano"
 } { \clef "treble_8" \global \tema }
 
+temaPartDue = \new Staff \with {
+  instrumentName = ""
+  midiInstrument = "piano"
+} { \clef "treble_8" \global \temaDue }
+
 scoreContent = << 
   \chordsPart
   \temaPart
+  \temaPartDue
 >>
 %}}}
 
@@ -106,7 +135,7 @@ scoreContent = <<
     \bookOutputSuffix "C"
     \score {
       \scoreContent
-      \layout {}
+      \layout { indent = #0 }
       \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 90 4) } }
     }
   }
