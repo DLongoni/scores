@@ -73,10 +73,13 @@ global = {
 
 % {{{ PARTE B
   temaB = {
-    \time 9/8
     \repeat volta 2{
+      \time 9/8
       g8 d bes' g4 f16 g16 f8 d c~ |
       c8 g bes c d e f4 d8 |
+      g8 d bes' g4 f16 g16 f8 d c~ |
+      \time 6/8
+      c8 e c a8 g8 g8 |
     }
   }
 
@@ -84,12 +87,35 @@ global = {
     \time 9/8
     \repeat volta 2{
       bes'8 g d' bes4 a16 bes16 a8 f e~ |
-      e4 f8 a c bes a4 f8 |
+      e8 f g a c bes a4 f8 |
+      bes8 g d' bes4 a16 bes16 a8 f e~ |
+      \time 6/8
+      e8 g e a8 g g |
+    }
+  }
+
+  bassoB = {
+    \repeat volta 2{
+      g,2. bes,4. | c4. d2. |
+      g,2. d4. | 
+      \time 6/8
+      c2. |
+    }
+  }
+
+  ritmicaB = {
+    \repeat volta 2{
+      r8 <bes' d''>8 r8 <bes' d''>8 r4 r8 <bes' d''>8 r8 |
+      <c'' e''>8 r4 r8 <d'' f''>8 r8 <d'' f''>8 r4 |
+      r8 <bes' d''>8 r8 <bes' d''>8 r4 r8 <bes' d''>8 r8 |
+      \time 6/8
+      <c'' e''>8 r4 r8 <c'' e''>8 r8 |
     }
   }
 
   accordiB = \chordmode{
-    g1*9/8:m7 | c4. d2.:m7 |
+    g1*9/8:m7 | c4.:9 d2.:m7 |
+    g1*9/8:m7 | c2.:9 |
   }
 % }}}
 
@@ -97,6 +123,7 @@ global = {
 tema = \relative c' {
   \mark \default
   \temaA \break
+  \mark \default
   \temaB \break
 }
 
@@ -113,6 +140,17 @@ chordsPart ={
   }
 }
 
+ritmicaPart = \new Staff {
+  \silenzioA
+  \ritmicaB
+}
+
+bassoPart = \new Staff {
+  \clef "bass"
+  \silenzioA
+  \bassoB
+}
+
 temaPart = \new Staff \with {
   instrumentName = ""
   midiInstrument = "piano"
@@ -127,6 +165,8 @@ scoreContent = <<
   \chordsPart
   \temaPart
   \temaPartDue
+  \ritmicaPart
+  \bassoPart
 >>
 %}}}
 
