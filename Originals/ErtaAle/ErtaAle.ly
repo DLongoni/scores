@@ -45,7 +45,7 @@ global = {
   temaA = {
     \partial 4 ees8 d
     \repeat volta 2{
-      g,4 c8 ees d g ees4 d8 c b d~ |
+      g,4 c8 ees d g ees4 d8 c bes d~ |
       d4. ees8 d f~ f ees d ees d g,|
       R1*12/8 |
       r2. r4. r8 ees'8 d |
@@ -53,6 +53,20 @@ global = {
   }
 
   accordiA = \chordmode{
+    \partial 4 s4
+    \repeat volta 2{
+      g1*12/8:m | bes2. f 2. | g1*12/8:m | g1*12/8:m |
+    }
+  }
+
+  bassoA = {
+    \partial 4 s4
+    \repeat volta 2{
+      g4 bes8 r c d g,4 bes8 r c d |
+      bes4. c4. f,4. r8 a c |
+      g4 bes8 r c d g,4 bes8 r c d |
+      g,4 bes8 r c d g,4 bes8 r c d |
+    }
   }
 % }}}
 
@@ -74,9 +88,15 @@ temaPart = \new Staff \with {
   midiInstrument = "piano"
 } { \clef "treble_8" \global \tema }
 
+bassoPart = \new Staff {
+  \clef "bass"
+  \global
+  \relative c {\bassoA}
+}
 scoreContent = << 
   \chordsPart
   \temaPart
+  \bassoPart
 >>
 %}}}
 
