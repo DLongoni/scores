@@ -1,7 +1,7 @@
 % {{{ PARAMETRI
   myTitle = "Sara's Riddle"
   myKey = \key bes \major
-  myTime = \time 3/4 
+  myTime = \time 9/8 
   myTempo =  #(ly:make-moment 60 4)
 % }}}
 
@@ -48,25 +48,25 @@ global = {
 
 % {{{ PARTE A
   temaA = {
-    \partial 4 c'8 a |
+    \partial 4. c'4 a8 |
     \repeat volta 2{
-      bes4. \tuplet 3/2 {a16 bes a} \tuplet 3/2 {g8 e des} |
-      c8 d ees g f4~ | f2 g8 a | bes2 bes8 g | 
-      aes4. g8 \tuplet 3/2 {f8 ges f} | des2 ees4 | c2.~ | c2  c'8 a |
+      bes4.~ bes4 a8 g8 e des |
+      c4 d8 ees4 g8 f4.~ | f2. g4 a8 | bes2. bes4 g8 | 
+      aes4.~ aes4 g8 f8 ges f | des2. ees4. | c2.~ c4. | c2.  c'4 a8 |
     }
   }
 
   silenzioA = {
-    \partial 4 s4 |
-    s2. | s2. | s2. | s2. | 
-    s2. | s2. | s2. | s2. |
+    \partial 4. s4. |
+    s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | 
+    s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 |
   }
 
   accordiA = \chordmode{
-    \partial 4 s4 |
+    \partial 4. s4. |
     \repeat volta 2{
-      bes2.:maj7 | aes2.:6 | bes2.:6 | g2.:m7 |
-      bes2.:m7 | ges2.:7 | f2.:6 | f2.:6 |
+      bes1*9/8:maj7 | aes1*9/8:6 | bes1*9/8:6 | g1*9/8:m7 |
+      bes1*9/8:m7 | ges1*9/8:7 | f1*9/8:6 | f1*9/8:6 |
     }
   }
 % }}}
