@@ -1,5 +1,5 @@
 % {{{ PARAMETRI
-  myTitle = "Sara's Riddle"
+  myTitle = "Riddle"
   myKey = \key bes \major
   myTime = \time 9/8 
   myTempo =  #(ly:make-moment 60 4)
