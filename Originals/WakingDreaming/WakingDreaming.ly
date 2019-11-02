@@ -1,5 +1,5 @@
 % {{{ PARAMETRI
-  myTitle = "Sonnolento"
+  myTitle = "WakingDreaming"
   myKey = \key c \major
   myTime = \time 2/4 
   myTempo =  #(ly:make-moment 60 4)
@@ -161,11 +161,18 @@ scoreContent = <<
 
 % {{{ BOOKS
   \book{
+    \header{ composer="C" }
     \bookOutputSuffix "C"
     \score {
       \scoreContent
       \layout {}
       \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 90 4) } }
     }
+  }
+
+  \book{
+    \header{ composer="Bb" }
+    \bookOutputSuffix "Bb"
+    \score { \transpose c d {\scoreContent} }
   }
 % }}}

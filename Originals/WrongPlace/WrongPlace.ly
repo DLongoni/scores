@@ -1,5 +1,5 @@
 % {{{ PARAMETRI
-  myTitle = "Riddle"
+  myTitle = "Wrong Place"
   myKey = \key bes \major
   myTime = \time 9/8 
   myTempo =  #(ly:make-moment 60 4)
@@ -44,22 +44,35 @@ global = {
     \override VerticalAxisGroup.remove-first = ##t
   }
 }
+
+toCoda = {
+  % the align part
+  \mark \markup { { \lower #1 "al  " { \musicglyph #"scripts.coda"} } } 
+}
+
+struttura = \markup {
+  \column {
+      \line {
+        \bold{A}, \bold{B}, \bold{solo su B}, \bold{C}, \bold{solo su D}, \bold{B}, \bold{A}, \bold{Coda}
+    }
+  }
+}
 %}}}
 
 % {{{ PARTE A
   temaA = {
     \partial 4. c'4 a8 |
-    \repeat volta 2{
       bes4.~ bes4 a8 g8 e des |
       c4 d8 ees4 g8 f4.~ | f2. g4 a8 | bes2. bes4 g8 | 
-      aes4.~ aes4 g8 f8 ges f | des2. ees4. | c2.~ c4. | c2.  c'4 a8 |
-    }
+      aes4.~ aes4 g8 f8 ges f |\toCoda des2. ees4. | c2.~ c4. | c2.  c'4 a8 |
   }
 
   silenzioA = {
     \partial 4. s4. |
-    s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | 
-    s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 |
+    \repeat volta 2{
+      s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | 
+      s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 |
+    }
   }
 
   accordiA = \chordmode{
@@ -115,7 +128,89 @@ global = {
 
   accordiB = \chordmode{
     g1*9/8:m7 | c4.:9 d2.:m7 |
-    g1*9/8:m7 | c2.:9 |
+    g1*9/8:m7 | 
+    \time 6/8
+    c2.:9 |
+  }
+% }}}
+
+% {{{ PARTE C
+  temaC = {
+    \partial 4. c'4 a8 |
+    \time 9/8
+    \repeat volta 2{
+      bes4.~ bes4 a8 g8 e d |
+      c4 d8 ees4 g8 f4.~ | f2. g4 a8 | bes2. d4. | 
+      c4.~ c4 a8 c a g | f2. a4. | g2.~ g4. | r2. c4 a8 |
+    } \break
+    bes4.~ bes4 a8 g8 e d |
+    c4 d8 ees4 g8 f4.~ | f2. g4 a8 | bes2. d4. | 
+    c2. e4. | d2. r4. |
+  }
+
+  silenzioC = {
+    \partial 4. s4. |
+    \time 9/8
+    \repeat volta 2{
+      s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | 
+      s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 |
+    }
+    s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | 
+    s1*9/8 | s1*9/8 | 
+  }
+
+  accordiC = \chordmode{
+    \partial 4. s4. |
+    \time 9/8
+    \repeat volta 2{
+      bes1*9/8 | aes1*9/8 | bes1*9/8 | g1*9/8:m7 |
+      f1*9/8 | d1*9/8:m | ees1*9/8 | ees1*9/8 |
+    }
+    bes1*9/8 | aes1*9/8 | bes1*9/8 | g1*9/8:m7 |
+    f1*9/8 | g1*9/8:m |
+  }
+% }}}
+
+% {{{ PARTE D
+  temaD = {
+    \repeat volta 2{
+      g,8 d bes' g4 f16 g16 f8 d bes~ |
+      bes8 g bes c d e f4 d8 |
+      g8 d bes' g4 f16 g16 f8 d bes~ |
+      bes8 g bes c d e f4 d8 |
+    }
+  }
+
+  bassoD = {
+    \repeat volta 2{
+      g,4 g8 r4 g8~ g4.~ | g2. r4. | g4 g8 r4 g8 r4. | g2.~ g4. |
+    }
+  }
+
+  silenzioD = {
+    \repeat volta 2{
+      s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | 
+    }
+  }
+
+  accordiD = \chordmode{
+    \repeat volta 2{
+      g1*9/8:m | g1*9/8:m | g1*9/8:m | g1*9/8:m |
+    }
+  }
+% }}}
+
+% {{{ PARTE Coda
+  temaCoda = {
+    cis2. dis4. | eis2.~ eis4. |
+  }
+
+  silenzioCoda = {
+      s1*9/8 | s1*9/8 |
+  }
+
+  accordiCoda = \chordmode{
+    a1*9/8 | cis1*9/8 |
   }
 % }}}
 
@@ -125,11 +220,21 @@ tema = \relative c' {
   \temaA \break
   \mark \default
   \temaB \break
+  \mark \default
+  \temaC \break
+  \mark \default
+  \temaD \break
+  \mark \markup { \musicglyph #"scripts.coda"}
+  \temaCoda
+  \bar"|."
 }
 
 temaDue = \relative c' {
   \silenzioA
   \temaBdue 
+  \silenzioC
+  \silenzioD
+  \silenzioCoda
 }
 
 chordsPart ={
@@ -137,18 +242,27 @@ chordsPart ={
     \set chordChanges = ##t
     \accordiA
     \accordiB
+    \accordiC
+    \accordiD
+    \accordiCoda
   }
 }
 
 ritmicaPart = \new Staff {
   \silenzioA
   \ritmicaB
+  \silenzioC
+  \silenzioD
+  \silenzioCoda
 }
 
 bassoPart = \new Staff {
   \clef "bass"
   \silenzioA
   \bassoB
+  \silenzioC
+  \bassoD
+  \silenzioCoda
 }
 
 temaPart = \new Staff \with {
@@ -172,11 +286,20 @@ scoreContent = <<
 
 % {{{ BOOKS
   \book{
+    \header{ composer="C" }
+    \struttura
     \bookOutputSuffix "C"
     \score {
       \scoreContent
       \layout { indent = #0 }
       \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 90 4) } }
     }
+  }
+
+  \book{
+    \header{ composer="Bb" }
+    \struttura
+    \bookOutputSuffix "Bb"
+    \score { \transpose c d {\scoreContent} }
   }
 % }}}
