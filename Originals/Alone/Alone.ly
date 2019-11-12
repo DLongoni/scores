@@ -258,6 +258,7 @@ scoreContent = <<
   \book{
     \struttura
     \bookOutputSuffix "C"
+    \header{ composer="C" }
     \score {
       \scoreContent
       \layout {}
@@ -267,6 +268,7 @@ scoreContent = <<
 
   \book{
     \struttura
+    \header{ composer="Bb" }
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }
   }

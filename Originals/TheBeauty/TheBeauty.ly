@@ -269,6 +269,7 @@ percPart = \new RhythmicStaff \with {
 
 \book{
   \bookOutputSuffix "Score"
+  \header{ composer="Score" }
   \score {
     <<
       \chordsPart
@@ -291,6 +292,7 @@ percPart = \new RhythmicStaff \with {
 
 \book{
   \bookOutputSuffix "C"
+  \header{ composer="C" }
   \score {
     <<
       \chordsPart
@@ -306,6 +308,7 @@ percPart = \new RhythmicStaff \with {
 
 \book{
   \bookOutputSuffix "Bb"
+  \header{ composer="Bb" }
   \score {
     <<
       \transpose c d { \chordsPart }
@@ -320,6 +323,7 @@ percPart = \new RhythmicStaff \with {
 
 \book{
   \bookOutputSuffix "Perc"
+  \header{ composer="Perc" }
   \score {
     <<
       \chordsPart

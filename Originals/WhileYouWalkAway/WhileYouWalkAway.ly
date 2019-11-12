@@ -151,6 +151,7 @@ scoreContent = <<
 % {{{ BOOKS
   \book{
     \bookOutputSuffix "C"
+    \header{ composer="C" }
     \score {
       \scoreContent
       \layout {}
@@ -159,6 +160,7 @@ scoreContent = <<
   }
 
   \book{
+    \header{ composer="Bb" }
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }
   }
