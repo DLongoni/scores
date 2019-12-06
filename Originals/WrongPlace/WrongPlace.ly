@@ -210,7 +210,7 @@ struttura = \markup {
   }
 
   accordiCoda = \chordmode{
-    a1*9/8 | cis1*9/8 |
+    a1*6/8 b4. | cis1*9/8 |
   }
 % }}}
 
