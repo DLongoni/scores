@@ -9,36 +9,43 @@
 \version "2.18.2"
 
 \header {
-  title = \myTitle
+title = \myTitle
 }
 
 \paper{
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
+print-first-page-number = ##t
+oddHeaderMarkup = \markup \null
+evenHeaderMarkup = \markup \null
+oddFooterMarkup = \markup {
+  \fill-line {
+    \on-the-fly \print-page-number-check-first
+    \fromproperty #'page:page-number-string
   }
-  evenFooterMarkup = \oddFooterMarkup
-  #(set-global-staff-size 10)
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 20))
+}
+evenFooterMarkup = \oddFooterMarkup
+#(set-global-staff-size 10)
+myStaffSize = #20
+fonts = #(make-pango-font-tree
+"FontAwesome"
+"FontAwesome"
+"FontAwesome"
+(/ myStaffSize 20))
 }
 
 global = {
-  \myKey
-  \numericTimeSignature
-  \myTime
-  \set Score.markFormatter = #format-mark-box-alphabet
+\myKey
+\numericTimeSignature
+\myTime
+\set Score.markFormatter = #format-mark-box-alphabet
 }
 \layout { indent = #0 }
+
+\layout {
+  \context { 
+    \Staff \RemoveEmptyStaves 
+    \override VerticalAxisGroup.remove-first = ##t
+  }
+}
 %}}}
 
 % {{{ PARTE A
@@ -80,6 +87,11 @@ global = {
       c'4 aes | bes2 | a2 | g2 |
     }
   }
+
+  silenzioA = {
+      s2 | s2 | s2 | s2 | 
+      s2 | s2 | s2 | s2 | 
+  }
 % }}}
 
 % {{{ PARTE B
@@ -94,6 +106,19 @@ global = {
     }
     \alternative{
       { r4. f,8 fis g | }
+      { r2. | }
+    }
+}
+
+  temaBdue = {
+    \time 6/8
+    \key c \minor
+    \repeat volta 2{
+      ees,8 g d' ees d ees | f ees d c bes d | aes4. bes4. | c2. |
+      ees,8 g d' ees d ees | f4 ees8 d ees e | f2. |
+    }
+    \alternative{
+      { r2. | }
       { r2. | }
     }
 }
@@ -117,7 +142,14 @@ tema = \relative c' {
   \temaA \break
   \mark \default
   \temaB \break
+  \bar "|."
 }
+
+temaDue = \relative c' {
+  \silenzioA
+  \temaBdue 
+}
+
 
 basso = \relative c {
   \bassoA \break
@@ -135,6 +167,11 @@ temaPart = \new Staff \with {
   instrumentName = ""
   midiInstrument = "piano"
 } { \clef "treble_8" \global \tema }
+
+temaDuePart = \new Staff \with {
+  instrumentName = ""
+  midiInstrument = "piano"
+} { \clef "treble_8" \global \temaDue }
 
 bassoPart = \new Staff \with {
   instrumentName = ""
@@ -154,6 +191,7 @@ ritmicaPart = \new Staff \with {
 scoreContent = << 
   \chordsPart
   \temaPart
+  \temaDuePart
   \ritmicaPart
   \bassoPart
 >>
