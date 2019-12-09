@@ -134,6 +134,55 @@ global = {
       { g2.:7 | }
     }
   }
+
+  silenzioB = {
+    \time 6/8
+    \repeat volta 2{
+      s2. | s2. | s2. | s2. | 
+      s2. | s2. | s2. | 
+    }
+    \alternative{
+      { s2. | }
+      { s2. | }
+    }
+  }
+% }}}
+
+% {{{ PARTE C
+  temaC = {
+    \time 2/4
+    \key c \major
+    \mark \markup {
+      \hspace #44
+      "Going from B to A play this on the last bar of B"
+    }
+      r2 |  g4 c |
+  }
+
+  ritmicaCuno = {
+    \time 2/4
+      ees16 f ees8 d16 e d8 | c16 d c8~ c4 |
+  }
+
+  ritmicaCdue = {
+    \time 2/4
+      aes16 bes aes8 g16 a g8 | e16 fis e8 ees4 |
+  }
+
+  accordiC = \chordmode{
+    \time 2/4
+      aes4:7 g:7 | c4:maj7 aes:maj7 | 
+  }
+
+  bassoC = {
+    \time 2/4
+    aes8 c g a | c4 aes4 |
+  }
+
+  silenzioC = {
+    \time 2/4
+      s2 | s2 |
+  }
 % }}}
 
 % SCORE {{{
@@ -143,16 +192,20 @@ tema = \relative c' {
   \mark \default
   \temaB \break
   \bar "|."
+  \temaC \break
 }
 
 temaDue = \relative c' {
   \silenzioA
   \temaBdue 
+  \silenzioC
 }
 
 
 basso = \relative c {
   \bassoA \break
+  \silenzioB
+  \bassoC
 }
 
 chordsPart ={
@@ -160,6 +213,7 @@ chordsPart ={
     \set chordChanges = ##t
     \accordiA
     \accordiB
+    \accordiC
   }
 }
 
@@ -185,6 +239,11 @@ ritmicaPart = \new Staff \with {
       \new Voice <<  
         \relative c'' {\ritmicaAuno }
         \relative c' {\ritmicaAdue }
+      >>
+        \silenzioB
+      \new Voice <<  
+        \relative c' {\ritmicaCuno }
+        \relative c'' {\ritmicaCdue }
       >>
 }
 
