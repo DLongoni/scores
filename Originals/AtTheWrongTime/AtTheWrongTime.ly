@@ -1,5 +1,5 @@
 % {{{ PARAMETRI
-  myTitle = "Wrong Place"
+  myTitle = "At the Wrong Time"
   myKey = \key bes \major
   myTime = \time 9/8 
   myTempo =  #(ly:make-moment 60 4)
@@ -300,6 +300,6 @@ scoreContent = <<
     \header{ composer="Bb" }
     \struttura
     \bookOutputSuffix "Bb"
-    \score { \transpose c d {\scoreContent} }
+    \score { \transpose c d, {\scoreContent} }
   }
 % }}}
