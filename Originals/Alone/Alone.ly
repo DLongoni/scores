@@ -76,25 +76,31 @@ struttura = \markup {
 
   ritmicaUnoIntro = {
     \repeat volta 3{
-      f,8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. |
+      f,8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | 
+      ees8 r8 r2 ees4. | ees8 r8 r2 ees4. |
     }
-    f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. |
+    f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | 
+    ees8 r8 r2 ees4. | ees8 r8 r2 ees4. |
     g'8 f g f es d es d c | a2.~ a4. | r2. r4. |
     \repeat volta 2{ f4 f f f8 f f | es4 es es es8 es es | d4 d d d8 d d | es4 es es es8 es es | }
   }
 
   ritmicaDueIntro = {
     \repeat volta 3{
-      f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 |
+      f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 a,8 | 
+      g4 ees'2 r4 a,8 | g4 ees'2 r4 a,8 |
     }
-     f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 |
+    f4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 a,8 | 
+    g4 ees'2 r4 a,8 | g4 ees'2 r4 a8 |
     s2. s4. | f4 f f f8 f f | f4 f f f8 f f |
     \repeat volta 2{ c4 c c c8 c c | c4 c c c8 c c | c4 c c c8 c c | c4 c c c8 c c | }
   }
 
   accordiIntro = \chordmode{
-    \repeat volta 3{ s2. s4. | s2. s4. | s2. s4. | s2. s4. | s2. s4. |}
-   s2. s4. | s2. s4. | s2. s4. | s2. s4. | s2. s4. |
+    \repeat volta 3{ f2. f4. | f2. f4. | f2. f4. | 
+      ees2.:maj7.11+ ees4.:maj7.11+ | ees2.:maj7.11+ ees4.:maj7.11+ |}
+    f2. f4. | f2. f4. | f2. f4. | 
+    ees2.:maj7.11+ ees4.:maj7.11+ | ees2.:maj7.11+ ees4.:maj7.11+ |
    s2. s4. | f2.:7 f4.:7 | f2.:7 f4.:7 | 
    \repeat volta 2{f2.:7 f4.:7 | f2.:7/es f4.:7/es | f2.:7/d f4.:7/d | f2.:7/c f4.:7/c | }
   }
