@@ -88,10 +88,10 @@ struttura = \markup {
   ritmicaDueIntro = {
     \repeat volta 3{
       f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 a,8 | 
-      g4 ees'2 r4 a,8 | g4 ees'2 r4 a,8 |
+      g4 ees'2 r4 a,8 | g4 ees'2 r4 c8 |
     }
-    f4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 a,8 | 
-    g4 ees'2 r4 a,8 | g4 ees'2 r4 a8 |
+    f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 a,8 | 
+    g4 ees'2 r4 a,8 | g4 ees'2 r4 c8 |
     s2. s4. | f4 f f f8 f f | f4 f f f8 f f |
     \repeat volta 2{ c4 c c c8 c c | c4 c c c8 c c | c4 c c c8 c c | c4 c c c8 c c | }
   }
