@@ -44,20 +44,26 @@ fakeBar = {
   \once \omit Score.TimeSignature
   \myTime
 }
-\paper{
-  system-system-spacing =
-    #'((basic-distance . -1) 
-       (minimum-distance . -1)
-       (padding . -1)
-       (stretchability . 60)) 
-}
+% \paper{
+%   system-system-spacing =
+%     #'((basic-distance . -1) 
+%        (minimum-distance . -1)
+%        (padding . -1)
+%        (stretchability . 60)) 
+% }
 
 struttura = \markup {
   \column {
       \line {
-        \bold{Intro}, \bold{Bridge}, \bold{A}, \bold{B}, \bold{A}, \bold{Solo}-Intro, \bold{Bridge}, \bold{C}, \bold{Solo}-Vamp, \bold{A}
+        \bold{Intro}, \bold{A}, \bold{B}, \bold{A}, \bold{Solo}:Vamp+\bold{C},
         \bold{D}, \bold{B}, \bold{A}, \bold{Coda}
     }
+  }
+}
+\layout {
+  \context { 
+    \Staff \RemoveEmptyStaves 
+    \override VerticalAxisGroup.remove-first = ##t
   }
 }
 %}}}
@@ -65,36 +71,37 @@ struttura = \markup {
 % {{{ PARTE Intro
   temaIntro = {
     \repeat volta 3{
-      r4 es'4 d es8 d c~ | c4 c b c8 b a~ | a4 a g a8 g es~ | es2 r4 r4. | r2. r4. |
-    }
-    r4 es4 d es8 d c~ | c4 c b c8 b a~ | a4 a g a8 g es~ | es2 r4 r4. | r2. r4. | \break
-    \mark "Bridge"
+      r4 es4 d es8 d c~ | c4 c b c8 b a~ | a4 a g a8 g es~ | es2 r4 r4. | r2. r4. |
+    } \break
     es'8 d es d c b c b a | f2.~ f4. | r2. r4. | \break
     \mark "Vamp"
-    \repeat volta 2{ s2. s4. | s2. s4. | s2. s4. | s2. s4. |}
+    \repeat volta 2{ 
+      f4 f f f8 f f | ees4 ees ees ees8 ees ees |
+      d4 d d d8 d d | c4 c c c8 c c |
+    }
   }
 
   ritmicaUnoIntro = {
     \repeat volta 3{
-      f,8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. |
+      f,8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | 
+      ees8 r8 r2 ees4. | ees8 r8 r2 ees4. |
     }
-    f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. |
-    g'8 f g f es d es d c | a2.~ a4. | r2. r4. |
-    \repeat volta 2{ f4 f f f8 f f | es4 es es es8 es es | d4 d d d8 d d | es4 es es es8 es es | }
+    s2. s4. | s2. s4. | s2. s4. | 
+    \repeat volta 2{ s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | }
   }
 
   ritmicaDueIntro = {
     \repeat volta 3{
-      f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 |
+      f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 a,8 | 
+      g4 ees'2 r4 a,8 | g4 ees'2 r4 c8 |
     }
-     f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 c8 |
     s2. s4. | f4 f f f8 f f | f4 f f f8 f f |
-    \repeat volta 2{ c4 c c c8 c c | c4 c c c8 c c | c4 c c c8 c c | c4 c c c8 c c | }
+    \repeat volta 2{ s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | }
   }
 
   accordiIntro = \chordmode{
-    \repeat volta 3{ s2. s4. | s2. s4. | s2. s4. | s2. s4. | s2. s4. |}
-   s2. s4. | s2. s4. | s2. s4. | s2. s4. | s2. s4. |
+    \repeat volta 3{ f2. f4. | f2. f4. | f2. f4. | 
+      ees2.:maj7.11+ ees4.:maj7.11+ | ees2.:maj7.11+ ees4.:maj7.11+ |}
    s2. s4. | f2.:7 f4.:7 | f2.:7 f4.:7 | 
    \repeat volta 2{f2.:7 f4.:7 | f2.:7/es f4.:7/es | f2.:7/d f4.:7/d | f2.:7/c f4.:7/c | }
   }
@@ -116,7 +123,7 @@ struttura = \markup {
   }
 
   temaAtris = {
-    d'2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
+    d2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
     g2.~ g4. | d4 g8 r g r fis4 a8 | bes2.~ bes4.~ | bes2. r4. |
     d,2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
     g2.~ g4. | ees4 g8 r g r f ees d | bes2. r4. |
@@ -148,16 +155,38 @@ struttura = \markup {
   }
 % }}}
 
-% {{{ PARTE C
-  temaC = {
+% {{{ PARTE C - Dismessa
+  % temaC = {
+  %   \repeat volta 2 {
+  %     c8 f, es'16 d c bes c4 a g8 | b16 a g f es8 g a16 b a g b4 a8 |
+  %   }
+  % }
+  %
+  % accordiC = \chordmode{
+  %   \repeat volta 2 {
+  %     f2.:7 f4.:7 | f2.:7 f4.:7 |
+  %   }
+  % }
+% }}}
+
+% {{{ PARTE C - Soli
+  silenzioC = {
     \repeat volta 2 {
-      c8 f, es'16 d c bes c4 a g8 | b16 a g f es8 g a16 b a g b4 a8 |
+      g1*9/8 | r1*9/8 | r1*9/8 |
+    }
+    \alternative{
+      {r1*9/8 |}
+      {r1*9/8 |}
     }
   }
 
   accordiC = \chordmode{
     \repeat volta 2 {
-      f2.:7 f4.:7 | f2.:7 f4.:7 |
+      g1*9/8:m | ees1*9/8 | f1*9/8 |
+    }
+    \alternative{
+      {d1*9/8:m |}
+      {d1*9/8:7 |}
     }
   }
 % }}}
@@ -165,7 +194,7 @@ struttura = \markup {
 % {{{ PARTE D
   temaD = {
     \repeat volta 2 {
-      d8 g, ees'16 d c bes c4 a g8 | bes16 a g fis es8 fis g16 fis es d c4^"Stop" d8 |
+      d'8 g, ees'16 d c bes c4 a g8 | bes16 a g fis es8 fis g16 fis es d c4^"Stop" d8 |
     }
   }
 
@@ -193,13 +222,13 @@ tema = \relative c' {
   \mark "Intro"
   \temaIntro
   \break
-  \pageBreak
+  % \pageBreak
   \mark \default
   \temaA \break 
   \mark \default
   \temaB \break 
   \mark \default
-  \temaC \break 
+  \silenzioC \break 
   \mark \default
   \temaD \bar "|."
   % \mark "Soli"
@@ -209,13 +238,14 @@ tema = \relative c' {
 }
 
 ritmicaUno = \relative c' {
-  \ritmicaUnoIntro
-  \temaAbis
+  % \ritmicaUnoIntro
+  \ritmicaDueIntro
+  \temaAtris
 }
 
-ritmicaDue = \relative c' {
-  \ritmicaDueIntro
-}
+% ritmicaDue = \relative c' {
+%   \ritmicaDueIntro
+% }
 
 chordsPart ={
   \new ChordNames \with{midiInstrument = "acoustic guitar (nylon)"}
@@ -239,18 +269,18 @@ ritmicaUnoPart = \new Staff \with {
   midiInstrument = "acoustic guitar (nylon)"
 } { \clef "treble_8" \global \ritmicaUno }
 
-ritmicaDuePart = \new Staff \with {
-  
-  \override VerticalAxisGroup.default-staff-staff-spacing =#'((basic-distance . 30))
-  instrumentName = ""
-  midiInstrument = "acoustic guitar (nylon)"
-} { \clef "treble_8" \global \ritmicaDue }
+% ritmicaDuePart = \new Staff \with {
+%   
+%   \override VerticalAxisGroup.default-staff-staff-spacing =#'((basic-distance . 30))
+%   instrumentName = ""
+%   midiInstrument = "acoustic guitar (nylon)"
+% } { \clef "treble_8" \global \ritmicaDue }
 
 scoreContent = << 
   \chordsPart
   \temaPart
   \ritmicaUnoPart
-  \ritmicaDuePart
+  % \ritmicaDuePart
 >>
 %}}}
 
