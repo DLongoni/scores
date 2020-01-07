@@ -249,6 +249,7 @@ ritmicaUno = \relative c' {
 
 chordsPart ={
   \new ChordNames \with{midiInstrument = "acoustic guitar (nylon)"}
+    \powerChords % necessario per Ees lyd
     \set chordChanges = ##t
     \accordiIntro
     \accordiA

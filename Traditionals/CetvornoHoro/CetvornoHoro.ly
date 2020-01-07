@@ -1,9 +1,9 @@
 % {{{ PARAMETRI
-  myTitle = "Arapsko Kokonjeste"
-  mySubTitle = "Serbian"
+  myTitle = "Cetvorno Horo"
+  mySubTitle = "Bulgarian"
   myKey = \key bes \major
-  myTime = \time 2/4 
-  myTempo =  #(ly:make-moment 190 4)
+  myTime = \time #'(3 2 2) 7/16 
+  myTempo =  #(ly:make-moment 120 4)
 % }}}
 
 % INTESTAZIONE {{{
@@ -49,19 +49,24 @@ trip = #(define-music-function (parser location m1 m2 m3)
 
 % {{{ PARTE A
   temaA = {
-    \partial 8 g8 |
-    c4. g8 | c4. g8 | c4. g8 | c16 ees d ees c8. g16 | 
-    c16 ees d ees c8. g16 | c16 ees d ees c8. g16 | c16 ees d ees c8. g16 | c16 ees d ees c8. g16 | 
     \repeat volta 2 {
-      bes8 bes16 c g8 d' | bes16 d a bes g8 d' | bes8 bes16 a g8 d' | bes16 d a bes g4 |
+      g8 d16 fis g a bes | g bes bes a8 bes16 a | g8 a16 bes d c8 | \break
+      bes16 a g fis g a bes | g bes bes a8 bes16 a |
     } 
+    \alternative{
+      { g8 g16 g8 r8 }
+      { g8 g16 g8\staccato g16 a }
+    }
   }
 
   accordiA = \chordmode{
-    \partial 8 s8 |
-    c2:m | c2:m | c2:m | c2:m | c2:m | c2:m | c2:m | c2:m |
     \repeat volta 2{
-      g2:m | g2:m | g2:m | d4 g4:m | 
+      g8.:m g8:m d8:7 | g8.:m c8:m d8:7 | g8.:m g8:m c8:m |
+      g4.:m g16:m | c8.:m c8:m d8:7 | 
+    }
+    \alternative{
+      { g1*7/16:m }
+      { g1*7/16:m }
     }
   }
 % }}}
@@ -69,15 +74,23 @@ trip = #(define-music-function (parser location m1 m2 m3)
 % {{{ PARTE B
   temaB = {
     \repeat volta 2 {
-      g'16 d g8~ g16 f e d | cis d e f g f e d | cis d e d cis8 bes16 a | g a bes cis d4 |
-      g16 d g8~ g16 f e d | cis d e f g f e d | cis d e d cis8 bes16 a | g a bes a g4 |
+      bes8 f16 bes d c8 | a8 f16 a c bes8 | g8 d16 g bes a8 | g d16 e fis g a | \break
+      bes8 f16 bes d c8 | a8 f16 a c bes8 | g8 d16 g bes a8 |
     } 
+    \alternative{
+      { g8 d16 g8\staccato g16 a }
+      { g8 d16 g16 d bes' a }
+    }
   }
 
   accordiB = \chordmode{
     \repeat volta 2{
-      g2:m | g2:m | g2:m | g2:m | 
-      g2:m | g2:m | d2 | g2:m | 
+      bes8. bes8 ees8 | f8. f8 d8:7 | g8.:m c8:m d8:7 | g1*7/16:m |
+      bes8. bes8 ees8 | f8. f8 d8:7 | g8.:m c8:m d8:7 |
+    }
+    \alternative{
+      { g1*7/16:m }
+      { g1*7/16:m }
     }
   }
 % }}}
@@ -85,66 +98,36 @@ trip = #(define-music-function (parser location m1 m2 m3)
 % {{{ PARTE C
   temaC = {
     \repeat volta 2 {
-      g16 a bes a bes4 | d16 e d cis d4 | cis16 e d cis bes d bes a | g a bes cis d4 | 
-      g,16 a bes a bes4 | d16 e d cis d4 | cis16 e d cis bes d bes a | b a bes a g4 |
+      g16 fis g a bes g bes | a8 g16 a c bes a | bes8 a16 g d g d| \break
+      g16 fis g a bes g bes | a8 g16 a c bes a | 
     } 
-    g'16 fis ees d ees4 | g16 fis ees d c4 | g'16 fis ees d ees4 | g16 fis ees d c4 |
+    \alternative{
+      { bes8 a16 g d g8\staccato }
+      { g8 g16 g8 r8 }
+    }
   }
 
   accordiC = \chordmode{
     \repeat volta 2{
-      g2:m | g2:m | d2 | g2:m | 
-      g2:m | g2:m | d2 | g2:m | 
+     g1*7/16:m | c8.:m d4:7 | g1*7/16:m |
+     g1*7/16:m | c8.:m d4:7 | 
     }
-    c2:m | c2:m | c2:m | c2:m | 
-  }
-% }}}
-
-% {{{ PARTE D
-  temaD = {
-    \repeat volta 2 {
-      bes'8 bes16 a g8 d' | bes16 d a bes g8 d' | bes bes16 a g8 d' | bes16 d a bes16 g4 |
-    } 
-  }
-
-  accordiD = \chordmode{
-    \repeat volta 2{
-      g2:m | g2:m | g2:m | d4 g4:m |
+    \alternative{
+      { g1*7/16:m }
+      { g1*7/16:m }
     }
   }
 % }}}
 
-% LYRICS {{{
-testoCompleto=\markup {
-  \vspace #2
-  \fill-line {
-    \hspace #1
-    \column {
-      \line {Jovno,Jovanke }
-      \vspace #1
-      \line {Jovano,Jovanke }
-    }
-    \hspace #2
-    \column \italic {
-      \line {Jovano, Jovanke,}
-      \vspace #1
-      \line {Jovano, Jovanke,}
-    }
-    \hspace #1
-  }
-}
-% }}}
 
 % SCORE {{{
 tema = \relative c' {
   \mark \default
-  \temaA \break
+  \temaA \break \bar "||"
   \mark \default
-  \temaB \break
+  \temaB \break \bar "||"
   \mark \default
-  \temaC \break \bar "||"
-  \mark \default
-  \temaD 
+  \temaC \break \bar "|."
 }
 
 chordsPart ={
@@ -153,7 +136,6 @@ chordsPart ={
     \accordiA
     \accordiB
     \accordiC
-    \accordiD
   }
 }
 
@@ -176,18 +158,10 @@ scoreContent = <<
       \layout {}
       \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
     }
-    \testoCompleto
   }
 
   \book{
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }
-    \testoCompleto
-  }
-
-  \book{
-    \bookOutputSuffix "Eb"
-    \score { \transpose ees c { \scoreContent } }
-    \testoCompleto
   }
 % }}}

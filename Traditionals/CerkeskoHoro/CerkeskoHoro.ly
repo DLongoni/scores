@@ -1,9 +1,9 @@
 % {{{ PARAMETRI
-  myTitle = "Arapsko Kokonjeste"
-  mySubTitle = "Serbian"
-  myKey = \key bes \major
-  myTime = \time 2/4 
-  myTempo =  #(ly:make-moment 190 4)
+  myTitle = "Cerkesko Horo"
+  mySubTitle = "Bulgarian"
+  myKey = \key g \major
+  myTime = \time #'(2 2 2 3) 9/8
+  myTempo =  #(ly:make-moment 126 4)
 % }}}
 
 % INTESTAZIONE {{{
@@ -49,100 +49,76 @@ trip = #(define-music-function (parser location m1 m2 m3)
 
 % {{{ PARTE A
   temaA = {
-    \partial 8 g8 |
-    c4. g8 | c4. g8 | c4. g8 | c16 ees d ees c8. g16 | 
-    c16 ees d ees c8. g16 | c16 ees d ees c8. g16 | c16 ees d ees c8. g16 | c16 ees d ees c8. g16 | 
-    \repeat volta 2 {
-      bes8 bes16 c g8 d' | bes16 d a bes g8 d' | bes8 bes16 a g8 d' | bes16 d a bes g4 |
-    } 
+    d,4 g fis8 g a4 g8 | b4 c b8 g a4 g8 |
+    b4 d e8 d c b a | b g a fis g4 g16 f e8 d | \break
+    d4 g fis8 g a4 g8 | b4 c b8 g a4 g8 |
+    b4 d e8 d c b a | b g a fis g4 g4 r8 |
   }
 
   accordiA = \chordmode{
-    \partial 8 s8 |
-    c2:m | c2:m | c2:m | c2:m | c2:m | c2:m | c2:m | c2:m |
-    \repeat volta 2{
-      g2:m | g2:m | g2:m | d4 g4:m | 
-    }
+    g2 d2 d8 | g4 c g d4. | g2 d2 d8 | g4 d4 g4 g4. |
+    g2 d2 d8 | g4 c g d4. | g2 d2 d8 | g4 d4 g4 g4. |
   }
 % }}}
 
 % {{{ PARTE B
   temaB = {
     \repeat volta 2 {
-      g'16 d g8~ g16 f e d | cis d e f g f e d | cis d e d cis8 bes16 a | g a bes cis d4 |
-      g16 d g8~ g16 f e d | cis d e f g f e d | cis d e d cis8 bes16 a | g a bes a g4 |
+      d'4 g g g8 d e | f4 e d8 c b4 g8 | 
+      b g e' d d c c b a | b g a fis g a b c cis |
+      d4 g g g8 d e | f4 e d8 c b4 g8 | 
+      b g e' d d c c b a | b g a fis g4 g d8 |
     } 
   }
 
   accordiB = \chordmode{
-    \repeat volta 2{
-      g2:m | g2:m | g2:m | g2:m | 
-      g2:m | g2:m | d2 | g2:m | 
-    }
+    g1*9/8 | g1*9/8 | g4 c g d4. | g4 d g g4. |
+    g1*9/8 | g1*9/8 | g4 c g d4. | g4 d g g4. |
   }
 % }}}
 
 % {{{ PARTE C
   temaC = {
     \repeat volta 2 {
-      g16 a bes a bes4 | d16 e d cis d4 | cis16 e d cis bes d bes a | g a bes cis d4 | 
-      g,16 a bes a bes4 | d16 e d cis d4 | cis16 e d cis bes d bes a | b a bes a g4 |
+      b'8 g a fis g a b16 c d8 c | b g a fis g g g16 f e8 d |
+      b'8 g a fis g a b16 c d8 c | b g a fis g4 g d8 |
     } 
-    g'16 fis ees d ees4 | g16 fis ees d c4 | g'16 fis ees d ees4 | g16 fis ees d c4 |
   }
 
   accordiC = \chordmode{
     \repeat volta 2{
-      g2:m | g2:m | d2 | g2:m | 
-      g2:m | g2:m | d2 | g2:m | 
+      g4 d g g4. | g4 d g g4. | g4 d g g4. | g4 d g g4. |
     }
-    c2:m | c2:m | c2:m | c2:m | 
   }
 % }}}
 
 % {{{ PARTE D
   temaD = {
+    \key c \major
     \repeat volta 2 {
-      bes'8 bes16 a g8 d' | bes16 d a bes g8 d' | bes bes16 a g8 d' | bes16 d a bes16 g4 |
+      g8 a16 a a e f g a8 a16 g a bes cis d e f | g e f d e cis d bes cis8 bes16 a a g e' e e g, |
+      g8 a16 a a e f g a8 a16 g a bes cis d e f | g e f d e cis d bes cis8 bes16 a a8 a4 |
     } 
   }
 
   accordiD = \chordmode{
     \repeat volta 2{
-      g2:m | g2:m | g2:m | d4 g4:m |
+      a2. g4.:m | g2:m a4 a4. |
+      a2. g4.:m | g2:m a4 a4. |
     }
   }
-% }}}
-
-% LYRICS {{{
-testoCompleto=\markup {
-  \vspace #2
-  \fill-line {
-    \hspace #1
-    \column {
-      \line {Jovno,Jovanke }
-      \vspace #1
-      \line {Jovano,Jovanke }
-    }
-    \hspace #2
-    \column \italic {
-      \line {Jovano, Jovanke,}
-      \vspace #1
-      \line {Jovano, Jovanke,}
-    }
-    \hspace #1
-  }
-}
 % }}}
 
 % SCORE {{{
 tema = \relative c' {
   \mark \default
   \temaA \break
+  \bar "||"
   \mark \default
   \temaB \break
+  \bar "||"
   \mark \default
-  \temaC \break \bar "||"
+  \temaC \break 
   \mark \default
   \temaD 
 }
@@ -176,18 +152,10 @@ scoreContent = <<
       \layout {}
       \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
     }
-    \testoCompleto
   }
 
   \book{
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }
-    \testoCompleto
-  }
-
-  \book{
-    \bookOutputSuffix "Eb"
-    \score { \transpose ees c { \scoreContent } }
-    \testoCompleto
   }
 % }}}

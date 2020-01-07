@@ -1,5 +1,5 @@
 % {{{ PARAMETRI
-  myTitle = "WakingDreaming"
+  myTitle = "Waking Dreaming"
   myKey = \key c \major
   myTime = \time 2/4 
   myTempo =  #(ly:make-moment 60 4)
