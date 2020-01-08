@@ -142,10 +142,12 @@ struttura = \markup {
       bes4.~ bes4 a8 g8 e d |
       c4 d8 ees4 g8 f4.~ | f2. g4 a8 | bes2. d4. | 
       c4.~ c4 a8 c a g | f2. a4. | g2.~ g4. | r2. c4 a8 |
-    } \break
+    } \break 
+    \mark \default
     bes4.~ bes4 a8 g8 e d |
     c4 d8 ees4 g8 f4.~ | f2. g4 a8 | bes2. d4. | 
     c2. e4. | d2. r4. |
+    \bar "||"
   }
 
   silenzioC = {
