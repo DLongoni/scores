@@ -55,8 +55,10 @@ fakeBar = {
 struttura = \markup {
   \column {
       \line {
-        \bold{Intro}, \bold{A}, \bold{B}, \bold{A}, \bold{Solo}:Vamp+\bold{C},
-        \bold{D}, \bold{B}, \bold{A}, \bold{Coda}
+        \bold{Intro} 2x Gtr, 4x Gtr+Fisa, \bold{A} Tr, \bold{B} Fisa, \bold{B} Tr, 
+        \bold{A} Tr}
+      \line{\bold{Solo}Tr: Pedale F +\bold{C}, \bold{Solo}Fisa: Pedale F +\bold{C},
+            \bold{D}, \bold{B}, \bold{A} 1/2 Fisa II voce, 1/2 Tr
     }
   }
 }
@@ -73,8 +75,8 @@ struttura = \markup {
     \repeat volta 3{
       r4 es4 d es8 d c~ | c4 c b c8 b a~ | a4 a g a8 g es~ | es2 r4 r4. | r2. r4. |
     } \break
-    es'8 d es d c b c b a | f2.~ f4. | r2. r4. | \break
-    \mark "Vamp"
+    <<{es'8 d es d c b c b a |} \\ {c8 b c b a g a g f |}>>
+    
     \repeat volta 2{ 
       f4 f f f8 f f | ees4 ees ees ees8 ees ees |
       d4 d d d8 d d | c4 c c c8 c c |
@@ -86,7 +88,7 @@ struttura = \markup {
       f,8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | 
       ees8 r8 r2 ees4. | ees8 r8 r2 ees4. |
     }
-    s2. s4. | s2. s4. | s2. s4. | 
+    s2. s4. | 
     \repeat volta 2{ s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | }
   }
 
@@ -95,14 +97,14 @@ struttura = \markup {
       f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 a,8 | 
       g4 ees'2 r4 a,8 | g4 ees'2 r4 c8 |
     }
-    s2. s4. | f4 f f f8 f f | f4 f f f8 f f |
+    s2. s4. | 
     \repeat volta 2{ s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | }
   }
 
   accordiIntro = \chordmode{
     \repeat volta 3{ f2. f4. | f2. f4. | f2. f4. | 
       ees2.:maj7.11+ ees4.:maj7.11+ | ees2.:maj7.11+ ees4.:maj7.11+ |}
-   s2. s4. | f2.:7 f4.:7 | f2.:7 f4.:7 | 
+   s2. s4. | 
    \repeat volta 2{f2.:7 f4.:7 | f2.:7/es f4.:7/es | f2.:7/d f4.:7/d | f2.:7/c f4.:7/c | }
   }
 % }}}
@@ -112,7 +114,7 @@ struttura = \markup {
     r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4. | \break
     r8 es bes es g4 f8 d bes | c4 es8 c es c d4 fis8 | a4 a8 g d4~ d4.~ | d2. r4. | \break
     r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4.^"(al Coda)" | \break
-    r8 es bes es g4 f8 d bes | c4 es8 d es d c4 g'8^"(Soli su Intro)" | <<{bes2.} \\ {f2.}>> r4. | \bar "||"
+    r8 es bes es g4 f8 d bes | c4 es8 d es d c4 g'8^"(Soli su Intro)" | <<{bes2.} \\ {f2.}>> r4. | 
   }
 
   temaAbis = {
@@ -124,7 +126,7 @@ struttura = \markup {
 
   temaAtris = {
     d2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
-    g2.~ g4. | d4 g8 r g r fis4 a8 | bes2.~ bes4.~ | bes2. r4. |
+    g2.~ g4. | ees4 g8 r g r fis4 a8 | bes2.~ bes4.~ | bes2. r4. |
     d,2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
     g2.~ g4. | ees4 g8 r g r f ees d | bes2. r4. |
   }
@@ -139,7 +141,6 @@ struttura = \markup {
 
 % {{{ PARTE B
   temaB = {
-    \fakeBar
     \repeat volta 2 {
       bes4 bes d c a8 | f2. a8 g f | g4 g bes a g8 | d2. r4. |
       c'4 c es d bes8 | a2. g8 f es | f2.~ f4. | r2. r4. |
@@ -147,7 +148,6 @@ struttura = \markup {
   }
 
   accordiB = \chordmode{
-    \fakeBar
     \repeat volta 2 {
       g2.:m7 g4.:m7 | f2.:6 f4.:6 | es2.:maj7 f4.:7 | bes2.:maj7 bes4.:maj7 |
       c2.:m7 c4.:m7 | f2.:6 f4.:6 | d2.:m7 d4.:m7 | d2.:m7 d4.:m7 |

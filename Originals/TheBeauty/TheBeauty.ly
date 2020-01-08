@@ -47,6 +47,15 @@ toCoda = {
   \once \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
   \mark \markup { { \lower #1 "al  " { \musicglyph #"scripts.coda"} } } 
 }
+
+  struttura = \markup {
+    \column {
+        \line {\bold{Intro}, \bold{A} Fisa, \bold{A} Tr, \bold{B} Fisa, 
+               \bold{B} Gtr, \bold{A} Tr}
+        \line{\bold{Solo} Gtr su B, \bold{B}, \bold{Solo} Tr su B, 
+              \bold{B2}x2, \bold{A}, \bold{Coda}}
+      }
+    }
 %}}}
 
 % PARTE A {{{
@@ -307,6 +316,7 @@ percPart = \new RhythmicStaff \with {
 }
 
 \book{
+  \struttura
   \bookOutputSuffix "Bb"
   \header{ composer="Bb" }
   \score {
@@ -322,6 +332,7 @@ percPart = \new RhythmicStaff \with {
 }
 
 \book{
+  \struttura
   \bookOutputSuffix "Perc"
   \header{ composer="Perc" }
   \score {

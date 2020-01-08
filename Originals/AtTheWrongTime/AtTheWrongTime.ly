@@ -3,6 +3,13 @@
   myKey = \key bes \major
   myTime = \time 9/8 
   myTempo =  #(ly:make-moment 60 4)
+
+  struttura = \markup {
+    \column {
+        \line {\bold{A}, \bold{B}x2 Fisa, \bold{B}x2 Fisa+Gtr, \bold{Solo} su B, \bold{B}x2 su solo}
+        \line{\bold{C} Fisa,\bold{D} Tr, \bold{Solo} su E, \bold{E} Fisa, \bold{B}x2 Fisa+Gtr, \bold{C} Tr, \bold{A} Gtr, \bold{Coda}}
+    }
+  }
 % }}}
 
 % INTESTAZIONE {{{
@@ -39,6 +46,7 @@ global = {
   \set Score.markFormatter = #format-mark-box-alphabet
 }
 \layout {
+  indent = #0
   \context { 
     \Staff \RemoveEmptyStaves 
     \override VerticalAxisGroup.remove-first = ##t
@@ -48,14 +56,6 @@ global = {
 toCoda = {
   % the align part
   \mark \markup { { \lower #1 "al  " { \musicglyph #"scripts.coda"} } } 
-}
-
-struttura = \markup {
-  \column {
-      \line {
-        \bold{A}, \bold{B}, \bold{solo su B}, \bold{C}, \bold{solo su D}, \bold{B}, \bold{A}, \bold{Coda}
-    }
-  }
 }
 %}}}
 
@@ -147,7 +147,6 @@ struttura = \markup {
     bes4.~ bes4 a8 g8 e d |
     c4 d8 ees4 g8 f4.~ | f2. g4 a8 | bes2. d4. | 
     c2. e4. | d2. r4. |
-    \bar "||"
   }
 
   silenzioC = {

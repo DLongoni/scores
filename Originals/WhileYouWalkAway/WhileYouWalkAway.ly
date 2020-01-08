@@ -4,6 +4,12 @@
   myKey = \key d \minor
   myTime = \time #'(3 2) 5/8
   myTempo =  #(ly:make-moment 190 4)
+  struttura = \markup {
+    \column {
+      \line {\bold{Intro} Gtr+Fisa, \bold{A}x3 Tr, \bold{B}x4, \bold{C}x4}
+      \line{\bold{D}x2, \bold{Solo} su D \bold{D}x2 solo prima metà Fisa+Tr, \bold{A}x4}
+    }
+  }
 % }}}
 
 % INTESTAZIONE {{{
@@ -49,13 +55,28 @@ global = {
        (stretchability . 60)) 
 }
 
-\layout { indent = #0 }
+\layout { indent = #0   
+}
 %}}}
+
+% {{{ PARTE Intro
+  % silenzioIntro = {
+  %   \mark "Vamp"
+  %   \repeat volta 2 {s1*5/8 | s1*5/8 |}
+  %   s1*5/8 | s1*5/8 |
+  % }
+  %
+  % accordiIntro = \chordmode{
+  %   \repeat volta 2 {d1*5/8:m | a1*5/8:m |}
+  %   a1*5/8:m | a1*5/8:m |
+  % }
+% }}}
 
 % {{{ PARTE A
   temaA = {
+    R1*5/8 | R1*5/8 |
     \repeat volta 2 {
-      a4 f'8 e c'| a4.~ a8 c | g4 f8 bes a | f4.~ f4 |
+      a4 f'8 e c'| a4.~ a8 c | g4 f8 bes a | f4.~ f4 |\break
       a,4 f'8 a g | 
     } 
     \alternative{
@@ -66,6 +87,7 @@ global = {
   }
 
   accordiA = \chordmode{
+    a1*5/8:m | a1*5/8:m |
     \repeat volta 2 {
       f4.~ f4 | a4.:m/e~ a4:m/e | ees4.~ ees4 | bes4.:/d~ bes4:/d |
       f4.~ f4 |
@@ -150,6 +172,7 @@ scoreContent = <<
 
 % {{{ BOOKS
   \book{
+    \struttura
     \bookOutputSuffix "C"
     \header{ composer="C" }
     \score {
@@ -160,6 +183,7 @@ scoreContent = <<
   }
 
   \book{
+    \struttura
     \header{ composer="Bb" }
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }

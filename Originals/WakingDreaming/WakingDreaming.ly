@@ -3,6 +3,14 @@
   myKey = \key c \major
   myTime = \time 2/4 
   myTempo =  #(ly:make-moment 60 4)
+
+  struttura = \markup {
+    \column {
+        \line {\bold{A} Bass, \bold{A} Tr+chords, \bold{A} Tr+II voci, \bold{A} Gtr}
+        \line{ \bold{B} Fisa, \bold{solo} Fisa, \bold{B} Tr+II voce Fisa, \bold{Special}}
+        \line{\bold{A}x2 Tr, \bold{A} solo Gtr}
+      }
+    }
 % }}}
 
 % INTESTAZIONE {{{
@@ -131,7 +139,7 @@ global = {
     \alternative
     {
       { bes2.: | }
-      { g2.:7 | }
+      { bes2.: | }
     }
   }
 
@@ -191,8 +199,9 @@ tema = \relative c' {
   \temaA \break
   \mark \default
   \temaB \break
-  \bar "|."
+  \bar "||"
   \temaC \break
+  \bar "|."
 }
 
 temaDue = \relative c' {
@@ -258,6 +267,7 @@ scoreContent = <<
 
 % {{{ BOOKS
   \book{
+    \struttura
     \header{ composer="C" }
     \bookOutputSuffix "C"
     \score {
@@ -268,6 +278,7 @@ scoreContent = <<
   }
 
   \book{
+    \struttura
     \header{ composer="Bb" }
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }
