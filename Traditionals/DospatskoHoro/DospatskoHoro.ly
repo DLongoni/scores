@@ -71,8 +71,8 @@ trip = #(define-music-function (parser location m1 m2 m3)
 
   accordiB = \chordmode{
     \repeat volta 2{
-      c1*7/8 | d1*7/8:m | e1*7/8:m | e1*7/8:m |
-      a1*7/8:m | d1*7/8:m | e1*7/8:m | a4.:m d2:m |
+      c1*7/8 | d1*7/8 | e1*7/8:m | e1*7/8:m |
+      a1*7/8:m | d1*7/8 | e1*7/8:m | a4. e2:m |
     }
   }
 % }}}
@@ -97,7 +97,7 @@ trip = #(define-music-function (parser location m1 m2 m3)
   temaD = {
     \repeat volta 2 {
       d'4. d8 c b a | a4 g8 g2 | d'8 g, e' d c b a | b4 a8 a2 | \break
-      d4. d8 c b a | a4 g8 g2 | d'8 g, e' d c b a | e2.. |
+      d4. d8 c b a | a4 g8 g2 | a8 e b' a g fis e | e2.. |
     } 
   }
 
