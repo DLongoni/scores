@@ -2,7 +2,7 @@
   myTitle = "Ispajce"
   mySubTitle = "Bulgarian"
   myKey = \key ees \major
-  myTime = \time #'(3 5 5) 13/16 
+  myTime = \time #'(3 2 3 2 3) 13/16 
   myTempo =  #(ly:make-moment 120 4)
 % }}}
 
@@ -80,7 +80,7 @@ trip = #(define-music-function (parser location m1 m2 m3)
 
   accordiB = \chordmode{
     \repeat volta 2{
-      g1*13/16 | f2 g1*5/16:m |
+      g1*13/16 | f2:m g1*5/16 |
       g8. f1*10/16:m | g1*13/16 | 
     }
   }
