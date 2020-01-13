@@ -73,6 +73,7 @@ trip = #(define-music-function (parser location m1 m2 m3)
 tema = \relative c' {
   \mark \default
   \temaA \break
+  \bar "|."
 }
 
 chordsPart ={
