@@ -37,7 +37,7 @@
   system-system-spacing =
     #'((basic-distance . 11) 
        (minimum-distance . 10)
-       (padding . 0.6)
+       (padding . 0.5)
        (stretchability . 60)) 
 }
 
@@ -95,8 +95,8 @@ trip = #(define-music-function (parser location m1 m2 m3)
       e2:m | e2:m | e2:m |
     }
     \alternative{
-      { e2:m | }
-      { e2:m | }
+      { fis2 | }
+      { fis2 | }
     }
   }
 % }}}
@@ -104,9 +104,9 @@ trip = #(define-music-function (parser location m1 m2 m3)
 % {{{ PARTE C
   temaC = {
     \repeat volta 2 {
-      fis'8. fis16 fis4 | fis2 | eis8. d16 cis8. b16 | d8. d16 d4 | d2 | e8.d16 cis8. b16 | \break
-      ais8. b16 cis4 | cis2 | eis8. d16 cis8. b16 | \trip ais8 b cis \trip b8 ais g | fis2 | ais8. b16 cis4 | \break
-      ais8. b16 cis4 | cis2 | eis8. d16 cis8. b16 | \trip ais8 b cis \trip b8 ais g | fis2 | fis4 fis4 | 
+      fis'8. fis16 fis4 | fis2 | e8. d16 cis8. b16 | d8. d16 d4 | d2 | e8.d16 cis8. b16 | \break
+      ais8. b16 cis4 | cis2 | e8. d16 cis8. b16 | \trip ais8 b cis \trip b8 ais g | fis2 | ais8. b16 cis4 | \break
+      ais8. b16 cis4 | cis2 | e8. d16 cis8. b16 | \trip ais8 b cis \trip b8 ais g | fis2 | fis4 fis4 | 
 
     } 
   }
