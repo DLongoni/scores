@@ -51,7 +51,7 @@ trip = #(define-music-function (parser location m1 m2 m3)
   temaA = {
     \repeat volta 2 {
       a4\prall a8 b cis | d e fis e d | cis4\prall a8 b cis | d e, d' cis b | \break
-      cis4\prall b8 a gis | a4\prall a8 e e | a4\prall a8 b cis | d e fis e dis | \break
+      cis4\prall b8 a gis | a4\prall a8 e e | a4\prall a8 b cis | d e fis e d | \break
       cis4\prall a8 b cis | d e, d' cis b | cis4\prall b8 a gis | a e a4\prall r8 |
     } 
   }
@@ -59,7 +59,7 @@ trip = #(define-music-function (parser location m1 m2 m3)
   accordiA = \chordmode{
     \repeat volta 2{
       a1*5/8 | d1*5/8 | a1*5/8 | b1*5/8:m |
-      e1*5/8:7 | a1*5/8 | a1*5/8 | d1*5/8:m |
+      e1*5/8:7 | a1*5/8 | a1*5/8 | d1*5/8 |
       a1*5/8 | b1*5/8:m | e1*5/8:7 | a1*5/8 |
     }
   }
@@ -107,7 +107,7 @@ trip = #(define-music-function (parser location m1 m2 m3)
 % {{{ PARTE D
   temaD = {
     \repeat volta 2 {
-      a8 gis a4\prall gis8 | gis e gis4\prall fis8 | e4\prall d8 cis b | cis d e fis gis | \break
+      a'8 gis a4\prall gis8 | gis e gis4\prall fis8 | e4\prall d8 cis b | cis d e fis gis | \break
       a4\prall a4\prall gis8 | gis e gis4\prall fis8 | e4\prall d8 cis b |
     } 
     \alternative{
@@ -118,8 +118,8 @@ trip = #(define-music-function (parser location m1 m2 m3)
 
   accordiD = \chordmode{
     \repeat volta 2{
-      d1*5/8 | e1*5/8:m | e1*5/8:7 | a1*5/8 |
-      fis1*5/8 | d1*5/8 | e1*5/8 |
+      d1*5/8 | e1*5/8 | e1*5/8:7 | a1*5/8 |
+      fis1*5/8:m | d1*5/8 | e1*5/8 |
     }
     \alternative{
       { a1*5/8 | }
@@ -138,7 +138,7 @@ trip = #(define-music-function (parser location m1 m2 m3)
       cis4\trill cis8 d e | fis4\prall fis\prall e8 | 
       gis e fis4\trill e8 | e4\trill d8 cis b | \break
       cis8 d e4\prall d8 | fis4 e8 fis gis | 
-      e4\trill d8 cis b | cis d e4\trill a8 | \break
+      e4\trill d8 cis b | cis d e4\trill a,8 | \break
       cis4\trill cis8 d e | fis4\mordent fis\prall e8 | 
       gis e fis4\trill e8 | e4\trill d8 cis b | \break
       cis8 d e4 d8 | fis4\mordent e8\prall fis gis | 
@@ -148,10 +148,10 @@ trip = #(define-music-function (parser location m1 m2 m3)
 
   accordiE = \chordmode{
     \repeat volta 2{
-      a1*5/8 | d1*5/8:m | e1*5/8 | a1*5/8 |
-      a1*5/8 | e1*5/8:m | e1*5/8:7 | a1*5/8 |
-      a1*5/8 | d1*5/8:m | e1*5/8 | a1*5/8 |
-      a1*5/8 | e1*5/8:m | e1*5/8:7 | a1*5/8 |
+      a1*5/8 | d1*5/8 | e1*5/8 | a1*5/8 |
+      a1*5/8 | e1*5/8 | e1*5/8:7 | a1*5/8 |
+      a1*5/8 | d1*5/8 | e1*5/8 | a1*5/8 |
+      a1*5/8 | e1*5/8 | e1*5/8:7 | a1*5/8 |
     }
   }
 % }}}
