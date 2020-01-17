@@ -119,15 +119,89 @@ trip = #(define-music-function (parser location m1 m2 m3)
   }
 % }}}
 
+% {{{ PARTE D
+  temaD = {
+    \key g \major
+    \repeat volta 2 {
+      cis16 d d cis d cis d | e8 d16 d c b8 | d8 c16 c b a8 | c8 b16 b a g d | \break
+      cis'16 d d cis d cis d | e8 d16 d c b8 | d8 c16 c b a8 | c8 b16 b a g8\staccato | 
+    } 
+  }
+
+  accordiD = \chordmode{
+    \repeat volta 2{
+       g1*7/16 | g1*7/16 | d1*7/16:7 | d8.:7 g4 |
+       g1*7/16 | g1*7/16 | d1*7/16:7 | d8.:7 g4 |
+    }
+  }
+% }}}
+
+% {{{ PARTE E
+  temaE = {
+    \repeat volta 2 {
+      g16 fis g a b g b | a8 d,16 a' b c d | b8 d,16 a'8 b16 a | g8 r16 d' e d8 |\break
+      g,16 fis g a b g b | a8 d,16 a' b c d | b8 d,16 a'8 b16 a | g8 d16 g8\prall g\staccato |
+    } 
+  }
+
+  accordiE = \chordmode{
+    \repeat volta 2{
+       g1*7/16 | d1*7/16:7 | g8. c8 d8:7 | g8. d4:7 |
+       e1*7/16:m | a8.:m d4:7 | g8. c8 d8:7 | g1*7/16 |
+    }
+  }
+% }}}
+
+% {{{ PARTE F
+  temaF = {
+    \repeat volta 2 {
+      a8 e16 a b c a | b8 g16 a g fis e | a8 e16 a b c a | b8 g16 a8 a16 e16 |
+      a8 e16 a b c a | b8 g16 a8 a16 b | c8 b16 d8 c16 b16 | a8 e16 a8 r |
+    } 
+  }
+
+  accordiF = \chordmode{
+    \repeat volta 2{
+      a1*7/16:m | e8.:m a4:m | a1*7/16:m | e8.:m a4:m |
+      a1*7/16:m | e8.:m a4:m | f8. d8:m e8:7 | a1*7/16:m |
+    }
+  }
+% }}}
+
+% {{{ PARTE G
+  temaG = {
+    \repeat volta 2 {
+       b8 d,16 b' c a8 | b16 c a b c a8 | d16 d, d b' c b8 | a16 b a a g g d | \break
+       b'8 d,16 b' c a8 | b16 c a b c a8 | d16 d, d b' c b8 | a16 b a a g g8\staccato |
+    } 
+  }
+
+  accordiG = \chordmode{
+    \repeat volta 2{
+      g8. g8 d8:7 | g8. g8 d8:7 | g8. g8 e8:m | a8.:m d8:7 g8 |
+      g8. g8 d8:7 | g8. g8 d8:7 | g8. g8 e8:m | a8.:m d8:7 g8 |
+    }
+  }
+% }}}
 
 % SCORE {{{
 tema = \relative c' {
   \mark \default
-  \temaA \break \bar "||"
+  \temaA \break 
   \mark \default
-  \temaB \break \bar "||"
+  \temaB \break 
   \mark \default
-  \temaC \break \bar "|."
+  \temaC \break 
+  \mark \default
+  \temaD \break 
+  \mark \default
+  \temaE \break 
+  \mark \default
+  \pageBreak
+  \temaF \break 
+  \mark \default
+  \temaG \break 
+  \bar "|."
 }
 
 chordsPart ={
@@ -136,6 +210,10 @@ chordsPart ={
     \accordiA
     \accordiB
     \accordiC
+    \accordiD
+    \accordiE
+    \accordiF
+    \accordiG
   }
 }
 
