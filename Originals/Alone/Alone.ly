@@ -75,7 +75,7 @@ struttura = \markup {
     \repeat volta 3{
       r4 es4 d es8 d c~ | c4 c b c8 b a~ | a4 a g a8 g es~ | es2 r4 r4. | r2. r4. |
     } \break
-    <<{es'8 d es d c b c b a |} \\ {c8 b c b a g a g f |}>>
+    <<{es'8 d es d c b c b a |} \\ {c8 b c b a gis a gis f |}>>
     
     \repeat volta 2{ 
       f4 f f f8 f f | ees4 ees ees ees8 ees ees |
@@ -143,14 +143,22 @@ struttura = \markup {
   temaB = {
     \repeat volta 2 {
       bes4 bes d c a8 | f2. a8 g f | g4 g bes a g8 | d2. r4. |
-      c'4 c es d bes8 | a2. g8 f es | f2.~ f4. | r2. r4. |
+      c'4 c es d bes8 | a2. g8 f es | f2.~ f4. |
+    }
+    \alternative{
+      {r2. r4. |}
+      {r2. r4. |}
     }
   }
 
   accordiB = \chordmode{
     \repeat volta 2 {
       g2.:m7 g4.:m7 | f2.:6 f4.:6 | es2.:maj7 f4.:7 | bes2.:maj7 bes4.:maj7 |
-      c2.:m7 c4.:m7 | f2.:6 f4.:6 | d2.:m7 d4.:m7 | d2.:m7 d4.:m7 |
+      c2.:m7 c4.:m7 | f2.:6 f4.:6 | d2.:m7 d4.:m7 |
+    }
+    \alternative{
+      {d2.:m7 d4.:m7 |}
+      {d2.:m7 d4.:m7/a |}
     }
   }
 % }}}
@@ -222,9 +230,9 @@ tema = \relative c' {
   \mark "Intro"
   \temaIntro
   \break
-  % \pageBreak
   \mark \default
   \temaA \break 
+  \pageBreak
   \mark \default
   \temaB \break 
   \mark \default
