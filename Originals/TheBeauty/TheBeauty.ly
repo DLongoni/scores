@@ -40,7 +40,6 @@ global = {
   }
 }
 
-
 toCoda = {
   % the align part
   \once \override Score.RehearsalMark.self-alignment-X = #RIGHT  
@@ -63,7 +62,7 @@ temaA = {
   \repeat volta 2{
     a8^\markup{ \italic {swing feel} } b c d e a | g e b a b a | e'4 d4. c8 | d4 c e | \break
     a,8 b c d e a | g e c a c a | e' f8~ f8 c8~ c8 g | a2. | \break
-    e'4.\< a | fis d | c\! e\> | d b\! | \break
+    e'4. a | fis d | c e | d b | \break
     a8 c \tuplet 3/2 {b c d} e4 | d8 f \tuplet 3/2 {e f g} a4 | e2.~ | e 2.| \toCoda \break
     a,8 b c d e a | \time 2/4 g e g e | \time 3/4 a,4 r2 | r2. |
   }
@@ -116,8 +115,14 @@ accordiA = \chordmode{
 % PARTE B {{{
 temaB = {
   \repeat volta 2{
-    \time 3/4 a8 a4 c4. | a8 a4 g4. | r4 d'8 e d e | \time 2/4 c8 c a4 |
-    \time 3/4 a8 a4 c4. | a8 a g2 | e8 e4 g4. | e8 e d2 |
+    \new Voice <<
+      {
+        \time 3/4 a8 a4 c4. | a8 a4 g4. | r4 d'8 e d e | \time 2/4 c8 c a4 |
+        \time 3/4 a8 a4 c4. | a8 a g2 | e8 e4 g4. | e8 e d2 |}
+      {
+        \time 3/4 c'8 c4 e4. | c8 c4 b4. | r4 b8 c b c | \time 2/4 e e c4 |
+        \time 3/4 c8 c4 e4. | c8 c b2 | g8 g4 b4. | g8 g a2 |
+      }>>
   }
 }
 
@@ -182,8 +187,15 @@ percBdue = {
 
 % CODA {{{
 temaCoda = {
-  \time 4/4 a'8 b c d e a g f | \time 3/4 e4. a | g d | c ees | d c | \break
-  c8 d ees f g c | \time 2/4 bes g bes g | c2 |
+  \new Voice <<
+    {
+  \time 4/4 a8 b c d e a g f | \time 3/4 e4. a | g d | c ees | d c | \break
+  c8 d ees f g c | \time 2/4 bes g bes g | c2 |}
+  {
+  \time 4/4 c,8 d e f g c b g | \time 3/4 a,4. c | b g | aes c | g aes | \break
+  s2. | \time 2/4 s2 | s2 |
+  }
+    >>
 }
 
 temaCodaseconda = {
@@ -224,9 +236,6 @@ tema = \relative c' {
 temaseconda = \relative c' {
   \global 
   \temaAseconda
-  \temaBseconda
-  \relative c'{\temaBseconda}
-  \temaCodaseconda
 }
 
 bass = \relative c' {
@@ -277,6 +286,7 @@ percPart = \new RhythmicStaff \with {
 } { \clef percussion \perc }
 
 \book{
+  \struttura
   \bookOutputSuffix "Score"
   \header{ composer="Score" }
   \score {
@@ -300,6 +310,7 @@ percPart = \new RhythmicStaff \with {
 }
 
 \book{
+  \struttura
   \bookOutputSuffix "C"
   \header{ composer="C" }
   \score {
@@ -331,19 +342,19 @@ percPart = \new RhythmicStaff \with {
   }
 }
 
-\book{
-  \struttura
-  \bookOutputSuffix "Perc"
-  \header{ composer="Perc" }
-  \score {
-    <<
-      \chordsPart
-      \temaPart
-      \percPart
-    >>
-    \layout {
-      indent = #0
-    }
-  }
-}
+% \book{
+%  \struttura
+%  \bookOutputSuffix "Perc"
+%  \header{ composer="Perc" }
+%  \score {
+%    <<
+%      \chordsPart
+%      \temaPart
+%      \percPart
+%    >>
+%    \layout {
+%      indent = #0
+%    }
+%  }
+%}
 % }}}

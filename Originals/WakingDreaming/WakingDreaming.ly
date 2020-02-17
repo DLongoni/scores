@@ -6,9 +6,9 @@
 
   struttura = \markup {
     \column {
-        \line {\bold{A} Bass, \bold{A} Tr+chords, \bold{A} Tr+II voci, \bold{A} Gtr}
-        \line{ \bold{B} Fisa, \bold{solo} Fisa, \bold{B} Tr+II voce Fisa, \bold{Special}}
-        \line{\bold{A}x2 Tr, \bold{A} solo Gtr}
+        \line {\bold{A} Bass, \bold{A} Bass+Tr, \bold{A} Bass+Tr+Chords, \bold{A} solo II voci, \bold{A} II voci+Tr, \bold{A} Gtr}
+        \line{ \bold{B} Fisa, \bold{solo} Fisa, \bold{B} Tr+II voce Fisa, \bold{Ending B3}}
+        \line{\bold{A}x1 Tr, \bold{A} solo Gtr}
       }
     }
 % }}}
@@ -90,7 +90,7 @@ global = {
   }
 
   bassoA = {
-    \repeat volta 2{
+    \repeat volta 3 {
       c4 aes | bes2 | g4 des' | f,2 |
       c'4 aes | bes2 | a2 | g2 |
     }
@@ -106,7 +106,7 @@ global = {
   temaB = {
     \time 6/8
     \key c \minor
-    \repeat volta 2{
+    \repeat volta 3 {
       c,8 ees g c b c | d c bes aes g bes | 
       f4. g4 f16 g | f ees  c4~ c4. |
       c8 ees g c b c | a4 a8 g b c | 
@@ -115,24 +115,31 @@ global = {
     \alternative{
       { r4. f,8 fis g | }
       { r2. | }
+      {\time 2/4 
+       \new Voice
+           << {ees'16 f ees8 d16 e d8 |} 	
+              {aes'16 bes aes8 g16 a g8 |}
+           >>
+        }
     }
 }
 
   temaBdue = {
     \time 6/8
     \key c \minor
-    \repeat volta 2{
+    \repeat volta 3 {
       ees,8 g d' ees d ees | f ees d c bes d | aes4. bes4. | c2. |
       ees,8 g d' ees d ees | f4 ees8 d ees e | f2. |
     }
     \alternative{
       { r2. | }
       { r2. | }
+      {\time 2/4 aes,8 c g a | }
     }
 }
 
   accordiB = \chordmode{
-    \repeat volta 2 {
+    \repeat volta 3 {
       c2.:m | bes2. | f4.:m g4.:7 | c2.:m | \break
       c2.:m | f2. | g2.:7 |
     }
@@ -140,6 +147,7 @@ global = {
     {
       { bes2.: | }
       { bes2.: | }
+      {\time 2/4aes4:7 g:7 | }
     }
   }
 
@@ -150,6 +158,7 @@ global = {
       s2. | s2. | s2. | 
     }
     \alternative{
+      { s2. | }
       { s2. | }
       { s2. | }
     }
@@ -199,22 +208,18 @@ tema = \relative c' {
   \temaA \break
   \mark \default
   \temaB \break
-  \bar "||"
-  \temaC \break
   \bar "|."
 }
 
 temaDue = \relative c' {
   \silenzioA
   \temaBdue 
-  \silenzioC
 }
 
 
 basso = \relative c {
   \bassoA \break
   \silenzioB
-  \bassoC
 }
 
 chordsPart ={
@@ -222,7 +227,6 @@ chordsPart ={
     \set chordChanges = ##t
     \accordiA
     \accordiB
-    \accordiC
   }
 }
 
@@ -250,10 +254,6 @@ ritmicaPart = \new Staff \with {
         \relative c' {\ritmicaAdue }
       >>
         \silenzioB
-      \new Voice <<  
-        \relative c' {\ritmicaCuno }
-        \relative c'' {\ritmicaCdue }
-      >>
 }
 
 scoreContent = << 
