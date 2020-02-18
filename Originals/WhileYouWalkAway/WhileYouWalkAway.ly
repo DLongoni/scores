@@ -102,7 +102,7 @@ global = {
 % {{{ PARTE B
   temaB = {
     \repeat volta 2 {
-      r8 d, a' a16 a \tuplet 3/2 {g8~ g f} \tuplet 3/2 {g f e} |
+      r8 d, \tuplet 3/2 {a'8 a a} \tuplet 3/2 {g8~ g f} \tuplet 3/2 {g f e} |
       \tuplet 3/2 {f8~ f e~} \tuplet 3/2 {e~ e d} \tuplet 3/2 {e d c} \tuplet 3/2 {a~ a d~} |
       d2 r2 | r1 |
     } 
@@ -148,6 +148,19 @@ tema = \relative c' {
   \temaD \break \bar "|."
 }
 
+temaBb = \relative c {
+  \mark \default
+  \temaA \break
+  \mark \default
+  \time 4/4
+  \temaB \break
+  \mark \default
+  \relative c'{\temaC} \break 
+  \mark \default
+  \time 5/8
+  \temaD \break \bar "|."
+}
+
 chordsPart ={
   \new ChordNames {
     \set chordChanges = ##t
@@ -164,10 +177,21 @@ temaPart = \new Staff \with {
   midiInstrument = "piano"
 } { \clef "treble_8" \global \tema }
 
+temaPartBb = \new Staff \with {
+  instrumentName = ""
+  midiInstrument = "piano"
+} { \clef "treble_8" \global \temaBb }
+
 scoreContent = << 
   \chordsPart
   \temaPart
 >>
+
+scoreContentBb = << 
+  \transpose c d {\chordsPart}
+  \transpose c d {\temaPartBb}
+>>
+
 %}}}
 
 % {{{ BOOKS
@@ -186,6 +210,6 @@ scoreContent = <<
     \struttura
     \header{ composer="Bb" }
     \bookOutputSuffix "Bb"
-    \score { \transpose c d {\scoreContent} }
+    \score { \scoreContentBb} 
   }
 % }}}

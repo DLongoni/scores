@@ -91,7 +91,7 @@ accordi = \chordmode{
 
   \repeat volta 2{
   d1*7/8:m | d4.:m d4:m g4:m | 
-  c1*7/8 | c4. d2:m | 
+  c1*7/8 | c4. f2 | 
   d1*7/8:m | g1*7/8:m |
   a1*7/8 | a4. a4 g4:m | 
   a1*7/8 | a1*7/8 |
