@@ -55,7 +55,7 @@ fakeBar = {
 struttura = \markup {
   \column {
       \line {
-        \bold{Intro} 2x Gtr, 4x Gtr+Fisa, \bold{A} Tr, \bold{B} Fisa, \bold{B} Tr, 
+        \bold{Intro} 1x Gtr, 3x Gtr+Fisa, \bold{A} Tr, \bold{B} Fisa, \bold{B} Tr, 
         \bold{A} Tr}
       \line{\bold{Solo}Tr: Pedale F +\bold{C}, \bold{Solo}Fisa: Pedale F +\bold{C},
             \bold{D}, \bold{B}, \bold{A} 1/2 Fisa II voce, 1/2 Tr
@@ -75,7 +75,7 @@ struttura = \markup {
     \repeat volta 3{
       r4 es4 d es8 d c~ | c4 c b c8 b a~ | a4 a g a8 g es~ | es2 r4 r4. | r2. r4. |
     } \break
-    <<{es'8 d es d c b c b a |} \\ {c8 b c b a gis a gis f |}>>
+   \new Voice <<{es'8 d es d c b c b a |} {c8 b c b a gis a gis f |}>>
     
     \repeat volta 2{ 
       f4 f f f8 f f | ees4 ees ees ees8 ees ees |

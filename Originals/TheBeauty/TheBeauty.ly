@@ -276,39 +276,46 @@ percPart = \new RhythmicStaff \with {
   shortInstrumentName = "P"
 } { \clef percussion \perc }
 
-\book{
-  \bookOutputSuffix "Score"
-  \header{ composer="Score" }
-  \score {
-    <<
+scoreC = <<
       \chordsPart
       \temaPart
       \temasecondaPart
       \bassPart      
-      \percPart
     >>
-    \layout {
-      indent = #0
-    }
-    \midi {
-      \context {
-        \Score
-        tempoWholesPerMinute = #(ly:make-moment 120 4)
-      }
-    }
-  }
-}
+
+scoreBb = <<
+  \transpose c d { \chordsPart }
+  \transpose c d, { \temaPart}
+  \transpose c d, { \temasecondaPart}
+>>
+% \book{
+%   \bookOutputSuffix "Score"
+%   \header{ composer="Score" }
+%   \score {
+%     <<
+%       \chordsPart
+%       \temaPart
+%       \temasecondaPart
+%       \bassPart      
+%       \percPart
+%     >>
+%     \layout {
+%       indent = #0
+%     }
+%     \midi {
+%       \context {
+%         \Score
+%         tempoWholesPerMinute = #(ly:make-moment 120 4)
+%       }
+%     }
+%   }
+% }
 
 \book{
   \bookOutputSuffix "C"
   \header{ composer="C" }
   \score {
-    <<
-      \chordsPart
-      \temaPart
-      \temasecondaPart
-      \bassPart      
-    >>
+    \scoreC
     \layout {
       indent = #0
     }
@@ -320,30 +327,26 @@ percPart = \new RhythmicStaff \with {
   \bookOutputSuffix "Bb"
   \header{ composer="Bb" }
   \score {
-    <<
-      \transpose c d { \chordsPart }
-      \transpose c d { \temaPart}
-      \transpose c d { \temasecondaPart}
-    >>
+    \scoreBb
     \layout {
       indent = #0
     }
   }
 }
 
-\book{
-  \struttura
-  \bookOutputSuffix "Perc"
-  \header{ composer="Perc" }
-  \score {
-    <<
-      \chordsPart
-      \temaPart
-      \percPart
-    >>
-    \layout {
-      indent = #0
-    }
-  }
-}
+% \book{
+%   \struttura
+%   \bookOutputSuffix "Perc"
+%   \header{ composer="Perc" }
+%   \score {
+%     <<
+%       \chordsPart
+%       \temaPart
+%       \percPart
+%     >>
+%     \layout {
+%       indent = #0
+%     }
+%   }
+% }
 % }}}
