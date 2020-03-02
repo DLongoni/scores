@@ -1,6 +1,6 @@
 % {{{ PARAMETRI
   myTitle = "Senza titolo in 7"
-  myKey = \key c \major
+  myKey = \key f \major
   myTime = \time 7/8 
   myTempo =  #(ly:make-moment 60 4)
 % }}}
@@ -49,6 +49,13 @@ global = {
     }
   }
 
+  temaAdue = {
+    \repeat volta 2{
+      d4 f8 r8 g16 a bes c r a | g16 a g8 f r f16 e f g r a |
+      bes16 c bes8 a r a16 g e c r bes | a2~ a4. | r2 r4. |
+    }
+  }
+
   ritmicaA = {
     \repeat volta 2{
       d8 d f d c e16 c~ c8 | d8 d f d c e16 c~ c8 | d8 d f d c e16 c~ c8 |
@@ -70,6 +77,10 @@ tema = \relative c' {
   \temaA \break
 }
 
+temaDue = \relative c' {
+  \temaAdue \break
+}
+
 ritmica = \relative c' {
   \ritmicaA 
 }
@@ -86,9 +97,15 @@ temaPart = \new Staff \with {
   midiInstrument = "piano"
 } { \clef "treble_8" \global \tema }
 
+temaDuePart = \new Staff \with {
+  instrumentName = ""
+  midiInstrument = "piano"
+} { \clef "treble_8" \global \temaDue }
+
 scoreContent = << 
   \chordsPart
   \temaPart
+  \temaDuePart
   \ritmica
 >>
 %}}}
