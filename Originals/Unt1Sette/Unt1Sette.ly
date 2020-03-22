@@ -153,4 +153,10 @@ scoreContent = <<
       \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 90 4) } }
     }
   }
+
+  \book{
+    \header{ composer="Bb" }
+    \bookOutputSuffix "Bb"
+    \score { \transpose c d {\scoreContent} }
+  }
 % }}}
