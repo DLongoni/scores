@@ -43,61 +43,31 @@ global = {
 
 % {{{ PARTE A
   temaA = {
-    \repeat volta 2{
       a4 c8 r8 d16 e d f r e | d16 e d8 c r bes16 a c bes r a |
-      f16 g f8 e r f16 e g f r c | d2~ d4. | r2 r4. |
-    }
+      f16 g f8 e r f16 e g f r c | d2~ d4. | r2 r4. | \break
+      a'4 c8 r8 d16 e d f r e | d16 e d8 c r bes16 a c bes r a |
+      f16 g f8 e r c'16 a d bes r e | f2~ f4. | r2 r4. |
   }
 
   temaAdue = {
-    \repeat volta 2{
       d4 f8 r8 g16 a bes c r a | g16 a g8 f r f16 e g f r e |
       e16 f e8 d r a'16 g e c r bes | a2~ a4. | r2 r4. |
-    }
+      d4 f8 r8 f16 g a bes r bes | a16 bes a8 g r f16 e g f r e |
+      e16 f e8 d r a'16 g bes f r g | d2~ d4. | r2 r4. |
   }
 
   ritmicaA = {
-    \repeat volta 2{
       d8 d f d c e16 c~ c8 | d8 d f d c e16 c~ c8 | d8 d f d c e16 c~ c8 |
       d8 d f d c e16 c~ c8 | d8 d f d c e16 c~ c8 |
-    }
+      d8 d f d c e16 c~ c8 | d8 d f d c e16 c~ c8 | d8 d f d c e16 c~ c8 |
+      d8 d f d c e16 c~ c8 | d8 d f d c e16 c~ c8 |
   }
 
   accordiA = \chordmode{
-    \repeat volta 2{
       d2:m c4.| d2:m c4.| d2:m c4.|
       d2:m c4.| d2:m c4.|
-    }
-  }
-% }}}
-
-% {{{ PARTE B
-  temaB = {
-    \repeat volta 2{
-      a'4 c8 r8 d16 e d f r e | d16 e d8 c r bes16 a c bes r a |
-      f16 g f8 e r f16 e g f r c | d2~ d4. | r2 r4. |
-    }
-  }
-
-  temaBdue = {
-    \repeat volta 2{
-      d4 f8 r8 f16 g a bes r bes | a16 bes a8 g r f16 e g f r e |
-      e16 f e8 d r a'16 g e c r bes | a2~ a4. | r2 r4. |
-    }
-  }
-
-  ritmicaB = {
-    \repeat volta 2{
-      d8 d f d c e16 c~ c8 | d8 d f d c e16 c~ c8 | d8 d f d c e16 c~ c8 |
-      d8 d f d c e16 c~ c8 | d8 d f d c e16 c~ c8 |
-    }
-  }
-
-  accordiB = \chordmode{
-    \repeat volta 2{
       d2:m bes4.| d2:m bes4.| d2:m bes4.|
       d2:m bes4.| d2:m bes4.|
-    }
   }
 % }}}
 
@@ -105,24 +75,21 @@ global = {
 tema = \relative c' {
   \mark \default
   \temaA \break
-  \temaB \break
+  \bar "|."
 }
 
 temaDue = \relative c' {
   \temaAdue \break
-  \temaBdue \break
 }
 
 ritmica = \relative c' {
   \ritmicaA 
-  \ritmicaB
 }
 
 chordsPart ={
   \new ChordNames {
     \set chordChanges = ##t
     \accordiA
-    \accordiB
   }
 }
 
@@ -142,11 +109,17 @@ scoreContent = <<
   \temaDuePart
   \ritmica
 >>
+
+temiContent = << 
+  \chordsPart
+  \temaPart
+  \temaDuePart
+>>
 %}}}
 
 % {{{ BOOKS
   \book{
-    \bookOutputSuffix "C"
+    \bookOutputSuffix "Score"
     \score {
       \scoreContent
       \layout {}
@@ -155,8 +128,16 @@ scoreContent = <<
   }
 
   \book{
+    \header{ composer="C" }
+    \bookOutputSuffix "C"
+    \score {
+      \temiContent
+    }
+  }
+
+  \book{
     \header{ composer="Bb" }
     \bookOutputSuffix "Bb"
-    \score { \transpose c d {\scoreContent} }
+    \score { \transpose c d {\temiContent} }
   }
 % }}}
