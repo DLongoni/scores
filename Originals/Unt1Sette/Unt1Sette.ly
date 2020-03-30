@@ -109,9 +109,9 @@ global = {
       { s1*7/8 | }
       { s1*7/8 | }
     }
-    f4 aes,8 c f4.~ | f2~ r4. | des2~ des4. |
-    f4 aes,8 c f4.~ | f2~ r4. | des2~ des4. |
-    f4 aes,8 c f4.~ | f2~ r4. | des2~ des4. |
+    f4 aes,8 c f4.~ | f2 r4. | des2~ des4. |
+    f4 aes,8 c f4.~ | f2 r4. | des2~ des4. |
+    f4 aes,8 c f4.~ | f2 r4. | des2~ des4. |
     c4 f,8 aes c4.~ | c2~ c4. | bes2~ bes4. |
     g2~ g4. | r1*7/8 | r1*7/8 | r1*7/8 | r1*7/8 | r1*7/8 |
     s1*7/8 | s1*7/8 |
@@ -214,7 +214,8 @@ temiContent = <<
 
 % {{{ BOOKS
   \book{
-    \bookOutputSuffix "Score"
+    \header{ composer="C" }
+    \bookOutputSuffix "C"
     \score {
       \scoreContent
       \layout {}
@@ -223,16 +224,8 @@ temiContent = <<
   }
 
   \book{
-    \header{ composer="C" }
-    \bookOutputSuffix "C"
-    \score {
-      \temiContent
-    }
-  }
-
-  \book{
     \header{ composer="Bb" }
     \bookOutputSuffix "Bb"
-    \score { \transpose c d {\temiContent} }
+    \score { \transpose c d {\scoreContent} }
   }
 % }}}
