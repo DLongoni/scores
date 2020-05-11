@@ -1,5 +1,5 @@
 % {{{ PARAMETRI
-  myTitle = "Senza titolo in 7"
+  myTitle = "Through Dark Waters"
   myKey = \key f \major
   myTime = \time #'(2 2 3) 7/8
   myTempo =  #(ly:make-moment 60 4)
