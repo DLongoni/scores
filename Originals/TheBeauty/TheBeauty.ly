@@ -182,12 +182,12 @@ percBdue = {
 
 % CODA {{{
 temaCoda = {
-  \time 4/4 a'8 b c d e a g f | \time 3/4 e4. a | g d | c ees | d c | \break
+  \time 4/4 a'8 b c d e a g f | \time 3/4 e4. a | g d | c ees | d bes | \break
   c8 d ees f g c | \time 2/4 bes g bes g | c2 |
 }
 
 temaCodaseconda = {
-  \time 4/4 c8 d e f g c b g | \time 3/4 a,4. c | b g | aes c | g aes | \break
+  \time 4/4 c8 d e f g c b g | \time 3/4 a,4. c | b g | aes c | g ees | \break
   c8 d ees f g c | \time 2/4 bes g bes g | c,2 |
 }
 
