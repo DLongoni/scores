@@ -116,7 +116,9 @@ global = {
 
 % {{{ PARTE C
   temaC = {
-    b16 c a f r d e8~ e2 | r4 b'16 c a f~ f d e f b c a8~ | a2 r2 |
+    <b e>16 <c f> <a d> <f c'> r <d a'> <e b'>8~ <e b'>2 |
+    r4 <b' e>16 <c f> <a d> <f c'>~ <f c'> <d a'> <e b'> <f c'> <b d> <c f> <a e'>8~ | 
+    <a e'>2 r2 |
   }
 
   accordiC = \chordmode{
