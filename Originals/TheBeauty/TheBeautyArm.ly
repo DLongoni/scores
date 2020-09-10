@@ -60,11 +60,11 @@ toCoda = {
 
 % PARTE A {{{
 armA = {
-  <e, g c>2. | <e g b> | <f b c> | <e bes' c> |
+  <e, g c>2. | <e g b> | <d g a> | <e aes c> |
   <e g c> | <e g bes> | < d f bes> | <d f a> | \break
   <cis e> | <d fis> | <e g> | <fis b> |
   <c f a>~ | <c f a> | <c e a>~ | <c e a> |
-  <c e a> | \time 2/4 <c f a>4 <c f gis> | \time 3/4 <c e a>2. | r2. |
+  <c e a> | \time 2/4 <c f a>4 <c f b> | \time 3/4 <c e a>2. | r2. |
 }
 
 accordiA = \chordmode{
@@ -79,12 +79,21 @@ accordiA = \chordmode{
     \time 3/4
     a2.:m | a2.:m |
 }
+
+silenzioA = {
+    s2. | s2. | s2. | s2. |
+    s2. | s2. | s2. | s2. |
+    s2. | s2. | s2. | s2. |
+    s2. | s2. | s2. | s2. |
+    s2. | s2 |  s2. | s2. |
+}
 % }}}
 
 % PARTE B {{{
 armB = {
   \time 3/4 <g' c e>2.~ | <g c e> | <a c e>~ | \time 2/4 <a c e>4 <a c f>4 | 
   \time 3/4 <b c g'>2.~ | <b c g'> | <a b e>~ | <a b e> | \break \bar "||"
+  \mark "B Alternativa"
   \time 3/4 <g c e>2.~ | <g c e> | <a c e>~ | \time 2/4 <a c e>4 <a c f>4 | 
   \time 3/4 <g c g'>2.~ | <g c g'> | <e b' e>~ | <e b' e> | \break \bar "||"
 }
@@ -101,6 +110,36 @@ accordiB = \chordmode{
   \time 2/4 f2:maj7 |
   \time 3/4
   a2.:m7 | a2.:m7 | g2.:6 | g2.:6 |
+}
+
+silenzioB = {
+  \repeat volta 2{
+    \time 3/4 s2. | s2. | s2. | \time 2/4 s2 |
+    \time 3/4 s2. | s2. | s2. | s2. |
+  }
+}
+% }}}
+
+% PARTE B2 {{{
+armBdue = {
+  r8 <e a c>8 r4 <e g c> | r8 <e a c>8 r4 <e g c> |
+  r8 <d fis a> r4 <d fis b> | \time 2/4 <d fis a>2 |
+  r4. <c e a>4 r8 | <c e a> r <c e a>2 |
+  r4. <d fis a>4 r8 | <d fis a> r <d fis a>2 |
+
+}
+
+accordiBdue = \chordmode{
+  \set chordChanges = ##t
+  \time 3/4 a2.:m7 | a2.:m7 | d2.:7 | \time 2/4 d2:7 |
+  \time 3/4
+  a2.:m7 | a2.:m7 |
+  g2.:6 | g2.:6 |
+}
+
+bassoBdue = { 
+  \time 3/4 a,4 r8 c8~ c4 | a r8 c8~ c4 | d r8 c8~ c4 | \time 2/4 d g, |
+  \time 3/4 a4. r4 a8 | r4 a2 | g4. r4 g8 | r4 g2 |
 }
 % }}}
 
@@ -126,15 +165,25 @@ arm = \relative c' {
   \mark \default
   \armB
   \break
+  \mark \markup{ \box \bold{B2} }
+  \armBdue
+  \break
   \mark \markup { \musicglyph #"scripts.coda"}
   \armCoda
   \bar"|."
+}
+
+bass = \relative c' {
+  \silenzioA
+  \silenzioB
+  \bassoBdue
 }
 
 chordsPart ={
   \new ChordNames {
     \accordiA
     \accordiB
+    \accordiBdue
     \accordiCoda
   }
 }
@@ -145,9 +194,16 @@ armPart = \new Staff \with {
   shortInstrumentName = "T"
 } { \clef "treble_8" \arm }
 
+bassPart = \new Staff \with {
+  instrumentName = ""
+  midiInstrument = "bass"
+  shortInstrumentName = "B"
+} { \clef "bass" \bass }
+
 scoreC = <<
       \chordsPart
       \armPart
+      \bassPart
     >>
 
 \book{

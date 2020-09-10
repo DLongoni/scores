@@ -158,8 +158,8 @@ accordiB = \chordmode{
 
 % PARTE Bdue {{{
 bassoBdue = { 
-  \time 3/4 a,4 r4 c | a r c | d r c | \time 2/4 d g, |
-  \time 3/4 a4. a4. | c4 a2 | g4. g4. b4 g2 |
+  \time 3/4 a,4 r8 c8~ c4 | a r8 c8~ c4 | d r8 c8~ c4 | \time 2/4 d g, |
+  \time 3/4 a4. r4 a8 | r4 a2 | g4. r4 g8 | r4 g2 |
 }
 
 accordiBdue = \chordmode{
