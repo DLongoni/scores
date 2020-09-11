@@ -125,7 +125,11 @@ toCoda = {
       c1:m | c1:m | g1:m | g1:m |
       c1:m | c1:m | g1:m | g1:m |
       d1:7 | d1:7 | g1:m | g1:m |
-      d1:7 | d1:7 | g1:m | g1:m |
+      d1:7 | d1:7 | 
+    }
+    \alternative{
+      { g1:m | g1:m | }
+      { g1:m | g1:m | }
     }
   }
 % }}}
