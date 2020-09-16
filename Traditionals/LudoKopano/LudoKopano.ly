@@ -46,10 +46,10 @@ global = {
   }
 
   accordiA = \chordmode{
-    \repeat volta 2  { g4 d4 g4. g2 | d1*11/8:m | c1*11/8 | }
+    \repeat volta 2  { g1*11/8 | d1*11/8:m | c1*11/8 | }
     \alternative {
-      {c4 a4 d4.:m d2:m |}
-      {c4 a4 d4.:m d2:m |}
+      {f4 c4 d4.:m d2:m |}
+      {f4 c4 d4.:m d2:m |}
     }
   }
 % }}}
@@ -64,7 +64,7 @@ global = {
 
   accordiB = \chordmode{
     \repeat volta 2{
-      g1*11/8:m | g2:m d4.:m d2:m | g1*11/8:m | d4:m a4 d4.:m d2:m |
+      g1*11/8:m | g2:m d4.:m d2:m | g1*11/8:m | d4:m a4:m d4.:m d2:m |
     }
   }
 % }}}
@@ -78,7 +78,7 @@ global = {
 
   accordiC = \chordmode{
     \repeat volta 2{
-      a1*11/8:m | d1*11/8 |  a1*11/8:m | d4:m a4 d4.:m d2:m |
+      a1*11/8:m | d1*11/8 |  a1*11/8:m | d2:m a4.:m d2:m |
     }
   }
 % }}}
@@ -93,7 +93,7 @@ global = {
 
   accordiD = \chordmode{
     \repeat volta 2{
-      d1*11/8:m | d1*11/8:m | d1*11/8:m | d1*11/8:m | 
+      d2:m d4.:m c2 | d1*11/8:m | d2:m d4.:m g2 | d2:m c4. d2:m |
     }
     d1*11/8:m | d1*11/8:m | 
   }
@@ -109,7 +109,7 @@ global = {
 
   accordiE = \chordmode{
     \repeat volta 2{
-      s1*11/8 | s1*11/8 | s1*11/8 | s1*11/8 | 
+      d1*11/8:m | s1*11/8 | s1*11/8 | s1*11/8 | 
     }
   }
 % }}}
@@ -123,14 +123,14 @@ global = {
 
   accordiF = \chordmode{
     \repeat volta 2{
-      s1*11/8 | s1*11/8 | s1*11/8 | s1*11/8 | 
+      d1*11/8:m | s1*11/8 | s1*11/8 | s1*11/8 | 
     }
   }
 % }}}
 
 % {{{ PARTE G
   temaG = {
-    \repeat volta 2 {fis8 g a b c b d c bes a g | g f f e d4. a'8 bes a g | g f f e c4.  e8 f f e |}
+    \repeat volta 2 {fis8 g a b c b d c bes a g | g f f e c4. a'8 bes a g | g f f e c4.  e8 f f e |}
     \alternative {
       { e d e f e d e c4 r4 |}
       {e8 d e c d4. r4}
