@@ -15,6 +15,10 @@
 }
 
 \paper{
+  system-system-spacing =
+    #'( (padding . 3))
+        
+
   print-first-page-number = ##t
   oddHeaderMarkup = \markup \null
   evenHeaderMarkup = \markup \null
