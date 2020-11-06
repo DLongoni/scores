@@ -142,7 +142,8 @@ trip = #(define-music-function (parser location m1 m2 m3)
     \repeat volta 2{
       s1 | s1 | s1 | s1 |
       s1 | s1 | s1 | s1 |
-      a'2 b' | c'' b' | d'' ees'' | e'' c''8. c''16 r4 | 
+      <a' e''>2 <b' f''> | <c'' g''> <b' ges''> | 
+      <d'' a''> <ees'' bes''> | <e'' b''>2. r4 | 
     }
   }
 
