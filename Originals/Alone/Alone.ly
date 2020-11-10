@@ -114,7 +114,7 @@ struttura = \markup {
     r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4. | \break
     r8 es bes es g4 f8 d bes | c4 es8 c es c d4 fis8 | a4 a8 g d4~ d4.~ | d2. r4. | \break
     r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4.^"(al Coda)" | \break
-    r8 es bes es g4 f8 d bes | c4 es8 d es d c4 g'8^"(Soli su Intro)" | <<{bes2.} \\ {f2.}>> r4. | 
+    r8 es bes es g4 f8 d bes | c4 es8 c es d c4 g'8^"(Soli su Intro)" | <<{bes2.} \\ {f2.}>> r4. | 
   }
 
   temaAbis = {
@@ -133,7 +133,8 @@ struttura = \markup {
 
   accordiA = \chordmode{
       bes2.:maj7 f4.:7 | g2.:m7 d4.:m7 | es2.:maj7 bes4.:maj7 | d1*9/8:m7 |
-      es2.:maj7 bes4.:maj7 | c2.:m7 d4.:7 | g1*9/8:m9 | ges2.:7.9+ f4.:13 |
+      % es2.:maj7 bes4.:maj7 | c2.:m7 d4.:7 | g1*9/8:m9 | ges2.:7.9+ f4.:13 |
+      es2.:maj7 bes4.:maj7 | a2.:m7.5- aes4.:7.11+ | g1*9/8:m9 | ges2.:7.9+ f4.:13 |
       bes2.:maj7 f4.:7 | g2.:m7 d4.:m7 | es2.:maj7 bes4.:maj7 | d1*9/8:m7 |
       es2.:maj7 bes4.:maj7 | c2.:m7 f4.:9 | bes1*9/8:maj7 |
   }
