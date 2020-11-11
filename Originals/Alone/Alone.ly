@@ -13,9 +13,21 @@
 }
 
 \paper{
+  % system-system-spacing =
+  %   #'((basic-distance . 0) 
+  %      (minimum-distance . 0)
+  %      (padding . 0)
+  %      (stretchability . 0)) 
   print-first-page-number = ##t
   oddHeaderMarkup = \markup \null
   evenHeaderMarkup = \markup \null
+  oddFooterMarkup = \markup {
+    \fill-line {
+      \on-the-fly \print-page-number-check-first
+      \fromproperty #'page:page-number-string
+    }
+  }
+  evenFooterMarkup = \oddFooterMarkup
   #(set-global-staff-size 10)
   myStaffSize = #20
   fonts = #(make-pango-font-tree
@@ -25,6 +37,7 @@
   (/ myStaffSize 20))
 }
 
+
 global = {
   \myKey
   \numericTimeSignature
@@ -32,25 +45,6 @@ global = {
   \set Score.markFormatter = #format-mark-box-alphabet
 }
 \layout { indent = #0 }
-fakeBar = {  
-  \bar""
-  \cadenzaOn
-  \once \omit Score.TimeSignature
-  \time 1/16
-  
-    \bar ":|."
-  s16  
-  \cadenzaOff
-  \once \omit Score.TimeSignature
-  \myTime
-}
-% \paper{
-%   system-system-spacing =
-%     #'((basic-distance . -1) 
-%        (minimum-distance . -1)
-%        (padding . -1)
-%        (stretchability . 60)) 
-% }
 
 struttura = \markup {
   \column {
@@ -63,6 +57,7 @@ struttura = \markup {
   }
 }
 \layout {
+  indent = #0
   \context { 
     \Staff \RemoveEmptyStaves 
     \override VerticalAxisGroup.remove-first = ##t
@@ -107,6 +102,14 @@ struttura = \markup {
    s2. s4. | 
    \repeat volta 2{f2.:7 f4.:7 | f2.:7/es f4.:7/es | f2.:7/d f4.:7/d | f2.:7/c f4.:7/c | }
   }
+
+  silenzioIntro = {
+    \repeat volta 3{
+      s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 |
+    }
+    s2. s4. | 
+    \repeat volta 2{ s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | }
+  }
 % }}}
 
 % {{{ PARTE A
@@ -118,7 +121,7 @@ struttura = \markup {
   }
 
   temaAbis = {
-    r8 f' d f bes4 a8 f d | bes2. f'8 d bes | g2. d'8 bes g | a d f2~ f4. | 
+    r8 f d f bes4 a8 f d | bes2. f'8 d bes | g2. d'8 bes g | a d f2~ f4. | 
     r8 bes, g bes ees4 d8 bes f | g4 c8 r c r a4 c8 | d2.~ d4.~ | d2. r4. | 
     r8 f d f bes4 a8 f d | bes2. f'8 d bes | g2. d'8 bes g | a d f2~ f4. |
     r8 bes, g bes ees4 d8 bes f | g2. f4. | d2.~ d4. |
@@ -126,9 +129,9 @@ struttura = \markup {
 
   temaAtris = {
     d2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
-    g2.~ g4. | ees4 g8 r g r fis4 a8 | bes2.~ bes4.~ | bes2. r4. |
+    g2. f4. | ees4 g8 r g r fis4 a8 | bes2.~ bes4.~ | bes2. r4. |
     d,2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
-    g2.~ g4. | ees4 g8 r g r f ees d | bes2. r4. |
+    g2. f4. | ees4 g8 r g r f ees d | bes2. r4. |
   }
 
   accordiA = \chordmode{
@@ -233,7 +236,6 @@ tema = \relative c' {
   \break
   \mark \default
   \temaA \break 
-  \pageBreak
   \mark \default
   \temaB \break 
   \mark \default
@@ -249,6 +251,11 @@ tema = \relative c' {
 ritmicaUno = \relative c' {
   % \ritmicaUnoIntro
   \ritmicaDueIntro
+  \temaAbis
+}
+
+temaTris = \relative c' {
+  \silenzioIntro
   \temaAtris
 }
 
@@ -279,6 +286,11 @@ ritmicaUnoPart = \new Staff \with {
   midiInstrument = "acoustic guitar (nylon)"
 } { \clef "treble_8" \global \ritmicaUno }
 
+temaTrisPart = \new Staff \with {
+  instrumentName = ""
+  midiInstrument = "acoustic guitar (nylon)"
+} { \clef "treble_8" \global \temaTris }
+
 % ritmicaDuePart = \new Staff \with {
 %   
 %   \override VerticalAxisGroup.default-staff-staff-spacing =#'((basic-distance . 30))
@@ -290,7 +302,7 @@ scoreContent = <<
   \chordsPart
   \temaPart
   \ritmicaUnoPart
-  % \ritmicaDuePart
+  \temaTrisPart
 >>
 %}}}
 
