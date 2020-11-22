@@ -51,9 +51,6 @@ trip = #(define-music-function (parser location m1 m2 m3)
     \repeat volta 2 {
       b4 b8 c b a b | c4 g8 r8 c d e | 
       f e d d e f g | e4. r4 d8 e | \break
-      % VERS BE
-      % f4 f8 a4 f | e d8 c4 d |
-      % dis4 fis8 dis4 b | e4 e,8 a a b c | \break
       f4 f8 a4 f | e d8 c4 e8 a |
       gis4 f8 e4 e8 b | c4 e,8 a a b c | \break
       b4 b8 c b a b | c4 g8 r8 c d e | 
@@ -71,7 +68,6 @@ trip = #(define-music-function (parser location m1 m2 m3)
     \partial 1*5/8 s1*5/8 |
     \repeat volta 2{
       g1*7/8 | c1*7/8 | g1*7/8 | c1*7/8 |
-      % d1*7/8:m | c1*7/8 | b1*7/8:7 | e4. d2:7 | % VERS B E
       d1*7/8:m | c1*7/8 | e1*7/8:7 | a4.:m d2:7 |
       g1*7/8 | c1*7/8 | g1*7/8 | c1*7/8 |
       d1*7/8:m | c1*7/8 | e1*7/8:7 |
@@ -94,7 +90,7 @@ trip = #(define-music-function (parser location m1 m2 m3)
     } 
     \alternative{
       { \trip fis g fis \trip ees d c a4 | }
-      { \time 1/4 \trip fis16 g fis \trip ees d c | \time 7/8 a4. r2 | }
+      { \time 1/4 \trip fis'16 g fis \trip ees d c | \time 7/8 a4. r2 | }
     }
   }
 
