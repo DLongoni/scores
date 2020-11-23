@@ -203,7 +203,7 @@ temaCoda = {
 }
 
 bassoCoda = {
-    g,2 d'8. d16 r8 bes8 | a2 |
+    g2 d'8. d16 r8 bes8 | a2 |
 }
 
 accordiCoda = \chordmode{
