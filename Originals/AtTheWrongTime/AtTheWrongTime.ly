@@ -182,6 +182,15 @@ toCoda = {
     }
   }
 
+  temaDdue = {
+    \repeat volta 2{
+      bes8 g d' bes4 a16 bes16 a8 f e~ |
+      e8 f g a c bes a4 f8 |
+      bes8 g d' bes4 a16 bes16 a8 f e~ |
+      e8 f g a c bes a4 f8 |
+    }
+  }
+
   bassoD = {
     \repeat volta 2{
       g,4 g8 r4 g8~ g4.~ | g2. r4. | g4 g8 r4 g8 r4. | g2.~ g4. |
@@ -234,7 +243,7 @@ temaDue = \relative c' {
   \silenzioA
   \temaBdue 
   \silenzioC
-  \silenzioD
+  \temaDdue
   \silenzioCoda
 }
 
