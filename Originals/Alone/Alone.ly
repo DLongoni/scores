@@ -65,50 +65,90 @@ struttura = \markup {
 }
 %}}}
 
-% {{{ PARTE Intro
-  temaIntro = {
-    \repeat volta 3{
-      r4 es4 d es8 d c~ | c4 c b c8 b a~ | a4 a g a8 g es~ | es2 r4 r4. | r2. r4. |
-    } \break
-   \new Voice <<{es'8 d es d c b c b a |} {c8 b c b a gis a gis f |}>>
-    
-    \repeat volta 2{ 
-      f4 f f f8 f f | ees4 ees ees ees8 ees ees |
-      d4 d d d8 d d | c4 c c c8 c c |
-    }
-  }
+% {{{ PARTE Intro - OLD
+  % temaIntro = {
+  %   \repeat volta 3{
+  %     r4 es4 d es8 d c~ | c4 c b c8 b a~ | a4 a g a8 g es~ | es2 r4 r4. | r2. r4. |
+  %   } \break
+  %  \new Voice <<{es'8 d es d c b c b a |} {c8 b c b a gis a gis f |}>>
+  %   
+  %   \repeat volta 2{ 
+  %     f4 f f f8 f f | ees4 ees ees ees8 ees ees |
+  %     d4 d d d8 d d | c4 c c c8 c c |
+  %   }
+  % }
+  %
+  % ritmicaUnoIntro = {
+  %   \repeat volta 3{
+  %     f,8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | 
+  %     ees8 r8 r2 ees4. | ees8 r8 r2 ees4. |
+  %   }
+  %   s2. s4. | 
+  %   \repeat volta 2{ s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | }
+  % }
+  %
+  % ritmicaDueIntro = {
+  %   \repeat volta 3{
+  %     f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 a,8 | 
+  %     g4 ees'2 r4 a,8 | g4 ees'2 r4 c8 |
+  %   }
+  %   s2. s4. | 
+  %   \repeat volta 2{ s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | }
+  % }
+  %
+  % accordiIntro = \chordmode{
+  %   \repeat volta 3{ f2. f4. | f2. f4. | f2. f4. | 
+  %     ees2.:maj7.11+ ees4.:maj7.11+ | ees2.:maj7.11+ ees4.:maj7.11+ |}
+  %  s2. s4. | 
+  %  \repeat volta 2{f2.:7 f4.:7 | f2.:7/es f4.:7/es | f2.:7/d f4.:7/d | f2.:7/c f4.:7/c | }
+  % }
+  %
+  % silenzioIntro = {
+  %   \repeat volta 3{
+  %     s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 |
+  %   }
+  %   s2. s4. | 
+  %   \repeat volta 2{ s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | }
+  % }
+% }}}
 
+% {{{ PARTE Intro
   ritmicaUnoIntro = {
-    \repeat volta 3{
-      f,8 r8 r2 f4. | f8 r8 r2 f4. | f8 r8 r2 f4. | 
-      ees8 r8 r2 ees4. | ees8 r8 r2 ees4. |
+    \repeat volta 2 {
+      bes4\staccato bes4\staccato bes8 g a4 g8 | bes4\staccato bes4\staccato bes8 g a4 g8 |
+      bes4\staccato bes4\staccato bes8 g a4 g8 | bes4\staccato bes4\staccato bes8 g a4 g8 |
+      bes4\staccato bes4\staccato bes8 g a4 g8 |
     }
-    s2. s4. | 
-    \repeat volta 2{ s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | }
   }
 
   ritmicaDueIntro = {
-    \repeat volta 3{
-      f,4 f'2 r4 c8 | f,4 f'2 r4 c8 | f,4 f'2 r4 a,8 | 
-      g4 ees'2 r4 a,8 | g4 ees'2 r4 c8 |
+    \repeat volta 2 {
+       \new Voice <<
+         { d4 r4 r8 d8 f4. | f4 r4 r8 f8 f4. | 
+         g4 r4 r8 g8 f4. | f4 r r8 f8 f4. | f4 r4 r8 f8 ees4. | } 
+         { a,4 r4 r8 a8 c4. | d4 r r8 d8 d4. | 
+         d4 r r8 d d4. | d4 r r8 d c4. | d4 r r8 d c4. |}
+       >>
     }
-    s2. s4. | 
-    \repeat volta 2{ s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | }
   }
 
   accordiIntro = \chordmode{
-    \repeat volta 3{ f2. f4. | f2. f4. | f2. f4. | 
-      ees2.:maj7.11+ ees4.:maj7.11+ | ees2.:maj7.11+ ees4.:maj7.11+ |}
-   s2. s4. | 
-   \repeat volta 2{f2.:7 f4.:7 | f2.:7/es f4.:7/es | f2.:7/d f4.:7/d | f2.:7/c f4.:7/c | }
+     \repeat volta 2 {
+        bes2. f4. | f2.:m d4.:m |
+        bes2. f4. | f2.:m d4.:m | bes2. f4.:7 |
+     }
+  }
+
+  bassoIntro ={
+    \repeat volta 2 {
+     r8 bes4. g4 f4 d8 | r8 g4. ees4 d4. | 
+     r8 bes4. g4 f4 d8 | r8 g4. ees4 d4. | 
+     bes,4 bes, d ees8 e f |
+    } 
   }
 
   silenzioIntro = {
-    \repeat volta 3{
-      s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 |
-    }
-    s2. s4. | 
-    \repeat volta 2{ s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | }
+    \repeat volta 2{ s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | }
   }
 % }}}
 
@@ -134,12 +174,35 @@ struttura = \markup {
     g2. f4. | ees4 g8 r g r f ees d | bes2. r4. |
   }
 
+  ritmicaA = \relative c''{
+     \new Voice <<
+       { d4 r4 r8 d8 f4. | f4 r4 r8 f8 f4. | g4 r4 r8 g8 f4. | f4 r r8 f8 f4. | 
+         g4 r4 r8 g8 f4. | ees4 r r8 ees d4. | d4 r r8 d d4. | d4 r r8 d d4. | 
+         d4 r4 r8 d8 f4. | f4 r4 r8 f8 f4. | g4 r4 r8 g8 f4. | f4 r r8 f8 f4. | 
+         g4 r4 r8 g8 f4. | ees4 r r8 ees ees4. | d4 r r4 r4. | } 
+       { a4 r4 r8 a8 c4. | d4 r r8 d8 d4. | d4 r r8 d d4. | d4 r r8 d d4. | 
+         d4 r r8 d d4. | c4 r r8 c c4. | bes4 r4 r8 bes bes4. | bes4 r r8 bes a4. |
+         a4 r4 r8 a8 c4. | d4 r r8 d8 d4. | d4 r r8 d d4. | d4 r r8 d d4. | 
+         d4 r r8 d d4. | c4 r r8 c c4. | bes4 r4 r4 r4. |
+       }
+     >>
+  }
+
   accordiA = \chordmode{
       bes2.:maj7 f4.:7 | g2.:m7 d4.:m7 | es2.:maj7 bes4.:maj7 | d1*9/8:m7 |
       % es2.:maj7 bes4.:maj7 | c2.:m7 d4.:7 | g1*9/8:m9 | ges2.:7.9+ f4.:13 |
       es2.:maj7 bes4.:maj7 | a2.:m7.5- aes4.:7.11+ | g1*9/8:m9 | ges2.:7.9+ f4.:13 |
       bes2.:maj7 f4.:7 | g2.:m7 d4.:m7 | es2.:maj7 bes4.:maj7 | d1*9/8:m7 |
       es2.:maj7 bes4.:maj7 | c2.:m7 f4.:9 | bes1*9/8:maj7 |
+  }
+
+  bassoA ={
+    \repeat volta 2 {
+     r8 bes4. g4 f4 d8 | r8 g4. ees4 d4. | r8 ees4. g8 a bes4 f8 | r8 d4. f4 a8 f d |
+     r8 ees4. g4 bes4. | r8 a4. g4 aes4. | r8 g8 g4 r4 g4. | r8 ges4 bes8 a g f4. |
+     r8 bes4. g4 f4. | r8 g4. ees4 d4. | r8 ees4. g8 aes bes4 f8 | r8 d4. f4 f8 ees d |
+     r8 ees4. g4 bes4. | r8 c'4. g4 f4. | r8 bes,4. d4 f8 fis g |
+    } 
   }
 % }}}
 
@@ -232,7 +295,7 @@ struttura = \markup {
 % SCORE {{{
 tema = \relative c' {
   \mark "Intro"
-  \temaIntro
+  \ritmicaUnoIntro
   \break
   \mark \default
   \temaA \break 
@@ -249,7 +312,6 @@ tema = \relative c' {
 }
 
 ritmicaUno = \relative c' {
-  % \ritmicaUnoIntro
   \ritmicaDueIntro
   \temaAbis
 }
@@ -257,6 +319,18 @@ ritmicaUno = \relative c' {
 temaTris = \relative c' {
   \silenzioIntro
   \temaAtris
+}
+
+ritmicaApart = \new Staff {
+  \silenzioIntro
+  \ritmicaA
+}
+
+bassoPart = \new Staff {
+  \global
+  \clef "bass"
+  \bassoIntro
+  \bassoA
 }
 
 % ritmicaDue = \relative c' {
@@ -303,6 +377,8 @@ scoreContent = <<
   \temaPart
   \ritmicaUnoPart
   \temaTrisPart
+  \ritmicaApart
+  \bassoPart
 >>
 %}}}
 
