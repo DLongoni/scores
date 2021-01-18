@@ -13,11 +13,11 @@
 }
 
 \paper{
-  % system-system-spacing =
-  %   #'((basic-distance . 0) 
-  %      (minimum-distance . 0)
-  %      (padding . 0)
-  %      (stretchability . 0)) 
+  system-system-spacing =
+    #'((basic-distance . 10) 
+       (minimum-distance . 0)
+       (padding . 5)
+       (stretchability . 20)) 
   print-first-page-number = ##t
   oddHeaderMarkup = \markup \null
   evenHeaderMarkup = \markup \null
@@ -218,6 +218,17 @@ struttura = \markup {
     }
   }
 
+  silenzioB = {
+    \repeat volta 2 {
+      s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 |
+      s1*9/8 | s1*9/8 | s1*9/8 |
+    }
+    \alternative{
+      {r1*9/8 |}
+      {r1*9/8 |}
+    }
+  }
+
   accordiB = \chordmode{
     \repeat volta 2 {
       g2.:m7 g4.:m7 | f2.:6 f4.:6 | es2.:maj7 f4.:7 | bes2.:maj7 bes4.:maj7 |
@@ -252,6 +263,39 @@ struttura = \markup {
     \alternative{
       {r1*9/8 |}
       {r1*9/8 |}
+    }
+  }
+
+  bassoC = {
+    \repeat volta 2 {
+      g4 g r g4. | ees4 ees r ees4. | f4 f r f4. |
+    }
+    \alternative{
+      { d4 d r f4. | }
+      { d4 d r fis4. | }
+    }
+  }
+
+  voicingC = {
+    \repeat volta 2 {
+       \new Voice <<
+         { r8 d4. c4 d c8 | r8 d4. c4 d4. | r8 d4. c4 d c8 | }
+         { r8 bes4. bes4 bes4. | r8 bes4. bes4 bes4. | r8 a4. a4 a4. | }
+       >>
+    }
+    \alternative{
+      {
+      \new Voice <<
+        { r8 d4. c4 d4. | }
+        { r8 a4. a4 a4. | }
+      >>
+      }
+      {
+      \new Voice <<
+        { r8 d4. c4 d4. | }
+        { r8 a4. a4 a4. | }
+      >>
+      }
     }
   }
 
@@ -302,7 +346,7 @@ tema = \relative c' {
   \mark \default
   \temaB \break 
   \mark \default
-  \silenzioC \break 
+  \voicingC \break 
   \mark \default
   \temaD \bar "|."
   % \mark "Soli"
@@ -331,6 +375,8 @@ bassoPart = \new Staff {
   \clef "bass"
   \bassoIntro
   \bassoA
+  \silenzioB
+  \bassoC
 }
 
 % ritmicaDue = \relative c' {
