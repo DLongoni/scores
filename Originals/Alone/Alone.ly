@@ -115,9 +115,8 @@ struttura = \markup {
 % {{{ PARTE Intro
   ritmicaUnoIntro = {
     \repeat volta 2 {
-      bes4\staccato bes4\staccato bes8 g a4 g8 | bes4\staccato bes4\staccato bes8 g a4 g8 |
-      bes4\staccato bes4\staccato bes8 g a4 g8 | bes4\staccato bes4\staccato bes8 g a4 g8 |
-      bes4\staccato bes4\staccato bes8 g a4 g8 |
+      bes4\staccato bes4\staccato bes8 g a4 f8 | bes4\staccato bes4\staccato bes8 g a4 f8 |
+      bes4\staccato bes4\staccato bes8 g a4 f8 | bes4\staccato bes4\staccato bes8 g a4 f8 | bes4\staccato bes4\staccato bes8 g a4 f8 |
     }
   }
 
@@ -134,8 +133,8 @@ struttura = \markup {
 
   accordiIntro = \chordmode{
      \repeat volta 2 {
-        bes2. f4. | f2.:m d4.:m |
-        bes2. f4. | f2.:m d4.:m | bes2. f4.:7 |
+        bes2. f4. | g2.:m d4.:m |
+        bes2. f4. | g2.:m d4.:m | bes2. f4.:7 |
      }
   }
 
@@ -366,6 +365,7 @@ temaTris = \relative c' {
 }
 
 ritmicaApart = \new Staff {
+  \global
   \silenzioIntro
   \ritmicaA
 }
