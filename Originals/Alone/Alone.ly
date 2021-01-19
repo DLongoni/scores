@@ -7,44 +7,7 @@
 
 % INTESTAZIONE {{{
 \version "2.18.2"
-
-\header {
-  title = \myTitle
-}
-
-\paper{
-  system-system-spacing =
-    #'((basic-distance . 10) 
-       (minimum-distance . 0)
-       (padding . 5)
-       (stretchability . 20)) 
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-  #(set-global-staff-size 10)
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 20))
-}
-
-
-global = {
-  \myKey
-  \numericTimeSignature
-  \myTime
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
-\layout { indent = #0 }
+\include "/home/davide/scores/Template/Common.ly"
 
 struttura = \markup {
   \column {
@@ -54,13 +17,6 @@ struttura = \markup {
       \line{\bold{Solo}Tr: Pedale F +\bold{C}, \bold{Solo}Fisa: Pedale F +\bold{C},
             \bold{D}, \bold{B}, \bold{A} 1/2 Fisa II voce, 1/2 Tr
     }
-  }
-}
-\layout {
-  indent = #0
-  \context { 
-    \Staff \RemoveEmptyStaves 
-    \override VerticalAxisGroup.remove-first = ##t
   }
 }
 %}}}
@@ -156,7 +112,7 @@ struttura = \markup {
     r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4. | \break
     r8 es bes es g4 f8 d bes | c4 es8 c es c d4 fis8 | a4 a8 g d4~ d4.~ | d2. r4. | \break
     r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4.^"(al Coda)" | \break
-    r8 es bes es g4 f8 d bes | c4 es8 c es d c4 g'8^"(Soli su Intro)" | <<{bes2.} \\ {f2.}>> r4. | 
+    r8 es bes es g4 f8 d bes | c4 es8 c es d c4 g'8| <<{bes2.} \\ {f2.}>> r4. | 
   }
 
   temaAbis = {
@@ -430,9 +386,10 @@ scoreContent = <<
 
 % {{{ BOOKS
   \book{
-    \struttura
     \bookOutputSuffix "C"
     \header{ composer="C" }
+    \struttura
+    \markup { \vspace #1 }
     \score {
       \scoreContent
       \layout {}
@@ -442,6 +399,7 @@ scoreContent = <<
 
   \book{
     \struttura
+    \markup { \vspace #1 }
     \header{ composer="Bb" }
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }
