@@ -52,6 +52,11 @@ trip = #(define-music-function (parser location m1 m2 m3)
   "Triplets"             
   #{ \tuplet 3/2 { $m1 $m2 $m3 } #})
 
+toCoda = {
+  % the align part
+  \mark \markup { { \lower #1 "al  " { \musicglyph #"scripts.coda"} } } 
+}
+
 #(define-public includeLocal (define-music-function (parser location 
 file)(string?)
      (let ((outname (format "~A.ly" (ly:parser-output-name parser)))

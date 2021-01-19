@@ -1,5 +1,6 @@
 % {{{ PARAMETRI
   myTitle = "At the Wrong Time"
+  myFname = "AtTheWrongTime"
   myKey = \key bes \major
   myTime = \time 9/8 
   myTempo =  #(ly:make-moment 60 4)
@@ -14,49 +15,7 @@
 
 % INTESTAZIONE {{{
 \version "2.18.2"
-
-\header {
-  title = \myTitle
-}
-
-\paper{
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-  #(set-global-staff-size 10)
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 20))
-}
-
-global = {
-  \myKey
-  \numericTimeSignature
-  \myTime
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
-\layout {
-  indent = #0
-  \context { 
-    \Staff \RemoveEmptyStaves 
-    \override VerticalAxisGroup.remove-first = ##t
-  }
-}
-
-toCoda = {
-  % the align part
-  \mark \markup { { \lower #1 "al  " { \musicglyph #"scripts.coda"} } } 
-}
+\include "/home/davide/scores/Template/Common.ly"
 %}}}
 
 % {{{ PARTE A
@@ -296,8 +255,10 @@ scoreContent = <<
 
 % {{{ BOOKS
   \book{
+    \bookOutputName \myFname
     \header{ composer="C" }
     \struttura
+    \markup { \vspace #1 }
     \bookOutputSuffix "C"
     \score {
       \scoreContent
@@ -307,9 +268,11 @@ scoreContent = <<
   }
 
   \book{
+    \bookOutputName \myFname
     \header{ composer="Bb" }
     \struttura
     \bookOutputSuffix "Bb"
+    \markup { \vspace #1 }
     \score { \transpose c d, {\scoreContent} }
   }
 % }}}

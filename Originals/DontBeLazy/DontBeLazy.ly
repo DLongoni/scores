@@ -1,55 +1,19 @@
-% DEFINIZIONI {{{
+% {{{ PARAMETRI
+  myTitle = "Don't Be Lazy"
+  myFname = "DontBeLazy"
+  myKey = \key bes \major
+  myTime = \time 2/4 
+  myTempo =  #(ly:make-moment 60 4)
+% }}}
+
+% INTESTAZIONE {{{
 \version "2.18.2"
-
-\header {
-  title = "Don't Be Lazy"
-}
-
-\paper{
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-  #(set-global-staff-size 10)
-
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-            "FontAwesome"
-            "FontAwesome"
-            "FontAwesome"
-            (/ myStaffSize 20))
-}
-
-global = {
-  \key bes \major
-  \numericTimeSignature
-  \time 2/4
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
-
-toCoda = {
-  % the align part
-  \once \override Score.RehearsalMark.self-alignment-X = #RIGHT  
-  \once \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
-  \mark \markup { { \lower #1 "al  " { \musicglyph #"scripts.coda"} } } 
-}
-
-\layout {
-  \context { 
-    \Staff \RemoveEmptyStaves 
-  }
-}
+\include "/home/davide/scores/Template/Common.ly"
 
 struttura = \markup {
   \column {
     \line {
-      \bold{B}, \bold{A}, \bold{B}, \bold{A}, Soli, \bold{C}, \bold{B}, \bold{A}, \bold{C}, Colda
+      \bold{B}, \bold{A}, \bold{B}, \bold{A}, Soli, \bold{C}, \bold{B}, \bold{A}, \bold{C}, Coda
     }
   }
 }
@@ -230,6 +194,7 @@ tema = \relative c' {
   \temaSoli
   \break
   \temaCoda
+  \bar "|."
 }
 
 basso = \relative c {
@@ -268,6 +233,7 @@ bassPart = \new Staff \with {
 
 \book{
   \struttura
+  \markup { \vspace #1 }
   \bookOutputSuffix "C"
   \score {
     <<
@@ -297,6 +263,7 @@ bassPart = \new Staff \with {
 
 \book{
   \struttura
+  \markup { \vspace #1 }
   \bookOutputSuffix "Bb"
   \score {
     <<

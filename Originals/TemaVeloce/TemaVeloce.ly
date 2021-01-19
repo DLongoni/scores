@@ -1,5 +1,6 @@
 % {{{ PARAMETRI
   myTitle = "Tema Veloce"
+  myFname = "TemaVeloce"
   myKey = \key f \major
   myTime = \time 4/4 
   myTempo =  #(ly:make-moment 130 4)
@@ -7,42 +8,7 @@
 
 % INTESTAZIONE {{{
 \version "2.18.2"
-
-\header {
-  title = \myTitle
-}
-
-\paper{ print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-  #(set-global-staff-size 10)
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 20))
-}
-
-global = {
-  \myKey
-  \numericTimeSignature
-  \myTime
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
-\layout { indent = #0 }
-
-trip = #(define-music-function (parser location m1 m2 m3) 
-  (ly:music? ly:music? ly:music?)
-  "Triplets"             
-  #{ \tuplet 3/2 { $m1 $m2 $m3 } #})
+\include "/home/davide/scores/Template/Common.ly"
 %}}}
 
 % {{{ PARTE A
@@ -105,6 +71,7 @@ scoreContent = <<
 
 % {{{ BOOKS
   \book{
+    \bookOutputName \myFname
     \bookOutputSuffix "C"
     \score {
       \scoreContent

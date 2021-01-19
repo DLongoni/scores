@@ -1,52 +1,9 @@
-% DEFINIZIONI {{{
-\version "2.18.2"
-
-\header {
-  title = "The Beauty I Don't See"
-}
-
-\paper{
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-  #(set-global-staff-size 10)
-
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 20))
-}
-
-global = {
-  \key a \minor
-  \numericTimeSignature
-  \time 3/4
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
-
-\layout {
-  \context { 
-    \Staff \RemoveEmptyStaves 
-    \override VerticalAxisGroup.remove-first = ##t
-  }
-}
-
-
-toCoda = {
-  % the align part
-  \once \override Score.RehearsalMark.self-alignment-X = #RIGHT  
-  \once \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
-  \mark \markup { { \lower #1 "al  " { \musicglyph #"scripts.coda"} } } 
-}
+% {{{ PARAMETRI
+  myTitle = "The Beauty I Don't See"
+  myFname = "TheBeauty"
+  myKey = \key c \major
+  myTime = \time 3/4 
+  myTempo =  #(ly:make-moment 60 4)
 
   struttura = \markup {
     \column {
@@ -56,6 +13,18 @@ toCoda = {
               \bold{B2}x2, \bold{A}, \bold{Coda}}
       }
     }
+% }}}
+
+% DEFINIZIONI {{{
+\version "2.18.2"
+\include "/home/davide/scores/Template/Common.ly"
+toCoda = {
+  % the align part
+  \once \override Score.RehearsalMark.self-alignment-X = #RIGHT  
+  \once \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
+  \mark \markup { { \lower #1 "al  " { \musicglyph #"scripts.coda"} } } 
+}
+
 %}}}
 
 % PARTE A {{{
@@ -288,30 +257,11 @@ scoreBb = <<
   \transpose c d, { \temaPart}
   \transpose c d, { \temasecondaPart}
 >>
-% \book{
-%   \bookOutputSuffix "Score"
-%   \header{ composer="Score" }
-%   \score {
-%     <<
-%       \chordsPart
-%       \temaPart
-%       \temasecondaPart
-%       \bassPart      
-%       \percPart
-%     >>
-%     \layout {
-%       indent = #0
-%     }
-%     \midi {
-%       \context {
-%         \Score
-%         tempoWholesPerMinute = #(ly:make-moment 120 4)
-%       }
-%     }
-%   }
-% }
 
 \book{
+  \bookOutputName \myFname
+  \struttura
+  \markup { \vspace #1 }
   \bookOutputSuffix "C"
   \header{ composer="C" }
   \score {
@@ -323,7 +273,9 @@ scoreBb = <<
 }
 
 \book{
+  \bookOutputName \myFname
   \struttura
+  \markup { \vspace #1 }
   \bookOutputSuffix "Bb"
   \header{ composer="Bb" }
   \score {
@@ -333,20 +285,4 @@ scoreBb = <<
     }
   }
 }
-
-% \book{
-%   \struttura
-%   \bookOutputSuffix "Perc"
-%   \header{ composer="Perc" }
-%   \score {
-%     <<
-%       \chordsPart
-%       \temaPart
-%       \percPart
-%     >>
-%     \layout {
-%       indent = #0
-%     }
-%   }
-% }
 % }}}
