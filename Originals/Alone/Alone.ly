@@ -135,11 +135,11 @@ struttura = \markup {
        { d4 r4 r8 d8 f4. | f4 r4 r8 f8 f4. | g4 r4 r8 g8 f4. | f4 r r8 f8 f4. | 
          g4 r4 r8 g8 f4. | ees4 r r8 ees d4. | d4 r r8 d d4. | d4 r r8 d d4. | 
          d4 r4 r8 d8 f4. | f4 r4 r8 f8 f4. | g4 r4 r8 g8 f4. | f4 r r8 f8 f4. | 
-         g4 r4 r8 g8 f4. | ees4 r r8 ees ees4. | d4 r r4 r4. | } 
-       { a4 r4 r8 a8 c4. | d4 r r8 d8 d4. | d4 r r8 d d4. | d4 r r8 d d4. | 
+         g4 r4 r8 g8 f4. | f4 r r8 f f4. | f4 r r4 r4. | } 
+       { a,4 r4 r8 a8 c4. | d4 r r8 d8 d4. | d4 r r8 d d4. | d4 r r8 d d4. | 
          d4 r r8 d d4. | c4 r r8 c c4. | bes4 r4 r8 bes bes4. | bes4 r r8 bes a4. |
          a4 r4 r8 a8 c4. | d4 r r8 d8 d4. | d4 r r8 d d4. | d4 r r8 d d4. | 
-         d4 r r8 d d4. | c4 r r8 c c4. | bes4 r4 r4 r4. |
+         d4 r r8 d d4. | c4 r r8 c c4. | d4 r4 r4 r4. |
        }
      >>
   }
