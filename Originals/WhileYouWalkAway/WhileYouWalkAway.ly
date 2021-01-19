@@ -1,5 +1,6 @@
 % {{{ PARAMETRI
   myTitle = "While You Walk Away"
+  myFname = "WhileYouWalkAway"
   mySubTitle = ""
   myKey = \key d \minor
   myTime = \time #'(3 2) 5/8
@@ -14,49 +15,7 @@
 
 % INTESTAZIONE {{{
 \version "2.18.2"
-
-\header {
-  title = \myTitle
-  composer = \mySubTitle
-}
-
-\paper{
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-  
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 20))
-}
-
-global = {
-  \myKey
-  \numericTimeSignature
-  \myTime
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
-
-\paper{
-  system-system-spacing =
-    #'((basic-distance . 10) 
-       (minimum-distance . 5)
-       (padding . 5)
-       (stretchability . 60)) 
-}
-
-\layout { indent = #0   
-}
+\include "/home/davide/scores/Template/Common.ly"
 %}}}
 
 % {{{ PARTE Intro
@@ -199,6 +158,8 @@ scoreContentBb = <<
 % {{{ BOOKS
   \book{
     \struttura
+    \bookOutputName \myFname
+    \markup { \vspace #1 }
     \bookOutputSuffix "C"
     \header{ composer="C" }
     \score {
@@ -209,7 +170,9 @@ scoreContentBb = <<
   }
 
   \book{
+    \bookOutputName \myFname
     \struttura
+    \markup { \vspace #1 }
     \header{ composer="Bb" }
     \bookOutputSuffix "Bb"
     \score { \scoreContentBb} 

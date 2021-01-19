@@ -1,5 +1,6 @@
 % {{{ PARAMETRI
   myTitle = "Alone in a sleeping city"
+  myFname = "Alone"
   myKey = \key bes \major
   myTime = \time #'(2 2 2 3) 9/8
   myTempo =  #(ly:make-moment 100 4)
@@ -386,6 +387,7 @@ scoreContent = <<
 
 % {{{ BOOKS
   \book{
+    \bookOutputName \myFname
     \bookOutputSuffix "C"
     \header{ composer="C" }
     \struttura
@@ -398,6 +400,7 @@ scoreContent = <<
   }
 
   \book{
+    \bookOutputName \myFname
     \struttura
     \markup { \vspace #1 }
     \header{ composer="Bb" }

@@ -1,5 +1,6 @@
 % {{{ PARAMETRI
   myTitle = "Waking Dreaming"
+  myFname = "WakingDreaming"
   myKey = \key c \major
   myTime = \time 2/4 
   myTempo =  #(ly:make-moment 60 4)
@@ -15,45 +16,7 @@
 
 % INTESTAZIONE {{{
 \version "2.18.2"
-
-\header {
-title = \myTitle
-}
-
-\paper{
-print-first-page-number = ##t
-oddHeaderMarkup = \markup \null
-evenHeaderMarkup = \markup \null
-oddFooterMarkup = \markup {
-  \fill-line {
-    \on-the-fly \print-page-number-check-first
-    \fromproperty #'page:page-number-string
-  }
-}
-evenFooterMarkup = \oddFooterMarkup
-#(set-global-staff-size 10)
-myStaffSize = #20
-fonts = #(make-pango-font-tree
-"FontAwesome"
-"FontAwesome"
-"FontAwesome"
-(/ myStaffSize 20))
-}
-
-global = {
-\myKey
-\numericTimeSignature
-\myTime
-\set Score.markFormatter = #format-mark-box-alphabet
-}
-\layout { indent = #0 }
-
-\layout {
-  \context { 
-    \Staff \RemoveEmptyStaves 
-    \override VerticalAxisGroup.remove-first = ##t
-  }
-}
+\include "/home/davide/scores/Template/Common.ly"
 %}}}
 
 % {{{ PARTE A
@@ -267,7 +230,9 @@ scoreContent = <<
 
 % {{{ BOOKS
   \book{
+    \bookOutputName \myFname
     \struttura
+    \markup { \vspace #1 }
     \header{ composer="C" }
     \bookOutputSuffix "C"
     \score {
@@ -278,7 +243,9 @@ scoreContent = <<
   }
 
   \book{
+    \bookOutputName \myFname
     \struttura
+    \markup { \vspace #1 }
     \header{ composer="Bb" }
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }

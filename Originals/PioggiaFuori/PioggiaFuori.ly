@@ -1,5 +1,6 @@
 % {{{ PARAMETRI
   myTitle = "Pioggia Fuori"
+  myFname = "PioggiaFuori"
   mySubTitle = "Luca Pedeferri"
   myKey = \key g \major
   myTime = \time 3/4 
@@ -8,53 +9,11 @@
 
 % INTESTAZIONE {{{
 \version "2.18.2"
+\include "/home/davide/scores/Template/Common.ly"
 
 \header {
-  title = \myTitle
-  composer = \mySubTitle
+  arranger = \mySubTitle
 }
-
-\paper{
-  system-system-spacing =
-    #'( (padding . 3))
-        
-
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-  #(set-global-staff-size 10)
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 20))
-}
-
-global = {
-  \myKey
-  \numericTimeSignature
-  \myTime
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
-\layout {
-  indent = #0
-  \context { 
-    \Staff \RemoveEmptyStaves 
-    \override VerticalAxisGroup.remove-first = ##t
-  }
-}
-trip = #(define-music-function (parser location m1 m2 m3) 
-  (ly:music? ly:music? ly:music?)
-  "Triplets"             
-  #{ \tuplet 3/2 { $m1 $m2 $m3 } #})
 %}}}
 
 % {{{ PARTE A
@@ -226,6 +185,7 @@ scoreContent = <<
 
 % {{{ BOOKS
   \book{
+    \bookOutputName \myFname
     \bookOutputSuffix "C"
     \score {
       \scoreContent
@@ -235,6 +195,7 @@ scoreContent = <<
   }
 
   \book{
+    \bookOutputName \myFname
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }
   }
