@@ -195,6 +195,43 @@ struttura = \markup {
       {d2.:m7 d4.:m7/a |}
     }
   }
+
+  accordiB = \chordmode{
+    \repeat volta 2 {
+      g2.:m7 g4.:m7 | f2.:6 f4.:6 | es2.:maj7 f4.:7 | bes2.:maj7 bes4.:maj7 |
+      c2.:m7 c4.:m7 | f2.:6 f4.:6 | d2.:m7 d4.:m7 |
+    }
+    \alternative{
+      {d2.:m7 d4.:m7 |}
+      {d2.:m7 d4.:m7/a |}
+    }
+  }
+% }}}
+
+% {{{ PARTE B 2
+  temaBdue = {
+      bes4 bes d c a8 | f2. a8 g f | g4 g bes a g8 | d2. r4. | \break
+      c'4 c es d bes8 | a2. g8 f es | f2.~ f4. | r2. r4. |
+  }
+
+  compBdue = {
+       \new Voice <<
+         { bes'2.~ bes4. | a2.~ a4. | c2.~ c4. | d2.~ d4. | 
+         ees2.~ ees4. | ees2. ees4. | d2. d4. | r2. r4. | }
+         { g,,2.~ g4. | f2.~ f4. | ees'2.~ ees4. | bes2. bes4. |
+         c2.~ c4. | f2.~ f4. | bes,2.~ bes4. | r2. r4. | }
+       >>
+    }
+
+  silenzioBdue = {
+      s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 |
+      s1*9/8 | s1*9/8 | s1*9/8 | r1*9/8 |
+  }
+
+  accordiBdue = \chordmode{
+      g2.:m7 g4.:m7 | f2.:6 f4.:6 | es2.:maj7 ees4.:maj7 | bes2.:maj7 bes4.:maj7 |
+      c2.:m7 c4.:m7 | f2.:6 f4.:6 | bes2.:maj7 bes4.:maj7 | bes2.:maj7 bes4.:maj7 |
+  }
 % }}}
 
 % {{{ PARTE C - Dismessa
@@ -300,7 +337,9 @@ tema = \relative c' {
   \mark \default
   \temaA \break 
   \mark \default
-  \temaB \break 
+  \temaB \pageBreak 
+  \mark \markup{ \box \bold{B2} }
+  \temaBdue \bar "||" \break 
   \mark \default
   \voicingC \break 
   \mark \default
@@ -314,6 +353,8 @@ tema = \relative c' {
 ritmicaUno = \relative c' {
   \ritmicaDueIntro
   \temaAbis
+  \silenzioB
+  \compBdue
 }
 
 temaTris = \relative c' {
@@ -333,6 +374,7 @@ bassoPart = \new Staff {
   \bassoIntro
   \bassoA
   \silenzioB
+  \silenzioBdue
   \bassoC
 }
 
@@ -347,6 +389,7 @@ chordsPart ={
     \accordiIntro
     \accordiA
     \accordiB
+    \accordiBdue
     \accordiC
     \accordiD
     % \accordiSoli
