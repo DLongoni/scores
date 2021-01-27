@@ -217,9 +217,9 @@ struttura = \markup {
   compBdue = {
        \new Voice <<
          { bes'2.~ bes4. | a2.~ a4. | c2.~ c4. | d2.~ d4. | 
-         ees2.~ ees4. | ees2. ees4. | d2. d4. | r2. r4. | }
-         { g,,2.~ g4. | f2.~ f4. | ees'2.~ ees4. | bes2. bes4. |
-         c2.~ c4. | f2.~ f4. | bes,2.~ bes4. | r2. r4. | }
+         ees2.~ ees4. | d2. d4. | a2. a4. | r2. r4. | }
+         { g,2.~ g4. | f2.~ f4. | ees'2.~ ees4. | bes2. bes4. |
+         c2.~ c4. | f2.~ f4. | d2.~ d4. | r2. r4. | }
        >>
     }
 
@@ -230,7 +230,7 @@ struttura = \markup {
 
   accordiBdue = \chordmode{
       g2.:m7 g4.:m7 | f2.:6 f4.:6 | es2.:maj7 ees4.:maj7 | bes2.:maj7 bes4.:maj7 |
-      c2.:m7 c4.:m7 | f2.:6 f4.:6 | bes2.:maj7 bes4.:maj7 | bes2.:maj7 bes4.:maj7 |
+      c2.:m7 c4.:m7 | f2.:6 f4.:6 | d2.:m7 d4.:m7 | d2.:m7 d4.:m7 |
   }
 % }}}
 
