@@ -226,6 +226,7 @@ chordsPart ={
 }
 
 ritmicaPart = \new Staff {
+  \global
   \silenzioA
   \ritmicaB
   \silenzioC
@@ -241,6 +242,7 @@ bembeyaPart = \new Staff {
 
 bassoPart = \new Staff {
   \clef "bass"
+  \global
   \silenzioA
   \bassoB
   \silenzioC
