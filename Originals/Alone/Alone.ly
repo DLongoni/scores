@@ -113,7 +113,7 @@ struttura = \markup {
     r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4. | \break
     r8 es bes es g4 f8 d bes | c4 es8 c es c d4 fis8 | a4 a8 g d4~ d4.~ | d2. r4. | \break
     r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4.^"(al Coda)" | \break
-    r8 es bes es g4 f8 d bes | c4 es8 c es d c4 g'8| <<{bes2.} \\ {f2.}>> r4. | 
+    r8 es bes es g4 f8 d bes | c4 es8 c es d c4 g'8| bes2. r4. | 
   }
 
   temaAbis = {
