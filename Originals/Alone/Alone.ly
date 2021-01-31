@@ -144,6 +144,19 @@ struttura = \markup {
      >>
   }
 
+  ritmicaAsignola ={
+    \repeat volta 2 {
+      bes'4 bes bes8 g a4 f8 | bes4 bes bes8 g a4 f8 | 
+      bes4 bes bes8 g bes4 f8 | a4 a a8 f a4 f8 |
+      bes4 bes bes8 g bes4 f8 | c'4 c c8 g8 c4 ges8 |
+      bes4 bes bes8 g bes4 g8 | bes4 bes bes8 g a4 f8 | 
+      bes4 bes bes8 g a4 f8 | bes4 bes bes8 g a4 f8 | 
+      bes4 bes bes8 g bes4 f8 | a4 a a8 f a4 f8 |
+      bes4 bes bes8 g bes4 f8 | bes4 bes bes8 g a4 f8 |
+      bes4 bes bes8 f bes4 r8 |
+    } 
+  }
+
   accordiA = \chordmode{
       bes2.:maj7 f4.:7 | g2.:m7 d4.:m7 | es2.:maj7 bes4.:maj7 | d1*9/8:m7 |
       % es2.:maj7 bes4.:maj7 | c2.:m7 d4.:7 | g1*9/8:m9 | ges2.:7.9+ f4.:13 |
@@ -362,6 +375,12 @@ temaTris = \relative c' {
   \temaAtris
 }
 
+ritmicaSingolaA = \relative c' {
+  \global
+  \silenzioIntro
+  \ritmicaAsignola
+}
+
 ritmicaApart = \new Staff {
   \global
   \silenzioIntro
@@ -424,6 +443,7 @@ scoreContent = <<
   \ritmicaUnoPart
   \temaTrisPart
   \ritmicaApart
+  \ritmicaSingolaA
   \bassoPart
 >>
 %}}}
