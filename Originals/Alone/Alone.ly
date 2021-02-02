@@ -187,6 +187,17 @@ struttura = \markup {
     }
   }
 
+  lineaB = {
+    \repeat volta 2 {
+      g1*9/8 | a1*9/8 | bes2. a4.~ | a2. r4. |
+      s1*9/8 | s1*9/8 | s1*9/8 |
+    }
+    \alternative{
+      {s1*9/8 | }
+      {s1*9/8 | }
+    }
+  }
+
   silenzioB = {
     \repeat volta 2 {
       s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 |
@@ -195,17 +206,6 @@ struttura = \markup {
     \alternative{
       {r1*9/8 |}
       {r1*9/8 |}
-    }
-  }
-
-  accordiB = \chordmode{
-    \repeat volta 2 {
-      g2.:m7 g4.:m7 | f2.:6 f4.:6 | es2.:maj7 f4.:7 | bes2.:maj7 bes4.:maj7 |
-      c2.:m7 c4.:m7 | f2.:6 f4.:6 | d2.:m7 d4.:m7 |
-    }
-    \alternative{
-      {d2.:m7 d4.:m7 |}
-      {d2.:m7 d4.:m7/a |}
     }
   }
 
@@ -366,7 +366,7 @@ tema = \relative c' {
 ritmicaUno = \relative c' {
   \ritmicaDueIntro
   \temaAbis
-  \silenzioB
+  \lineaB
   \compBdue
 }
 
