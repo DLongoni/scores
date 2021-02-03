@@ -94,8 +94,9 @@
 
   riffBbembeya = \relative c''{
      \new Voice <<
-       {bes1*9/8 | g8 c4~ c4. r4. | bes8 d4~ d4. r4. | r8 d c bes a r | } 
-       {g1*9/8 | e8 a4~ a4. r4. | g8 bes4~ bes4. r4. | r8 bes a g f r | } 
+       {bes1*9/8 | g8 c4 r2. | bes8 d4~ d4. r4. | r8 d c bes a r | } 
+       {g1*9/8 | e8 a4 r2. | g8 bes4~ bes4. r4. | r8 bes a g f r | } 
+       {e1*9/8 | d8 g4 r2. | e8 a4~ a4. r4. | r8 f e d c r | } 
      >>
   }
 
