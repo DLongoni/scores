@@ -101,8 +101,8 @@
     \repeat volta 2{
       s1 | s1 | s1 | s1 |
       s1 | s1 | s1 | s1 |
-      <a' e''>2 <b' f''> | <c'' g''> <b' ges''> | 
-      <d'' a''> <ees'' bes''> | <e'' b''>2. r4 | 
+      <a' e''>2 <b' f''> | <c'' e''> <b' a''> | 
+      <d'' b''> <ees'' bes''> | <e'' a''>2. r4 | 
     }
   }
 
