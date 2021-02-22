@@ -156,7 +156,7 @@ temaCoda = {
 }
 
 temaCodaseconda = {
-  \time 4/4 c8 d e f g c b g | \time 3/4 a,4. c | b g | aes c | g ees | \break
+  \time 4/4 c8 d e f g c, b g | \time 3/4 a4. c | b g | aes c | g aes | \break
   c8 d ees f g c | \time 2/4 bes g bes g | c,2 |
 }
 
