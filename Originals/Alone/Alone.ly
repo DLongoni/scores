@@ -110,37 +110,66 @@ struttura = \markup {
 
 % {{{ PARTE A
   temaA = {
-    r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4. | \break
-    r8 es bes es g4 f8 d bes | c4 es8 c es c d4 fis8 | a4 a8 g d4~ d4.~ | d2. r4. | \break
-    r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4.^"(al Coda)" | \break
-    r8 es bes es g4 f8 d bes | c4 es8 c es d c4 g'8| bes2. r4. | 
+    \repeat volta 2 {
+      r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4. | \break
+      r8 es bes es g4 f8 d bes | c4 es8 c es c d4 fis8 | a4 a8 g d4~ d4.~ | d2. r4. | \break
+      r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4.^"(al Coda)" | \break
+      r8 es bes es g4 f8 d bes | c4 es8 c es d c4 g'8|
+    }
+    \alternative{
+      { bes2.~ bes4. | }
+      { bes4.~ bes8\staccato r4 r4. | }
+    }
   }
 
   temaAbis = {
-    r8 f d f bes4 a8 f d | bes2. f'8 d bes | g2. d'8 bes g | a d f2~ f4. | 
-    r8 bes, g bes ees4 d8 bes f | g4 c8 r c r a4 c8 | d2.~ d4.~ | d2. r4. | 
-    r8 f d f bes4 a8 f d | bes2. f'8 d bes | g2. d'8 bes g | a d f2~ f4. |
-    r8 bes, g bes ees4 d8 bes f | g2. f4. | d2.~ d4. |
+    \repeat volta 2 {
+      r8 f' d f bes4 a8 f d | bes2. f'8 d bes | g2. d'8 bes g | a d f2~ f4. | 
+      r8 bes, g bes ees4 d8 bes f | g4 c8 r c r a4 c8 | d2.~ d4.~ | d2. r4. | 
+      r8 f d f bes4 a8 f d | bes2. f'8 d bes | g2. d'8 bes g | a d f2~ f4. |
+      r8 bes, g bes ees4 d8 bes f | g2. f4. | 
+    }
+    \alternative{
+      { d2.~ d4. | }
+      { d4.~ d8\staccato r4 r4. | }
+    }
   }
 
   temaAtris = {
-    d2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
-    g2. f4. | ees4 g8 r g r fis4 a8 | bes2.~ bes4.~ | bes2. r4. |
-    d,2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
-    g2. f4. | ees4 g8 r g r f ees d | bes2. r4. |
+    \repeat volta 2 {
+      d2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
+      g2. f4. | ees4 g8 r g r fis4 a8 | bes2.~ bes4.~ | bes2. r4. |
+      d,2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
+      g2. f4. | ees4 g8 r g r f ees d | 
+    }
+    \alternative{
+      { bes2.~ bes4. | }
+      { bes4.~ bes8\staccato r4 r4. | }
+    }
   }
 
   ritmicaA = \relative c''{
      \new Voice <<
+      \repeat volta 2 {
        { d4 r4 r8 d8 f4. | f4 r4 r8 f8 f4. | g4 r4 r8 g8 f4. | f4 r r8 f8 f4. | 
          g4 r4 r8 g8 f4. | ees4 r r8 ees d4. | d4 r r8 d d4. | d4 r r8 d d4. | 
          d4 r4 r8 d8 f4. | f4 r4 r8 f8 f4. | g4 r4 r8 g8 f4. | f4 r r8 f8 f4. | 
-         g4 r4 r8 g8 f4. | f4 r r8 ees f4. | f4 r r4 r4. | } 
+         g4 r4 r8 g8 f4. | f4 r r8 ees f4. | }
+       }
+        \alternative{
+          { f4 r4 r4 r4. | }
+          { f4 r4 r4 r4. | }
+        }
+      \repeat volta 2 {
        { a,4 r4 r8 a8 c4. | d4 r r8 d8 d4. | d4 r r8 d d4. | d4 r r8 d d4. | 
          d4 r r8 d d4. | c4 r r8 c c4. | bes4 r4 r8 bes bes4. | bes4 r r8 bes a4. |
          a4 r4 r8 a8 c4. | d4 r r8 d8 d4. | d4 r r8 d d4. | d4 r r8 d d4. | 
-         d4 r r8 d d4. | c4 r r8 c c4. | d4 r4 r4 r4. |
+         d4 r r8 d d4. | c4 r r8 c c4. | }
        }
+        \alternative{
+          { d4 r4 r4 r4. | }
+          { d4 r4 r4 r4. | }
+        }
      >>
   }
 
@@ -153,16 +182,25 @@ struttura = \markup {
       bes4 bes bes8 g a4 f8 | bes4 bes bes8 g a4 f8 | 
       bes4 bes bes8 g bes4 f8 | a4 a a8 f a4 f8 |
       bes4 bes bes8 g bes4 f8 | bes4 bes bes8 g a4 f8 |
-      bes4 bes bes8 f bes4 r8 |
     } 
+    \alternative{
+      { bes4 bes bes8 f bes4 r8 | }
+      { bes4 r4 r4 r4. | }
+    }
   }
 
   accordiA = \chordmode{
+    \repeat volta 2 {
       bes2.:maj7 f4.:7 | g2.:m7 d4.:m7 | es2.:maj7 bes4.:maj7 | d1*9/8:m7 |
       % es2.:maj7 bes4.:maj7 | c2.:m7 d4.:7 | g1*9/8:m9 | ges2.:7.9+ f4.:13 |
       es2.:maj7 bes4.:maj7 | a2.:m7.5- aes4.:7.11+ | g1*9/8:m9 | ges2.:7.9+ f4.:13 |
       bes2.:maj7 f4.:7 | g2.:m7 d4.:m7 | es2.:maj7 bes4.:maj7 | d1*9/8:m7 |
-      es2.:maj7 bes4.:maj7 | c2.:m7 f4.:9 | bes1*9/8:maj7 |
+      es2.:maj7 bes4.:maj7 | c2.:m7 f4.:9 | 
+    }
+      \alternative{
+        { bes1*9/8:maj7 | }
+        { bes1*9/8:maj7 | }
+      }
   }
 
   bassoA ={
@@ -170,8 +208,12 @@ struttura = \markup {
      r8 bes4. g4 f4 d8 | r8 g4. ees4 d4. | r8 ees4. g8 a bes4 f8 | r8 d4. f4 a8 f d |
      r8 ees4. g4 bes4. | r8 a4. g4 aes4. | r8 g8 g4 r4 g4. | r8 ges4 bes8 a g f4. |
      r8 bes4. g4 f4. | r8 g4. ees4 d4. | r8 ees4. g8 aes bes4 f8 | r8 d4. f4 f8 ees d |
-     r8 ees4. g4 bes4. | r8 c'4. g4 f4. | r8 bes,4. d4 f8 fis g |
+     r8 ees4. g4 bes4. | r8 c'4. g4 f4. | 
     } 
+    \alternative{
+      { r8 bes,4. d4 ees8 e f | }
+      { bes,8 d ees bes,\staccato r4 r4.}
+    }
   }
 % }}}
 
