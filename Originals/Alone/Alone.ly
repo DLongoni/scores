@@ -488,6 +488,12 @@ scoreContent = <<
   \ritmicaSingolaA
   \bassoPart
 >>
+
+scoreBassContent = << 
+  \chordsPart
+  \temaPart
+  \bassoPart
+>>
 %}}}
 
 % {{{ BOOKS
@@ -502,6 +508,14 @@ scoreContent = <<
       \layout {}
       \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
     }
+  }
+
+  \book{
+    \bookOutputName \myFname
+    \markup { \vspace #1 }
+    \header{ composer="Basso" }
+    \bookOutputSuffix "Basso"
+    \score { \transpose c d {\scoreBassContent} }
   }
 
   \book{
