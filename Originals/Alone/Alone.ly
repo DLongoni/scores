@@ -515,7 +515,7 @@ scoreBassContent = <<
     \markup { \vspace #1 }
     \header{ composer="Basso" }
     \bookOutputSuffix "Basso"
-    \score { \transpose c d {\scoreBassContent} }
+    \score {\scoreBassContent}
   }
 
   \book{
