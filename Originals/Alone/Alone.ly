@@ -207,7 +207,7 @@ struttura = \markup {
     \repeat volta 2 {
      r8 bes4. g4 f4 d8 | r8 g4. ees4 d4. | r8 ees4. g8 a bes4 f8 | r8 d4. f4 a8 f d |
      r8 ees4. g4 bes4. | r8 a4. g4 aes4. | r8 g8 g4 r4 g4. | r8 ges4 bes8 a g f4. |
-     r8 bes4. g4 f4. | r8 g4. ees4 d4. | r8 ees4. g8 aes bes4 f8 | r8 d4. f4 f8 ees d |
+     r8 bes4. g4 f4. | r8 g4. ees4 d4. | r8 ees4. g8 a bes4 f8 | r8 d4. f4 f8 ees d |
      r8 ees4. g4 bes4. | r8 c'4. g4 f4. | 
     } 
     \alternative{
