@@ -1,5 +1,6 @@
 % {{{ PARAMETRI
   myTitle = "Arapsko Kokonjeste"
+  myFname = "Arapsko"
   mySubTitle = "Serbian"
   myKey = \key bes \major
   myTime = \time 2/4 
@@ -8,43 +9,18 @@
 
 % INTESTAZIONE {{{
 \version "2.18.2"
+\include "/home/davide/scores/Template/Common.ly"
 
-\header {
-  title = \myTitle
-  composer = \mySubTitle
-}
-
-\paper{
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
+struttura = \markup {
+  \column {
+      \line {
+        \bold{Intro} 1x Gtr, 3x Gtr+Fisa, \bold{A} Tr, \bold{B} Fisa, \bold{B} Tr, 
+        \bold{A} Tr}
+      \line{\bold{Solo}Tr: Pedale F +\bold{C}, \bold{Solo}Fisa: Pedale F +\bold{C},
+            \bold{D}, \bold{B}, \bold{A} 1/2 Fisa II voce, 1/2 Tr
     }
   }
-  evenFooterMarkup = \oddFooterMarkup
-  #(set-global-staff-size 10)
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 20))
 }
-
-global = {
-  \myKey
-  \numericTimeSignature
-  \myTime
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
-\layout { indent = #0 }
-trip = #(define-music-function (parser location m1 m2 m3) 
-  (ly:music? ly:music? ly:music?)
-  "Triplets"             
-  #{ \tuplet 3/2 { $m1 $m2 $m3 } #})
 %}}}
 
 % {{{ PARTE A
@@ -170,6 +146,7 @@ scoreContent = <<
 
 % {{{ BOOKS
   \book{
+    \bookOutputName \myFname
     \bookOutputSuffix "C"
     \score {
       \scoreContent
@@ -180,12 +157,14 @@ scoreContent = <<
   }
 
   \book{
+    \bookOutputName \myFname
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }
     \testoCompleto
   }
 
   \book{
+    \bookOutputName \myFname
     \bookOutputSuffix "Eb"
     \score { \transpose ees c { \scoreContent } }
     \testoCompleto
