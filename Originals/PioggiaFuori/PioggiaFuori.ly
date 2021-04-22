@@ -91,8 +91,8 @@
 
   bassoC = {
     \repeat volta 2{
-      c4 r2 e4 | f r2 e8 ges | f4 r e r | r d des2 |
-      c4 r2 e4 | f g aes r | r des c r | r c' b bes |
+      c4 r2 e4 | f r2 e8 g | f4 r e r | r d des2 |
+      c4 r2 e4 | f g aes4. r8 | r4 des c r | r c' b bes |
       a2 aes2 | g ges | r4 e ees r | d r f des |
     }
   }
