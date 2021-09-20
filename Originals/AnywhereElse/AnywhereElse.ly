@@ -14,28 +14,28 @@
 
 % {{{ PARTE A
   temaA = {
-    \repeat volta 2 {
+    \repeat volta 3 {
       g4. d'8~ d4 r8 b | \trip fis4 g d' \trip f, c' d | 
       gis,4. d'8~ d4 r8 b | \trip a4 c d \trip g, c d |
       fis,4. d'8~ d4 r8 c | \trip aes4 des ees \trip f8~ f des r8 bes16 aes |
     } 
     \alternative{
       { g2 r8 ees'8~ ees4 | d8 bes r aes r fis8~ fis4 | }
-      { g2 r8 ees'8~ ees4~ | ees4 r4 c8 bes r aes8 | }
+      { g2 r8 ees'8~ ees4~ | ees4 r4 c8 bes r aes8 | g1 | }
+      { g2 r8 ees'8~ ees4~ | ees4 r4 c8 bes r aes8 | g1 | }
     }
-    g1 |
   }
 
   accordiA = \chordmode{
-    \repeat volta 2{
+    \repeat volta 3 {
       g1 | b2:m ees2:maj7 | e1:7 | a2:m f2 | 
       d1:7 | des2 bes2:m |
     }
     \alternative{
       { ees1 | e2:m7.5- aes2:7 | }
-      { ees1 | e2:m7+ aes2:maj7 | }
+      { ees1 | e2:m7+ aes2:maj7 | ees1 | }
+      { ees1 | e2:m7+ aes2:7 | g1 | }
     }
-    ees1 |
   }
 % }}}
 
