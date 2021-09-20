@@ -32,7 +32,7 @@
       d1:7 | des2 bes2:m |
     }
     \alternative{
-      { ees1 | e2:m7.5- aes2:7 | }
+      { ees1 | e2:7.11+ aes2:7 | }
       { ees1 | e2:m7+ aes2:maj7 | ees1 | }
       { ees1 | e2:m7+ aes2:7 | g1 | }
     }
