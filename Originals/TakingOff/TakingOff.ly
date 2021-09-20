@@ -15,11 +15,11 @@
   temaA = {
     \partial 1*5/8 e,8 a a b c |
     \repeat volta 2 {
-      b4 b8 c b a b | c4 g8 r8 c d e | 
+      b4 bes8 b a g b | c4 g8 r8 c d e | 
       f e d d e f g | e4. r4 d8 e | \break
       f4 f8 a4 f | e d8 c4 e8 a |
       gis4 f8 e4 e8 b | c4 e,8 a a b c | \break
-      b4 b8 c b a b | c4 g8 r8 c d e | 
+      b4 bes8 b a g b | c4 g8 r8 c d e | 
       f e d d e f g | e4. r4 d8 e |  \break
       f4 f8 a4 f | e d8 c4 c8 e |
       d4 d8 d e c b | 
@@ -56,19 +56,19 @@
     } 
     \alternative{
       { \trip fis g fis \trip ees d c a4 | }
-      { \time 1/4 \trip fis'16 g fis \trip ees d c | \time 7/8 a4. r2 | }
+      { \time 1/4 \trip fis'16 g fis \trip ees d c | \time 7/8 a4 d,8 a' a b c | }
     }
   }
 
   accordiB = \chordmode{
     \time 2/4
     \repeat volta 2{
-      d2 | e2 | a2:m | a2:m |
+      d2 | e2 | a2:m | a4:m a4 |
       d2 | g2:m | c2:m |
     }
     \alternative{
-      { d2 |}
-      { \time 1/4 d4 | \time 7/8 d4. d2:7 | }
+      { fis4:m7.5- d8 a8 |}
+      { \time 1/4 fis4:m7.5- | \time 7/8 d4.:7 d2:7 | }
     }
   }
 % }}}
