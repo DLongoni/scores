@@ -26,6 +26,52 @@
     }
   }
 
+  bassoA = {
+    \repeat volta 3 {
+      g8 r16 g16 r8 b8~ b4 r4 | r8 b8~ b16 fis8. ees4 r4 |
+      e8 r16 e16 r8 gis8~ gis4 r4 | r8 a8~ a16 e8. f4 r4 |
+      d16 d r8 r8 d16 d r4 fis4 | des4. f8 bes4 r |
+    } 
+    \alternative{
+      { ees,8 r16 ees16 r8 g8~ g4 r4 | e8. bes'16 r8 a8 aes4 ges4 | }
+      { s1 | s1 | s1 | }
+      { s1 | s1 | s1 | }
+    }
+  }
+
+  ritmicaA = {
+    \repeat volta 3 {
+      r8 d16 e r d b r d8 r r4 | r8 d16 e r d b r d8 r16 d16 r4 |
+      r8 d16 e r d b r d8 r r4 | r8 d16 e r d b r d16 r16 e16 d16 r4 |
+      r8 d16 e r d b r d8 r r4 | r8 des16 ees r des bes r des8 r r4 | 
+    } 
+    \alternative{
+      { r8 des16 ees r des bes r des16 r ees des r4 | 
+      gis,16 gis r ais r c r ges~ ges4 r4 | }
+      { s1 | s1 | s1 | }
+      { s1 | s1 | s1 | }
+    }
+  }
+
+  fisaA = {
+    \repeat volta 3 {
+      \trip fis8( g fis \trip g fis g \trip fis8 g fis \trip g fis g) | 
+      \trip fis8( g fis \trip g fis g) \trip f8( g f \trip g f g) |
+      \trip fis8( gis fis \trip gis fis gis \trip fis8 gis fis \trip gis fis gis) |
+      \trip g8( a g \trip a g a) \trip f8( g f \trip g f g) |
+      \trip e8( fis e \trip fis e fis \trip e8 fis e \trip fis e fis) |
+      \trip ges8( aes ges \trip aes ges aes \trip ges8 aes ges \trip aes ges aes) |
+      \trip g8( aes g \trip aes g aes \trip g8 aes g \trip aes g aes) |
+    } 
+    \alternative{
+      {
+      \trip fis8( gis fis \trip gis fis gis \trip fis8 gis fis \trip gis fis gis) |
+}
+      { s1 | s1 | s1 | }
+      { s1 | s1 | s1 | }
+    }
+  }
+
   accordiA = \chordmode{
     \repeat volta 3 {
       g1 | b2:m ees2:maj7 | e1:7 | a2:m f2 | 
@@ -46,6 +92,18 @@ tema = \relative c' {
   \bar "|."
 }
 
+bass = \relative c' {
+  \bassoA
+}
+
+fisa = \relative c' {
+  \fisaA
+}
+
+ritmica = \relative c' {
+  \ritmicaA
+}
+
 chordsPart ={
   \new ChordNames {
     \set chordChanges = ##t
@@ -58,9 +116,28 @@ temaPart = \new Staff \with {
   midiInstrument = "piano"
 } { \clef "treble_8" \global \tema }
 
+bassPart = \new Staff \with {
+  instrumentName = ""
+  midiInstrument = "bass"
+  shortInstrumentName = "B"
+} { \clef "bass" \global \bass }
+
+fisaPart = \new Staff \with {
+  instrumentName = ""
+  shortInstrumentName = "F"
+} { \clef "treble_8" \global \fisa }
+
+ritmicaPart = \new Staff \with {
+  instrumentName = ""
+  shortInstrumentName = "F"
+} { \clef "treble_8" \global \ritmica }
+
 scoreContent = << 
   \chordsPart
   \temaPart
+  \fisaPart
+  \ritmicaPart
+  \bassPart
 >>
 %}}}
 
