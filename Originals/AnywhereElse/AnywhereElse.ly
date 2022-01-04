@@ -60,7 +60,7 @@
       \trip fis8( gis fis \trip gis fis gis \trip fis8 gis fis \trip gis fis gis) |
       \trip g8( a g \trip a g a) \trip f8( g f \trip g f g) |
       \trip e8( fis e \trip fis e fis \trip e8 fis e \trip fis e fis) |
-      \trip ges8( aes ges \trip aes ges aes \trip ges8 aes ges \trip aes ges aes) |
+      \trip f8( ges f \trip ges f ges \trip f8 ges f \trip ges f ges) |
       \trip g8( aes g \trip aes g aes \trip g8 aes g \trip aes g aes) |
     } 
     \alternative{
