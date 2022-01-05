@@ -34,7 +34,7 @@
     } 
     \alternative{
       { ees,8 r16 ees16 r8 g8~ g4 r4 | e8. bes'16 r8 a8 aes4 ges4 | }
-      { s1 | s1 | s1 | }
+      { ees8 r16 ees16 r8 g8~ g4 r4 | e4. b8 aes4 c16 des r8 | ees4 r4 r2 | }
       { s1 | s1 | s1 | }
     }
   }
@@ -48,7 +48,9 @@
     \alternative{
       { r8 des16 ees r des bes r des16 r ees des r4 | 
       gis,16 gis r ais r c r ges~ ges4 r4 | }
-      { s1 | s1 | s1 | }
+      { r8 des'16 ees r des bes r des16 r ees des r4 | 
+      g,16 g r bes r c r8 r16 bes r c ees c bes r |
+      g8 r r4 r2 | }
       { s1 | s1 | s1 | }
     }
   }
@@ -61,13 +63,17 @@
       \trip g8( a g \trip a g a) \trip f8( g f \trip g f g) |
       \trip e8( fis e \trip fis e fis \trip e8 fis e \trip fis e fis) |
       \trip f8( ges f \trip ges f ges \trip f8 ges f \trip ges f ges) |
-      \trip g8( aes g \trip aes g aes \trip g8 aes g \trip aes g aes) |
     } 
     \alternative{
       {
+      \trip g8( aes g \trip aes g aes \trip g8 aes g \trip aes g aes) |
       \trip fis8( gis fis \trip gis fis gis \trip fis8 gis fis \trip gis fis gis) |
 }
-      { s1 | s1 | s1 | }
+      {
+      \trip ees8( f ees \trip f ees f \trip ees8 f ees \trip f ees f) |
+      \trip dis8( e dis \trip e dis e) \trip ees( f ees \trip f ees f) |
+      \trip d( ees d \trip ees d ees d4) r4 |
+}
       { s1 | s1 | s1 | }
     }
   }
@@ -85,10 +91,32 @@
   }
 % }}}
 
+% {{{ Obbligato
+  temaObbUno = {
+    g'8 r16 f aes f r g r b r d r des r c~ |
+    c c b g aes b c b d8. cis16 ees8. c16 |
+    ees d c a aes aes r aes r aes r aes r4 |
+  }
+
+  temaObbDue = {
+    g8 r16 f aes f r g r b r d r des r c~ |
+    c c b g aes b c b b8. gis16 bes8. g16 |
+    a g f ees d d r d r d r d r4 |
+  }
+
+  temaObbTre = {
+    g'8 r16 f aes f r g r b r d r des r c~ |
+    c c b g aes g aes g f8. f16 g8. ees16 |
+    f ees d b bes bes r bes r bes r bes r4 |
+  }
+
+% }}}
+
 % SCORE {{{
 tema = \relative c' {
   \mark \default
   \temaA \break
+  \temaObbUno
   \bar "|."
 }
 
@@ -98,10 +126,12 @@ bass = \relative c' {
 
 fisa = \relative c' {
   \fisaA
+  \temaObbDue
 }
 
 ritmica = \relative c' {
   \ritmicaA
+  \temaObbTre
 }
 
 chordsPart ={
