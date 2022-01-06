@@ -94,22 +94,43 @@
 % {{{ Obbligato
   temaObbUno = {
     g'8 r16 f aes f r g r b r d r des r c~ |
-    c c b g aes b c b d8. cis16 ees8. c16 |
-    ees d c a aes aes r aes r aes r aes r4 |
+    c b32 c b16 g aes b c b d8. c16 ees8. des16 |
+    e dis cis b bes bes r bes r bes r bes r4 |
   }
 
   temaObbDue = {
     g8 r16 f aes f r g r b r d r des r c~ |
-    c c b g aes b c b b8. gis16 bes8. g16 |
-    a g f ees d d r d r d r d r4 |
+    c b32 c b16 g aes b c b bes8. gis16 a8. bes16 |
+    cis a bes g fis fis r fis r fis r fis r4 |
   }
 
   temaObbTre = {
     g'8 r16 f aes f r g r b r d r des r c~ |
-    c c b g aes g aes g f8. f16 g8. ees16 |
-    f ees d b bes bes r bes r bes r bes r4 |
+    c b32 c b16 g aes g ges f e8. f16 des8. bes16 |
+    a bes cis e c c r c r c r c r4 |
   }
 
+% }}}
+
+% {{{ Obbligato Old (fine Bb7)
+%   temaObbUno = {
+%     g'8 r16 f aes f r g r b r d r des r c~ |
+%     c c b g aes b c b d8. cis16 ees8. c16 |
+%     ees d c a aes aes r aes r aes r aes r4 |
+%   }
+%
+%   temaObbDue = {
+%     g8 r16 f aes f r g r b r d r des r c~ |
+%     c c b g aes b c b b8. gis16 bes8. g16 |
+%     a g f ees d d r d r d r d r4 |
+%   }
+%
+%   temaObbTre = {
+%     g'8 r16 f aes f r g r b r d r des r c~ |
+%     c c b g aes g aes g f8. f16 g8. ees16 |
+%     f ees d b bes bes r bes r bes r bes r4 |
+%   }
+%
 % }}}
 
 % SCORE {{{
