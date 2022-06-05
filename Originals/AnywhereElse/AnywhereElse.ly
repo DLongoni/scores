@@ -91,25 +91,116 @@
   }
 % }}}
 
-% {{{ Obbligato
-  temaObbUno = {
+% {{{ Special to A
+  temaObbUnoA = {
     g8 r16 f aes f r g r b r d r des r c~ |
     c b32 c b16 g aes b c b d8. c16 ees8. des16 |
-    e dis cis b bes bes r bes r bes r bes r4 |
+    \time 5/4
+    e dis cis b bes bes r bes r bes r bes r2 |
+    \time 4/4
   }
 
-  temaObbDue = {
+  temaObbDueA = {
+    g8 r16 f aes f r g r b r d r des r c~ |
+    c b32 c b16 g aes b c b bes8. gis16 a8. bes16 |
+    \time 5/4
+    cis a bes g fis fis r fis r fis r fis r2 |
+    \time 4/4
+  }
+
+  temaObbTreA = {
+    g'8 r16 f aes f r g r b r d r des r c~ |
+    c b32 c b16 g aes g ges f e8. f16 des8. bes16 |
+    \time 5/4
+    a bes cis e c c r c r c r c r2 |
+    \time 4/4
+  }
+
+  accordiObbA = \chordmode{
+    s1 | s2 bes4:7 ees4:7 |
+    \time 5/4
+    a4:7 d1:7 | 
+    \time 4/4
+  }
+
+
+  silenzioObbA = {
+    s1 | s1 |
+    \time 5/4
+    s1*5/4 |
+    \time 4/4
+  }
+
+% }}}
+
+% {{{ Special to B
+  temaObbUnoB = {
+    g8 r16 f aes f r g r b r d r des r c~ |
+    c b32 c b16 g aes b c b d8. c16 ees8. des16 |
+    \time 3/4
+    e dis cis b bes bes r bes r bes r bes~ |
+    \time 4/4
+    bes4 d2 fis4 | gis1 |
+  }
+
+  temaObbDueB = {
     g,8 r16 f aes f r g r b r d r des r c~ |
     c b32 c b16 g aes b c b bes8. gis16 a8. bes16 |
-    cis a bes g fis fis r fis r fis r fis r4 |
+    \time 3/4
+    cis a bes g fis fis r fis r fis r fis~ |
+    \time 4/4
+    fis1~ | fis |
   }
 
-  temaObbTre = {
+  temaObbTreB = {
     g8 r16 f aes f r g r b r d r des r c~ |
     c b32 c b16 g aes g ges f e8. f16 des8. bes16 |
-    a bes cis e c c r c r c r c r4 |
+    \time 3/4
+    a bes cis e c c r c r c r c~ |
+    \time 4/4
+    c1~ | c |
   }
 
+  silenzioObbB = {
+    s1 | s1 |
+    \time 3/4
+    s1*3/4 |
+    \time 4/4
+    s1 | s1 |
+  }
+
+  accordiObbB = \chordmode{
+    s1 | s2 bes4:7 ees4:7 |
+    \time 3/4
+    a4:7 d2:7 | 
+    \time 4/4
+    d1:7 | d1:7.11+ |
+  }
+
+% }}}
+
+% {{{ PARTE B
+  temaB = {
+    r16 f r f32 fes ees16 c aes f16~ f4 r16 aes r f |
+    g4 r16 f aes f g bes b d g bes r a | d,4 r16 f r ees c2 | r1 | \break
+    r16 c' r c32 ces bes16 g ees c~ c4 r16 ees r d | 
+    c4 r16 c ees c d f fis a d a r c | b1 | r1 |
+  }
+
+  bassoB = {
+     des8 r8 aes'8 r8 des,16 des r des r8 c | des8 r16 g g r8 des16 des8 r r ces |
+     c8 r g'8 r8 c,16 c r c r8 d | ees8 r16 g g r8 ees16 ees8 r r g, |
+     aes8 r8 ees'8 r8 aes,16 aes r aes r8 g | aes8 r16 d16 d r8 aes16 aes8 r r ges |
+     g8 r d' r g,16 g r g r8 fis | g8 r16 d' d r8 g,16 g8 r8 r4 |
+  }
+
+  silenzioB = { s1 | s1 | s1 | s1 | s1 | s1 | }
+
+  accordiB = \chordmode{
+    des1:maj7.9.11+ | des1:7.11+ | c1:m | ees1 |
+    aes1:maj7.9.11+ | aes1:7.11+ | g1 | g1 |
+
+  }
 % }}}
 
 % {{{ Obbligato Old (fine Bb7)
@@ -137,29 +228,43 @@
 tema = \relative c' {
   \mark \default
   \temaA \break
+  \mark \markup{ \box \bold{"Special to A"} }
+  \temaObbUnoA \break
+  \mark \markup{ \box \bold{"Special to B"} }
+  \temaObbUnoB \break
   \mark \default
-  \temaObbUno
+  \temaB
   \bar "|."
 }
 
 bass = \relative c' {
   \bassoA
+  \silenzioObbA
+  \silenzioObbB
+  \bassoB
 }
 
 fisa = \relative c' {
   \fisaA
-  \temaObbDue
+  \temaObbDueA
+  \temaObbDueB
+  \silenzioB
 }
 
 ritmica = \relative c' {
   \ritmicaA
-  \temaObbTre
+  \temaObbTreA
+  \temaObbTreB
+  \silenzioB
 }
 
 chordsPart ={
   \new ChordNames {
     \set chordChanges = ##t
     \accordiA
+    \accordiObbA
+    \accordiObbB
+    \accordiB
   }
 }
 
