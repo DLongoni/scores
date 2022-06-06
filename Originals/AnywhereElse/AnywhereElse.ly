@@ -101,7 +101,7 @@
   }
 
   temaObbDueA = {
-    g8 r16 f aes f r g r b r d r des r c~ |
+    g,8 r16 f aes f r g r b r d r des r c~ |
     c b32 c b16 g aes b c b bes8. gis16 a8. bes16 |
     \time 5/4
     cis a bes g fis fis r fis r fis r fis r2 |
@@ -109,7 +109,7 @@
   }
 
   temaObbTreA = {
-    g'8 r16 f aes f r g r b r d r des r c~ |
+    g8 r16 f aes f r g r b r d r des r c~ |
     c b32 c b16 g aes g ges f e8. f16 des8. bes16 |
     \time 5/4
     a bes cis e c c r c r c r c r2 |
@@ -144,7 +144,7 @@
   }
 
   temaObbDueB = {
-    g,8 r16 f aes f r g r b r d r des r c~ |
+    g8 r16 f aes f r g r b r d r des r c~ |
     c b32 c b16 g aes b c b bes8. gis16 a8. bes16 |
     \time 3/4
     cis a bes g fis fis r fis r fis r fis~ |
@@ -153,7 +153,7 @@
   }
 
   temaObbTreB = {
-    g8 r16 f aes f r g r b r d r des r c~ |
+    g'8 r16 f aes f r g r b r d r des r c~ |
     c b32 c b16 g aes g ges f e8. f16 des8. bes16 |
     \time 3/4
     a bes cis e c c r c r c r c~ |
@@ -183,8 +183,8 @@
   temaB = {
     r16 f r f32 fes ees16 c aes f16~ f4 r16 aes r f |
     g4 r16 f aes f g bes b d g bes r a | d,4 r16 f r ees c2 | r1 | \break
-    r16 c' r c32 ces bes16 g ees c~ c4 r16 ees r d | 
-    c4 r16 c ees c d f fis a d a r c | b1 | r1 |
+    r16 c' r c32 ces bes16 g ees c~ c4 r16 ees r c | 
+    d4 r16 c ees c d f fis a d a r c | b1 | r1 |
   }
 
   bassoB = {
@@ -194,12 +194,40 @@
      g8 r d' r g,16 g r g r8 fis | g8 r16 d' d r8 g,16 g8 r8 r4 |
   }
 
-  silenzioB = { s1 | s1 | s1 | s1 | s1 | s1 | }
+  silenzioB = { s1 | s1 | s1 | s1 | s1 | s1 | s1 | s1 | }
 
   accordiB = \chordmode{
     des1:maj7.9.11+ | des1:7.11+ | c1:m | ees1 |
     aes1:maj7.9.11+ | aes1:7.11+ | g1 | g1 |
 
+  }
+% }}}
+
+% {{{ Coda
+  temaCoda = {
+    g,8 r16 f aes f r g r b r d r des r c~ |
+    c b32 c b16 g aes b c b d8. c16 ees8. des16 |
+    e dis cis b bes aes r b r d r f~ f4~ |
+    f1 |
+  }
+
+  temaCodaDue = {
+    g8 r16 f aes f r g r b r d r des r c~ |
+    c b32 c b16 g aes b c b bes8. gis16 a8. bes16 |
+    cis a bes g fis fis r f r gis r gis~ gis4~ |
+    gis1 |
+  }
+
+  temaCodaTre = {
+    g'8 r16 f aes f r g r b r d r des r c~ |
+    c b32 c b16 g aes g ges f e8. f16 des8. bes16 |
+    a bes cis e c bes r d r c r b~ b4~ |
+    b1 |
+  }
+
+  silenzioCoda = {
+    s1 | s1 |
+    s1 | s1 |
   }
 % }}}
 
@@ -233,7 +261,9 @@ tema = \relative c' {
   \mark \markup{ \box \bold{"Special to B"} }
   \temaObbUnoB \break
   \mark \default
-  \temaB
+  \temaB \break
+  \mark \markup{ \box \bold{"Coda"} }
+  \temaCoda
   \bar "|."
 }
 
@@ -249,6 +279,7 @@ fisa = \relative c' {
   \temaObbDueA
   \temaObbDueB
   \silenzioB
+  \temaCodaDue
 }
 
 ritmica = \relative c' {
@@ -256,6 +287,7 @@ ritmica = \relative c' {
   \temaObbTreA
   \temaObbTreB
   \silenzioB
+  \temaCodaTre
 }
 
 chordsPart ={
