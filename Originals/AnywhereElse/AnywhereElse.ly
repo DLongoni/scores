@@ -180,27 +180,54 @@
 % }}}
 
 % {{{ PARTE B
-  temaB = {
+  temaB = \repeat volta 2 {
     r16 f r f32 fes ees16 c aes f16~ f4 r16 aes r f |
     g4 r16 f aes f g bes b d g bes r a | d,4 r16 f r ees c2 | r1 | \break
     r16 c' r c32 ces bes16 g ees c~ c4 r16 ees r c | 
-    d4 r16 c ees c d f fis a d a r c | b1 | r1 |
+  }
+  \alternative{
+    { d4 r16 c ees c d f fis a d a r c | b1 | r1 | }
+    { d,4 r16 c ees c d f fis a d a r g | }
   }
 
-  bassoB = {
+  armoniaB = {
+    \repeat volta 2{
+      <c' f,~>1 | <b f~>1 | <bes f>2. r4 |
+      <bes g>4 <c a>4 <d bes>4 \grace{<fis cis>16} <g d>4 | <f c>1 |
+    }
+    \alternative{
+      { r1 | r2. <d a>4 | <b fis>2 <c e,>2 | }
+      { r1 | }
+    }
+  }
+
+  bassoB = \repeat volta 2 {
      des8 r8 aes'8 r8 des,16 des r des r8 c | des8 r16 g g r8 des16 des8 r r ces |
      c8 r g'8 r8 c,16 c r c r8 d | ees8 r16 g g r8 ees16 ees8 r r g, |
-     aes8 r8 ees'8 r8 aes,16 aes r aes r8 g | aes8 r16 d16 d r8 aes16 aes8 r r ges |
-     g8 r d' r g,16 g r g r8 fis | g8 r16 d' d r8 g,16 g8 r8 r4 |
+     aes8 r8 ees'8 r8 aes,16 aes r aes r8 g | 
+  }
+  \alternative{
+     { aes8 r16 d16 d r8 aes16 aes8 r r ges | 
+     g8 r d' r g,16 g r g r8 fis | g8 r16 d' d r8 g,16 g8 r8 r4 | }
+     { aes8 r16 d16 d r8 aes16 aes8 r r8. g16 | }
   }
 
-  silenzioB = { s1 | s1 | s1 | s1 | s1 | s1 | s1 | s1 | }
+  silenzioB = \repeat volta 2 { s1 | s1 | s1 | s1 | s1 | }
+  \alternative {
+    { s1 | s1 | s1 | }
+    { s1 | }
+  }
 
   accordiB = \chordmode{
-    des1:maj7.9.11+ | des1:7.11+ | c1:m | ees1 |
-    aes1:maj7.9.11+ | aes1:7.11+ | g1 | g1 |
-
-  }
+    \repeat volta 2 {
+      des1:maj7.9.11+ | des1:7.11+ | c1:m | ees1 |
+      aes1:maj7.9.11+ | 
+    }
+    \alternative{
+      {aes1:7.11+ | g1 | g1 | }
+      {aes1:7.11+ | }
+    } 
+}
 % }}}
 
 % {{{ Coda
@@ -262,6 +289,7 @@ tema = \relative c' {
   \temaObbUnoB \break
   \mark \default
   \temaB \break
+  \bar "||"
   \mark \markup{ \box \bold{"Coda"} }
   \temaCoda
   \bar "|."
@@ -278,7 +306,7 @@ fisa = \relative c' {
   \fisaA
   \temaObbDueA
   \temaObbDueB
-  \silenzioB
+  \armoniaB
   \temaCodaDue
 }
 
@@ -328,6 +356,11 @@ scoreContent = <<
   \ritmicaPart
   \bassPart
 >>
+
+scoreContentTheme = <<
+  \chordsPart
+  \temaPart
+>>
 %}}}
 
 % {{{ BOOKS
@@ -344,6 +377,6 @@ scoreContent = <<
   \book{
     \bookOutputName \myFname
     \bookOutputSuffix "Bb"
-    \score { \transpose c d {\scoreContent} }
+    \score { \transpose c d {\scoreContentTheme} }
   }
 % }}}

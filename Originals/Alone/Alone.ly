@@ -444,8 +444,7 @@ bassoPart = \new Staff {
 % }
 
 chordsPart ={
-  \new ChordNames \with{midiInstrument = "acoustic guitar (nylon)"}
-    \powerChords % necessario per Ees lyd
+  \new ChordNames{
     \set chordChanges = ##t
     \accordiIntro
     \accordiA
@@ -456,6 +455,7 @@ chordsPart ={
     % \accordiSoli
     % \accordiCoda
   }
+}
 
 temaPart = \new Staff \with {
   instrumentName = ""
