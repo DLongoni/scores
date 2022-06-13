@@ -182,7 +182,7 @@
 % {{{ PARTE B
   temaB = \repeat volta 2 {
     r16 f r f32 fes ees16 c aes f16~ f4 r16 aes r f |
-    g4 r16 f aes f g bes b d g bes r a | d,4 r16 f r ees c2 | r1 | \break
+    g4 r16 f aes f g bes b d g bes r aes | d,4 r16 f r ees c2 | r1 | \break
     r16 c' r c32 ces bes16 g ees c~ c4 r16 ees r c | 
   }
   \alternative{
