@@ -37,7 +37,7 @@
     <fis' b>4 <gis cis> <fis b> <dis gis> | <dis g> <fis b> <e g> <fis a> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <dis g> <fis b> <e g> <fis a> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <e a> <fis b> <fis gis> <e a> |
-    <fis b>4 <gis cis> <fis b> <f b> | <fis c'> <a e'> <g c> <fis b> |
+    <fis b>4 <gis cis> <fis ais> <f b> | <fis c'> <a e'> <g c> <fis b> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <dis g> <fis b> <e g> <fis a> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <dis g> <fis b> <e g> <fis a> |
     <fis b>4 <gis cis> <fis ais> <f b> | <e a> <fis b> <dis g> <e a> |
