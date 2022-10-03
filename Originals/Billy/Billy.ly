@@ -10,6 +10,10 @@
 % INTESTAZIONE {{{
 \version "2.18.2"
 \include "/home/davide/scores/Template/Common.ly"
+
+\header {
+  arranger = \mySubTitle
+}
 %}}}
 
 % {{{ PARTE A
@@ -37,10 +41,10 @@
     <fis' b>4 <gis cis> <fis b> <dis gis> | <dis g> <fis b> <e g> <fis a> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <dis g> <fis b> <e g> <fis a> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <e a> <fis b> <fis gis> <e a> |
-    <fis b>4 <gis cis> <fis ais> <f b> | <fis c'> <a e'> <g c> <fis b> |
+    <fis b>4 <gis cis> <fis b> <e ais> | <fis c'> <a e'> <g c> <fis b> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <dis g> <fis b> <e g> <fis a> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <dis g> <fis b> <e g> <fis a> |
-    <fis b>4 <gis cis> <fis ais> <f b> | <e a> <fis b> <dis g> <e a> |
+    <ges b>4 <aes des> <ges bes> <ees aes> | <e a> <fis b> <dis g> <e a> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <g b> <a cis> <fis b> <dis g> |
   }
 
@@ -147,7 +151,6 @@ scoreContent = <<
   \chordsPart
   \temaPart
   \ritmica
-  \temaTre
   \bassoPart
 >>
 %}}}
