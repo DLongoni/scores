@@ -23,13 +23,10 @@
   }
 
   temaAdue = {
-    fis,2. e4 | dis2. e4 | fis2. e4 | dis2. e4 | fis2. e4 | b'2. a8 gis | fis2. r4 | c1 | \break
-    fis2. e4 | dis2. e8 g | fis2. e8 fis | dis2. e4 | fis2. e4 | b'2. a4 | fis1 | dis1 | \break 
-  }
-
-  temaAtre = {
-    fis,2. e4 | dis2. e4 | fis2. e4 | dis2. e4 | fis2. e4 | b'2. a8 gis | fis2. r4 | c1 | \break
-    fis2. e4 | dis2. e8 g | fis2. e8 fis | dis2. e4 | fis2. e4 | b'2. a4 | fis1 | dis1 | \break 
+    r4 b''4 cis2~ | cis4 dis4 cis2~ | cis4 b cis2~ | cis4 dis4 cis2~ |
+    cis4 b4 cis2~ | cis4 dis4 fis,2 | r4 b8 cis dis2 | e1 |
+    r4 b4 cis2~ | cis4 dis4 cis2~ | cis4 b cis2~ | cis4 dis4 cis2~ |
+    cis4 bes4 ees2~ | ees4 dis4 fis,2 | r4 cis4 dis2 | g1 |
   }
 
   accordiA = \chordmode{
@@ -41,7 +38,7 @@
     <fis' b>4 <gis cis> <fis b> <dis gis> | <dis g> <fis b> <e g> <fis a> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <dis g> <fis b> <e g> <fis a> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <e a> <fis b> <fis gis> <e a> |
-    <fis b>4 <gis cis> <fis b> <e ais> | <fis c'> <a e'> <g c> <fis b> |
+    <fis b>4 <gis cis> <fis b> <e ais> | <fis c'> <a d> <g c> <fis b> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <dis g> <fis b> <e g> <fis a> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <dis g> <fis b> <e g> <fis a> |
     <ges b>4 <aes des> <ges bes> <ees aes> | <e a> <fis b> <dis g> <e a> |
@@ -68,14 +65,6 @@
     \repeat volta 2 {
       fis2.~ \trip fis8 e fis | fis2.~ \trip fis8 e fis | fis2~ \trip fis8 e fis \trip g a b | a2.~ a8 b | \break
       c2. \trip c8 b a | \tuplet 3/2 {bes4 f8~} f2. | a1~ | a2.~ \trip a8 e fis |
-    } 
-  }
-
-  temaBtre = {
-    \partial 4 \trip r8 e'' fis |     
-    \repeat volta 2 {
-      fis2.~ \trip fis8 e fis | fis2.~ \trip fis8 f fis | fis2~ \trip fis8 e fis \trip g a b | a2.~ g8 fis | \break
-      e2. \trip g8 fis e | \tuplet 3/2 {d4 bes8~} bes2. | cis1~ | cis2.~ \trip cis8 e fis |
     } 
   }
 
@@ -123,8 +112,8 @@ ritmica = \relative c {
 
 temaTre = \relative c {
   \global
-  \silenzioA
-  \temaBtre
+  \temaAdue
+  \silenzioB
 }
 
 chordsPart ={
@@ -150,6 +139,7 @@ temaPart = \new Staff \with {
 scoreContent = << 
   \chordsPart
   \temaPart
+  \temaTre
   \ritmica
   \bassoPart
 >>
