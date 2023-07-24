@@ -42,7 +42,7 @@ global = {
   \set chordChanges = ##t
   \override Score.RehearsalMark.self-alignment-X = #LEFT
   \context { 
-    \Staff \RemoveEmptyStaves 
+    \Staff \RemoveAllEmptyStaves 
     \override VerticalAxisGroup.remove-first = ##t
   }
 }
