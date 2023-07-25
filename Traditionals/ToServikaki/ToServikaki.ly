@@ -1,6 +1,6 @@
 % {{{ PARAMETRI
   myTitle = "To Servikaki"
-  mySubTitle = ""
+  myFname = "ToServikaki"
   myKey = \key fis \minor
   myTime = \time 2/4 
   myTempo =  #(ly:make-moment 70 4)
@@ -8,39 +8,7 @@
 
 % INTESTAZIONE {{{
 \version "2.18.2"
-
-\header {
-  title = \myTitle
-  composer = \mySubTitle
-}
-
-\paper{
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-  #(set-global-staff-size 10)
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 20))
-}
-
-global = {
-  \myKey
-  \numericTimeSignature
-  \myTime
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
-\layout { indent = #0 }
+\include "/home/davide/scores/Template/Common.ly"
 %}}}
 
 % {{{ PARTE A
@@ -65,9 +33,9 @@ global = {
   temaB = {
     \repeat volta 2{
       fis16 eis fis cis bis cis eis fis | gis a fis gis a bis gis a |
-      bis cis a bis cis dis bis dis | e dis cis bis cis4 |
+      bis cis a bis cis dis bis dis | e dis cis bis cis4 | \break
       e16 dis cis dis cis bis a8 | bis16 dis cis8 cis16 bis cis dis |
-      cis bis a bis a gis fis eis | fis gis a bis cis8 cis |
+      cis bis a bis a gis fis eis | fis gis a bis cis8 cis | \break
       e16 dis cis dis cis bis a8 | bis16 dis cis8 cis16 bis cis dis |
       cis bis a bis a gis fis eis | fis8 cis fis4 |
     }

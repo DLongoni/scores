@@ -192,6 +192,7 @@
 
 % SCORE {{{
 tema = \relative c' {
+  \mark "Intro"
   \temaIntro \break
   \mark \default
   \temaA \break
