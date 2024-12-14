@@ -16,8 +16,12 @@ date = \markup{ \small \medium \italic #(strftime "%d/%m/%Y" (localtime (current
   evenHeaderMarkup = \markup \null
   oddFooterMarkup = \markup {
     \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
+      \if \should-print-page-number
+      \concat{
+        \fromproperty #'page:page-number-string
+        \if #on-last-page-of-part "/" 
+        \if #on-last-page-of-part \fromproperty #'page:page-number-string
+      }
     }
   }
   evenFooterMarkup = \oddFooterMarkup
@@ -33,7 +37,7 @@ global = {
   \myKey
   \numericTimeSignature
   \myTime
-  \set Score.markFormatter = #format-mark-box-alphabet
+  \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
 }
 
 \layout {

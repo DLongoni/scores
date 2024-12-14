@@ -24,7 +24,6 @@ toCoda = {
   \once \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
   \mark \markup { { \lower #1 "al  " { \musicglyph #"scripts.coda"} } } 
 }
-
 %}}}
 
 % PARTE A {{{
@@ -45,16 +44,6 @@ temaAseconda = {
     a,4. cis4. | b fis | g a | b2. |
     r2. | r2. | r2. | r2. |
     r8 e~ e g~ g e | \time 2/4 c4 b | \time 3/4 c4 r2 | r2. |
-  }
-}
-
-percA = {
-  \repeat volta 2{
-    c4^\markup { \italic {swing} } c8 c r8 c | c4 c8 c r8 c | c4 c8 c r8 c | c4 c8 c r8 c |
-    c4 c8 c r8 c | c4 c8 c r8 c | c4 c8 c r8 c | \tuplet 3/2 {c c c} \tuplet 3/2 {c c c} c4 |
-    c4.^\markup{ \italic {straight feel} } c | c c | c2. | c2 r8 c8 | 
-    c8^\markup{ \italic {swing} } c r c r c | c8 c r c r c | c4 c8 c r8 c | c4 c8 c r8 c |
-    c4 c8 c r8 c | \time 2/4 c4 c | c8 c \tuplet 3/2 {c c c} c8 c | c4 r4 r8 c8 |
   }
 }
 
@@ -97,17 +86,23 @@ temaBseconda = {
   }
 }
 
+armB = {
+  \repeat volta 2{
+    \new Voice <<
+      { \time 3/4 e2.~ | e2. | e2.~ | \time 2/4 e4 f |
+      \time 3/4 g2.~ | g2. | e2.~ | e2. | }
+      { \time 3/4 c2.~ | c2. | c2.~ | \time 2/4 c4~ c |
+      \time 3/4 c2.~ | c2. | b2.~ | b2. | }
+      { \time 3/4 g2.~ | g2. | a2.~ | \time 2/4 a4~ a |
+      \time 3/4 g2.~ | g2. | e2.~ | e2. | }
+  >>
+  }
+}
+
 silenzioB = {
   \repeat volta 2{
     \time 3/4 s2. | s2. | s2. | \time 2/4 s2 |
     \time 3/4 s2. | s2. | s2. | s2. |
-  }
-}
-
-percB = {
-  \repeat volta 2{
-    c8 c r c c c | c8 c r c c c | c8 c r c c c | \time 2/4 c8 c c4 |
-    c8 c r c c c | c8 c r c c c | c8 c r c c c | c8 c r c c c | 
   }
 }
 
@@ -140,13 +135,6 @@ accordiBdue = \chordmode{
     g2.:6 | g2.:6 |
   }
 }
-
-percBdue = {
-  \repeat volta 2{
-    c4 r4 c | c4 r4 c | c4 r4 c | \time 2/4 c c |
-    \time 3/4 c4 r4 r8 c | r8 c c4 c| c4 r4 r8 c | r8 c c4 c|
-  }
-}
 % }}}
 
 % CODA {{{
@@ -159,12 +147,6 @@ temaCodaseconda = {
   \time 4/4 c8 d e f g c, b g | \time 3/4 a4. c | b g | aes c | g aes | \break
   c8 d ees f g c | \time 2/4 bes g bes g | c,2 |
 }
-
-percCoda = {
-  \time 4/4 c4 c8 c r8 c c4 | \time 3/4 r2. | r2. | r2. | r2. |
-  c4 c8 c r c | \time 2/4 c8 c c4 | c4 r4 |
-}
-  
 
 accordiCoda = \chordmode{
   \set chordChanges = ##t
@@ -204,6 +186,12 @@ bass = \relative c' {
   \bassoBdue
 }
 
+arm = \relative c' {
+  \silenzioA
+  \armB
+  \silenzioB
+}
+
 chordsPart ={
   \new ChordNames {
     \accordiA
@@ -211,13 +199,6 @@ chordsPart ={
     \accordiBdue
     \accordiCoda
   }
-}
-
-perc = {
-  \percA
-  \percB
-  \percBdue
-  \percCoda
 }
 
 temaPart = \new Staff \with {
@@ -233,22 +214,23 @@ temasecondaPart = \new Staff \with {
   shortInstrumentName = "T2"
 } { \clef "treble_8" \temaseconda }
 
+armPart = \new Staff \with {
+  instrumentName = ""
+  midiInstrument = "pad"
+  shortInstrumentName = "P"
+} { \clef "treble_8" \arm }
+
 bassPart = \new Staff \with {
   instrumentName = ""
   midiInstrument = "bass"
   shortInstrumentName = "B"
 } { \clef "bass" \bass }
 
-percPart = \new RhythmicStaff \with {
-  instrumentName = ""
-  midiInstrument = "woodblock"
-  shortInstrumentName = "P"
-} { \clef percussion \perc }
-
 scoreC = <<
       \chordsPart
       \temaPart
       \temasecondaPart
+      \armPart
       \bassPart      
     >>
 
@@ -272,17 +254,17 @@ scoreBb = <<
   }
 }
 
-\book{
-  \bookOutputName \myFname
-  \struttura
-  \markup { \vspace #1 }
-  \bookOutputSuffix "Bb"
-  \header{ composer="Bb" }
-  \score {
-    \scoreBb
-    \layout {
-      indent = #0
-    }
-  }
-}
+% \book{
+%   \bookOutputName \myFname
+%   \struttura
+%   \markup { \vspace #1 }
+%   \bookOutputSuffix "Bb"
+%   \header{ composer="Bb" }
+%   \score {
+%     \scoreBb
+%     \layout {
+%       indent = #0
+%     }
+%   }
+% }
 % }}}
