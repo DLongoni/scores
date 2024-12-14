@@ -55,6 +55,16 @@ silenzioA = {
     s2. | s2 |  s2. | s2. |
 }
 
+bassoA = {
+  \repeat volta 2{
+    a2. | g2. | f2. | bes2. |
+    a2. | c2. | bes4. e,4. | f2 r4 |
+    a2. | b2. | c2. | d2.~ | 
+    d2. | d4 a b | c2 r8 c | b e r g, r gis | 
+    a2~ a8 g | \time 2/4 f4 e |  \time 3/4 a4 r2 | r2. |
+  }
+}
+
 accordiA = \chordmode{
   \set chordChanges = ##t
   \repeat volta 2{
@@ -181,7 +191,7 @@ temaseconda = \relative c' {
 }
 
 bass = \relative c' {
-  \silenzioA
+  \bassoA
   \silenzioB
   \bassoBdue
 }
