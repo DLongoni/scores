@@ -303,6 +303,44 @@ struttura = \markup {
   % }
 % }}}
 
+% {{{ Solo Tromba
+  silenzioSoloTr = {
+    \repeat volta 2 { s1*9/8 | s1*9/8 | s1*9/8 | s1*9/8 | }
+  }
+
+  ritmicaUnoSoloTr = {
+    \repeat volta 2 {
+      bes,4\staccato bes4\staccato bes8 g a4 f8 | bes4\staccato bes4\staccato bes8 g a4 f8 |
+      bes4\staccato bes4\staccato bes8 g a4 f8 | bes4\staccato bes4\staccato bes8 g a4 f8 |
+    }
+  }
+
+  ritmicaDueSoloTr = {
+    \repeat volta 2 {
+       \new Voice <<
+         { d4 r4 r8 d8 f4. | f4 r4 r8 f8 f4. | 
+         g4 r4 r8 g8 f4. | f4 r r8 f8 ees4. | } 
+         { a,4 r4 r8 a8 c4. | d4 r r8 d8 d4. | 
+         d4 r r8 d d4. | d4 r r8 d c4. | }
+       >>
+    }
+  }
+
+  bassoSoloTr = {
+    \repeat volta 2 {
+       r8 bes4. g4 f4 d8 | r8 g4. ees4 d4. | 
+       r8 g4. ees4 d4. | bes,4 bes, d ees8 e f |
+    }
+  }
+
+  accordiSoloTr = \chordmode{
+    \repeat volta 2 {
+      bes2. f4. | g2.:m d4.:m |
+      g2.:m d4.:m | bes2. f4.:7 |
+    }
+  }
+% }}}
+
 % {{{ PARTE C - Soli
   silenzioC = {
     \repeat volta 2 {
@@ -361,13 +399,21 @@ struttura = \markup {
 % {{{ PARTE D
   temaD = {
     \repeat volta 2 {
-      d'8 g, ees'16 d c bes c4 a g8 | bes16 a g fis es8 fis g16 fis es d c4^"Stop" d8 |
+      d'8 g, ees'16 d c bes c4 a g8 |
+    }
+    \alternative{
+      { bes16 a g fis es8 fis g16 fis es d c4 d8 | }
+      { bes'16 a g fis es8 fis g16 fis es c d4^"Stop" r8 | }
     }
   }
 
   accordiD = \chordmode{
     \repeat volta 2 {
-      g2.:m d4.:7 | g2:m d4:7 d4.:7 |
+      g2.:m d4.:7 | 
+    }
+    \alternative{
+      { g2:m d4:7 d4.:7 | }
+      { g2:m d4:7 d4.:7 | }
     }
   }
 % }}}
@@ -395,6 +441,8 @@ tema = \relative c' {
   \temaB \pageBreak 
   \mark \markup{ \box \bold{B2} }
   \temaBdue \bar "||" \break 
+  \mark \markup{ \box \bold{"Solo Tromba"} }
+  \ritmicaUnoSoloTr
   \mark \default
   \voicingC \break 
   \mark \default
@@ -410,6 +458,7 @@ ritmicaUno = \relative c' {
   \temaAbis
   \lineaB
   \compBdue
+  \ritmicaDueSoloTr
 }
 
 temaTris = \relative c' {
@@ -436,12 +485,9 @@ bassoPart = \new Staff {
   \bassoA
   \silenzioB
   \silenzioBdue
+  \bassoSoloTr
   \bassoC
 }
-
-% ritmicaDue = \relative c' {
-%   \ritmicaDueIntro
-% }
 
 chordsPart ={
   \new ChordNames{
@@ -450,10 +496,9 @@ chordsPart ={
     \accordiA
     \accordiB
     \accordiBdue
+    \accordiSoloTr
     \accordiC
     \accordiD
-    % \accordiSoli
-    % \accordiCoda
   }
 }
 
