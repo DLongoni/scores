@@ -45,6 +45,19 @@
     }
   }
 
+  accordoniA = {
+    \repeat volta 2 {
+       \new Voice <<
+         { d2~ | d2 | g~ | g |
+          d2~ | d2 | g~ | g | }
+         { g,2~ | g2 | c~ | c |
+         g2~ | g2 | d'~ | d | }
+         { c,2~ | c2 | f2~ | f2 |
+          c2~ | c2 | f2~ | f2 | }
+       >>
+    }
+  }
+
   accordiA = \chordmode{
     \repeat volta 2{
       c4:maj7 aes:maj7 | bes2:7 | g4:m7 des:6.9 | f2:7 |
@@ -91,7 +104,7 @@
     \time 6/8
     \key c \minor
     \repeat volta 3 {
-      ees,8 g d' ees d ees | f ees d c bes d | aes4. bes4. | c2. |
+      ees8 g d' ees d ees | f ees d c bes d | aes4. bes4. | c2. |
       ees,8 g d' ees d ees | f4 ees8 d ees e | f2. |
     }
     \alternative{
@@ -175,7 +188,7 @@ tema = \relative c' {
 }
 
 temaDue = \relative c' {
-  \silenzioA
+  \accordoniA
   \temaBdue 
 }
 
