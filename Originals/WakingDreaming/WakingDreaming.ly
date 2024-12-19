@@ -48,12 +48,12 @@
   accordoniA = {
     \repeat volta 2 {
        \new Voice <<
-         { d2~ | d2 | g~ | g |
-          d2~ | d2 | g~ | g | }
-         { g,2~ | g2 | c~ | c |
-         g2~ | g2 | d'~ | d | }
-         { c,2~ | c2 | f2~ | f2 |
-          c2~ | c2 | f2~ | f2 | }
+         { e4 d~ | d2 | a'4 g~ | g2 |
+          e4 d4~ | d2 | a'2 | g | }
+         { a,4 g~ | g2 | d'4 c~ | c2 |
+         a4 g~ | g2 | e'2 | d | }
+         { c,4~ c~ | c2 | f4~ f~ | f2 |
+          c4~ c~ | c2 | f2~ | f2 | }
        >>
     }
   }
