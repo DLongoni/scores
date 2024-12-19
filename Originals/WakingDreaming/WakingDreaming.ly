@@ -127,6 +127,20 @@
     }
   }
 
+  bassoB = {
+    \key c \minor
+    \repeat volta 3 {
+      c4. aes | bes g | f4 aes8 g4. | c4. ees4 bes8 |
+      c4. aes | f a | g b | 
+    }
+    \alternative
+    {
+      { bes8 r4  f8 fis g | }
+      { bes4. r4. | }
+      {\time 2/4 aes4 g4 | }
+    }
+  }
+
   silenzioB = {
     \time 6/8
     \repeat volta 2{
@@ -195,7 +209,7 @@ temaDue = \relative c' {
 
 basso = \relative c {
   \bassoA \break
-  \silenzioB
+  \bassoB
 }
 
 chordsPart ={
