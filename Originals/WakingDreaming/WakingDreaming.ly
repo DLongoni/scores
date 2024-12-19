@@ -66,7 +66,7 @@
   }
 
   bassoA = {
-    \repeat volta 3 {
+    \repeat volta 2 {
       c4 aes | bes2 | g4 des' | f,2 |
       c'4 aes | bes2 | a2 | g2 |
     }
@@ -131,7 +131,7 @@
     \key c \minor
     \repeat volta 3 {
       c4. aes | bes g | f4 aes8 g4. | c4. ees4 bes8 |
-      c4. aes | f a | g b | 
+      c4. g | f a | g b | 
     }
     \alternative
     {
@@ -143,14 +143,14 @@
 
   silenzioB = {
     \time 6/8
-    \repeat volta 2{
+    \repeat volta 3{
       s2. | s2. | s2. | s2. | 
       s2. | s2. | s2. | 
     }
     \alternative{
       { s2. | }
       { s2. | }
-      { s2. | }
+      {\time 2/4 s2 | }
     }
   }
 % }}}
@@ -243,7 +243,8 @@ ritmicaPart = \new Staff \with {
         \relative c'' {\ritmicaAuno }
         \relative c' {\ritmicaAdue }
       >>
-        \silenzioB
+      \key c \minor
+      \silenzioB
 }
 
 scoreContent = << 
