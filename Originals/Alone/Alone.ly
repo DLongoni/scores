@@ -558,17 +558,7 @@ scoreBassContent = <<
   \book{
     \bookOutputName \myFname
     \markup { \vspace #1 }
-    \header{ composer="Basso" }
-    \bookOutputSuffix "Basso"
+    \bookOutputSuffix "Tema-e-Basso"
     \score {\scoreBassContent}
-  }
-
-  \book{
-    \bookOutputName \myFname
-    \struttura
-    \markup { \vspace #1 }
-    \header{ composer="Bb" }
-    \bookOutputSuffix "Bb"
-    \score { \transpose c d {\scoreContent} }
   }
 % }}}
