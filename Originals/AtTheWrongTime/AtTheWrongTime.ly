@@ -108,6 +108,14 @@
      >>
   }
 
+  silenzioB = {
+    \repeat volta 2{
+      s1*9/8 | s1*9/8 | s1*9/8 | 
+      \time 6/8
+      s2. |
+    }
+  }
+
   bassoBstacchi = {
     \time 9/8
     g4 g8 r4. c4 c8 | r4. d4 d8 r4. |
@@ -308,123 +316,143 @@
 % }}}
 
 % SCORE {{{
-tema = \relative c' {
-\mark \default
-\temaA \break
-\mark \default
-\temaB \break
-\mark \markup{ \box \bold{"Stacchi B"} }
-\silenzioBstacchi \bar "||" \break
-\mark \default
-\temaC \bar "||" \break
-\mark \default
-\temaE \break
-\mark \markup{ \box \bold{"Stacchi E"} }
-\silenzioEstacchi \bar "||" \break
-\mark \default
-\temaF \break
-\mark \markup { \musicglyph #"scripts.coda"}
-\temaCoda
-\bar "|."
-}
+  tema = \relative c' {
+    \mark \default
+    \temaA \break
+    \mark \default
+    \temaB \break
+    \mark \markup{ \box \bold{"Stacchi B"} }
+    \silenzioBstacchi \bar "||" \break
+    \mark \default
+    \temaC \bar "||" \break
+    \mark \default
+    \temaE \break
+    \mark \markup{ \box \bold{"Stacchi E"} }
+    \silenzioEstacchi \bar "||" \break
+    \mark \default
+    \temaF \break
+    \mark \markup { \musicglyph #"scripts.coda"}
+    \temaCoda
+    \bar "|."
+  }
 
-temaEue = \relative c' {
-\silenzioA
-\temaBdue 
-\silenzioBstacchi
-\silenzioC
-\temaEdue
-\silenzioEstacchi
-\temaFdue
-\silenzioCoda
-}
+  temaEue = \relative c' {
+    \silenzioA
+    \temaBdue 
+    \silenzioBstacchi
+    \silenzioC
+    \temaEdue
+    \silenzioEstacchi
+    \temaFdue
+    \silenzioCoda
+  }
 
-chordsPart ={
-\new ChordNames {
-  \set chordChanges = ##t
-  \accordiA
-  \accordiB
-  \accordiBstacchi
-  \accordiC
-  \accordiE
-  \accordiEstacchi
-  \accordiF
-  \accordiCoda
-}
-}
+  chordsPart ={
+    \new ChordNames {
+      \set chordChanges = ##t
+      \accordiA
+      \accordiB
+      \accordiBstacchi
+      \accordiC
+      \accordiE
+      \accordiEstacchi
+      \accordiF
+      \accordiCoda
+    }
+  }
 
-ritmicaPart = \new Staff {
-\global
-\silenzioA
-\ritmicaB
-\silenzioBstacchi
-\silenzioC
-\silenzioE
-\silenzioEstacchi
-\silenzioF
-\silenzioCoda
-}
+  ritmicaPart = \new Staff {
+    \global
+    \silenzioA
+    \ritmicaB
+    \silenzioBstacchi
+    \silenzioC
+    \silenzioE
+    \silenzioEstacchi
+    \silenzioF
+    \silenzioCoda
+  }
 
-bembeyaPart = \new Staff {
-\global
-\silenzioA
-\riffBbembeya
-\silenzioBstacchi
-}
+  bembeyaPart = \new Staff {
+    \global
+    \silenzioA
+    \riffBbembeya
+    \silenzioBstacchi
+  }
 
-bassoPart = \new Staff \relative c{
-\clef "bass"
-\global
-\bassoA
-\bassoB
-\bassoBstacchi
-\bassoC
-\bassoE
-\bassoEstacchi
-\bassoFdue
-\bassoCoda
-}
+  bassoPart = \new Staff \relative c{
+    \clef "bass"
+    \global
+    \bassoA
+    \bassoB
+    \bassoBstacchi
+    \bassoC
+    \bassoE
+    \bassoEstacchi
+    \bassoFdue
+    \bassoCoda
+  }
 
-temaPart = \new Staff \with {
-instrumentName = ""
-midiInstrument = "piano"
-} { \clef "treble_8" \global \tema }
+  temaPart = \new Staff \with {
+    instrumentName = ""
+    midiInstrument = "piano"
+  } { \clef "treble_8" \global \tema }
 
-temaPartDue = \new Staff \with {
-instrumentName = ""
-midiInstrument = "piano"
-} { \clef "treble_8" \global \temaEue }
+  temaPartDue = \new Staff \with {
+    instrumentName = ""
+    midiInstrument = "piano"
+  } { \clef "treble_8" \global \temaEue }
 
-scoreContent = << 
-\chordsPart
-\temaPart
-\temaPartDue
-\ritmicaPart
-\bembeyaPart
-\bassoPart
->>
+  scoreContent = << 
+    \chordsPart
+    \temaPart
+    \temaPartDue
+    \ritmicaPart
+    \bembeyaPart
+    \bassoPart
+  >>
+
+  bassoPartShort = \new Staff \relative c{
+    \clef "bass"
+    \global
+    \silenzioA
+    \silenzioB
+    \bassoBstacchi
+    \silenzioC
+    \silenzioE
+    \bassoEstacchi
+    \silenzioF
+  }
+
+  scoreContentShort = <<
+    \chordsPart
+    \temaPart
+    \bassoPartShort
+  >>
 %}}}
 
 % {{{ BOOKS
   \book{
     \bookOutputName \myFname
-    \header{ composer="C" }
+    \header{ composer="Parte completa" }
     \struttura
     \markup { \vspace #1 }
-    \bookOutputSuffix "C"
+    \bookOutputSuffix "Complete"
     \score {
       \scoreContent
       \layout { indent = #0 }
-      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 90 4) } }
     }
   }
 
   \book{
     \bookOutputName \myFname
-    \header{ composer="Bb" }
+    \header{ composer="Parte breve" }
     \struttura
-    \bookOutputSuffix "Bb"
     \markup { \vspace #1 }
-    \score { \transpose c d, {\scoreContent} }
+    \bookOutputSuffix "Short"
+    \score {
+      \scoreContentShort
+      \layout { indent = #0 }
+    }
   }
 % }}}
