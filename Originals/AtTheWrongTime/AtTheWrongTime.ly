@@ -243,7 +243,7 @@
     \repeat volta 2{
       f8 c aes' f4 ees16 f16 ees8 c aes~ |
       aes8 f aes bes c d ees4 c8 |
-      f,8 c aes' f4 ees16 f16 ees8 c aes~ |
+      f8 c aes' f4 ees16 f16 ees8 c aes~ |
       aes8 f aes bes c d ees4 c8 |
     }
   }
@@ -253,7 +253,7 @@
     \repeat volta 2{
       aes8 f c' aes4 g16 aes16 g8 ees d~ |
       d8 ees f g bes aes g4 ees8 |
-      aes8 f c' aes4 g16 aes16 g8 ees d~ |
+      aes8 f c' aes4 g16 aes16 g8 ees d |
       e8 f g a c bes a4 f8 |
     }
   }
@@ -292,7 +292,7 @@
 % {{{ PARTE Coda
   temaCoda = {
     \key bes \major
-    cis'2. dis4. | eis2.~ eis4. |
+    cis2. dis4. | eis2.~ eis4. |
     cis2.^\markup{ \italic{"rall."} } dis4. | eis2.~ eis4. |
   }
 
@@ -338,8 +338,7 @@
 
   temaEue = \relative c' {
     \silenzioA
-    \temaBdue 
-    \silenzioBstacchi
+    \temaBdue \silenzioBstacchi
     \silenzioC
     \temaEdue
     \silenzioEstacchi
@@ -420,7 +419,7 @@
     \bassoBstacchi
     \silenzioC
     \silenzioE
-    \bassoEstacchi
+    \relative c'{ \bassoEstacchi }
     \silenzioF
   }
 
@@ -428,6 +427,12 @@
     \chordsPart
     \temaPart
     \bassoPartShort
+  >>
+
+  scoreBb = <<
+    \transpose c d { \chordsPart }
+    \transpose c d, { \temaPart}
+    \transpose c d { \bassoPartShort}
   >>
 %}}}
 
@@ -454,5 +459,14 @@
       \scoreContentShort
       \layout { indent = #0 }
     }
+  }
+
+  \book{
+    \bookOutputName \myFname
+    \struttura
+    \markup { \vspace #1 }
+    \header{ composer="Bb" }
+    \bookOutputSuffix "Bb"
+    \score { \scoreBb} 
   }
 % }}}
