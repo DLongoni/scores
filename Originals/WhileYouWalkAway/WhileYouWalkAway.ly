@@ -177,7 +177,7 @@ tema = \relative c' {
   \mark \default
   \time 5/8
   \temaD \break
-  \mark \markup{ \box \bold{"Uscita solo Guit"} }
+  \mark \markup{ \box \bold{"Solo Guit"} }
   \temaSoloGuit \break
   \bar "|."
 }
