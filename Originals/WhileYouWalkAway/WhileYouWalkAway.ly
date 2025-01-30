@@ -189,19 +189,24 @@ temaDue = \relative c' {
   \temaCdue
 }
 
-% temaBb = \relative c {
-%   \silenzioIntro \break
-%   \mark \default
-%   \temaA \break
-%   \mark \default
-%   \time 4/4
-%   \temaB \break
-%   \mark \default
-%   \relative c'{\temaC} \break 
-%   \mark \default
-%   \time 5/8
-%   \temaD \break \bar "|."
-% }
+temaBb = \relative c {
+  \mark \markup{ \box \bold{"Intro - Solo Fisa"} }
+  \relative c'{\temaIntro} \break
+  \bar "||"
+  \mark \default
+  \temaA \break
+  \mark \default
+  \time 4/4
+  \temaB \break
+  \mark \default
+  \relative c'{\temaC} \break 
+  \mark \default
+  \time 5/8
+  \temaD \break 
+  \mark \markup{ \box \bold{"Solo Guit"} }
+  \temaSoloGuit \break
+  \bar "|."
+}
 
 chordsPart ={
   \new ChordNames {
@@ -219,18 +224,15 @@ chordsPart ={
 
 temaPart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "piano"
 } { \clef "treble_8" \global \tema }
 
 temaDuePart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "piano"
 } { \clef "treble_8" \global \temaDue }
 
-% temaPartBb = \new Staff \with {
-%   instrumentName = ""
-%   midiInstrument = "piano"
-% } { \clef "treble_8" \global \temaBb }
+temaPartBb = \new Staff \with {
+  instrumentName = ""
+} { \clef "treble_8" \global \temaBb }
 
 scoreContent = << 
   \chordsPart
@@ -238,10 +240,10 @@ scoreContent = <<
   \temaDuePart
 >>
 
-% scoreContentBb = << 
-%   \transpose c d {\chordsPart}
-%   \transpose c d {\temaPartBb}
-% >>
+scoreContentBb = << 
+  \transpose c d {\chordsPart}
+  \transpose c d {\temaPartBb}
+>>
 
 %}}}
 
@@ -255,16 +257,15 @@ scoreContent = <<
     \score {
       \scoreContent
       \layout {}
-      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 120 4) } }
     }
   }
 
-  % \book{
-  %   \bookOutputName \myFname
-  %   \struttura
-  %   \markup { \vspace #1 }
-  %   \header{ composer="Bb" }
-  %   \bookOutputSuffix "Bb"
-  %   \score { \scoreContentBb} 
-  % }
+  \book{
+    \bookOutputName \myFname
+    \struttura
+    \markup { \vspace #1 }
+    \header{ composer="Bb" }
+    \bookOutputSuffix "Bb"
+    \score { \scoreContentBb} 
+  }
 % }}}
