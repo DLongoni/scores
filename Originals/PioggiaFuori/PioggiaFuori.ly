@@ -5,6 +5,14 @@
   myKey = \key g \major
   myTime = \time 3/4 
   myTempo =  #(ly:make-moment 190 4)
+
+  struttura = \markup {
+    \column {
+        \line {\bold{A} Gtr, \bold{A} Impro Tr, \bold{A} Tr, \bold{B} libera, \bold{C} Fisa, \bold{C} Tr, 
+          \bold{B} bridge }
+        \line {\bold{C} Solo Tr, \bold{C} Solo Guit, \bold{Bridge}, \bold{A}x2 }
+      }
+    }
 % }}}
 
 % INTESTAZIONE {{{
@@ -172,7 +180,6 @@ chordsPart ={
 
 temaPart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "piano"
 } { \clef "treble_8" \global \tema }
 
 scoreContent = << 
@@ -186,16 +193,17 @@ scoreContent = <<
 % {{{ BOOKS
   \book{
     \bookOutputName \myFname
+    \struttura
     \bookOutputSuffix "C"
     \score {
       \scoreContent
       \layout {}
-      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
     }
   }
 
   \book{
     \bookOutputName \myFname
+    \struttura
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }
   }

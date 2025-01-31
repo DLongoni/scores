@@ -4,6 +4,13 @@
   myKey = \key f \major
   myTime = \time #'(2 2 3) 7/8
   myTempo =  #(ly:make-moment 60 4)
+
+  struttura = \markup {
+    \column {
+      \line {\bold{Intro} libera, \bold{Intro} loop, \bold{A}x2 Fisa, \bold{A}x2 Tr, \bold{Solo} Tr, \bold{Solo} Fisa,
+        \bold{B}, \bold{A}x2, \bold{Solo} Gtr}
+      }
+    }
 % }}}
 
 % INTESTAZIONE {{{
@@ -126,7 +133,7 @@
 % SCORE {{{
 tema = \relative c' {
   \mark \default
-  \temaA \break
+  \temaA \bar "||" \break
   \mark \default
   \temaB \break
   \bar "|."
@@ -177,17 +184,18 @@ temiContent = <<
 % {{{ BOOKS
   \book{
     \bookOutputName \myFname
+    \struttura
     \header{ composer="C" }
     \bookOutputSuffix "C"
     \score {
       \scoreContent
       \layout {}
-      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 90 4) } }
     }
   }
 
   \book{
     \bookOutputName \myFname
+    \struttura
     \header{ composer="Bb" }
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }

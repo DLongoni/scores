@@ -7,9 +7,9 @@
 
   struttura = \markup {
     \column {
-        \line {\bold{A} Bass, \bold{A} Bass+Tr, \bold{A} Bass+Tr+Chords, \bold{A} solo II voci, \bold{A} II voci+Tr, \bold{A} Gtr}
-        \line{ \bold{B} Fisa, \bold{solo} Fisa, \bold{B} Tr+II voce Fisa, \bold{Ending B3}}
-        \line{\bold{A}x1 Tr, \bold{A} solo Gtr}
+        \line{ \bold{A} Bass, \bold{A} Bass+Gtr, \bold{A} Bass+Gtr+Fisa, \bold{A} Tema Gtr 8vb}
+        \line{ \bold{A} Bass+Gtr+Fisa, \bold{A} Gtr 8va, \bold{A}x2 Tr}
+        \line{ \bold{B} Fisa, \bold{B} Solo Fisa, \bold{B} Solo Tr, \bold{B} Tr+II voce Fisa, \bold{Ending B3}, \bold{A} solo Guit, \bold{A}x2 Tr, \bold{A} Gtr}
       }
     }
 % }}}
@@ -222,22 +222,18 @@ chordsPart ={
 
 temaPart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "piano"
 } { \clef "treble_8" \global \tema }
 
 temaDuePart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "piano"
 } { \clef "treble_8" \global \temaDue }
 
 bassoPart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "piano"
 } { \clef "bass" \basso }
 
 ritmicaPart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "piano"
 } { \clef "treble_8" 
       \new Voice <<  
         \relative c'' {\ritmicaAuno }
@@ -266,7 +262,6 @@ scoreContent = <<
     \score {
       \scoreContent
       \layout {}
-      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 90 4) } }
     }
   }
 

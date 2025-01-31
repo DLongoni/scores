@@ -213,26 +213,22 @@ chordsPart ={
 
 temaPart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "piano"
   shortInstrumentName = "T"
 } { \clef "treble_8" \tema }
 
 temasecondaPart = \new Staff \with {
   \override VerticalAxisGroup.remove-empty = ##f 
   instrumentName = ""
-  midiInstrument = "piano"
   shortInstrumentName = "T2"
 } { \clef "treble_8" \temaseconda }
 
 armPart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "pad"
   shortInstrumentName = "P"
 } { \clef "treble_8" \arm }
 
 bassPart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "bass"
   shortInstrumentName = "B"
 } { \clef "bass" \bass }
 
