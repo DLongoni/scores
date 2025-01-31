@@ -227,12 +227,12 @@ struttura = \markup {
 
   lineaB = {
     \repeat volta 2 {
-      g1*9/8 | a1*9/8 | bes2. a4.~ | a2. r4. |
-      s1*9/8 | s1*9/8 | s1*9/8 |
+      g1*9/8 | f1*9/8 | bes2. a4.~ | a2. r4. |
+      r1*9/8 | r1*9/8 | r1*9/8 |
     }
     \alternative{
-      {s1*9/8 | }
-      {s1*9/8 | }
+      {r1*9/8 | }
+      {r1*9/8 | }
     }
   }
 
