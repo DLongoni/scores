@@ -12,12 +12,8 @@
 
 struttura = \markup {
   \column {
-      \line {
-        \bold{Intro} 1x Gtr, 3x Gtr+Fisa, \bold{A} Tr, \bold{B} Fisa, \bold{B} Tr, 
-        \bold{A} Tr}
-      \line{\bold{Solo}Tr: Pedale F +\bold{C}, \bold{Solo}Fisa: Pedale F +\bold{C},
-            \bold{D}, \bold{B}, \bold{A} 1/2 Fisa II voce, 1/2 Tr
-    }
+    \line { \bold{Intro} Dr, Guit, Bass, Fisa, \bold{A} Tr, \bold{A} Tr+Guit, \bold{B} Fisa, \bold{B} Guit, \bold{A} Tr}
+    \line{\bold{Solo}Tr,  \bold{C} Tr, \bold{C}Guit, \bold{D}, \bold{B}, \bold{A} Fisa, \bold{A} Tr }
   }
 }
 %}}}
@@ -97,9 +93,9 @@ struttura = \markup {
 
   bassoIntro ={
     \repeat volta 2 {
-     r8 bes4. g4 f4 d8 | r8 g4. ees4 d4. | 
-     r8 bes4. g4 f4 d8 | r8 g4. ees4 d4. | 
-     bes,4 bes, d ees8 e f |
+     r8 bes'4. g4 f4 d8 | r8 g4. ees4 d4. | 
+     r8 bes'4. g4 f4 d8 | r8 g4. ees4 d4. | 
+     bes4 bes d ees8 e f |
     } 
   }
 
@@ -208,11 +204,11 @@ struttura = \markup {
      r8 bes4. g4 f4 d8 | r8 g4. ees4 d4. | r8 ees4. g8 a bes4 f8 | r8 d4. f4 a8 f d |
      r8 ees4. g4 bes4. | r8 a4. g4 aes4. | r8 g8 g4 r4 g4. | r8 ges4 bes8 a g f4. |
      r8 bes4. g4 f4. | r8 g4. ees4 d4. | r8 ees4. g8 a bes4 f8 | r8 d4. f4 f8 ees d |
-     r8 ees4. g4 bes4. | r8 c'4. g4 f4. | 
+     r8 ees4. g4 bes4. | r8 c4. g4 f4. | 
     } 
     \alternative{
       { r8 bes,4. d4 ees8 e f | }
-      { bes,8 d ees bes,\staccato r4 r4.}
+      { bes,8 d ees bes\staccato r4 r4.}
     }
   }
 % }}}
@@ -220,7 +216,7 @@ struttura = \markup {
 % {{{ PARTE B
   temaB = {
     \repeat volta 2 {
-      bes4 bes d c a8 | f2. a8 g f | g4 g bes a g8 | d2. r4. |
+      bes,4 bes d c a8 | f2. a8 g f | g4 g bes a g8 | d2. r4. |
       c'4 c es d bes8 | a2. g8 f es | f2.~ f4. |
     }
     \alternative{
@@ -271,7 +267,7 @@ struttura = \markup {
 
   compBdue = {
        \new Voice <<
-         { bes'2.~ bes4. | a2.~ a4. | c2.~ c4. | d2.~ d4. | 
+         { bes2.~ bes4. | a2.~ a4. | c2.~ c4. | d2.~ d4. | 
          ees2.~ ees4. | d2. d4. | a2. a4. | r2. r4. | }
          { g,2.~ g4. | f2.~ f4. | ees'2.~ ees4. | bes2. bes4. |
          c2.~ c4. | f2.~ f4. | d2.~ d4. | r2. r4. | }
@@ -310,7 +306,7 @@ struttura = \markup {
 
   ritmicaUnoSoloTr = {
     \repeat volta 2 {
-      bes,4\staccato bes4\staccato bes8 g a4 f8 | bes4\staccato bes4\staccato bes8 g a4 f8 |
+      bes4\staccato bes4\staccato bes8 g a4 f8 | bes4\staccato bes4\staccato bes8 g a4 f8 |
       bes4\staccato bes4\staccato bes8 g a4 f8 | bes4\staccato bes4\staccato bes8 g a4 f8 |
     }
   }
@@ -318,7 +314,7 @@ struttura = \markup {
   ritmicaDueSoloTr = {
     \repeat volta 2 {
        \new Voice <<
-         { d4 r4 r8 d8 f4. | f4 r4 r8 f8 f4. | 
+         { d'4 r4 r8 d8 f4. | f4 r4 r8 f8 f4. | 
          g4 r4 r8 g8 f4. | f4 r r8 f8 ees4. | } 
          { a,4 r4 r8 a8 c4. | d4 r r8 d8 d4. | 
          d4 r r8 d d4. | d4 r r8 d c4. | }
@@ -328,8 +324,8 @@ struttura = \markup {
 
   bassoSoloTr = {
     \repeat volta 2 {
-       r8 bes4. g4 f4 d8 | r8 g4. ees4 d4. | 
-       r8 g4. ees4 d4. | bes,4 bes, d ees8 e f |
+       r8 bes'4. g4 f4 d8 | r8 g4. ees4 d4. | 
+       r8 g4. ees4 d4. | bes4 bes d ees8 e f |
     }
   }
 
@@ -354,7 +350,7 @@ struttura = \markup {
 
   bassoC = {
     \repeat volta 2 {
-      g4 g r g4. | ees4 ees r ees4. | f4 f r f4. |
+      g4 g r g4. | ees4 ees r ees4. | f4 f r f8 r4 |
     }
     \alternative{
       { d4 d r f4. | }
@@ -365,8 +361,10 @@ struttura = \markup {
   voicingC = {
     \repeat volta 2 {
        \new Voice <<
-         { r8 d4. c4 d c8 | r8 d4. c4 d4. | r8 d4. c4 d c8 | }
-         { r8 bes4. bes4 bes4. | r8 bes4. bes4 bes4. | r8 a4. a4 a4. | }
+         { r8 d'4. c4 d c8 | r8 d4. c4 d4. | r8 d4. c4 d8^\markup{\italic{"silenzio"}} r4 | }
+         { r8 bes4. bes4 bes4. | r8 bes4. bes4 bes4. | r8 a4. a4 a8 r4 | }
+         % { r8 d4. c4 d c8 | r8 d4. c4 d4. | r8 d4. c4 d c8 | }
+         % { r8 bes4. bes4 bes4. | r8 bes4. bes4 bes4. | r8 a4. a4 a4. | }
        >>
     }
     \alternative{
@@ -398,8 +396,9 @@ struttura = \markup {
 
 % {{{ PARTE D
   temaD = {
+    \partial 8 r8 |
     \repeat volta 2 {
-      d'8 g, ees'16 d c bes c4 a g8 |
+      d8 g, ees'16 d c bes c4 a g8 |
     }
     \alternative{
       { bes16 a g fis es8 fis g16 fis es d c4 d8 | }
@@ -407,7 +406,19 @@ struttura = \markup {
     }
   }
 
+  bassoD = {
+    \partial 8 g,8~ |
+    \repeat volta 2 {
+      g2 d'4~ d4 g8~ |
+    }
+    \alternative{
+      { g2 d4~ d4 g,8 | }
+      { g'2 d4 g,4 r8 | }
+    }
+  }
+
   accordiD = \chordmode{
+    \partial 8 s8 |
     \repeat volta 2 {
       g2.:m d4.:7 | 
     }
@@ -415,8 +426,7 @@ struttura = \markup {
       { g2:m d4:7 d4.:7 | }
       { g2:m d4:7 d4.:7 | }
     }
-  }
-% }}}
+  } % }}}
 
 % {{{ PARTE Coda
   temaCoda = {
@@ -436,7 +446,7 @@ tema = \relative c' {
   \ritmicaUnoIntro
   \break
   \mark \default
-  \temaA \break 
+  \temaA \bar "||" \break 
   \mark \default
   \temaB \pageBreak 
   \mark \markup{ \box \bold{B2} }
@@ -479,14 +489,17 @@ ritmicaApart = \new Staff {
 }
 
 bassoPart = \new Staff {
-  \global
   \clef "bass"
-  \bassoIntro
-  \bassoA
-  \silenzioB
-  \silenzioBdue
-  \bassoSoloTr
-  \bassoC
+  \global
+  \relative c {
+    \bassoIntro
+    \bassoA
+    \silenzioB
+    \silenzioBdue
+    \bassoSoloTr
+    \bassoC
+    \bassoD
+  }
 }
 
 chordsPart ={
@@ -534,6 +547,12 @@ scoreContent = <<
   \bassoPart
 >>
 
+scoreContentBb = << 
+  \chordsPart
+  \temaPart
+  \bassoPart
+>>
+
 scoreBassContent = << 
   \chordsPart
   \temaPart
@@ -551,7 +570,6 @@ scoreBassContent = <<
     \score {
       \scoreContent
       \layout {}
-      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
     }
   }
 
@@ -560,5 +578,17 @@ scoreBassContent = <<
     \markup { \vspace #1 }
     \bookOutputSuffix "Tema-e-Basso"
     \score {\scoreBassContent}
+  }
+
+  \book{
+    \bookOutputName \myFname
+    \struttura
+    \markup { \vspace #1 }
+    \header{ composer="Bb" }
+    \bookOutputSuffix "Bb"
+    \score { 
+      \scoreContentBb 
+      \layout {}
+    }
   }
 % }}}
