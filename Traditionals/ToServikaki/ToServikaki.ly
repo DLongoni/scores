@@ -14,7 +14,7 @@
 % {{{ PARTE A
   temaA = {
     \repeat volta 2 {
-      dis16 e fis e dis8 cis bis16 cis dis cis bis8 a |
+      dis,16 e fis e dis8 cis bis16 cis dis cis bis8 a |
       gis16 a bis dis cis bis a gis fis gis a bis cis bis cis r |
       dis16 e fis e dis8 cis bis16 cis dis cis bis8 a |
       gis16 a bis dis cis bis a gis fis8 cis fis r |
@@ -32,7 +32,7 @@
 % {{{ PARTE B
   temaB = {
     \repeat volta 2{
-      fis16 eis fis cis bis cis eis fis | gis a fis gis a bis gis a |
+      fis'16 eis fis cis bis cis eis fis | gis a fis gis a bis gis a |
       bis cis a bis cis dis bis dis | e dis cis bis cis4 | \break
       e16 dis cis dis cis bis a8 | bis16 dis cis8 cis16 bis cis dis |
       cis bis a bis a gis fis eis | fis gis a bis cis8 cis | \break
@@ -127,18 +127,16 @@ scoreContent = <<
   \book{
     \bookOutputSuffix "Fis"
     \score {
-      \scoreContent 
+      \transpose a d { \scoreContent }
       \layout {}
-      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 100 4) } }
     }
   }
 
   \book{
     \bookOutputSuffix "C"
     \score {
-      \transpose c ees { \scoreContent }
+      \transpose c aes { \relative c, { \scoreContent }}
       \layout {}
-      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 100 4) } }
     }
   }
 
