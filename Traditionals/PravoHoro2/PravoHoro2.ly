@@ -8,41 +8,7 @@
 
 % INTESTAZIONE {{{
 \version "2.18.2"
-
-\header {
-  title = \myTitle
-  composer = \mySubTitle
-}
-
-\paper{
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  #(set-global-staff-size 10)
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 20))
-}
-
-global = {
-  \myKey
-  \numericTimeSignature
-  \myTime
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
-\layout { indent = #0 }
-fakeBar = {  
-  \cadenzaOn
-  \once \omit Score.TimeSignature
-  \time 1/16
-  s16 \bar ""
-  \cadenzaOff
-  \once \omit Score.TimeSignature
-  \time 6/8
-}
+\include "/home/davide/scores/Template/Common.ly"
 %}}}
 
 % {{{ PARTE A

@@ -1,38 +1,14 @@
-% DEFINIZIONI {{{
+% {{{ PARAMETRI
+  myTitle = "Gankino Horo"
+  mySubTitle = "Bulgarian"
+  myKey = \key c \major
+  myTime = \time #'(2 2 3 2 2) 11/8
+  myTempo =  #(ly:make-moment 120 4)
+% }}}
+
+% INTESTAZIONE {{{
 \version "2.18.2"
-
-\header {
-  title = "Gankino Horo"
-  composer = "Bulgarian Traditional"
-}
-
-\paper{
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-  #(set-global-staff-size 10)
-
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 20))
-}
-
-global = {
-  \key c \major
-  \numericTimeSignature
-  \time #'(2 2 3 2 2) 11/8
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
+\include "/home/davide/scores/Template/Common.ly"
 %}}}
 
 % PARTE A {{{
