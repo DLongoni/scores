@@ -150,14 +150,14 @@
   temaSoloGuit = {
     \repeat volta 2 { r1*5/8 | r1*5/8 | }
     b16 c a f r d e4~ | e4. r4 | r1*5/8 | r1*5/8 |
-    b'16 c a f r d e4~ | e4. r4 | 
+    b'16 c a f~ f d e f b c | a4.~ a4 | r1*5/8 | r1*5/8 | \bar "||"
     r1*5/8 | r1*5/8 | r1*5/8^\markup{\italic{"To" \box \bold {"A"}} } | 
   }
 
   accordiSoloGuit = \chordmode{
     \repeat volta 2 { d4.:m d4:m | a4.:m a4:m | }
     d4.:m d4:m | a4.:m a4:m | d4.:m d4:m | a4.:m a4:m |
-    d4.:m d4:m | a4.:m a4:m | 
+    d4.:m d4:m | a4.:m a4:m | d4.:m d4:m | a4.:m a4:m |
     a1*5/8:m | a1*5/8:m | a1*5/8:m |
   }
 % }}}
