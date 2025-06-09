@@ -226,7 +226,7 @@
 
   bassoEstacchi = {
     g,4 g8 r4. c4 c8 | r4. d4 d8 r4. |
-    g,4 g8 r4. c4 f8~ | f1*9/8 | 
+    g,4 g8 r4. c4 f,8~ | f1*9/8 | 
   }
   
   accordiEstacchi = \chordmode{
@@ -261,7 +261,7 @@
   bassoF = {
     \key f \minor
     \repeat volta 2{
-      f4 f8 r4 aes8 r4 c8 | f,4.~ f4. r4. | 
+      f'4 f8 r4 aes8 r4 c8 | f,4.~ f4. r4. | 
       f4 f8 r4 c'8 r4 f,8 | aes4 f8~ f4 bes8 c4. |
     }
   }
@@ -269,7 +269,7 @@
   bassoFdue = {
     \key f \minor
     \repeat volta 2{
-      f,4 f8 r8 g4 aes4. | c2. aes8 c8 r8 |
+      f4 f8 r8 g4 aes4. | c2. aes8 c8 r8 |
       f,4 f8 r8 g4 aes4. | c2. aes8 g8 r8 |
     }
   }
