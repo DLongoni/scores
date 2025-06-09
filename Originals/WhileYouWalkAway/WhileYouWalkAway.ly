@@ -25,8 +25,8 @@
   }
 
   temaIntro = {
-    \repeat volta 2 { d,8 d d f d | a a a c e | }
-    a,4 a8 c e | a,4 a8 c e | a,4 c8 d e |
+    \repeat volta 2 { d,8 d d f c | a a a c e | }
+    a,4 a8 c e | a,4 a8 c e | a,4 a8 d e |
   }
 
   accordiIntro = \chordmode{
