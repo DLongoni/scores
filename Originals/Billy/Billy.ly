@@ -46,10 +46,14 @@
   }
 
   bassoA = {
-    r8 b8~ b b' fis b,4. | r8 b8~ b b' g b,4. | r8 b8~ b b' fis b,4. | r8 b8~ b b' g b,4. |
-    r8 b8~ b b' fis b,4. | r8 a8~ a b' fis a,4. | r8 gis8~ gis b' fis gis,4. | a4 c'8 fis, a,2 |
-    r8 b8~ b b' fis b,4. | r8 b8~ b b' g b,4. | r8 b8~ b b' fis b,4. | r8 b8~ b b' g b,4. |
-    r8 bes8~ bes bes' f bes,4. | r8 fis8~ fis a' e fis,4. | r8 e8~ e gis' e e,4. | \trip e4 b' fis'~ fis4 r |
+    r8 b8~ b b'\staccato fis\staccato b,4. | r8 b8~ b b'\staccato g\staccato b,4. | 
+    r8 b8~ b b'\staccato fis\staccato b,4. | r8 b8~ b b'\staccato g\staccato b,4. |
+    r8 b8~ b b'\staccato fis\staccato b,4. | r8 a8~ a b'\staccato fis\staccato a,4. | 
+    r8 gis8~ gis b'\staccato fis\staccato gis,4. | a4 c'8\staccato fis,\staccato a,2 |
+    r8 b8~ b b'\staccato fis\staccato b,4. | r8 b8~ b b'\staccato g\staccato b,4. | 
+    r8 b8~ b b'\staccato fis\staccato b,4. | r8 b8~ b b'\staccato g\staccato b,4. |
+    r8 bes8~ bes bes'\staccato f\staccato bes,4. | r8 fis8~ fis a'\staccato e\staccato fis,4. | 
+    r8 e8~ e gis'\staccato e\staccato e,4. | \trip e4 b' fis'~ fis4 r |
   }
 
   silenzioA = {
