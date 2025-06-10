@@ -45,6 +45,13 @@
     <fis b>4 <gis cis> <fis b> <dis gis> | <g b> <a cis> <fis b> <dis g> |
   }
 
+  bassoA = {
+    r8 b8~ b b' fis b,4. | r8 b8~ b b' g b,4. | r8 b8~ b b' fis b,4. | r8 b8~ b b' g b,4. |
+    r8 b8~ b b' fis b,4. | r8 a8~ a b' fis a,4. | r8 gis8~ gis b' fis gis,4. | a4 c'8 fis, a,2 |
+    r8 b8~ b b' fis b,4. | r8 b8~ b b' g b,4. | r8 b8~ b b' fis b,4. | r8 b8~ b b' g b,4. |
+    r8 bes8~ bes bes' f bes,4. | r8 fis8~ fis a' e fis,4. | r8 e8~ e gis' e e,4. | \trip e4 b' fis'~ fis4 r |
+  }
+
   silenzioA = {
     s1 | s1 | s1 | s1 | s1 | s1 | s1 | s1 | 
     s1 | s1 | s1 | s1 | s1 | s1 | s1 | s1 | 
@@ -127,8 +134,10 @@ chordsPart ={
 bassoPart = \new Staff {
   \clef "bass"
   \global
-  \silenzioA
-  \relative c {\bassoB}
+  \relative c {
+    \bassoA
+    \bassoB
+  }
 }
 
 temaPart = \new Staff \with {
