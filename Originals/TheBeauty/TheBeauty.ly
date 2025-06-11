@@ -84,15 +84,15 @@ accordiA = \chordmode{
 % PARTE B {{{
 temaB = {
   \repeat volta 2{
-    \time 3/4 a8 a4 c4. | a8 a4 g4. | r4 d'8 e d e | \time 2/4 c8 c a4 |
-    \time 3/4 a8 a4 c4. | a8 a g2 | e8 e4 g4. | e8 e d2 |
+    \time 3/4 a8 a4 c8~ c4 | a8 a4 g8~ g4 | r4 d'8 e d e | \time 2/4 c8 c a4 |
+    \time 3/4 a8 a4 c8~ c4 | a8 a4 g8~ g4 | e8 e4 g8~ g4 | e8 e d2 |
   }
 }
 
 temaBseconda = {
   \repeat volta 2{
-    \time 3/4 c8 c4 e4. | c8 c4 b4. | r4 b8 c b c | \time 2/4 e e c4 |
-    \time 3/4 c8 c4 e4. | c8 c b2 | g8 g4 b4. | g8 g a2 |
+    \time 3/4 c8 c4 e8~ e4 | c8 c4 b8~ b4 | r4 b8 c b c | \time 2/4 e e c4 |
+    \time 3/4 c8 c4 e8~ e4 | c8 c4 b8~ b4 | g8 g4 b8~ b4 | g8 g a2 |
   }
 }
 
@@ -131,6 +131,20 @@ accordiB = \chordmode{
 % }}}
 
 % PARTE Bdue {{{
+temaBdue = {
+  \repeat volta 2{
+    \time 3/4 a8 a4 c8~ c4 | a8 a4 g8~ g4 | r4 d'8 e d e | \time 2/4 c8 c a4 |
+    \time 3/4 a8 a4 c8~ c4 | a8 a8 g2 | e8 e4 g8~ g4 | e8 e d2 |
+  }
+}
+
+temaBsecondaDue = {
+  \repeat volta 2{
+    \time 3/4 c8 c4 e8~ e4 | c8 c4 b8~ b4 | r4 b8 c b c | \time 2/4 e e c4 |
+    \time 3/4 c8 c4 e8~ e4 | c8 c8 b2 | g8 g4 b8~ b4 | g8 g a2 |
+  }
+}
+ 
 bassoBdue = { 
   \time 3/4 a,4 r8 c8~ c4 | a r8 c8~ c4 | d r8 c8~ c4 | \time 2/4 d g, |
   \time 3/4 a4. r4 a8 | r4 a2 | g4. r4 g8 | r4 g2 |
@@ -175,7 +189,7 @@ tema = \relative c' {
   \temaB
   \break
   \mark \markup{ \box \bold{B2} }
-  \relative c'{\temaB}
+  \relative c'{\temaBdue}
   \break
   \mark \markup { \musicglyph #"scripts.coda"}
   \temaCoda
@@ -186,7 +200,7 @@ temaseconda = \relative c' {
   \global 
   \temaAseconda
   \temaBseconda
-  \relative c'{\temaBseconda}
+  \relative c'{\temaBsecondaDue}
   \temaCodaseconda
 }
 
@@ -259,18 +273,4 @@ scoreBb = <<
     }
   }
 }
-
-% \book{
-%   \bookOutputName \myFname
-%   \struttura
-%   \markup { \vspace #1 }
-%   \bookOutputSuffix "Bb"
-%   \header{ composer="Bb" }
-%   \score {
-%     \scoreBb
-%     \layout {
-%       indent = #0
-%     }
-%   }
-% }
 % }}}
