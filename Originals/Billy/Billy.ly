@@ -43,8 +43,8 @@
     <fis b>4 <gis cis> <fis b> <e ais> | <fis c'> <a d> <g c> <fis b> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <dis g> <fis b> <e g> <fis a> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <dis g> <fis b> <e g> <fis a> |
-    <ges b>4 <aes des> <ges bes> <ees aes> | <e a> <fis b> <dis g> <e a> |
-    <fis b>4 <gis cis> <fis b> <dis gis> | <g b> <a cis> <fis b> <dis g> |
+    <ges b>4 <aes des> <ges bes> <ees aes> | <e a> <fis b> <dis gis> <e a> |
+    <fis b>4 <gis cis> <fis b> <dis gis> | <g b> <a cis> e8 b' fis'4 |
   }
 
   ritmicaAdue = {
@@ -191,6 +191,12 @@ scoreContent = <<
   \ritmicaTre
   \bassoPart
 >>
+
+scoreContentCompact = << 
+  \chordsPart
+  \temaPart
+  \bassoPart
+>>
 %}}}
 
 % {{{ BOOKS
@@ -200,7 +206,15 @@ scoreContent = <<
     \score {
       \scoreContent
       \layout {}
-      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
+    }
+  }
+
+  \book{
+    \bookOutputName \myFname
+    \bookOutputSuffix "Compact"
+    \score {
+      \scoreContentCompact
+      \layout {}
     }
   }
 
