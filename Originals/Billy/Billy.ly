@@ -18,8 +18,10 @@
 
 % {{{ PARTE A
   temaA = {
-    fis,2. e4 | dis2. e4 | fis2. e4 | dis2. e4 | fis2. e4 | b'2. a8 gis | fis2. r4 | c1 | \break
-    fis2. e4 | dis2. e8 g | fis2. e8 fis | dis2. e4 | fis2. e4 | b'2. a4 | fis1 | dis1 | \break 
+    fis,2. e4 | dis2. e4 | fis2. e4 | dis2. e4 | \break
+    fis2. e4 | b'2. a8 gis | fis2. r4 | c1 | \break
+    fis2. e4 | dis2. e8 g | fis2. e8 fis | dis2. e4 | \break
+    fis2. e4 | b'2. a4 | fis1 | dis1 | \break 
   }
 
   temaAdue = {
@@ -44,6 +46,25 @@
     <ges b>4 <aes des> <ges bes> <ees aes> | <e a> <fis b> <dis g> <e a> |
     <fis b>4 <gis cis> <fis b> <dis gis> | <g b> <a cis> <fis b> <dis g> |
   }
+
+  ritmicaAdue = {
+    b''16 b r dis b r dis dis b8 r r b | b16 b r dis b r dis dis b8 r r b |
+    b16 b r dis b r dis dis b8 r r b | b16 b r dis b r dis dis b8 r r b |
+    b16 b r dis b r dis dis b8 r r b | a16 a r cis a r cis cis a8 r r a |
+    b16 b r dis b r dis dis b8 r r b | c16 c r e c r e e c8 r8 r4 |
+    b16 b r dis b r dis dis b8 r r b | b16 b r dis b r dis dis b8 r r b |
+    b16 b r dis b r dis dis b8 r r b | b16 b r dis b r dis dis b8 r r b |
+    bes16 bes r ees bes r ees ees bes8 r r bes | a16 a r dis a r dis dis a8 r r a |
+    gis16 gis r dis' gis, r dis' dis gis,8 r r gis | g16 g r dis' g, r dis' dis g,8 r8 r4 |
+  }
+
+ ritmicaAtre = {
+    fis'4. b8 dis4. b8 | g4. b8 dis4. b8 | fis4. b8 dis4. b8 | g4. b8 dis4. b8 |
+    fis4. b8 dis4. b8 | a4. cis8 e4. cis8 | gis4. b8 dis4. b8 | a4. c8 fis2 |
+    fis,4. b8 dis4. b8 | g4. b8 dis4. b8 | fis4. b8 dis4. b8 | g4. b8 dis4. b8 |
+    ges4. bes8 ees4. bes8 | fis4. a8 dis4. a8 | e4. b'8 dis4. b8 | e,4. b'8 fis'2 |
+  }
+
 
   bassoA = {
     r8 b8~ b b'\staccato fis\staccato b,4. | r8 b8~ b b'\staccato g\staccato b,4. | 
@@ -127,6 +148,18 @@ temaTre = \relative c {
   \silenzioB
 }
 
+ritmicaDue = \relative c {
+  \global
+  \ritmicaAdue
+  \silenzioB
+}
+
+ritmicaTre = \relative c {
+  \global
+  \ritmicaAtre
+  \silenzioB
+}
+
 chordsPart ={
   \new ChordNames {
     \set chordChanges = ##t
@@ -154,6 +187,8 @@ scoreContent = <<
   \temaPart
   \temaTre
   \ritmica
+  \ritmicaDue
+  \ritmicaTre
   \bassoPart
 >>
 %}}}
