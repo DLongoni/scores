@@ -1,66 +1,45 @@
 % INITIALIZATION {{{
-\version "2.18.2"
+  myTitle = "Sedi Donka"
+  myFname = "SediDonka"
+  mySubTitle = "Bulgarian Traditional"
+  myKey = \key f \major
+  myTime = \time #'(3 2 2) 7/8
 
-\header {
-  title = "Sedi Donka"
-  composer = "Bulgarian Traditional"
-}
-
-\paper{
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \fromproperty #'page:page-number-string
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-  #(set-global-staff-size 10)
-
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-            "FontAwesome"
-            "FontAwesome"
-            "FontAwesome"
-            (/ myStaffSize 20))
-}
-
-global = {
-  \key f \major
-  \numericTimeSignature
-  \time #'(3 2 2) 7/8
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
-
-struttura = \markup {
-  \column {
-    \line {
-      Struttura: \bold{A}(g,b) \bold{B1x}(g,b) \bold{B2x}(g\italic{8va},b)
-      \bold{A1x}(g,f,b) \bold{A2x}(g\italic{2voce},f,b) \bold{B}(g,f,b) \bold{C1}(t)
-    }
-    \line {
-      \bold{A2}(t) \bold{B2}(t,\italic{piano}) \bold{C2}(t) \bold{D} (g,f,c,t) \bold{Coda}
-    }
-    \line {
-      Clarino: entra a \bold{C1}, \bold{A2} 1voce, \bold{B2} 1voce, metà \bold{C2} 2voce, \bold{D2} 2voce, \bold{Coda}
-    }
-    \line {
-      Tromba: entra a \bold{C1}, \bold{A2} 2voce, \bold{B2} no, metà \bold{C2} 1voce, \bold{D2} 1voce, \bold{Coda}
-    }
-    \line {
-      Fisa: entra la 2a \bold{A1} 1voce, \bold{B1} 1voce, \bold{C1}, \bold{A2} acc, \bold{B2} 1voce, \bold{C2} 2voce, \bold{D2} acc \bold{Coda}
-    }
-    \line {
-      Chitarra: intro scritta, \bold{A2} acc \bold{B2} acc metà \bold{C2} 1voce, \bold{D2} acc \bold{Coda}
-    }
-    % \line {
-    %   Basso: intro scritta, \bold{A2} 1voce, \bold{B2} 1voce, metà \bold{C2} 2voce, \bold{D2} 2voce, \bold{Coda}
-    % }
-  }
-}
+%   struttura = \markup {
+%     \column {
+%       \line {
+%         Struttura: \bold{A}(g,b) \bold{B1x}(g,b) \bold{B2x}(g\italic{8va},b)
+%         \bold{A1x}(g,f,b) \bold{A2x}(g\italic{2voce},f,b) \bold{B}(g,f,b) \bold{C1}(t)
+%       }
+%       \line {
+%         \bold{A2}(t) \bold{B2}(t,\italic{piano}) \bold{C2}(t) \bold{D} (g,f,c,t) \bold{Coda}
+%       }
+%       \line {
+%         Clarino: entra a \bold{C1}, \bold{A2} 1voce, \bold{B2} 1voce, metà \bold{C2} 2voce, \bold{D2} 2voce, \bold{Coda}
+%       }
+%       \line {
+%         Tromba: entra a \bold{C1}, \bold{A2} 2voce, \bold{B2} no, metà \bold{C2} 1voce, \bold{D2} 1voce, \bold{Coda}
+%       }
+%       \line {
+%         Fisa: entra la 2a \bold{A1} 1voce, \bold{B1} 1voce, \bold{C1}, \bold{A2} acc, \bold{B2} 1voce, \bold{C2} 2voce, \bold{D2} acc \bold{Coda}
+%       }
+%       \line {
+%         Chitarra: intro scritta, \bold{A2} acc \bold{B2} acc metà \bold{C2} 1voce, \bold{D2} acc \bold{Coda}
+%       }
+%     }
+% }
 % }}}
+
+% DEFINIZIONI {{{
+\version "2.18.2"
+\include "/home/davide/scores/Template/Common.ly"
+toCoda = {
+  % the align part
+  \once \override Score.RehearsalMark.self-alignment-X = #RIGHT  
+  \once \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
+  \mark \markup { { \lower #1 "al  " { \musicglyph #"scripts.coda"} } } 
+}
+%}}}
 
 % PARTE A {{{
 temaA={
@@ -673,41 +652,20 @@ chordsPart ={
   }
 }
 
-accordionPart = \new Staff \with {
-  instrumentName = "Fisa"
-shortInstrumentName = #"F"
-  midiInstrument = "piano"
-} \accordion
+accordionPart = \new Staff \with { } \accordion
 
-clarinetPart = \new Staff \with {
-  instrumentName = "Clarinetto"
-shortInstrumentName = #"C"
-  midiInstrument = "clarinet"
-} \clarinet
+clarinetPart = \new Staff \with { } \clarinet
 
-trumpetPart =  \new Staff \with {
-  instrumentName = "Tromba"
-shortInstrumentName = #"T"
-  midiInstrument = "trumpet"
-} \trumpetBb
+trumpetPart =  \new Staff \with { } \trumpetBb
 
-guitarPart = \new Staff \with {
-  instrumentName = "Chitarra"
-shortInstrumentName = #"G"
-  midiInstrument = "guitar"
-} { \clef "treble_8" \guitar }
+guitarPart = \new Staff \with { } { \clef "treble_8" \guitar }
 
-contrabassPart = \new Staff \with {
-  instrumentName = "Basso"
-shortInstrumentName = #"B"
-  midiInstrument = "tuba"
-} { \clef bass \contrabass }
+contrabassPart = \new Staff \with { } { \clef bass \contrabass }
 %}}}
 
 % {{{ BOOKS
 \book{
   \bookOutputSuffix "Score"
-  \struttura
   \score {
     <<
       \chordsPart
@@ -719,50 +677,44 @@ shortInstrumentName = #"B"
     >>
     \layout {
     }
-    \midi {
-      \context {
-        \Score
-        tempoWholesPerMinute = #(ly:make-moment 150 4)
-      }
-    }
   }
 }
 
-\book{
-  \bookOutputSuffix "ClTr"
-  \struttura
-  \score {
-    <<
-      \transpose c d { \chordsPart }
-      \transpose c d { \clarinetPart}
-      \transpose c d { \trumpetPart}
-    >>
-  }
-}
+% \book{
+%   \bookOutputSuffix "ClTr"
+%   \struttura
+%   \score {
+%     <<
+%       \transpose c d { \chordsPart }
+%       \transpose c d { \clarinetPart}
+%       \transpose c d { \trumpetPart}
+%     >>
+%   }
+% }
 
-\book{
-  \bookOutputSuffix "Basso"
-  \struttura
-  \score {
-    <<
-      \chordsPart
-      \accordionPart
-      \contrabassPart
-    >>
-  }
-}
+% \book{
+%   \bookOutputSuffix "Basso"
+%   \struttura
+%   \score {
+%     <<
+%       \chordsPart
+%       \accordionPart
+%       \contrabassPart
+%     >>
+%   }
+% }
 
-\book{
-  \bookOutputSuffix "GuitAcc"
-  \struttura
-  \score {
-    <<
-      \chordsPart
-      \clarinetPart
-      \accordionPart
-      \guitarPart
-    >>
-  }
-}
+% \book{
+%   \bookOutputSuffix "GuitAcc"
+%   \struttura
+%   \score {
+%     <<
+%       \chordsPart
+%       \clarinetPart
+%       \accordionPart
+%       \guitarPart
+%     >>
+%   }
+% }
 
 % }}}

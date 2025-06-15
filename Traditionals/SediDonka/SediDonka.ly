@@ -1,40 +1,30 @@
 % INITIALIZATION {{{
-\version "2.18.2"
+  myTitle = "Sedi Donka"
+  mySubTitle = "Bulgarian Traditional"
+  myFname = "SediDonka"
+  myKey = \key f \major
+  myTime = \time #'(3 2 2) 7/8
 
-\header {
-  title = "Sedi Donka"
-  composer = "Bulgarian Traditional"
-}
-
-\paper{
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  #(set-global-staff-size 10)
-
-  myStaffSize = #20
-  fonts = #(make-pango-font-tree
-  "FontAwesome"
-  "FontAwesome"
-  "FontAwesome"
-  (/ myStaffSize 20))
-}
-
-global = {
-  \key f \major
-  \numericTimeSignature
-  \time #'(3 2 2) 7/8
-  \set Score.markFormatter = #format-mark-box-alphabet
-}
-
-struttura = \markup {
-  \column {
-    \line {
-      (\bold{A}, \bold{B}), (\bold{A}, \bold{B}, \bold{C} Alt., \bold{C}, \bold{D}), (\bold{A}, \bold{B}, \bold{C}, \bold{D}), \italic{Coda}
+  struttura = \markup {
+    \column {
+      \line {
+        (\bold{A}, \bold{B}), (\bold{A}, \bold{B}, \bold{C} Alt., 
+        \bold{C}, \bold{D}), (\bold{A}, \bold{B}, \bold{C}, \bold{D}), \italic{Coda}
+      }
     }
   }
-}
 % }}}
+
+% DEFINIZIONI {{{
+\version "2.18.2"
+\include "/home/davide/scores/Template/Common.ly"
+toCoda = {
+  % the align part
+  \once \override Score.RehearsalMark.self-alignment-X = #RIGHT  
+  \once \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
+  \mark \markup { { \lower #1 "al  " { \musicglyph #"scripts.coda"} } } 
+}
+%}}}
 
 % PARTE A {{{
 temaA={
@@ -96,7 +86,7 @@ temaAdue={
   temaB={
     \repeat volta 2 {
       \time #'(3 2 2) 7/8
-      d'8 e c e16 f e8 d c| e f c g'16 a g8 f e |
+      d8 e c e16 f e8 d c| e f c g'16 a g8 f e |
       \time #'(2 2 3 2 2) 11/8
       d e c a c d e f4 f|\break
       \time #'(3 2 2) 7/8
@@ -109,7 +99,7 @@ temaAdue={
   temaBdue={
     \repeat volta 2 {
       \time #'(3 2 2) 7/8
-      f,8 g e g16 a g8 f e| g a e c'16 d c8 a g |
+      f8 g e g16 a g8 f e| g a e c'16 d c8 a g |
       \time #'(2 2 3 2 2) 11/8
       e g e c e f g a4 a|\break
       \time #'(3 2 2) 7/8
@@ -151,7 +141,7 @@ temaAdue={
 % PARTE C {{{
 temaC={
   \time #'(3 2 2) 7/8
-  fis' 8 ees c d16 ees d c d4 | fis 8 ees c d16 ees ees d d4 |
+  fis 8 ees c d16 ees d c d4 | fis 8 ees c d16 ees ees d d4 |
   \time #'(2 2 3 2 2) 11/8
   d8 ees fis g a bes g a16 bes a g a4|\break
   \time #'(3 2 2) 7/8
@@ -195,7 +185,7 @@ alternativeRhythm={
 temaD={
   \repeat volta 2 {
     \time #'(3 2 2) 7/8
-    c'8 d c c bes a g| bes c bes a g fis g|
+    c8 d c c bes a g| bes c bes a g fis g|
     \time #'(2 2 3 2 2) 11/8
     a bes \tuplet 3/2 {a16 bes a} g8 a a g fis g a4|\break
     \time #'(3 2 2) 7/8
@@ -250,7 +240,7 @@ temaCoda={
 
 temaCodaDue={
   \time #'(3 2 2) 7/8
-  c8 e, a c16 d c8 bes a| bes e, g bes16 c bes8 a g |
+  c''8 e, a c16 d c8 bes a| bes e, g bes16 c bes8 a g |
   \time #'(2 2 3 2 2) 11/8
   f g e c e f g a4 a|\break
   \time #'(3 2 2) 7/8
@@ -304,34 +294,24 @@ pausa = {
 
 tema = \relative c'' {
   \mark \default
-  \new Voice <<
-    \temaA
-    \temaAdue
-  >>
+  \temaA
   \mark \default
-  \new Voice <<
-    \temaB
-    \temaBdue
-  >>
+  \temaB
   \mark \default
-  \new Voice <<
-    \temaC
-    \temaCdue
-  >>
+  \temaC
   \mark \default
-  \new Voice <<
-    \temaD
-    \temaDdue
-  >>
+  \temaD
   \mark \markup{Coda}
-  <<
-    \new Voice <<
-      \temaCoda
-      \temaCodaDue
-    >>
-    \new Staff { \temaCodaTre}
-  >>
+  \temaCoda
   \bar "|."
+}
+
+temaDue = \relative c'' {
+    \temaAdue
+    \temaBdue
+    \temaCdue
+    \temaDdue
+    \temaCodaDue
 }
 
 chordsPartFusion ={
@@ -353,24 +333,27 @@ chordsPart ={
 
 temaPart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "piano"
 } { \clef "treble_8" \global \tema }
+
+temaDuePart = \new Staff \with {
+  instrumentName = ""
+} { \clef "treble_8" \global \temaDue }
 
 scoreContent = << 
   \chordsPartFusion
   \chordsPart
   \temaPart
+  \temaDuePart
 >>
 %}}}
 
 % {{{ BOOKS
   \book{
-    \struttura
+    \bookOutputName \myFname
     \bookOutputSuffix "C"
     \score {
       \scoreContent
       \layout {}
-      \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 190 4) } }
     }
     \score{ 
       \new DrumStaff{ \alternativeRhythm }
@@ -379,7 +362,7 @@ scoreContent = <<
   }
 
   \book{
-    \struttura
+    \bookOutputName \myFname
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }
     \score{ 
@@ -388,13 +371,4 @@ scoreContent = <<
     }
   }
 
-  \book{
-    \struttura
-    \bookOutputSuffix "Eb"
-    \score { \transpose ees c { \scoreContent } }
-    \score{ 
-      \new DrumStaff{ \alternativeRhythm }
-      \header {piece = "Alt. Rhythm"}
-    }
-  }
 % }}}
