@@ -136,15 +136,15 @@ tema = \relative c' {
   \bar "|."
 }
 
-ritmica = \relative c {
-  \global
-  \ritmicaA
-  \temaBdue
-}
-
 temaTre = \relative c {
   \global
   \temaAdue
+  \temaBdue
+}
+
+ritmica = \relative c {
+  \global
+  \ritmicaA
   \silenzioB
 }
 
