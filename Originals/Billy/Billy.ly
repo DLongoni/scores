@@ -219,6 +219,7 @@ scoreContentCompact = <<
   }
 
   \book{
+    \struttura
     \bookOutputName \myFname
     \bookOutputSuffix "Compact"
     \score {
@@ -228,6 +229,7 @@ scoreContentCompact = <<
   }
 
   \book{
+    \struttura
     \bookOutputName \myFname
     \bookOutputSuffix "Bb"
     \score { \transpose c d {\scoreContent} }

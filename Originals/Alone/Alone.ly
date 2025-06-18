@@ -574,6 +574,7 @@ scoreBassContent = <<
   }
 
   \book{
+    \struttura
     \bookOutputName \myFname
     \markup { \vspace #1 }
     \bookOutputSuffix "Tema-e-Basso"
