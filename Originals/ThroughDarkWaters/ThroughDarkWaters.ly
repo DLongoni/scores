@@ -7,8 +7,8 @@
 
   struttura = \markup {
     \column {
-      \line {\bold{Intro} libera, \bold{Intro} loop, \bold{A}x2 Fisa, \bold{A}x2 Tr, \bold{Solo} Tr, \bold{Solo} Fisa,
-        \bold{B}, \bold{A}x2, \bold{Solo} Gtr}
+      \line {\bold{Intro} free, \bold{Intro} loop, \bold{A}x2 Fisa, \bold{Bridge} tutti, \bold{A}x2 Tr, \bold{Solo} Tr, 
+      \bold{B}, \bold{Bridge} Gtr,  \bold{A}x2, \bold{Solo} Gtr}
       }
     }
 % }}}

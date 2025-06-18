@@ -5,6 +5,14 @@
   myKey = \key g \major
   myTime = \time 4/4 
   myTempo =  #(ly:make-moment 104 4)
+
+  struttura = \markup {
+    \column {
+        \line { \bold{A} Bass, \bold{A} Gtr, \bold{A} Bass+Gtr+Fisa \bold{A} tutti,
+          \bold{Solo} Fisa, \bold{A} Bass, \bold{A} tutti }
+        \line { \bold{B} Fisa, \bold{Bx2} tutti, \bold{Bridge} Gtr, \bold{Solo} Gtr+Tr \bold{Bx2} tutti, \bold{A/2} Fisa, \bold{A/2} Tr}
+      }
+    }
 % }}}
 
 % INTESTAZIONE {{{
@@ -201,6 +209,7 @@ scoreContentCompact = <<
 
 % {{{ BOOKS
   \book{
+    \struttura
     \bookOutputName \myFname
     \bookOutputSuffix "C"
     \score {

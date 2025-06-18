@@ -10,7 +10,7 @@
     \column {
         \line {\bold{A} Gtr, \bold{A} Impro Tr, \bold{A} Tr, \bold{B} libera, \bold{C} Fisa, \bold{C} Tr, 
           \bold{B} bridge }
-        \line {\bold{C} Solo Tr, \bold{C} Solo Guit, \bold{Bridge}, \bold{A}x2 }
+          \line {\bold{C} Solo Tr, \bold{C} Solo Guit, \bold{C}, \bold{Bridge}, \bold{A}x2 }
       }
     }
 % }}}

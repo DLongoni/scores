@@ -9,8 +9,8 @@
     \column {
         \line {\bold{Intro}, \bold{A} Fisa, \bold{A} Tr, \bold{B} Fisa, 
                \bold{B} Gtr, \bold{A} Tr}
-        \line{\bold{Solo} Gtr su B, \bold{B}, \bold{Solo} Tr su B, 
-              \bold{B2}x2, \bold{A}, \bold{Coda}}
+        \line{\bold{Solo} Gtr, \bold{B}, \bold{Solo} Tr, 
+          \bold{B}, \bold{B2}, \bold{A}, \bold{Coda}}
       }
     }
 % }}}

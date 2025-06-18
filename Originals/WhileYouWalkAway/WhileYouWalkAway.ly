@@ -8,7 +8,7 @@
   struttura = \markup {
     \column {
       \line {\bold{Intro} Gtr+Fisa, \bold{A}x3(1-2-1) Tr, \bold{B}, \bold{C}}
-      \line{\bold{D}, \bold{Solo} Guit, \bold{A}x4}
+      \line{\bold{D}, \bold{Solo} Bass, \bold{Solo} Guit, \bold{A}x4}
     }
   }
 % }}}
