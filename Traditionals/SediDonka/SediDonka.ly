@@ -348,27 +348,38 @@ scoreContent = <<
 %}}}
 
 % {{{ BOOKS
-  \book{
-    \bookOutputName \myFname
-    \bookOutputSuffix "C"
-    \score {
-      \scoreContent
-      \layout {}
-    }
-    \score{ 
-      \new DrumStaff{ \alternativeRhythm }
-      \header {piece = "Alt. Rhythm"}
-    }
+\book{
+  \bookOutputName \myFname
+  \bookOutputSuffix "C"
+  \score {
+    \scoreContent
+    \layout {}
   }
+  \score{ 
+    \new DrumStaff{ \alternativeRhythm }
+    \header {piece = "Alt. Rhythm"}
+  }
+}
 
-  \book{
-    \bookOutputName \myFname
-    \bookOutputSuffix "Bb"
-    \score { \transpose c d {\scoreContent} }
-    \score{ 
-      \new DrumStaff{ \alternativeRhythm }
-      \header {piece = "Alt. Rhythm"}
-    }
+\book{
+  \bookOutputName \myFname
+  \bookOutputSuffix "Bb"
+  \score { \transpose c d {\scoreContent} }
+  \score{ 
+    \new DrumStaff{ \alternativeRhythm }
+    \header {piece = "Alt. Rhythm"}
   }
+}
+
+\book{
+  \bookOutputName \myFname
+  \bookOutputSuffix "Eb"
+  \header{ composer="Eb" }
+  \score { \transpose ees c { \scoreContent } }
+  \score{ 
+    \new DrumStaff{ \alternativeRhythm }
+    \header {piece = "Alt. Rhythm"}
+  }
+}
 
 % }}}

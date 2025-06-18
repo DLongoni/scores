@@ -272,4 +272,11 @@ scoreBb = <<
       }
     }
   }
+
+  \book{
+    \bookOutputName \myFname
+    \bookOutputSuffix "Eb"
+    \header{ composer="Eb" }
+    \score { \transpose ees c { \scoreC } }
+  }
 % }}}
