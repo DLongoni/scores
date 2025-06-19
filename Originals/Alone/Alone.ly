@@ -106,20 +106,22 @@ struttura = \markup {
 
 % {{{ PARTE A
   temaA = {
-    \repeat volta 2 {
+    \repeat volta 4 {
       r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4. | \break
       r8 es bes es g4 f8 d bes | c4 es8 c es c d4 fis8 | a4 a8 g d4~ d4.~ | d2. r4. | \break
       r8 bes' f bes d4 c8 a f | bes g g2 a8 f d | g es es2 f8 d bes | d a'16 bes a2~ a4. | \break
       r8 es bes es g4 f8 d bes | c4 es8 c es d c4 g'8|
     }
     \alternative{
-      { bes2.~ bes4. | }
-      { bes4.~ bes8\staccato r4 r4. | }
+      { bes2.~^\markup{ \italic {"ripetzione A"} } bes4. | \break }
+      { bes2.^\markup{ \italic {"fine A2, pre B"} }  r4. | }
+      { bes2.^\markup{ \italic {"fine A3, pre solo"} }  r4. | r1*9/8 | }
+      { bes4.^\markup{ \italic {"fine brano"} }  bes8\staccato r4 r4. | }
     }
   }
 
   temaAbis = {
-    \repeat volta 2 {
+    \repeat volta 4 {
       r8 f' d f bes4 a8 f d | bes2. f'8 d bes | g2. d'8 bes g | a d f2~ f4. | 
       r8 bes, g bes ees4 d8 bes f | g4 c8 r c r a4 c8 | d2.~ d4.~ | d2. r4. | 
       r8 f d f bes4 a8 f d | bes2. f'8 d bes | g2. d'8 bes g | a d f2~ f4. |
@@ -127,12 +129,14 @@ struttura = \markup {
     }
     \alternative{
       { d2.~ d4. | }
-      { d4.~ d8\staccato r4 r4. | }
+      { d2. r4. | }
+      { d2. r4. | r1*9/8 | }
+      { d4. d8\staccato r4 r4. | }
     }
   }
 
   temaAtris = {
-    \repeat volta 2 {
+    \repeat volta 4 {
       d2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
       g2. f4. | ees4 g8 r g r fis4 a8 | bes2.~ bes4.~ | bes2. r4. |
       d,2. ees4. | d2 c8 bes c4. | bes2 bes8 c d4. | f8 d f2 f8 g a |
@@ -140,13 +144,15 @@ struttura = \markup {
     }
     \alternative{
       { bes2.~ bes4. | }
-      { bes4.~ bes8\staccato r4 r4. | }
+      { bes2. r4. | }
+      { bes2. r4. | r1*9/8 | }
+      { bes4. bes8\staccato r4 r4. | }
     }
   }
 
   ritmicaA = \relative c''{
      \new Voice <<
-      \repeat volta 2 {
+      \repeat volta 4 {
        { d4 r4 r8 d8 f4. | f4 r4 r8 f8 f4. | g4 r4 r8 g8 f4. | f4 r r8 f8 f4. | 
          g4 r4 r8 g8 f4. | ees4 r r8 ees d4. | d4 r r8 d d4. | d4 r r8 d d4. | 
          d4 r4 r8 d8 f4. | f4 r4 r8 f8 f4. | g4 r4 r8 g8 f4. | f4 r r8 f8 f4. | 
@@ -155,8 +161,10 @@ struttura = \markup {
         \alternative{
           { f4 r4 r4 r4. | }
           { f4 r4 r4 r4. | }
+          { f4 r4 r4 r4. | r1*9/8  | }
+          { f4. f8\staccato r4 r4. | }
         }
-      \repeat volta 2 {
+      \repeat volta 4 {
        { a,4 r4 r8 a8 c4. | d4 r r8 d8 d4. | d4 r r8 d d4. | d4 r r8 d d4. | 
          d4 r r8 d d4. | c4 r r8 c c4. | bes4 r4 r8 bes bes4. | bes4 r r8 bes a4. |
          a4 r4 r8 a8 c4. | d4 r r8 d8 d4. | d4 r r8 d d4. | d4 r r8 d d4. | 
@@ -165,12 +173,14 @@ struttura = \markup {
         \alternative{
           { d4 r4 r4 r4. | }
           { d4 r4 r4 r4. | }
+          { d4 r4 r4 r4. | r1*9/8 | }
+          { d4. d8\staccato r4 r4. | }
         }
      >>
   }
 
   ritmicaAsignola ={
-    \repeat volta 2 {
+    \repeat volta 4 {
       bes'4 bes bes8 g a4 f8 | bes4 bes bes8 g a4 f8 | 
       bes4 bes bes8 g bes4 f8 | a4 a a8 f a4 f8 |
       bes4 bes bes8 g bes4 f8 | c'4 c c8 g8 c4 ges8 |
@@ -182,11 +192,13 @@ struttura = \markup {
     \alternative{
       { bes4 bes bes8 f bes4 r8 | }
       { bes4 r4 r4 r4. | }
+      { bes4 r4 r4 r4. | r1*9/8 | }
+      { bes4. bes8\staccato r4 r4. | }
     }
   }
 
   accordiA = \chordmode{
-    \repeat volta 2 {
+    \repeat volta 4 {
       bes2.:maj7 f4.:7 | g2.:m7 d4.:m7 | es2.:maj7 bes4.:maj7 | d1*9/8:m7 |
       % es2.:maj7 bes4.:maj7 | c2.:m7 d4.:7 | g1*9/8:m9 | ges2.:7.9+ f4.:13 |
       es2.:maj7 bes4.:maj7 | a2.:m7.5- aes4.:7.11+ | g1*9/8:m9 | ges2.:7.9+ f4.:13 |
@@ -196,11 +208,13 @@ struttura = \markup {
       \alternative{
         { bes1*9/8:maj7 | }
         { bes1*9/8:maj7 | }
+        { bes1*9/8:maj7 | s1*9/8 | }
+        { bes1*9/8:maj7 | }
       }
   }
 
   bassoA ={
-    \repeat volta 2 {
+    \repeat volta 4 {
      r8 bes4. g4 f4 d8 | r8 g4. ees4 d4. | r8 ees4. g8 a bes4 f8 | r8 d4. f4 a8 f d |
      r8 ees4. g4 bes4. | r8 a4. g4 aes4. | r8 g8 g4 r4 g4. | r8 ges4 bes8 a g f4. |
      r8 bes4. g4 f4. | r8 g4. ees4 d4. | r8 ees4. g8 a bes4 f8 | r8 d4. f4 f8 ees d |
@@ -208,7 +222,9 @@ struttura = \markup {
     } 
     \alternative{
       { r8 bes,4. d4 ees8 e f | }
-      { bes,8 d ees bes\staccato r4 r4.}
+      { bes,2. r4. | }
+      { r8 bes4. d4 ees8 e f | bes,4~ bes8 bes8\staccato r4 r4. |}
+      { bes8 d ees bes8\staccato r4 r4. | } 
     }
   }
 % }}}
@@ -448,7 +464,7 @@ tema = \relative c' {
   \mark \default
   \temaA \bar "||" \break 
   \mark \default
-  \temaB \pageBreak 
+  \temaB \bar "||" \break
   \mark \markup{ \box \bold{B2} }
   \temaBdue \bar "||" \break 
   \mark \markup{ \box \bold{"Solo Tromba"} }
@@ -517,7 +533,11 @@ chordsPart ={
 
 temaPart = \new Staff \with {
   instrumentName = ""
-  midiInstrument = "trumpet"
+  \override VerticalAxisGroup.default-staff-staff-spacing =
+    #'((basic-distance . 12)
+       (minimum-distance . 10)
+       (padding . 2)
+       (stretchability . 12))
 } { \clef "treble_8" \global \tema }
 
 ritmicaUnoPart = \new Staff \with {
