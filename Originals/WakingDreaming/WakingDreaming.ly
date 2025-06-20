@@ -194,8 +194,10 @@
 
 % SCORE {{{
 tema = \relative c' {
+  \tempo 4 = 64
   \mark \default
   \temaA \break
+  \tempo \markup{ \hspace #-8.0 } 4 = 68
   \mark \default
   \temaB \break
   \bar "|."

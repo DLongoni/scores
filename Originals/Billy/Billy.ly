@@ -138,6 +138,7 @@
 % SCORE {{{
 tema = \relative c' {
   \mark \default
+  \tempo 4 = 104
   \temaA \bar "||" \break
   \mark \default 
   \temaB

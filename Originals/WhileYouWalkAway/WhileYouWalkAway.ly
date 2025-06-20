@@ -171,6 +171,7 @@ tema = \relative c' {
   \temaA \break
   \mark \default
   \time 4/4
+  \tempo 4 = 112
   \temaB \break
   \mark \default
   \temaC \break 

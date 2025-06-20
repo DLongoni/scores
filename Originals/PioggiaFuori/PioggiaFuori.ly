@@ -144,6 +144,7 @@
 % SCORE {{{
 tema = \relative c' {
   \mark \default
+  \tempo \markup{ \hspace #2.0 } 4 = 120  
   \temaA \break
   \mark \default
   \temaB \break
@@ -166,7 +167,6 @@ trombaPart = \new Staff {
   \silenzioB
   \trombaC
 }
-
 
 chordsPart ={
   \new ChordNames {

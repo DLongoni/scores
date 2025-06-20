@@ -318,6 +318,7 @@
 % SCORE {{{
   tema = \relative c' {
     \mark \default
+    \tempo 4. = 116
     \temaA \break
     \mark \default
     \temaB \break
@@ -330,6 +331,7 @@
     \mark \markup{ \box \bold{"Stacchi E"} }
     \silenzioEstacchi \bar "||" \break
     \mark \default
+    \tempo \markup{ \hspace #2.0 } 4. = 136
     \temaF \break
     \mark \markup { \musicglyph #"scripts.coda"}
     \temaCoda

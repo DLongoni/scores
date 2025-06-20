@@ -459,6 +459,7 @@ struttura = \markup {
 % SCORE {{{
 tema = \relative c' {
   \mark "Intro"
+  \tempo 4 = 170
   \ritmicaUnoIntro
   \break
   \mark \default

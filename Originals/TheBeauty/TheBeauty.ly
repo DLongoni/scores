@@ -183,6 +183,7 @@ accordiCoda = \chordmode{
 tema = \relative c' {
   \global 
   \mark \default
+  \tempo 4 = 160
   \temaA
   \break
   \mark \default
