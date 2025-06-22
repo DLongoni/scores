@@ -4,6 +4,14 @@
   myKey = \key f \major
   myTime = \time #'(3 2) 5/8 
   myTempo =  #(ly:make-moment 70 4)
+
+  struttura = \markup {
+    \column {
+      \line {\bold{A1}, \bold{A2}, \bold{B}, \bold{C}, \bold{D}}
+      \line {\bold{A2}, \bold{B}, \bold{C}, \bold{D}}
+      \line {\bold{C}, \bold{A1}, \bold{A2} Solo, \bold{D}, \bold{C}x2, \bold{A}}
+      }
+    }
 % }}}
 
 % INTESTAZIONE {{{
@@ -95,113 +103,91 @@
 
 % {{{ PARTE B
   temaB = {
-    \repeat volta 2{
-      c'8 c c b bes | a bes a cis4 | r8 c c b bes | a bes a cis4 |
-      c8 c c b bes | a bes a cis4 | r8 c c b bes | a bes a cis e |
-    }
+    c'8 c c b bes | a bes a cis4 | r8 c c b bes | a bes a cis4 |
+    c8 c c b bes | a bes a cis4 | r8 c c b bes | a bes a cis e |
   }
 
   temaBdue = {
-    \repeat volta 2{
-      c'8 c c b bes | a bes a cis8 | r8 c c b bes | a bes a cis4 |
-      c'8 c c b bes | a bes a cis8 | r8 c c b bes | a bes a cis e |
-    }
+    c'8 c c b bes | a bes a cis8 | r8 c c b bes | a bes a cis4 |
+    c'8 c c b bes | a bes a cis8 | r8 c c b bes | a bes a cis e |
   }
 
   accordiB = \chordmode{
-    \repeat volta 2{
-      c1*5/8 | a1*5/8 | c1*5/8 | a1*5/8 |
-      c1*5/8 | a1*5/8 | c1*5/8 | a1*5/8 |
-    }
+    c1*5/8 | a1*5/8 | c1*5/8 | a1*5/8 |
+    c1*5/8 | a1*5/8 | c1*5/8 | a1*5/8 |
   }
 
   silenzioB = {
-    \repeat volta 2{
-      s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
-      s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
-    }
+    s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
+    s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
   }
 % }}}
 
 % {{{ PARTE C
   temaC = {
-    \repeat volta 2 {
-      f4. e8 g | f4. g8 f | e f g a g | f a a g a |
-      f4. e8 g | f4. g8 f | e f g a g | f4. r4 |
-      a4. g8 bes | a4. bes8 a | g a bes des bes | a bes a g bes |
-      a4. g8 bes | a4. bes8 a | g a bes des bes | a4. r4 |
-    } 
+    f4. e8 g | f4. g8 f | e f g a g | f a a g a |
+    f4. e8 g | f4. g8 f | e f g a g | f4. r4 |
+    a4. g8 bes | a4. bes8 a | g a bes des bes | a bes a g bes |
+    a4. g8 bes | a4. bes8 a | g a bes des bes | a4. r4 |
   }
 
   temaCdue = {
-    \repeat volta 2 {
-      d,4. cis8 e | d4. e8 d | cis d e f e | d f f e f |
-      d4. cis8 e | d4. e8 d | cis d e f e | d4. r4 |
-      f4. e8 g | f4. g8 f | e f g a g | f a a g a |
-      f4. e8 g | f4. g8 f | e f g a g | f4. r4 |
-    } 
+    d,4. cis8 e | d4. e8 d | cis d e f e | d f f e f |
+    d4. cis8 e | d4. e8 d | cis d e f e | d4. r4 |
+    f4. e8 g | f4. g8 f | e f g a g | f a a g a |
+    f4. e8 g | f4. g8 f | e f g a g | f4. r4 |
   }
 
   accordiC = \chordmode{
-    \repeat volta 2{
-      g1*5/8:m | d1*5/8:m | a1*5/8:7 | d1*5/8:m |
-      g1*5/8:m | d1*5/8:m | a1*5/8:7 | d1*5/8:m |
-      g1*5/8:m | d1*5/8:m | a1*5/8:7 | d1*5/8:m |
-      g1*5/8:m | d1*5/8:m | a1*5/8:7 | d1*5/8:m |
-    }
+    g1*5/8:m | d1*5/8:m | a1*5/8:7 | d1*5/8:m |
+    g1*5/8:m | d1*5/8:m | a1*5/8:7 | d1*5/8:m |
+    g1*5/8:m | d1*5/8:m | a1*5/8:7 | d1*5/8:m |
+    g1*5/8:m | d1*5/8:m | a1*5/8:7 | d1*5/8:m |
   }
 
   silenzioC = {
-    \repeat volta 2{
-      s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
-      s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
-      s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
-      s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
-    }
+    s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
+    s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
+    s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
+    s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
   }
 % }}}
 
 % {{{ PARTE D
   temaD = {
-    \repeat volta 2 {
-      bes8 a g bes g | a g f e f | g f e d cis | e4. r8 f |
-      e1*5/8 | f1*5/8 | g1*5/8 | g1*5/8 | \break
-      c4 bes8 a g | c4 bes8 a g | cis1*5/8~ | cis8 bes a g f |
-      e f g e c | f4 f8 a f | e f16 e d8 cis bes | a g bes a4 |
-    } 
+    bes8 a g bes g | a g f e f | g f e d cis | e4. r8 f |
+    e1*5/8 | f1*5/8 | g1*5/8 | g1*5/8 | \break
+    c4 bes8 a g | c4 bes8 a g | cis1*5/8~ | cis8 bes a g f |
+    e f g e c | f4 f8 a f | e f16 e d8 cis bes | a g bes a4 |
   }
 
   accordiD = \chordmode{
-    \repeat volta 2{
-      c1*5/8 | f1*5/8 | a1*5/8:7 | a1*5/8:7 |
-      c1*5/8 | f1*5/8 | a1*5/8:7 | a1*5/8:7 |
-      c1*5/8 | f1*5/8 | a1*5/8:7 | a1*5/8:7 |
-      c1*5/8 | f1*5/8 | a1*5/8:7 | a1*5/8:7 |
-    }
+    c1*5/8 | f1*5/8 | a1*5/8:7 | a1*5/8:7 |
+    c1*5/8 | f1*5/8 | a1*5/8:7 | a1*5/8:7 |
+    c1*5/8 | f1*5/8 | a1*5/8:7 | a1*5/8:7 |
+    c1*5/8 | f1*5/8 | a1*5/8:7 | a1*5/8:7 |
   }
 
   silenzioD = {
-    \repeat volta 2{
-      s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
-      s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
-      s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
-      s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
-    }
+    s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
+    s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
+    s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
+    s1*5/8 | s1*5/8 | s1*5/8 | s1*5/8 |
   }
 % }}}
 
 % SCORE {{{
 tema = \relative c' {
-  \mark "Intro"
+  \mark \markup{ \box \bold{A1} }
   \temaIntro \break
-  \mark \default
+  \mark \markup{ \box \bold{A2} }
   \temaA \break
-  \mark \default
-  \temaB \break 
-  \mark \default
-  \temaC \break 
-  \mark \default
-  \temaD \break 
+  \mark \markup{ \box \bold{B} }
+  \temaB \bar "||" \break 
+  \mark \markup{ \box \bold{C} }
+  \temaC \bar "||" \break 
+  \mark \markup{ \box \bold{D} }
+  \temaD \bar "|." \break 
 }
 
 temaseconda = \relative c' {
@@ -249,6 +235,7 @@ scoreBb = <<
 % {{{ BOOKS
   \book{
     \bookOutputName \myFname
+    \struttura
     \markup { \vspace #1 }
     \bookOutputSuffix "C"
     \header{ composer="C" }
@@ -262,6 +249,7 @@ scoreBb = <<
 
   \book{
     \bookOutputName \myFname
+    \struttura
     \markup { \vspace #1 }
     \bookOutputSuffix "Bb"
     \header{ composer="Bb" }
@@ -275,6 +263,7 @@ scoreBb = <<
 
   \book{
     \bookOutputName \myFname
+    \struttura
     \bookOutputSuffix "Eb"
     \header{ composer="Eb" }
     \score { \transpose ees c { \scoreC } }
