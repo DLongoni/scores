@@ -23,8 +23,9 @@
   temaA = {
     \repeat volta 2{
       g4 c bes g8 f | g4 f8 ees | f ees c bes |
-      g'4 c | bes g8 f | a4 a8 f | g2 |
-    }
+      g'4 c | bes g8 f | a4 a8 f | g2^\markup{\italic \lower #1 "al "\musicglyph #"scripts.coda"}
+ |
+     }
   }
 
   ritmicaAuno = {
@@ -155,40 +156,38 @@
   }
 % }}}
 
-% {{{ PARTE C
-  temaC = {
+% {{{ PARTE Coda
+  temaCoda = {
     \time 2/4
-    \key c \major
-    \mark \markup {
-      \hspace #44
-      "Going from B to A play this on the last bar of B"
+    g8 d bes' g | a f c' a | bes g d' bes | c2~\< | c4\staccato r4\! |
+  }
+
+  temaCodaDue = {
+    \trip g8 bes d \trip g f g | \trip a g f \trip ees d f | 
+    ees4 f | e2~\< | e4\staccato r4\! |
+  }
+
+  temaCodaTre = {
+    \key c \minor
+    g8 bes g bes | f a f a | ees g d g | c,2~\< | c4\staccato r4\! |
+  }
+
+  accordoniCoda = {
+    \repeat volta 2 {
+       \new Voice <<
+         { r4 bes | a2 | bes4 bes4 | r4 b4~ | b4\staccato r4 | }
+         { r4 f | f2 | g4 f | r8 g~ g4~ | g4\staccato r4 | }
+         { r4 d | d2 | ees4 d | e2~\< | e4\staccato r4\! | }
+       >>
     }
-      r2 |  g4 c |
   }
 
-  ritmicaCuno = {
-    \time 2/4
-      ees16 f ees8 d16 e d8 | c16 d c8~ c4 |
+  accordiCoda = \chordmode{
+    g2:m | f2 | ees4 bes4 | c2 | c2 |
   }
 
-  ritmicaCdue = {
-    \time 2/4
-      aes16 bes aes8 g16 a g8 | e16 fis e8 ees4 |
-  }
-
-  accordiC = \chordmode{
-    \time 2/4
-      aes4:7 g:7 | c4:maj7 aes:maj7 | 
-  }
-
-  bassoC = {
-    \time 2/4
-    aes8 c g a | c4 aes4 |
-  }
-
-  silenzioC = {
-    \time 2/4
-      s2 | s2 |
+  bassoCoda = {
+    r8 g~ g ges | f a c d | ees d bes d | c2~\< | c4\staccato r4\! |
   }
 % }}}
 
@@ -200,18 +199,35 @@ tema = \relative c' {
   \tempo \markup{ \hspace #-8.0 } 4 = 68
   \mark \default
   \temaB \break
+  \bar "||"
+  \mark \markup { \musicglyph #"scripts.coda"}
+  \temaCoda \break
   \bar "|."
 }
 
 temaDue = \relative c' {
   \accordoniA
   \temaBdue 
+  \temaCodaDue
 }
 
+temaTre = \relative c' {
+  \key c \minor
+  \silenzioA
+  \silenzioB
+  \temaCodaTre
+}
+
+voicing = \relative c' {
+  \silenzioA
+  \silenzioB
+  \accordoniCoda
+}
 
 basso = \relative c {
   \bassoA \break
   \bassoB
+  \bassoCoda
 }
 
 chordsPart ={
@@ -219,6 +235,7 @@ chordsPart ={
     \set chordChanges = ##t
     \accordiA
     \accordiB
+    \accordiCoda
   }
 }
 
@@ -229,6 +246,14 @@ temaPart = \new Staff \with {
 temaDuePart = \new Staff \with {
   instrumentName = ""
 } { \clef "treble_8" \global \temaDue }
+
+temaTrePart = \new Staff \with {
+  instrumentName = ""
+} { \clef "treble_8" \global \temaTre }
+
+voicingPart = \new Staff \with {
+  instrumentName = ""
+} { \clef "treble_8" \global \voicing }
 
 bassoPart = \new Staff \with {
   instrumentName = ""
@@ -243,12 +268,14 @@ ritmicaPart = \new Staff \with {
       >>
       \key c \minor
       \silenzioB
+      \accordoniCoda
 }
 
 scoreContent = << 
   \chordsPart
   \temaPart
   \temaDuePart
+  \temaTrePart
   \ritmicaPart
   \bassoPart
 >>
