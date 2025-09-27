@@ -46,9 +46,31 @@
       d2:m bes4.| d2:m bes4.| d2:m bes4.|
       d2:m bes4.| d2:m bes4.|
   }
+
+  fineSoli = {
+      a,4 c8 r8 d16 e d f~f8~ | f1*7/8 | r2 r4. |
+      a,4 c8 r8 d16 e d f~f8~ | f1*7/8 | r2 r4. |
+      a,4 c8 r8 d16 e d f r e | d16 e d8 c r bes16 a c bes r a |
+  }
+
+  fineSoliDue = {
+      d4 f8 r8 g16 a bes c ~c8~ | c1*7/8 | r2 r4. |
+      d,4 f8 r8 g16 a bes c ~c8~ | c1*7/8 | r2 r4. |
+      d,4 f8 r8 g16 a bes c r a | g16 a g8 f r f16 e g f r e |
+  }
+
+  accordiFineSoli = \chordmode{
+      d2:m c4.| d2:m c4.| d2:m c4.| d2:m c4.| \break
+      d2:m bes4.| d2:m bes4.| d2:m bes4.| d2:m bes4.| \pageBreak
+  }
+
+  silenzioFineSoli = {
+      s1*7/8 | s1*7/8 | s1*7/8 | s1*7/8 |
+      s1*7/8 | s1*7/8 | s1*7/8 | s1*7/8 |
+  }
 % }}}
 
-% {{{ PARTE A
+% {{{ PARTE B
   temaB = {
     \repeat volta 4 {
       c,2~ c4.~ c2 g8 a bes | 
@@ -135,6 +157,8 @@ tema = \relative c' {
   \mark \default
   \tempo 4 = 140
   \temaA \bar "||" \break
+  \mark \markup{ \box \bold{"Fine Solo"} }
+  \fineSoli \bar "||" \bar "||"
   \mark \default
   \temaB \break
   \bar "|."
@@ -142,11 +166,13 @@ tema = \relative c' {
 
 temaDue = \relative c' {
   \temaAdue 
+  \fineSoliDue
   \temaBdue
 }
 
 ritmica = \relative c' {
   \ritmicaA 
+  \silenzioFineSoli
   \ritmicaB
 }
 
@@ -154,6 +180,7 @@ chordsPart ={
   \new ChordNames {
     \set chordChanges = ##t
     \accordiA
+    \accordiFineSoli
     \accordiB
   }
 }
@@ -173,12 +200,6 @@ scoreContent = <<
   \temaPart
   \temaDuePart
   \ritmica
->>
-
-temiContent = << 
-  \chordsPart
-  \temaPart
-  \temaDuePart
 >>
 %}}}
 
