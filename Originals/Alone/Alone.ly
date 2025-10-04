@@ -184,7 +184,7 @@ struttura = \markup {
       bes'4 bes bes8 g a4 f8 | bes4 bes bes8 g a4 f8 | 
       bes4 bes bes8 g bes4 f8 | a4 a a8 f a4 f8 |
       bes4 bes bes8 g bes4 f8 | c'4 c c8 g8 c4 ges8 |
-      bes4 bes bes8 g bes4 g8 | bes4 bes bes8 g a4 f8 | 
+      bes8 bes r bes8 r g bes4 g8 | bes4 bes bes8 g a4 f8 | 
       bes4 bes bes8 g a4 f8 | bes4 bes bes8 g a4 f8 | 
       bes4 bes bes8 g bes4 f8 | a4 a a8 f a4 f8 |
       bes4 bes bes8 g bes4 f8 | bes4 bes bes8 g a4 f8 |
