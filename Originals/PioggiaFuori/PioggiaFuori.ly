@@ -93,7 +93,7 @@
       c2:maj7 e2:7 | f2:maj7 aes2:maj7 |
       des2:maj7 c2:maj7 | f2:maj7 e4:m7 e4:7 |
       a2:m aes2:dim7 | c2:/g ges:m7.5- |
-      e2:m7 ees2:7.5- | d1:m7 |
+      e2:m7 ees2:7.5- | d2:m7 des2:7.5-.9+ |
     }
   }
 
