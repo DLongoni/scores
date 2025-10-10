@@ -7,9 +7,9 @@
 
   struttura = \markup {
     \column {
-        \line{ \bold{A} Bass, \bold{A} Bass+Gtr, \bold{A} Bass+Gtr+Fisa, \bold{A} Tema Gtr 8vb}
-        \line{ \bold{A} Bass+Gtr+Fisa, \bold{A} Gtr 8va, \bold{A}x2 Tr}
-        \line{ \bold{B} Fisa, \bold{B} Solo Fisa, \bold{B} Solo Tr, \bold{B} Tr+II voce Fisa, \bold{Ending B3}, \bold{A} solo Guit, \bold{A}x2 Tr, \bold{A} Gtr}
+        \line{ \bold{A} Bass, \bold{A} Bass+Gtr, \bold{A} Bass+Gtr+Fisa, \bold{A} Gtr 8vb \bold{A} Bass+Gtr+Fisa, \bold{A} Gtr 8va, \bold{A}x2 Tr}
+        \line{ \bold{B} Fisa, \bold{B} Solo Fisa, \bold{B} Solo Tr, \bold{B} Tr+II voce Fisa, \bold{Ending B3}}
+        \line{ \bold{A} solo Gtr, \bold{A}x2 Tr, \bold{A} Gtr, \bold{Coda}}
       }
     }
 % }}}

@@ -8,9 +8,9 @@
 
   struttura = \markup {
     \column {
-        \line { \bold{A} Bass, \bold{A} Gtr, \bold{A} Drums+Gtr+Fisa \bold{A} tutti,
+        \line { \bold{A} Bass, \bold{A} Gtr, \bold{A} Drums+Gtr+Fisa, \bold{A} tutti,
           \bold{Solo} Fisa, \bold{A} Bass, \bold{A} tutti }
-        \line { \bold{B} Fisa, \bold{Bx2} tutti, \bold{Bridge} Gtr, \bold{Solo} Gtr+Tr \bold{Bx2} tutti, \bold{A/2} Fisa, \bold{A/2} Tr}
+        \line { \bold{B} Fisa, \bold{Bx2} tutti, \bold{Bridge} Gtr, \bold{Solo} Gtr+Tr, \bold{Bx2} tutti, \bold{A/2} Fisa, \bold{A/2} Tr}
       }
     }
 % }}}

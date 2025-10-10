@@ -7,7 +7,7 @@
 
   struttura = \markup {
     \column {
-      \line {\bold{Ax2} Tr, \bold{B} libera Dr+Bass, \bold{Bx2} Gtr+Fisa, \bold{B} stacchi, }
+      \line {\bold{Ax2} Tr, \bold{B} libera Dr+Bass, \bold{Bx2} Gtr+Fisa, }
       \line{\bold{C} Fisa, \bold{C} Tr, \bold{D} Tr, \bold{E} solo Fisa+Bass, \bold{E} solo Tr, 
         \bold{E} stacchi Fm, \bold{Break} sample,}
       \line{\bold{E} in Fm solo Tr, \bold{B} solo Tr, \bold{B} stacchi, \bold{C} Fisa, \bold{A} Gtr, \bold{Coda}}
