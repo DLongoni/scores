@@ -111,7 +111,12 @@
     \alternative{
       { f2. | r2. | }
       { f2. | r2. | }
-      {\time 2/4  f2 | aes,8 c g a | }
+      {\time 2/4  f2 |
+       \new Voice
+         << {ees16 d ees8 d16 c d8 |} 	
+            {c16 bes c8 b16 a b8 |}
+         >>
+       }
     }
 }
 
