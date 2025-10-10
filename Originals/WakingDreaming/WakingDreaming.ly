@@ -87,14 +87,14 @@
       c,8 ees g c b c | d c bes aes g bes | 
       f4. g4 f16 g | f ees  c4~ c4. |
       c8 ees g c b c | a4 a8 g b c | 
-      ees16 f d4~ d4. | 
     }
     \alternative{
-      { r4. f,8 fis g | }
-      { r2. | }
+      { ees16 f d4~ d4. |  r4. f,8 fis g | }
+      { ees'16 f d4~ d4. | r2. | }
       {\time 2/4 
+        ees16 f d8~ d4 | 
        \new Voice
-           << {ees'16 f ees8 d16 e d8 |} 	
+           << {ees16 f ees8 d16 e d8 |} 	
               {aes'16 bes aes8 g16 a g8 |}
            >>
         }
@@ -106,25 +106,25 @@
     \key c \minor
     \repeat volta 3 {
       ees8 g d' ees d ees | f ees d c bes d | aes4. bes4. | c2. |
-      ees,8 g d' ees d ees | f4 ees8 d ees e | f2. |
+      ees,8 g d' ees d ees | f4 ees8 d ees e |
     }
     \alternative{
-      { r2. | }
-      { r2. | }
-      {\time 2/4 aes,8 c g a | }
+      { f2. | r2. | }
+      { f2. | r2. | }
+      {\time 2/4  f2 | aes,8 c g a | }
     }
 }
 
   accordiB = \chordmode{
     \repeat volta 3 {
       c2.:m | bes2. | f4.:m g4.:7 | c2.:m | \break
-      c2.:m | f2. | g2.:7 |
+      c2.:m | f2. |
     }
     \alternative
     {
-      { bes2.: | }
-      { bes2.: | }
-      {\time 2/4aes4:7 g:7 | }
+      { g2.:7 | bes2.: | }
+      { g2.:7 | bes2.: | }
+      {\time 2/4 g2:7 | aes4:7 g:7 | }
     }
   }
 
@@ -132,13 +132,13 @@
     \key c \minor
     \repeat volta 3 {
       c4. aes | bes g | f4 aes8 g4. | c4. ees4 bes8 |
-      c4. g | f a | g b | 
+      c4. g | f a | 
     }
     \alternative
     {
-      { bes8 r4  f8 fis g | }
-      { bes4. r4. | }
-      {\time 2/4 aes4 g4 | }
+      { g4. b | bes8 r4  f8 fis g | }
+      { g4. b | bes4. r4. | }
+      {\time 2/4 g8 b g f | aes c g4 | }
     }
   }
 
@@ -146,12 +146,12 @@
     \time 6/8
     \repeat volta 3{
       s2. | s2. | s2. | s2. | 
-      s2. | s2. | s2. | 
+      s2. | s2. |
     }
     \alternative{
-      { s2. | }
-      { s2. | }
-      {\time 2/4 s2 | }
+      { s2. |  s2. | }
+      { s2. |  s2. | }
+      {\time 2/4 s2 | s2 | }
     }
   }
 % }}}
