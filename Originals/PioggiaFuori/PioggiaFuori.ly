@@ -94,11 +94,21 @@
       e2 d | c16 d r e r c g8 c16 d r des r b g8 | 
       bes2 b4 c4 | e16 f r e r d c8 b4 \trip d8 b d |
       e4 a aes b | c b a g | 
-      e16 g r a r e c8 ees16 g r a r ees c8 f2 f8 e8~ e4 |
+      e16 g r a r e c8 ees16 g r a r ees c8 | f2 f8 e8~ e4 |
     } 
   }
 
-  
+  temaCdueBis = {
+    \key c \major
+    \repeat volta 2 {
+      e''2 d | r8 c c a b2 |
+      a2 b | e8 e d e g4 \trip a8 g f |
+      e2 d | c8 c c a c2 | 
+      ees2 c2 | e8 e d e g8. e16 \trip d8 b d |
+      e4 a aes b | c b a g | 
+      e4 g ees g | d4 e8 f f8 e8~ e4 |
+    } 
+  }
 
   accordiC = \chordmode{
     \repeat volta 2{
@@ -187,7 +197,7 @@ temaDuePart = \new Staff {
   \relative c {
     \silenzioA
     \silenzioB
-    \temaCdue
+    \temaCdueBis
   }
 }
 
