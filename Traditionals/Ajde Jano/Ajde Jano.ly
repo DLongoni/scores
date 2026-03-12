@@ -1,38 +1,9 @@
 % {{{ INIZIALIZZAZIONE
-  \version "2.16.2"
-
-  \header {
-    title = "Ajde Jano"
-    composer = "Serbian Traditional"
-  }
-
-  \paper{
-    oddHeaderMarkup = \markup \null
-    evenHeaderMarkup = \markup \null
-    print-first-page-number = ##t
-    oddFooterMarkup = \markup {
-      \fill-line {
-        \on-the-fly \print-page-number-check-first
-        \fromproperty #'page:page-number-string
-      }
-    }
-    evenFooterMarkup = \oddFooterMarkup
-    #(set-global-staff-size 10)
-
-    myStaffSize = #20
-    fonts = #(make-pango-font-tree
-    "FontAwesome"
-    "FontAwesome"
-    "FontAwesome"
-    (/ myStaffSize 20) )
-  }
-
-  global = {
-    \key f \major
-    \numericTimeSignature
-    \time #'(3 2 2) 7/8
-    \set Score.markFormatter = #format-mark-box-alphabet
-  }
+  myTitle = "Ajde Jano"
+  myFname = "AjdeJano"
+  mySubTitle = "Serbian Traditional"
+  myKey = \key f \major
+  myTime = \time #'(3 2 2) 7/8
 
   struttura = \markup {
     \column {
@@ -47,6 +18,11 @@
     }
   }
 % }}}
+
+% DEFINIZIONI {{{
+\version "2.18.2"
+\include "/home/davide/scores/Template/Common.ly"
+%}}}
 
 % {{{ PARTE A
 
